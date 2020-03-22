@@ -11,7 +11,7 @@
 
 
     
-         <title>شرح مساله &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>تور اویلری درخت و Lca سریع &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -34,8 +34,8 @@
         <link rel="search" title="جستجو" href="../../search.html" />
         <link rel="top" title="نظریه گراف‌ها برای المپیاد کامپیوتر" href="../../index.html" />
         <link rel="up" title="Lca" href="index.html" />
-        <link rel="next" title="راه حل O(n+q*lg(n)) به کمک جداسازی سبک-سنگین" href="2.html" />
-        <link rel="prev" title="Lca" href="index.html" />
+        <link rel="next" title="الگوریتم های پیشرفته درخت" href="../11/index.html" />
+        <link rel="prev" title="ارتباط LCA و RMQ" href="4.html" />
 
 
 
@@ -177,11 +177,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lca</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">شرح مساله</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.html">شرح مساله</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.html">راه حل O(n+q*lg(n)) به کمک جداسازی سبک-سنگین</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">الگوریتم برون‌خط تارجان</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">ارتباط LCA و RMQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5.html">تور اویلری درخت و Lca سریع</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">تور اویلری درخت و Lca سریع</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../11/index.html">الگوریتم های پیشرفته درخت</a><ul>
@@ -242,12 +242,12 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; شرح مساله</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; تور اویلری درخت و Lca سریع</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
         
-            <a href="../../_sources/book/10/1.rst.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
+            <a href="../../_sources/book/10/5.rst.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
         
     
 </div>
@@ -257,51 +257,8 @@
                             <div class="row-fluid">
 			        <div class="col-lg-12">
 				    
-  <div class="section" id="id1">
-<h1>شرح مساله<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
-<p>در این فصل با یک درخت ریشه دار سر و کار داریم و دو مساله زیر را روی این درخت بررسی می‌کنیم.</p>
-<div class="section" id="id2">
-<h2>مساله جد در ارتفاع خاص<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>در این مساله یک درخت ریشه دار
-n
-راسی ورودی داده می‌شود و سپس
-q
-پرسش از ما انجام می‌شود. در هر پرسش یک راس مانند v و یک عدد مانند
-h
-داده می‌شود. تضمین می‌شود که ارتفاع راس از
-h
-بیشتر است و از ما جد راس
-v
-که در ارتفاع
-h
-قرار دارد
-(و یکتاست)
-از ما خواسته می‌شود.</p>
-</div>
-<div class="section" id="id3">
-<h2>مساله پایین ترین جد مشترک<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>در این مساله یک درخت ریشه دار
-n
-راسی ورودی داده می‌شود و سپس
-q
-پرسش از ما انجام می‌شود. در هر پرسش دو راس مانند
-v و u
-به ما داده می‌شود و از ما پایین ترین جد مشترک این دو راس خواسته می‌شود.</p>
-</div>
-<div class="section" id="id4">
-<h2>ارتباط این دو مساله<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>اگر برای مساله اول یک راه حل داشته باشیم که هر پرسش را از
-<span class="math notranslate nohighlight">\(O(x)\)</span>
-پاسخ دهد، می‌توانیم هر پرسش از مساله دوم را با
-<span class="math notranslate nohighlight">\(O(x*lg(n))\)</span>
-پاسخ دهیم.</p>
-<p>پایین ترین جد مشترک این دو راس را در نظر بگیرید. جدهایی که از ارتفاع آن راس
-بالاتر هستند مشترک هستند و جدهای پایین‌تر متفاوت هستند. پس می‌توانیم
-روی ارتفاع باینری سرچ بزنیم. برای این که چک کنیم جد ارتفاع x این دو راس
-مشترک است یا خیر کافیست که جد ارتفاع
-x
-هر دو راس را به کمک راه اول به دست آوریم و مقایسه کنیم که آیا یکی هستند یا خیر.</p>
-</div>
+  <div class="section" id="lca">
+<h1>تور اویلری درخت و Lca سریع<a class="headerlink" href="#lca" title="لینک ثابت به این سر مقاله">¶</a></h1>
 </div>
 
 
@@ -316,10 +273,10 @@ x
             <div id="body-btn">
                 
                     
-                    <a href="index.html" style="float:right;" title="Lca" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
+                    <a href="4.html" style="float:right;" title="ارتباط LCA و RMQ" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
-                    <a href="2.html" style="float:left;" title="راه حل O(n+q*lg(n)) به کمک جداسازی سبک-سنگین" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
+                    <a href="../11/index.html" style="float:left;" title="الگوریتم های پیشرفته درخت" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
                     
                 
             </div>

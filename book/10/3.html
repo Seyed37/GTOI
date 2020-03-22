@@ -11,7 +11,7 @@
 
 
     
-         <title>tarjan offline algorithm &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>الگوریتم برون‌خط تارجان &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -34,7 +34,7 @@
         <link rel="search" title="جستجو" href="../../search.html" />
         <link rel="top" title="نظریه گراف‌ها برای المپیاد کامپیوتر" href="../../index.html" />
         <link rel="up" title="Lca" href="index.html" />
-        <link rel="next" title="تور اویلری درخت و Lca سریع" href="4.html" />
+        <link rel="next" title="ارتباط LCA و RMQ" href="4.html" />
         <link rel="prev" title="راه حل O(n+q*lg(n)) به کمک جداسازی سبک-سنگین" href="2.html" />
 
 
@@ -179,8 +179,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Lca</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">شرح مساله</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.html">راه حل O(n+q*lg(n)) به کمک جداسازی سبک-سنگین</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">tarjan offline algorithm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4.html">تور اویلری درخت و Lca سریع</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">الگوریتم برون‌خط تارجان</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">ارتباط LCA و RMQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.html">تور اویلری درخت و Lca سریع</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../11/index.html">الگوریتم های پیشرفته درخت</a><ul>
@@ -241,7 +242,7 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; tarjan offline algorithm</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; الگوریتم برون‌خط تارجان</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
@@ -256,8 +257,48 @@
                             <div class="row-fluid">
 			        <div class="col-lg-12">
 				    
-  <div class="section" id="tarjan-offline-algorithm">
-<h1>tarjan offline algorithm<a class="headerlink" href="#tarjan-offline-algorithm" title="لینک ثابت به این سر مقاله">¶</a></h1>
+  <div class="section" id="id1">
+<h1>الگوریتم برون‌خط تارجان<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>مسائلی که در آن ها تعدادی پرسش مطرح می شوند دو نوع راه حل دارند. راه برخط
+(online)
+و راه برون‌خط
+(offline).
+در راه برخط شما مجبورید هر سوال را در لحظه پاسخ دهید و تا به پرسش فعلی پاسخ
+ندهید نمی‌توانید پرسش بعدی را دریافت کنید. اما در راه برون خط می توانید همه پرسش ها
+را دریافت کرده و سپس شروع به پاسخ دادن کنید.</p>
+<p>در این بخش با یک راه برون خط برای مسائلی که مطرح شد ارائه می‌کنیم. چون برخط بودن یک
+محدودیت است، راه های برون خط پیچیدگی کمتری دارند.</p>
+<div class="section" id="id2">
+<h2>راه مساله پدر در ارتفاع خاص<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>این مساله ساده است. کافیست همه پرسش ها را دریافت کرده و سپس از ریشه درخت
+DFS
+بزنیم. هنگامی که وارد یک راس شدیم، آن را در یک وکتور پوش می‌کنیم و هنگام خارج
+شدن آن را پاپ می‌کنیم. به این ترتیب هنگامی که در یک راس هستیم، خودش و تمام
+اجدادش درون وکتور هستند و به ترتیب ارتفاع چیده شده‌اند. پس هنگامی که به یک
+راس رسیدیم می‌توانیم تمامی پرسش های مربوط به آن را از
+<span class="math notranslate nohighlight">\(O(1)\)</span>
+پاسخ دهیم. به این ترتیب راهی خطی در اختیار داریم.</p>
+</div>
+<div class="section" id="id3">
+<h2>راه مساله پایین ترین جد مشترک<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>ابتدا تمام پرسش ها را دریافت می کنیم و برای هر راس، لیستی از پرسش های
+مربوط به آن را تهیه می کنیم. این کار در زمان خطی نسبت به ورودی قابل انجام است.</p>
+<p>سپس روی درخت
+DFS
+می‌زنیم. هنگامی که به یک راس می رسیم، یک دسته ایجاد می کنیم و این راس را
+درون آن می‌گذاریم. و هنگامی که از این راس خارج می شویم، دسته ای که این راس
+درون آن است را با دسته پدر این راس ترکیب می‌کنیم. به این ترتیب اگر روی یک راس مانند
+u
+باشیم، هر راس دیگر مانند
+v
+در دسته‌ای قرار دارد که سر دسته آن، جد مشترک بین آن دو است. عملیات های ترکیب را می‌توان با
+DSU
+انجام داد و بنابراین پیچیدگی این الگوریتم برابر است با:
+<span class="math notranslate nohighlight">\(O((n+q)*a(n))\)</span>
+که در آن
+<span class="math notranslate nohighlight">\(a(n)\)</span>
+همان تابع معکوس آکرمان است.</p>
+</div>
 </div>
 
 
@@ -275,7 +316,7 @@
                     <a href="2.html" style="float:right;" title="راه حل O(n+q*lg(n)) به کمک جداسازی سبک-سنگین" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
-                    <a href="4.html" style="float:left;" title="تور اویلری درخت و Lca سریع" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
+                    <a href="4.html" style="float:left;" title="ارتباط LCA و RMQ" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
                     
                 
             </div>
