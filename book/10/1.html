@@ -55,7 +55,6 @@
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -286,7 +285,13 @@ n
 q
 پرسش از ما انجام می‌شود. در هر پرسش دو راس مانند
 v و u
-به ما داده می‌شود و از ما پایین ترین جد مشترک این دو راس خواسته می‌شود.</p>
+به ما داده می‌شود و از ما پایین ترین جد مشترک
+این دو راس خواسته می‌شود.
+به پایین ترین جد مشترک دو راس عموما
+LCA
+می گویند که مخفف
+Lowest Common Ansector
+است.</p>
 </div>
 <div class="section" id="id4">
 <h2>ارتباط این دو مساله<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
@@ -295,7 +300,8 @@ v و u
 پاسخ دهد، می‌توانیم هر پرسش از مساله دوم را با
 <span class="math notranslate nohighlight">\(O(x*lg(n))\)</span>
 پاسخ دهیم.</p>
-<p>پایین ترین جد مشترک این دو راس را در نظر بگیرید. جدهایی که از ارتفاع آن راس
+<p>LCA
+این دو راس را در نظر بگیرید. جدهایی که از ارتفاع آن راس
 بالاتر هستند مشترک هستند و جدهای پایین‌تر متفاوت هستند. پس می‌توانیم
 روی ارتفاع باینری سرچ بزنیم. برای این که چک کنیم جد ارتفاع x این دو راس
 مشترک است یا خیر کافیست که جد ارتفاع
