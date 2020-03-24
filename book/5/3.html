@@ -55,6 +55,7 @@
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -258,6 +259,22 @@
 				    
   <div class="section" id="de-bruijn-sequence">
 <h1>De Bruijn sequence<a class="headerlink" href="#de-bruijn-sequence" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>آیا می توان دور یک دایره <span class="math notranslate nohighlight">\(2^n\)</span> ارقام 0 و 1 نوشت به طوریکه اگر تمام بازه های متوالی به طول <span class="math notranslate nohighlight">\(n\)</span> را در نظر بگیریم کل اعداد باینری <span class="math notranslate nohighlight">\(n\)</span> بیتی را تولید کند؟</p>
+<div class="section" id="id1">
+<h2>تبدیل به دور همیلتونی<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>اولین ایده ما برای مدل سازی این گراف به این شکل است :</p>
+<p>یک گراف <span class="math notranslate nohighlight">\(2^n\)</span> راسی می سازیم که هر راس آن با یک رشته <span class="math notranslate nohighlight">\(n\)</span> تایی از 0 و 1 ها است. و راس <span class="math notranslate nohighlight">\(a\)</span> به راس <span class="math notranslate nohighlight">\(b\)</span> یال جهت دار دارد اگر بتوان رقم آخر رشته <span class="math notranslate nohighlight">\(a\)</span> را حذف کرد سپس یک حرف به اول آن اضافه کرد به طویکه رشته <span class="math notranslate nohighlight">\(b\)</span> حاصل شود. حالا سوال معادل با پیدا کردن یک دور همیلتونی در گرافی که ساختیم می باشد!</p>
+<p>در اینجا به بن بست می خوریم زیرا که برای تشخیص اینکه یک گراف دور همیلتونی وجود دارد یا خیر روشی نداریم.</p>
+</div>
+<div class="section" id="id2">
+<h2>تبدیل به تور اویلری<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>یک گراف <span class="math notranslate nohighlight">\(2^{n-1}\)</span> راسی می سازیم که هر راس آن معادل با یک رشته <span class="math notranslate nohighlight">\(n-1\)</span> تایی از 0 و 1 ها است. هر راس مانند <span class="math notranslate nohighlight">\(u\)</span> دقیقا دو خروجی دارد. خروجی که عدد 0 روی آن نوشته شده است به راس <span class="math notranslate nohighlight">\(w\)</span> می رود به طوریکه اگر حرف آخر رشته <span class="math notranslate nohighlight">\(u\)</span> را حذف کنیم و به اول آن 0 را اضافه کنیم رشته حاصل همان رشته <span class="math notranslate nohighlight">\(w\)</span> خواهد بود. خروجی که روی آن عدد 1 نوشته شده است را هم می توان به شیوه مشابه تعریف کرد.</p>
+<p>تفاوت اصلی گراف قبلی با این گراف این است که در گراف قبل هر بازه <span class="math notranslate nohighlight">\(n\)</span> تایی از 0 و 1 های دور دایره معادل با یک راس گراف بود. ولی در اینجا معادل با یک یال گراف است. و مسئله را به پیدا کردن تور اویلری در گراف تبدیل کردیم. (می توان ثابت کرد که همانطور که درجه خروجی هر راس 2 است درجه ورودی هر راس هم 2 است همچنین گراف زمینه همبند است پس گراف اویلری می باشد).</p>
+<p>حالا اگر یک تور اویلری از گراف را پیدا کنید و ارقام روی یال های آن را به ترتیب دور دایره بنویسید چینش مطلوب ما حاصل خواهد شد!</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/De_bruijn_graph.svg.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/De_bruijn_graph.svg.png" style="width: 40%;" /></a>
+</div>
+</div>
 </div>
 
 
