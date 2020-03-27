@@ -11,7 +11,7 @@
 
 
     
-         <title>Kruskal &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>کاربرد ها &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -33,9 +33,9 @@
         <link rel="index" title="فهرست" href="../../genindex.html" />
         <link rel="search" title="جستجو" href="../../search.html" />
         <link rel="top" title="نظریه گراف‌ها برای المپیاد کامپیوتر" href="../../index.html" />
-        <link rel="up" title="MST" href="index.html" />
-        <link rel="next" title="Prim" href="2.html" />
-        <link rel="prev" title="MST" href="index.html" />
+        <link rel="up" title="تطابق" href="index.html" />
+        <link rel="next" title="جریان بیشینه" href="5.html" />
+        <link rel="prev" title="قضایا ی مینماکس" href="3.html" />
 
 
 
@@ -169,10 +169,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../8/4.html">Segment tree</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">MST</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Kruskal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">Prim</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.html">Buvrika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../9/index.html">MST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../9/1.html">Kruskal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../9/2.html">Prim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../9/3.html">Buvrika</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../10/index.html">Lca</a><ul>
@@ -191,14 +191,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../11/5.html">هش درخت</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../12/index.html">تطابق</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../12/1.html">آشنایی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/2.html">گراف دو بخشی جهت دار و تطابق</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/3.html">قضایا ی مینماکس</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/4.html">کاربرد ها</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/5.html">جریان بیشینه</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/6.html">Poset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/7.html">تطابق در گراف های عام</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">تطابق</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">آشنایی</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">گراف دو بخشی جهت دار و تطابق</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">قضایا ی مینماکس</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">کاربرد ها</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.html">جریان بیشینه</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.html">Poset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.html">تطابق در گراف های عام</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../13/index.html">همبندی</a><ul>
@@ -250,12 +250,12 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; Kruskal</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; کاربرد ها</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
         
-            <a href="../../_sources/book/9/1.rst.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
+            <a href="../../_sources/book/12/4.rst.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
         
     
 </div>
@@ -265,8 +265,26 @@
                             <div class="row-fluid">
 			        <div class="col-lg-12">
 				    
-  <div class="section" id="kruskal">
-<h1>Kruskal<a class="headerlink" href="#kruskal" title="لینک ثابت به این سر مقاله">¶</a></h1>
+  <div class="section" id="id1">
+<h1>کاربرد ها<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<div class="section" id="dag">
+<h2>افراز dag به مسیر ها<a class="headerlink" href="#dag" title="لینک ثابت به این سر مقاله">¶</a></h2>
+</div>
+<div class="section" id="id2">
+<h2>افراز گراف جهت دار به دور ها<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+</div>
+<div class="section" id="k">
+<h2>گراف 2k منتظم و افراز به دور ها<a class="headerlink" href="#k" title="لینک ثابت به این سر مقاله">¶</a></h2>
+</div>
+<div class="section" id="id3">
+<h2>دنباله درجه ای تورنومنت و تطابق<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+</div>
+<div class="section" id="id4">
+<h2>راس های ثابت در تطابق دو بخشی<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2>بازی ها و تطابق<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+</div>
 </div>
 
 
@@ -281,10 +299,10 @@
             <div id="body-btn">
                 
                     
-                    <a href="index.html" style="float:right;" title="MST" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
+                    <a href="3.html" style="float:right;" title="قضایا ی مینماکس" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
-                    <a href="2.html" style="float:left;" title="Prim" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
+                    <a href="5.html" style="float:left;" title="جریان بیشینه" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
                     
                 
             </div>
