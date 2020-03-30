@@ -34,7 +34,7 @@
         <link rel="search" title="جستجو" href="../../search.html" />
         <link rel="top" title="نظریه گراف‌ها برای المپیاد کامپیوتر" href="../../index.html" />
         <link rel="up" title="تطابق" href="index.html" />
-        <link rel="next" title="گراف دو بخشی جهت دار و تطابق" href="2.html" />
+        <link rel="next" title="تطابق در گراف دوبخشی" href="2.html" />
         <link rel="prev" title="تطابق" href="index.html" />
 
 
@@ -162,6 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../8/2.html">heap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../8/3.html">DSU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../8/4.html">Segment tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8/5.html">trie</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../9/index.html">MST</a><ul>
@@ -188,7 +189,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">تطابق</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">آشنایی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">گراف دو بخشی جهت دار و تطابق</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">تطابق در گراف دوبخشی</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">قضایا ی مینماکس</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">کاربرد ها</a></li>
 <li class="toctree-l2"><a class="reference internal" href="5.html">جریان بیشینه</a></li>
@@ -264,17 +265,29 @@
 <h1>آشنایی<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
 <div class="section" id="id2">
 <h2>تعریف<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>تطابق مجموعه‌ای از یال‌هاست که هیچ‌دوتایی از آنها باهم راس مشترک ندارند.
-به زبان ریاضی اگر گراف را G و مجموعه یال‌های آن را E درنظر بگیریم، به زیرمجموعه‌ای از E که هیچ‌یک از دو عضو آن راس مشترکی در G ندارند، تطابق یا مجموعه‌ ناوابسته‌ یال‌ها می‌گویند و آن را با M نشان می‌دهند.</p>
+<p>تطابق مجموعه‌ای از یال‌هاست که هیچ‌دوتایی از آنها باهم راس مشترک ندارند.</p>
+<p>به زبان ریاضی، اگر گراف را <span class="math notranslate nohighlight">\(G\)</span> و مجموعه یال‌های آن را <span class="math notranslate nohighlight">\(E\)</span> درنظر بگیریم، به زیرمجموعه‌ای از <span class="math notranslate nohighlight">\(E\)</span> که هیچ‌یک از دو عضو آن راس مشترکی در <span class="math notranslate nohighlight">\(G\)</span> ندارند، تطابق یا مجموعه‌ ناوابسته‌ یال‌ها می‌گویند و آن را با <span class="math notranslate nohighlight">\(M\)</span> نشان می‌دهند.</p>
+<p>به راسی که در یکی از دو انتهای یال‌های تطابق گراف  <span class="math notranslate nohighlight">\(G\)</span> واقع شده باشد، راس اشباع (منطبق شده) و در غیر این صورت راس غیراشباع (منطبق نشده) می‌گویند.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/matching_example.jpg"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/matching_example.jpg" style="width: 50%;" /></a>
+</div>
 </div>
 <div class="section" id="id3">
 <h2>تطابق ماکسیمال و ماکسیمم<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>تطابق ماکسیمال یک تطابق در <span class="math notranslate nohighlight">\(G\)</span> است، به صورتی که هر یال دیگری که در تطابق نیامده باشد را که به آن اضافه کنیم، گراف به وجود آمده خاصیت تطابق بودن خود را از دست بدهد. به عبارتی دیگر، تطابق <span class="math notranslate nohighlight">\(M\)</span> زمانی ماکسیمال است که هر یال <span class="math notranslate nohighlight">\(G\)</span> حداقل با یکی از یال‌های آن تقاطع داشته باشد.</p>
+<p>تطابق ماکسیمم تطابقی است که بیشترین تعداد یال‌های <span class="math notranslate nohighlight">\(G\)</span> را دارد. بنابراین می‌توان نتیجه گرفت هر تطابق ماکسیمم، یک تطابق ماکسیمال است، ولی هر تطابق ماکسیمال لزوما یک تطابق ماکسیمم نیست. تطابق کامل نیز تطابقی است که در آن همه راس‌ها اشباع هستند (در اصل تعداد یال‌های آن برابر <span class="math notranslate nohighlight">\(G / 2\)</span> است).</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/matchings.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/matchings.png" style="width: 50%;" /></a>
+</div>
 </div>
 <div class="section" id="id4">
 <h2>مسیر افزایشی<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>مسیر متناوب، مسیری است که یال‌های آن یکی در میان در میان یال‌های تطابق و خارج از یال‌های تطابق است.</p>
+<p>مسیر افزایشی، مسیری متناوب است که یال‌های اول و آخر آن خارج از یال‌های تطابق هستند.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/matching_paths.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/matching_paths.png" style="width: 50%;" /></a>
 </div>
-<div class="section" id="id5">
-<h2>شرط لازم و کافی تطابق ماکسیمم<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>می‌توان ثابت کرد یک تطابق ماکسیمم است، اگر و تنها اگر مسیر افزایشی نداشته باشد که این نتیجه‌گیری به نتیجه‌گیری برژ نیز معروف است.</p>
 </div>
 </div>
 
@@ -293,7 +306,7 @@
                     <a href="index.html" style="float:right;" title="تطابق" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
-                    <a href="2.html" style="float:left;" title="گراف دو بخشی جهت دار و تطابق" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
+                    <a href="2.html" style="float:left;" title="تطابق در گراف دوبخشی" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
                     
                 
             </div>

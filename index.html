@@ -162,6 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="book/8/2.html">heap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/8/3.html">DSU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/8/4.html">Segment tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/8/5.html">trie</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="book/9/index.html">MST</a><ul>
@@ -188,7 +189,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="book/12/index.html">تطابق</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="book/12/1.html">آشنایی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="book/12/2.html">گراف دو بخشی جهت دار و تطابق</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/12/2.html">تطابق در گراف دوبخشی</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/12/3.html">قضایا ی مینماکس</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/12/4.html">کاربرد ها</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/12/5.html">جریان بیشینه</a></li>
@@ -271,7 +272,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="book/2/index.html">درخت ها</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="book/2/1.html">خاصیت های مقدماتی</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/2/1.html">خاصیت های مقدماتی</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book/2/1.html#id2">تعاریف مربوط به این بخش</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="book/2/2.html">فاصله در درخت و گراف</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/2/3.html">مرکز و قطر گراف</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/2/4.html">شمردن تعداد درخت ها</a></li>
@@ -350,6 +354,7 @@
 <li class="toctree-l2"><a class="reference internal" href="book/8/2.html">heap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/8/3.html">DSU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="book/8/4.html">Segment tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/8/5.html">trie</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="book/9/index.html">MST</a><ul>
@@ -404,23 +409,37 @@
 <li class="toctree-l3"><a class="reference internal" href="book/12/1.html#id2">تعریف</a></li>
 <li class="toctree-l3"><a class="reference internal" href="book/12/1.html#id3">تطابق ماکسیمال و ماکسیمم</a></li>
 <li class="toctree-l3"><a class="reference internal" href="book/12/1.html#id4">مسیر افزایشی</a></li>
-<li class="toctree-l3"><a class="reference internal" href="book/12/1.html#id5">شرط لازم و کافی تطابق ماکسیمم</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="book/12/2.html">گراف دو بخشی جهت دار و تطابق</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="book/12/2.html#id2">اسپلیت</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/12/2.html">تطابق در گراف دوبخشی</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book/12/2.html#id2">الگوریتم</a></li>
 <li class="toctree-l3"><a class="reference internal" href="book/12/2.html#id3">قضیه هال</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book/12/2.html#k">تطابق در گراف دوبخشی k منتظم</a></li>
 <li class="toctree-l3"><a class="reference internal" href="book/12/2.html#id4">تعمیم قضیه هال</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="book/12/3.html">قضایا ی مینماکس</a></li>
+<li class="toctree-l2"><a class="reference internal" href="book/12/3.html">قضایا ی مینماکس</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book/12/3.html#id2">قضیه های برقرار در هر گرافی</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book/12/3.html#alpha-beta-n"><span class="math notranslate nohighlight">\(\alpha + \beta = n\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book/12/3.html#alpha-prime-beta-prime-n"><span class="math notranslate nohighlight">\(\alpha^{\prime} + \beta^{\prime} = n\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book/12/3.html#beta-geq-alpha-prime"><span class="math notranslate nohighlight">\(\beta \geq \alpha^{\prime}\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="book/12/3.html#id3">قضیه های برقرار در گراف دوبخشی</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="book/12/3.html#alpha-prime-beta"><span class="math notranslate nohighlight">\(\alpha^{\prime} = \beta\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="book/12/3.html#beta-prime-alpha"><span class="math notranslate nohighlight">\(\beta^{\prime} = \alpha\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="book/12/4.html">کاربرد ها</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="book/12/4.html#id2">گراف جهت دار و دوبخشی</a></li>
 <li class="toctree-l3"><a class="reference internal" href="book/12/4.html#dag">افراز dag به مسیر ها</a></li>
-<li class="toctree-l3"><a class="reference internal" href="book/12/4.html#id2">افراز گراف جهت دار به دور ها</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book/12/4.html#id3">افراز گراف جهت دار به دور ها</a></li>
 <li class="toctree-l3"><a class="reference internal" href="book/12/4.html#k">گراف 2k منتظم و افراز به دور ها</a></li>
-<li class="toctree-l3"><a class="reference internal" href="book/12/4.html#id3">دنباله درجه ای تورنومنت و تطابق</a></li>
-<li class="toctree-l3"><a class="reference internal" href="book/12/4.html#id4">راس های ثابت در تطابق دو بخشی</a></li>
-<li class="toctree-l3"><a class="reference internal" href="book/12/4.html#id5">بازی ها و تطابق</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book/12/4.html#id4">دنباله درجه ای تورنومنت و تطابق</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book/12/4.html#id5">راس های ثابت در تطابق دو بخشی</a></li>
+<li class="toctree-l3"><a class="reference internal" href="book/12/4.html#id6">بازی ها و تطابق</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="book/12/5.html">جریان بیشینه</a></li>
