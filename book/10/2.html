@@ -176,7 +176,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">راه حل O(n+q*lg(n)) به کمک جداسازی سبک-سنگین</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">الگوریتم برون‌خط تارجان</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">ارتباط LCA و RMQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5.html">تور اویلری درخت و Lca سریع</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.html">راه خطی برای LCA</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../11/index.html">الگوریتم های پیشرفته درخت</a><ul>
@@ -302,6 +302,61 @@ DFS
 به ازای هر پرسش طول می‌کشد و بنابراین پیچیدگی زمانی کل،
 <span class="math notranslate nohighlight">\(O(n+q*lg(n))\)</span>
 است.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e5</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">edge_counter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">st</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">stp</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">hld</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">par</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">h</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">dfsz</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mxsz</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="n">swap</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">szy</span> <span class="o">=</span> <span class="n">dfsz</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">x</span><span class="p">);</span>
+    <span class="n">sz</span> <span class="o">+=</span> <span class="n">szy</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">szy</span> <span class="o">&gt;</span> <span class="n">mxsz</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">mxsz</span> <span class="o">=</span> <span class="n">szy</span><span class="p">;</span>
+      <span class="n">swap</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span> <span class="c1">// enteghale yal sangin be g[x][0]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">sz</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">dfst</span><span class="p">(</span><span class="kt">int</span> <span class="n">stpx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">st</span><span class="p">[</span><span class="n">stpx</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="o">++</span><span class="p">;</span> <span class="c1">// shomare ras ha ra joori avaz mikonim ke yal haye sangin</span>
+  <span class="n">stp</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">stpx</span><span class="p">;</span> <span class="c1">// motevali bashand. in jayghasht ra dar st[x] va barakse aan ra dar stp[x] mirizim</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">stpy</span><span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">stpx</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">stpy</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+    <span class="n">dfst</span><span class="p">(</span><span class="n">stpy</span><span class="p">,</span> <span class="n">stpx</span><span class="p">);</span>
+    <span class="n">par</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">stpy</span><span class="p">]]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">parat</span><span class="p">(</span><span class="kt">int</span> <span class="n">stpx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hgoal</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// jadi az rase voroodi ke ertefae hadaf ra darad ra mikhahim</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">hld</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">stpx</span><span class="p">]];</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">hgoal</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="n">hld</span><span class="p">[</span><span class="n">par</span><span class="p">[</span><span class="n">x</span><span class="p">]];</span>
+  <span class="k">return</span> <span class="n">stp</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="n">hgoal</span><span class="o">-</span><span class="n">h</span><span class="p">[</span><span class="n">x</span><span class="p">]];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+  <span class="c1">// derakht ra voroodi begirid va yal ha ra dar g berizid</span>
+  <span class="n">dfsz</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="n">dfst</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">h</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">par</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hld</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">par</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">?</span> <span class="n">hld</span><span class="p">[</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">:</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// hld[x] bala tarin jadi ast ke be aan yale sangin darim</span>
+  <span class="p">}</span>
+  <span class="c1">// sepas porsesh ha ra ba parat pasokh dahid</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="lca">
 <h2>حل مساله LCA<a class="headerlink" href="#lca" title="لینک ثابت به این سر مقاله">¶</a></h2>
@@ -319,6 +374,74 @@ DFS
 این الگوریتم پیچیدگی زمانی
 <span class="math notranslate nohighlight">\(O(n+q*lg(n))\)</span>
 دارد.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e5</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">edge_counter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">st</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">stp</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">hld</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">par</span><span class="p">[</span><span class="n">M</span><span class="p">],</span> <span class="n">h</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">dfsz</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">sz</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mxsz</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="n">swap</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">szy</span> <span class="o">=</span> <span class="n">dfsz</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">x</span><span class="p">);</span>
+    <span class="n">sz</span> <span class="o">+=</span> <span class="n">szy</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">szy</span> <span class="o">&gt;</span> <span class="n">mxsz</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">mxsz</span> <span class="o">=</span> <span class="n">szy</span><span class="p">;</span>
+      <span class="n">swap</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">g</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span> <span class="c1">// enteghale yal sangin be g[x][0]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">sz</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">dfst</span><span class="p">(</span><span class="kt">int</span> <span class="n">stpx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">st</span><span class="p">[</span><span class="n">stpx</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="o">++</span><span class="p">;</span> <span class="c1">// shomare ras ha ra joori avaz mikonim ke yal haye sangin</span>
+  <span class="n">stp</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">stpx</span><span class="p">;</span> <span class="c1">// motevali bashand. in jayghasht ra dar st[x] va barakse aan ra dar stp[x] mirizim</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">stpy</span><span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">stpx</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">stpy</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+    <span class="n">dfst</span><span class="p">(</span><span class="n">stpy</span><span class="p">,</span> <span class="n">stpx</span><span class="p">);</span>
+    <span class="n">par</span><span class="p">[</span><span class="n">st</span><span class="p">[</span><span class="n">stpy</span><span class="p">]]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">parat</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hgoal</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// jadi az rase voroodi ke ertefae hadaf ra darad ra mikhahim</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">hld</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">hgoal</span><span class="p">)</span> <span class="n">x</span> <span class="o">=</span> <span class="n">hld</span><span class="p">[</span><span class="n">par</span><span class="p">[</span><span class="n">x</span><span class="p">]];</span>
+  <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">hgoal</span><span class="o">-</span><span class="n">h</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">lca</span><span class="p">(</span><span class="kt">int</span> <span class="n">stpx</span><span class="p">,</span> <span class="kt">int</span> <span class="n">stpy</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">st</span><span class="p">[</span><span class="n">stpx</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">st</span><span class="p">[</span><span class="n">stpy</span><span class="p">];</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">&lt;</span><span class="n">h</span><span class="p">[</span><span class="n">y</span><span class="p">])</span> <span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">parat</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="p">[</span><span class="n">y</span><span class="p">]);</span> <span class="c1">// do ras ra ham ertefa mikonim ta kod sade tar shavad</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">hld</span><span class="p">[</span><span class="n">x</span><span class="p">];</span> <span class="n">y</span> <span class="o">=</span> <span class="n">hld</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">&lt;</span><span class="n">h</span><span class="p">[</span><span class="n">y</span><span class="p">])</span> <span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+    <span class="n">y</span> <span class="o">+=</span> <span class="n">h</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">-</span> <span class="n">h</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">par</span><span class="p">[</span><span class="n">x</span><span class="p">];</span> <span class="n">y</span> <span class="o">=</span> <span class="n">par</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">stp</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+  <span class="c1">// derakht ra voroodi begirid va yal ha ra dar g berizid</span>
+  <span class="n">dfsz</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="n">dfst</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">h</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">par</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">hld</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">par</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">?</span> <span class="n">hld</span><span class="p">[</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">:</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// hld[x] bala tarin jadi ast ke be aan yale sangin darim</span>
+  <span class="p">}</span>
+  <span class="c1">// sepas porsesh ha ra ba parat pasokh dahid</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 

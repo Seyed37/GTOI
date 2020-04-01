@@ -11,7 +11,7 @@
 
 
     
-         <title>تور اویلری درخت و Lca سریع &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>راه خطی برای LCA &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -176,7 +176,7 @@
 <li class="toctree-l2"><a class="reference internal" href="2.html">راه حل O(n+q*lg(n)) به کمک جداسازی سبک-سنگین</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">الگوریتم برون‌خط تارجان</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">ارتباط LCA و RMQ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">تور اویلری درخت و Lca سریع</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">راه خطی برای LCA</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../11/index.html">الگوریتم های پیشرفته درخت</a><ul>
@@ -246,7 +246,7 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; تور اویلری درخت و Lca سریع</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; راه خطی برای LCA</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
@@ -262,7 +262,39 @@
 			        <div class="col-lg-12">
 				    
   <div class="section" id="lca">
-<h1>تور اویلری درخت و Lca سریع<a class="headerlink" href="#lca" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<h1>راه خطی برای LCA<a class="headerlink" href="#lca" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>در بخش قبل دیدیم که چگونه می توان مسائل
+LCA و RMQ
+را به هم تبدیل کرد. اگر توجه کنید وقتی که
+LCA را به RMQ
+تبدیل می کنیم، آرایه ای ساخته می شود که اختلاف اعضایش دقیقا یک واحد است. این مساله خاص
+را در زمان خطی حل می کنیم که از آن نتیجه می شود که
+LCA و RMQ
+نیز در زمان
+<span class="math notranslate nohighlight">\(O(n+q)\)</span>
+حل می شوند. توجه کنید که این راه ارزش تئوری دارد و با توجه به پیچیدگی پیاده سازی
+و ضریب بالا، در عمل استفاده نمی شود.</p>
+<p>در این راه آرایه را به دسته های
+<span class="math notranslate nohighlight">\(\frac{lg(n)}{2}\)</span>
+تایی تقسیم می کنیم. چون اختلاف هر دو عضو متوالی دقیقا ۱ است، این آرایه از لحاظ
+ساختار در کل
+<span class="math notranslate nohighlight">\(2^{\frac{lg(n)}{2}} = \sqrt{n}\)</span>
+حالت ممکن می تواند داشته باشد. برای هر کدام از زیر بازه های
+این حالات عضو مینیمم را به دست می آوریم که با پیاده سازی خوب پیچیدگی زمانی و حافظه ای
+<span class="math notranslate nohighlight">\(O(\sqrt{n} * lg^2(n))\)</span>
+خواهد داشت.
+برای هر بازه نیز به دست بیاورید که شبیه کدام یک از رادیکال حالت ممکن است. این کار
+نیز در زمان خطی قابل اجراست.
+سپس هر دسته را یک عضو از یک آرایه جدید بگیرید و روی آن یک جدول پراکنده مشابه آن چه
+در بخش قبل بررسی کردیم بسازید. این کار نیز در زمان
+<span class="math notranslate nohighlight">\(O(\frac{lg(n)}{2}*lg(\frac{lg(n)}{2})) = O(n)\)</span>
+قابل اجراست.</p>
+<p>حال می خواهیم به پرسش ها پاسخ دهیم. یک بازه را در نظر بگیرید. یا کاملا
+درون یکی از دسته های کوچک می افتد که جواب آن را از قبل حساب کرده ایم.
+و یا سر آن درون یک بازه و ته آن درون بازه ای دیگر است. دسته های وسط که کامل
+درون بازه افتاده اند را به کمک جدول پراکنده ای که حساب کردیم عضو کمینه اش را حساب کنید.
+دو بازه سر و ته را نیز مانند حالت اول عمل کنید. سپس عضو کمینه بین این سه کاندید
+را حساب کنید. این عضو جواب شماست.</p>
 </div>
 
 
