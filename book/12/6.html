@@ -263,6 +263,49 @@
 				    
   <div class="section" id="poset">
 <h1>Poset<a class="headerlink" href="#poset" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<div class="section" id="id1">
+<h2>تعریف<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>به گراف جهت داری که دارای ویژگی های زیر باشد Poset (Partially ordered set) می گوییم.
+- هر راس به خودش یال دارد.
+- اگر <span class="math notranslate nohighlight">\(ab\)</span> و <span class="math notranslate nohighlight">\(bc\)</span> یال های این گراف باشد آنگاه <span class="math notranslate nohighlight">\(ac\)</span> هم یال این گراف است.</p>
+<p>از آنجایی که بسیاری از مفاهیم ریاضی به poset تبدیل می شوند بررسی کردن آن ها مفید است.</p>
+<div class="section" id="id2">
+<h3>اولین مسئله<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>فرض کنید مجموعه ای از اعداد طبیعی مثل <span class="math notranslate nohighlight">\(A\)</span> داریم و می خواهیم بزرگترین زیرمجموعه ای از آن مثل <span class="math notranslate nohighlight">\(B\)</span> را پیدا کنیم که هر دو عضو <span class="math notranslate nohighlight">\(B\)</span> را که در نظر بگیریم یکی بر دیگری بخش پذیر است.</p>
+<p>می توانیم مسئله را به اینصورت به گراف مدل کنیم. به ازای هر عضو <span class="math notranslate nohighlight">\(A\)</span> یک راس در گراف قرار دهید و به ازای دو راس <span class="math notranslate nohighlight">\(x,y\)</span> که <span class="math notranslate nohighlight">\(x|y\)</span> است از <span class="math notranslate nohighlight">\(x\)</span> به <span class="math notranslate nohighlight">\(y\)</span> یال بگذارید. حالا مسئله معادل پیدا کردن بلندترین مسیر در این گراف است!</p>
+</div>
+<div class="section" id="id3">
+<h3>زنجیر و پادزنجیر<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>به یک دنباله از راس های غیر تکراری مثل <span class="math notranslate nohighlight">\(u_1,...,u_k\)</span> که به ازای هر <span class="math notranslate nohighlight">\(i&lt;j\)</span> ، <span class="math notranslate nohighlight">\(u_i\)</span> به <span class="math notranslate nohighlight">\(u_j\)</span> یال داشته باشد یک زنجیر می گوییم توجه کنید که به خاطر ویژگی poset کافیست که <span class="math notranslate nohighlight">\(u_1, ... u_k\)</span> یک مسیر باشد.</p>
+<p>به یک زیرمجموعه از راس ها که هیچ دوتایی به هم یال نداشته باشند یک پادزنجیر می گوییم.</p>
+<p>در ادامه افراز یک گراف به زنجیر ها یا پادزنجیر ها را بررسی خواهیم کرد (افراز راس های گراف مد نظر است).</p>
+<p>توجه کنید که از این تعاریف تنها در poset ها استفاده می شود.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>ماکسیمم زنجیر = مینیمم افراز به پادزنجیر<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید اندازه ماکسیمم زنجیر <span class="math notranslate nohighlight">\(L\)</span> باشد. و یک زنجیر ماکسیمم مثل <span class="math notranslate nohighlight">\(A\)</span> را در نظر بگیرید.</p>
+<p>هر پادزنجیر می تواند حداکثر یکی از راس های <span class="math notranslate nohighlight">\(A\)</span> را شامل شود. پس مینیمم افراز به پادزنجیر حداقل به اندازه <span class="math notranslate nohighlight">\(L\)</span> می باشد. حالا ثابت می کنیم حالتی از تساوی هم وجود دارد.</p>
+<p>به هر راس <span class="math notranslate nohighlight">\(u\)</span> عدد <span class="math notranslate nohighlight">\(a_i\)</span> را نسبت می دهیم که برابر است با اندازه بزرگترین زنجیری که <span class="math notranslate nohighlight">\(u\)</span> انتهای آن باشد. حالا می توانید ببینید که اگر <span class="math notranslate nohighlight">\(a_i = a_j\)</span> برقرار باشد امکان ندارد یالی بین <span class="math notranslate nohighlight">\(i,j\)</span> باشد زیرا به عنوان مثال اگر از <span class="math notranslate nohighlight">\(i\)</span> به <span class="math notranslate nohighlight">\(j\)</span> یال باشد آنگاه <span class="math notranslate nohighlight">\(a_j \geq a_i+1\)</span> خواهد بود.</p>
+<p>به ازای هر راس <span class="math notranslate nohighlight">\(u\)</span> به <span class="math notranslate nohighlight">\(a_u\)</span> رنگ راس <span class="math notranslate nohighlight">\(u\)</span> می گوییم. طبق اثبات بالا راس هایی که رنگ برابر دارند یک پادزنجیر هستند. همچنین تعداد رنگ ها برابر است با <span class="math notranslate nohighlight">\(L\)</span> (چرا؟). پس توانستیم گراف را به <span class="math notranslate nohighlight">\(L\)</span> پادزنجیر افراز کنیم.</p>
+<p>قضیه یالا به قضیه میرسکی معروف است و در سال 1971 مطرح شد. جالب است بدانید این قضیه در سال 1940 توسط گالای دیلورث ، گالای،‌ فولکرسون و بسیاری دیگر شناخته شده بود و تنها دلیل آنها برای مطرح نکردن آن بدیهی فرض کردن این قضیه بود!</p>
+</div>
+<div class="section" id="id5">
+<h2>ماکسیمم پادزنجیر = مینیمم افراز به زنجیر<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید اندازه ماکسیمم پادزنجیر <span class="math notranslate nohighlight">\(L\)</span> باشد و یک ماکسیمم پادزنجیر دلخواه مثل <span class="math notranslate nohighlight">\(A\)</span> را در نظر بگیرید. قضیه های زیر برقرارند.
+- هر راس خارج از <span class="math notranslate nohighlight">\(A\)</span> مثل <span class="math notranslate nohighlight">\(u\)</span> را در نظر بگیرید. بین <span class="math notranslate nohighlight">\(u\)</span> و مجموعه <span class="math notranslate nohighlight">\(A\)</span> قطعا یال وجود دارد (در غیر اینصورت با ماکسیمم بودن <span class="math notranslate nohighlight">\(A\)</span> در تناقض است).
+- هر راس خارج از <span class="math notranslate nohighlight">\(A\)</span> مثل <span class="math notranslate nohighlight">\(u\)</span> را در نظر بگیرید. امکان ندارد هم از <span class="math notranslate nohighlight">\(u\)</span> به یکی از رئوس <span class="math notranslate nohighlight">\(A\)</span> یال جهت دار باشد هم از یکی از رئوس <span class="math notranslate nohighlight">\(A\)</span> به <span class="math notranslate nohighlight">\(u\)</span> یال جهت دار باشد. (زیرا در اینصورت طبق ویژگی poset یالی درون <span class="math notranslate nohighlight">\(A\)</span> خواهیم داشت.</p>
+<p>طبق حرف های بالا می توان راس های خارج <span class="math notranslate nohighlight">\(A\)</span> را به دو دسته <span class="math notranslate nohighlight">\(D, U\)</span> افراز کرد که هر راس های <span class="math notranslate nohighlight">\(U\)</span> به <span class="math notranslate nohighlight">\(A\)</span> <strong>یال جهت دار دارد</strong> و هر راس <span class="math notranslate nohighlight">\(D\)</span> از <span class="math notranslate nohighlight">\(A\)</span> <strong>یال جهت دار میگیرد</strong>.</p>
+<p>اگر هر دوی <span class="math notranslate nohighlight">\(D,U\)</span> تهی باشند که مسئله حل است. حالا حالت های زیر را در نظر بگیرید.</p>
+<div class="section" id="d-u">
+<h3>اگر هر دوی <span class="math notranslate nohighlight">\(D,U\)</span> ناتهی باشند<a class="headerlink" href="#d-u" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>در اینصورت با استقرا روی تعداد راس ها یک بار <span class="math notranslate nohighlight">\(A \cup D\)</span> و بار دیگر <span class="math notranslate nohighlight">\(A \cup U\)</span> را در نظر بگیرید. در هر کدام از آنها به صورت استقرایی افرازی به زنجیر ها پیدا کنید که برابر با ماکسیمم پادزنجیر (یا همان <span class="math notranslate nohighlight">\(L\)</span>) است. از آنجایی که در <span class="math notranslate nohighlight">\(A \cup D\)</span> رئوس <span class="math notranslate nohighlight">\(A\)</span> یال ورودی ندارند پس ابتدای تمام زنجیر ها (در افراز مینیمم به زنجیر ها) در <span class="math notranslate nohighlight">\(A\)</span> است. مشابها اگر <span class="math notranslate nohighlight">\(A \cup U\)</span> را در نظر بگیرید انتهای تمام زنجیر ها در <span class="math notranslate nohighlight">\(A\)</span> است. حالا گراف اصلی را اینگونه افراز می کنیم که به ازای هر راس <span class="math notranslate nohighlight">\(A\)</span> مثل <span class="math notranslate nohighlight">\(v\)</span> زنجیری که در <span class="math notranslate nohighlight">\(A \cup U\)</span> به <span class="math notranslate nohighlight">\(v\)</span> ختم می شود را با زنجیری که در <span class="math notranslate nohighlight">\(A \cup D\)</span> از <span class="math notranslate nohighlight">\(v\)</span> شروع می شود را اجتماع گرفته و به عنوان یک زنجیر در افراز گراف اصلی قرار می دهیم. در اینصورت کل گراف به <span class="math notranslate nohighlight">\(L\)</span> زنجیر افراز می شود.</p>
+</div>
+<div class="section" id="id6">
+<h3>اگر یکی از <span class="math notranslate nohighlight">\(D,U\)</span> تهی باشند<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>بدون کم شدن از کلیت اثبات فرض کنید <span class="math notranslate nohighlight">\(U\)</span> تهی باشد.</p>
+</div>
+</div>
 </div>
 
 
