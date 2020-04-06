@@ -26,12 +26,12 @@
 
 
 .. figure:: /_static/sib.png
-   :width: 50%
+   :width: 20%
    :align: center
    :alt: اگه اینترنت یارو آشغال باشه این میاد
 
 .. figure:: /_static/golabi.png
-   :width: 50%
+   :width: 20%
    :align: center
    :alt: اگه اینترنت یارو آشغال باشه این میاد
 
