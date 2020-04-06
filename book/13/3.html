@@ -11,7 +11,7 @@
 
 
     
-         <title>فلو &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>قضایا ی مینماکس &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -33,9 +33,9 @@
         <link rel="index" title="فهرست" href="../../genindex.html" />
         <link rel="search" title="جستجو" href="../../search.html" />
         <link rel="top" title="نظریه گراف‌ها برای المپیاد کامپیوتر" href="../../index.html" />
-        <link rel="up" title="همبندی" href="index.html" />
-        <link rel="next" title="مباحث ویژه" href="../14/index.html" />
-        <link rel="prev" title="گراف k همبند" href="2.html" />
+        <link rel="up" title="تطابق" href="index.html" />
+        <link rel="next" title="کاربرد ها" href="4.html" />
+        <link rel="prev" title="تطابق در گراف دوبخشی" href="2.html" />
 
 
 
@@ -187,20 +187,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../11/5.html">هش درخت</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../12/index.html">تطابق</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../12/1.html">آشنایی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/2.html">تطابق در گراف دوبخشی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/3.html">قضایا ی مینماکس</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/4.html">کاربرد ها</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/5.html">جریان بیشینه</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/6.html">Poset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../12/7.html">تطابق در گراف های عام</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/index.html">همبندی</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12/1.html">برش ها و همبندی</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12/2.html">گراف k همبند</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12/3.html">برش کمینه و جریان بیشینه</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">همبندی</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1.html">برش ها و همبندی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">گراف k همبند</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">فلو</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">تطابق</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.html">آشنایی</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.html">تطابق در گراف دوبخشی</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">قضایا ی مینماکس</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.html">کاربرد ها</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.html">جریان بیشینه و تطابق</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.html">Poset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="7.html">تطابق در گراف های عام</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../14/index.html">مباحث ویژه</a><ul>
@@ -246,7 +246,7 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; فلو</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; قضایا ی مینماکس</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
@@ -262,7 +262,68 @@
 			        <div class="col-lg-12">
 				    
   <div class="section" id="id1">
-<h1>فلو<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<h1>قضایا ی مینماکس<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>در این بخش تعدادی قضیه را بررسی می کنیم که بیان می کنند مینیمم یک مقدار برابر است با ماکسیمم یک مقدار دیگر. تعدادی از این قضیه ها در هر گرافی برقرار است و تعدادی دیگر تنها در گراف دوبخشی برقرار هستند.</p>
+<p>ابتدا این علائم را قرار داد می کنیم‌ :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\alpha\)</span></td>
+<td>ماکسیمم مجموعه مستقل</td>
+</tr>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\alpha^{\prime}\)</span></td>
+<td>ماکسیمم تطابق</td>
+</tr>
+<tr class="row-odd"><td><span class="math notranslate nohighlight">\(\beta\)</span></td>
+<td>مینیمم پوشش راسی</td>
+</tr>
+<tr class="row-even"><td><span class="math notranslate nohighlight">\(\beta^{\prime}\)</span></td>
+<td>مینیمم پوشش یالی</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id2">
+<h2>قضیه های برقرار در هر گرافی<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="alpha-beta-n">
+<h3><span class="math notranslate nohighlight">\(\alpha + \beta = n\)</span><a class="headerlink" href="#alpha-beta-n" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>مکمل یک مجموعه مستقل یک پوشش راسی و مکمل یک پوشش راسی یک مجموعه مستقل است(چرا؟). در نتیجه اگر ماکسیمم مجموعه مستقل را در نظر بگیرید مکمل آن مینیمم پوشش راسی است و بالعکس.</p>
+</div>
+<div class="section" id="alpha-prime-beta-prime-n">
+<h3><span class="math notranslate nohighlight">\(\alpha^{\prime} + \beta^{\prime} = n\)</span><a class="headerlink" href="#alpha-prime-beta-prime-n" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>ابتدا باید فرض کنیم که گراف راس تنها ندارد زیرا در غیراینصورت پوشش یالی برای این گراف تعریف نمی شود.</p>
+<p>حالا مینیمم پوشش یالی را در نظر بگیرید.</p>
+<p>در ابتدا می توان نتیجه گرفت در این مجموعه یالی دور وجود ندارد (در اینصورت با حذف یکی از یال های دور به مجموعه کوچک تری رسید که همچنان پوشش یالی است). پس هر مولفه همبندی آن یک درخت است.</p>
+<p>سپس می توان نتیجه گرفت در هیچکدام از درخت ها فاصله بیشتر از 2 وجود ندارد (چرا؟). پس هر کدام از درخت ها یک ستاره هستند.</p>
+<p>تعداد ستاره ها <span class="math notranslate nohighlight">\(n-\beta^{\prime}\)</span> می باشد. و می توان از هر ستاره دقیقا یک یال را انتخاب کرد و یک تطابق تشکیل داد که اندازه آن کمتر مساوی تطابق ماکسیمم است. یعنی <span class="math notranslate nohighlight">\(n-\beta^{\prime} \leq \alpha^{\prime}\)</span> در نتیجه <span class="math notranslate nohighlight">\(n \leq \alpha^{\prime} + \beta^{\prime}\)</span>.</p>
+<p>حالا تطابق ماکسیمم را در نظر بگیرید.</p>
+<p>هر راسی مثل <span class="math notranslate nohighlight">\(u\)</span> که با تطابق ماکسیمم پوشش داده نمی شود را در نظر بگیرید. تمام مجاور های <span class="math notranslate nohighlight">\(u\)</span> باید با تطابق ماکسیمم پوشش داده شود (چرا؟) و چون راس تنها نداریم <span class="math notranslate nohighlight">\(u\)</span> حداقل یک مجاور دارد.</p>
+<p>حالا یک پوشش یالی می سازیم. ابتدا تمام یال های تطابق را به آن اضافه می کنیم. سپس به ازای هر راسی که با تطابق ماکسیمم پوشش داده نشده یکی از یال های مجاورش را به پوشش راسی اضافه می کنیم. حالا پوشش راسی به اندازه <span class="math notranslate nohighlight">\(n - \alpha^{\prime}\)</span> داریم زیرا که <span class="math notranslate nohighlight">\(\alpha^{\prime}\)</span> یال اولیه هر کدام دو راس را پوشش دادند و بقیه یال ها هر کدام یک راس را پوشش دادند. <span class="math notranslate nohighlight">\(n-\alpha^{\prime} \geq \beta^{\prime}\)</span> در نتیجه <span class="math notranslate nohighlight">\(n \geq \alpha^{\prime} + \beta^{\prime}\)</span>.</p>
+<p>در نهایت دو قسمت بالا حکم را نتیجه می دهند.</p>
+</div>
+<div class="section" id="beta-geq-alpha-prime">
+<h3><span class="math notranslate nohighlight">\(\beta \geq \alpha^{\prime}\)</span><a class="headerlink" href="#beta-geq-alpha-prime" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>تطابق ماکسیمم را در نظر بگیرید. تنها برای اینکه یال های مربوط به این تطابق را پوشش دهید به <span class="math notranslate nohighlight">\(\alpha^{\prime}\)</span> راس نیاز دارید. (هر راس حداکثر می تواند یکی از آن ها را پوشش دهد). پس <span class="math notranslate nohighlight">\(\beta \geq \alpha^{\prime}\)</span>.</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>قضیه های برقرار در گراف دوبخشی<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="alpha-prime-beta">
+<h3><span class="math notranslate nohighlight">\(\alpha^{\prime} = \beta\)</span><a class="headerlink" href="#alpha-prime-beta" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>در قسمت بالا داشتیم <span class="math notranslate nohighlight">\(\beta \geq \alpha^{\prime}\)</span> پس هر پوشش راسی بزرگتر مساوی یک تطابق است. پس اگر یک تطابق پیدا کنیم که برابر با یک پوشش راسی باشد در اینصورت حکم را ثابت کردیم همچنین آن تطابق ماکسیمم خواهد بود و آن پوشش راسی مینیمم خواهد بود.</p>
+<p>یک پوشش راسی مینیمم را در نظر بگیرید. فرض کنید گراف دو بخشی ما دارای دوبخش <span class="math notranslate nohighlight">\(X,Y\)</span> است و مجموعه راس های پوشش راسی ما <span class="math notranslate nohighlight">\(X1 \cup Y1\)</span> است که <span class="math notranslate nohighlight">\(X1\)</span> از بخش <span class="math notranslate nohighlight">\(X\)</span> و <span class="math notranslate nohighlight">\(Y1\)</span> از بخش <span class="math notranslate nohighlight">\(Y\)</span> می باشد همچنین <span class="math notranslate nohighlight">\(X2=X-X1, Y2=Y-Y1\)</span>.</p>
+<p>حالا گرافی که تنها شامل راس های <span class="math notranslate nohighlight">\(X1,Y2\)</span> باشند را در نظر بگیرید. می خواهیم یک تطابق کامل از <span class="math notranslate nohighlight">\(X1\)</span> به <span class="math notranslate nohighlight">\(Y2\)</span> پیدا می کنیم (یعنی کل راس های <span class="math notranslate nohighlight">\(X1\)</span> درون تطابق باشند).</p>
+<p>برقرار بودن شرط هال را برای پیدا کردن یک تطابق کامل از <span class="math notranslate nohighlight">\(X1\)</span> به <span class="math notranslate nohighlight">\(Y2\)</span> بررسی می کنیم. فرض کنید <span class="math notranslate nohighlight">\(S \subseteq X1\)</span> ادعا می کنیم <span class="math notranslate nohighlight">\(|S| \leq |n(S)|\)</span> برقرار است. فرض کنید برقرار نباشد یعنی <span class="math notranslate nohighlight">\(|S| &gt; |n(S)|\)</span> آنگاه اگر مجموعه <span class="math notranslate nohighlight">\(S\)</span> را از پوشش راسی حذف کنیم و مچموعه <span class="math notranslate nohighlight">\(n(S)\)</span> را به پوشش راسی اضافه کنیم همچنان همه یال ها پوشانده می شوند و به یک پوشش راسی کوچکتر رسیدیم که با مینیمم بودن پوشش راسی فعلی در تناقض است. پس شرط هال برقرار است.</p>
+<p>مشابها می توان یک تطابق کامل از <span class="math notranslate nohighlight">\(Y1\)</span> به <span class="math notranslate nohighlight">\(X2\)</span> پیدا کرد. که نتیجه می دهد ما تطابقی پیدا کردیم که اندازه آن برابر با پوشش راسی است.</p>
+</div>
+<div class="section" id="beta-prime-alpha">
+<h3><span class="math notranslate nohighlight">\(\beta^{\prime} = \alpha\)</span><a class="headerlink" href="#beta-prime-alpha" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>از بخش های قبل داشتیم‌ که <span class="math notranslate nohighlight">\(\alpha^{\prime} = \beta\)</span> و  <span class="math notranslate nohighlight">\(n - \alpha = \beta\)</span> و <span class="math notranslate nohighlight">\(n - \beta^{\prime} = \alpha^{\prime}\)</span> برقرارند.</p>
+<p>در نتیجه <span class="math notranslate nohighlight">\(n - \alpha = n - \beta^{\prime}\)</span> پس <span class="math notranslate nohighlight">\(\alpha = \beta^{\prime}\)</span>.</p>
+</div>
+</div>
 </div>
 
 
@@ -277,10 +338,10 @@
             <div id="body-btn">
                 
                     
-                    <a href="2.html" style="float:right;" title="گراف k همبند" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
+                    <a href="2.html" style="float:right;" title="تطابق در گراف دوبخشی" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
-                    <a href="../14/index.html" style="float:left;" title="مباحث ویژه" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
+                    <a href="4.html" style="float:left;" title="کاربرد ها" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
                     
                 
             </div>

@@ -11,7 +11,7 @@
 
 
     
-         <title>جریان بیشینه &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>جریان بیشینه و تطابق &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -187,20 +187,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../11/5.html">هش درخت</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../12/index.html">همبندی</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12/1.html">برش ها و همبندی</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12/2.html">گراف k همبند</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12/3.html">برش کمینه و جریان بیشینه</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">تطابق</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">آشنایی</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.html">تطابق در گراف دوبخشی</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">قضایا ی مینماکس</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">کاربرد ها</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">جریان بیشینه</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">جریان بیشینه و تطابق</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6.html">Poset</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7.html">تطابق در گراف های عام</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../13/index.html">همبندی</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../13/1.html">برش ها و همبندی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/2.html">گراف k همبند</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/3.html">فلو</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../14/index.html">مباحث ویژه</a><ul>
@@ -246,12 +246,12 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; جریان بیشینه</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; جریان بیشینه و تطابق</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
         
-            <a href="../../_sources/book/12/5.rst.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
+            <a href="../../_sources/book/13/5.rst.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
         
     
 </div>
@@ -262,7 +262,66 @@
 			        <div class="col-lg-12">
 				    
   <div class="section" id="id1">
-<h1>جریان بیشینه<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<h1>جریان بیشینه و تطابق<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>با مساله جریان بیشینه در فصل قبل آشنا شدیم. در این جا با یکی از کاربرد های دیگر
+این مساله که حل مساله تطابق و تعمیم های آن است آشنا می شویم.</p>
+<div class="section" id="id2">
+<h2>حل مساله تطابق بیشینه در گراف دو بخشی<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>این مساله را می توان به کمک مساله جریان بیشینه حل کرد. به این صورت که به گراف دوبخشی
+دو راس مبدا و مقصد اضافه کنید و راس مبدا را به همه رئوس بخش بالا با ظرفیت یک و رئوس
+بخش پایین را به راس مقصد با وزن ۱ یال بدهید. به ازای هر یال گراف نیز یک یال با وزن
+یک از راس بالا به پایین بکشید. ( مانند شکل )</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/flow_matching.svg"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/flow_matching.svg" width="50%" /></a>
+</div>
+<p>در این گراف بزرگترین تطابق همان جریان بیشینه است.</p>
+</div>
+<div class="section" id="id3">
+<h2>تطابق بیشینه وزن دار<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>در این مساله هر یال ارزشی دارد و ارزش یک تطابق برابر جمع ارزش یال های آن است.
+مسائل مختلفی را می توان برای تطابق وزن دار مطرح کرد. مانند تطابق با بیشترین ارزش،
+تطابق بیشینه با بیشترین ارزش یا تطابق با اندازه خاص و بیشترین ارزش. این مسائل را
+می توان به کمک تعمیمی از مساله جریان بیشینه که در زیر بررسی می کنیم حل کرد. خوب است
+که حین خواندن سعی کنید که خودتان به این مساله فکر کنید و قبل از رسیدن به بخش راه حل این سوال
+آن را حل کرده باشید.</p>
+</div>
+<div class="section" id="id4">
+<h2>جریان با کمترین هزینه<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>در این مساله هدف پیدا کردن جریانی است که کمترین هزینه را داشته باشد. هزینه هر جریان
+برابر جمع جریان گذرنده از هر یال * هزینه آن یال به ازای تمام یال هاست. می خواهیم
+به ازای تمام مقادیر صحیح جریان ( از ۰ تا جریان بیشینه ) کمینه هزینه را به دست بیاوریم.</p>
+<div class="section" id="id5">
+<h3>راه حل<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>از روشی مشابه روش فورد فلکرسون که در فصل قبل آموختیم استفاده می‌کنیم. با این تفاوت
+که به جای انتخاب یک مسیر دلخواه، مسیری که کمترین هزینه را دارد را انتخاب می‌کنیم و سپس
+یک واحد جریان را از آن می گذرانیم. این کار را تا زمانی که دیگر نتوان جریانی گذراند
+ادامه می‌دهیم. در هر مرحله هزینه به دست آمده کمینه هزینه ممکن برای آن مقدار جریان است.
+طبق درستی الگوریتم فورد، این الگوریتم جواب را تا جریان بیشینه به دست می‌آورد.</p>
+</div>
+<div class="section" id="id6">
+<h3>اثبات بهینگی<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>مانند اثبات درستی الگوریتم فورد، می‌توان ثابت کرد که در هر مرحله، اگر f مقدار جریان هدف
+و c هزینه آن باشد و کوتاه ترین مسیر از مبدا به مقصد x باشد، در گراف ساخته شده
+هم f-1 مقدار جریان هدف باشد، مینیمم هزینه ای که می توان با آن این مقدار جریان
+را عبور داد، c-x است.</p>
+</div>
+<div class="section" id="id7">
+<h3>تحلیل پیچیدگی<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>برای به دست آوردن کوتاه ترین مسیر، می توان از الگوریتم
+spfa
+استفاده کرد ( چون یال منفی داریم نمی توان از الگوریتم دایسترا استفاده کرد. ) که پیچیدگی زمانی
+<span class="math notranslate nohighlight">\(O(E)\)</span>
+دارد. پس پیچیدگی زمانی کل از
+<span class="math notranslate nohighlight">\(O(fE)\)</span>
+است.</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>راه حل تطابق بیشینه وزن دار<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>یک گراف مانند بالا می سازیم با این تفاوت که یال های مبدا و مقصد را با ظرفیت بینهایت قرار
+می‌دهیم و یال های وسط را با ظرفیت یک و هزینه اش را برابر وزن یال قرار می دهیم. سپس
+با الگوریتم جریان با کمترین هزینه می‌توان تمام مسائل بالا را پاسخ گفت.</p>
+</div>
 </div>
 
 
