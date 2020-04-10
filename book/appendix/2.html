@@ -279,9 +279,6 @@
 <div class="section" id="id2">
 <h2>تحلیل پیچیدگی<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>سخت است که زمان اجرای یک برنامه را به طور دقیق حساب کنیم. برای مثال دستور</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
-</pre></div>
-</div>
 <p>را در نظر بگیرید. این دستور چند عمل در سی پی یو است؟ پاسخ به این سوال بسیار سخت و نیازمند
 شناخت دقیق کامپایلر و سی پی یو است. حتی ممکن است پاسخ این سوال بسته به نوع سی پی یو یا
 کامپایلر یا درجه بهینه سازی کامپایلر یا مکان قرار گیری این دستور در کد فرق کند. برای مثال
@@ -293,13 +290,6 @@
 <p>بنابراین از محاسبه زمان دقیق اجرای کد صرف نظر می کنیم و تنها به این اکتفا می کنیم که
 دستورات سی پی یو مانند خواندن از آرایه یا جمع دو عدد، مقدار ثابتی از زمان طول می کشند.
 به همین صورت، دقت اندازه گیری ما در حد یک ضریب پایین می آید. برای مثال این کد را در نظر بگیرید</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
 <p>ما نمی دانیم که تابع سوپ یا عمل مقایسه یا عمل پلاس پلاس هر کدام چند واحد زمانی طول می کشند
 اما می دانیم که هر کدام مقدار ثابتی از زمان طول می کشند. پس می توان گفت که زمان اجرای این کد
 <span class="math notranslate nohighlight">\(kn^2\)</span>
@@ -341,62 +331,7 @@
 <div class="math notranslate nohighlight">
 \[1000n^2 \ne \Omega(n^5)\]</div>
 <div class="math notranslate nohighlight">
-\[n^5 = O(2^n)\]</div>
-<div class="math notranslate nohighlight">
-\[2*n^{10}+100*n^7+20*n^2 = \theta(n^{10})\]</div>
-</div>
-</div>
-<div class="section" id="id4">
-<h2>دسته بندی پیچیدگی های مهم<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>در مسائلی که ما بررسی می‌کنیم پیچیدگی هایی مرتبا تکرار می‌شوند که آن ها را در زیر
-بررسی می‌کنیم.</p>
-<div class="section" id="id5">
-<h3>پیچیدگی خطی<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>به الگوریتمی که زمان اجرایش ضریبی از طول ورودی باشد، الگوریتم خطی می گوییم. اگر طول
-ورودی n باشد زمان اجرای الگوریتم
-.. math:: O(n)
-است. در حالت عادی نمی توان الگوریتمی بهتر از الگوریتم خطی پیدا کرد زیرا خود دریافت
-ورودی ضریبی از
-n
-طول می‌کشد و حتی اگر زمان ورودی گرفتن را در نظر نگیریم چون در زمان ثابت می توان
-روی تعداد ثابتی از متغیر ها و خانه های حافظه انجام داد پس برای این که تمام ورودی
-را روی خروجی اثر دهیم باید ضریبی از طول ورودی را صرف کنیم.</p>
-</div>
-<div class="section" id="id6">
-<h3>تابع لگاریتم<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>تابع لگاریتم تابعی است که در تحلیل پیچیدگی الگوریتم ها بسیار ظاهر می‌شود.
-این تابع به صورت معکوس تابع توان ۲ تعریف می‌شود. یعنی:
-<span class="math notranslate nohighlight">\(2^{lg(n)} = n\)</span>
-به سادگی می توان صحت گزاره های زیر را بررسی کرد.</p>
-<div class="math notranslate nohighlight">
-\[lg(a*b) = lg(a) + lg(b)\]</div>
-<div class="math notranslate nohighlight">
-\[lg(a^b) = b * lg(a)\]</div>
-<div class="math notranslate nohighlight">
-\[a^{\frac{lg(n)}{lg(a)}} = n\]</div>
-<div class="math notranslate nohighlight">
-\[lg(n)^k = O(n)\]</div>
-</div>
-<div class="section" id="id7">
-<h3>پیچدگی شبه خطی<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>به الگوریتمی که زمان اجرایش از
-<span class="math notranslate nohighlight">\(O(n*lg(n)^k)\)</span>
-باشد که k عددی ثابت است، این الگوریتم زمان اجرای شبه خطی دارد.</p>
-</div>
-<div class="section" id="id8">
-<h3>پیچیدگی چندجمله ای<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>اگر زمان اجرای الگوریتم از
-<span class="math notranslate nohighlight">\(O(n^k)\)</span>
-باشد و k عددی ثابت باشد می گوییم زمان اجرای الگوریتم چند جمله ای است.</p>
-</div>
-<div class="section" id="id9">
-<h3>پیچیدگی نمایی<a class="headerlink" href="#id9" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>اگر زمان اجرای الگوریتم از
-<span class="math notranslate nohighlight">\(O(c^n)\)</span>
-باشد و c عددی ثابت باشد می گوییم زمان اجرای الگوریتم نمایی است.
-الگوریتم های نمایی عموما مناسب نیستند و برای
-n
-های بزرگ (مثلا ۱۰۰۰) می توانند به اندازه عمر کهکشان طول بشکند :))</p>
+\[n^2 = O(2^n)\]</div>
 </div>
 </div>
 </div>
