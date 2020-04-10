@@ -312,8 +312,42 @@
 <p><strong>اثبات :</strong> باید ثابت کنیم گراف باقی مانده همبند است و دور ندارد. واضح است که یک گراف اگر دور نداشته باشد وقتی راسی از ان را نیز حذف کنیم باز دور ندارد.حال میخواهیم بگوییم همبند است. اگر برگ را حذف کنیم و گراف ناهمبند شود پس حداقل  2 مولفه همبندی دارد
 و راسی که حذف کردیم هم باید به هر یک از این مولفه ها حداقل یک یال میداشت تا گراف بدون حذفش همبند باشد پس درجه اش حداقل 2 بود ولی درجه برگ 1 است. با تناقض بدست آمده ثابت شد گراف همبند نیز هست پس درخت است.</p>
 <p>قضیه 2.1.4 بسیار کاریردی است چون نشان میدهد اگر در سوالی خواستید روی درخت استقرا بزنید با حذف برگ میتوانید به فرض استقرا بروید.در ادامه کتاب با چنین سوالاتی اشنا خواهید شد.</p>
-<p>not yet</p>
 </div>
+<div class="section" id="id8">
+<h3><strong>قضیه 2.1.5</strong><a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>ثابت کنید گرافی که ویژگی های یکی از موارد زیر را داشته باشد درخت است.</p>
+<ul class="simple">
+<li>الف) گرافی که n-1 یال دارد و همبند است.</li>
+<li>ب) گرافی که دور ندارد و n-1 یال دارد.</li>
+<li>ج) بین هر دو راس گراف دقیقا یک مسیر وجود دارد.</li>
+</ul>
+<p><strong>جواب :</strong></p>
+<p><strong>الف)</strong>  اگر ثابت کنیم گراف دور ندارد قضیه اثبات میشود. طبق لم 2.1.1 اگر گراف دور داشته باشد تعداد مولفه های همبندی بیشتر از n-m است ولی در این گراف برابر n-m است.
+با تناقض بدست امده قضیه اثبات شد.</p>
+<p><strong>ب)</strong>  چون گراف دور ندارد طبق لم 2.1.1</p>
+<p>n - m - Cc = 0 -&gt; n - (n-1) = Cc -&gt; Cc = 1</p>
+<p>پس گراف همبند است و دور ندارد پس درخت است .</p>
+<p><strong>ج)</strong> باید ثابت کنیم گراف همبند است و دور ندارد. واضح است گراف همبند است زیرا بین هر دو راس مسیر وجود دارد پس همه در یک مولفه همبندی هستند .حال باید بگوییم دور ندارد .این هم
+واضح است زیرا اگر دور داشته باشد بین هر دو راس از یک دور حداقل 2 مسیر وجود دارد .</p>
+</div>
+<div class="section" id="id9">
+<h3><strong>قضیه 2.1.6</strong><a class="headerlink" href="#id9" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p><strong>صورت قضیه :</strong> هر گراف همبند یک درخت فراگیر دارد.</p>
+<p><strong>اثبات :</strong> تا زمانی تعداد یال های گراف n-1 نشده هر مرحله یک یال را از گراف حذف میکنیم و ثابت میکنیم گراف همچنان همبند است و طبق قضیه 2.1.5 گرافی که n-1 یال دارد و همبند است درخت است و قضیه اثبات میشود.</p>
+<p>پس تا زمانی که تعداد یال ها n-1 حرکت زیر را انجام میدهیم : چون تعداد یال ها &gt; n-1 است و گراف 1 مولفه همبندی دارد طبق لم 2.1.1 در گراف دور وجود دارد. یکی از دور ها را بگیرید و یک یال از ان را حذف کنید واضح است گراف همبند میماند
+زیرا دو سر این یال از طریق یال های دیگر این دور باز هم به هم مسیر دارند پس تا وقتی تعداد یال ها n-1 نشده میتوانیم هی یال حذف کنیم به طوری که گراف همبند بماند پس قضیه اثبات شد.</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>ریشه دار کردن درخت<a class="headerlink" href="#id10" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید یال های درخت را طوری جهت دهی کردیم که هر راس به جز راس <span class="math notranslate nohighlight">\(u\)</span> دقیقا یک ورودی دارد (دقیقا یک یال به آن وارد می شود) و راس <span class="math notranslate nohighlight">\(u\)</span> هیچ ورودی ندارد.</p>
+<p>در ابتدا یک مهره را روی راس <span class="math notranslate nohighlight">\(v\)</span> قرار دهید و در هر مرحله مهره اگر در راس <span class="math notranslate nohighlight">\(w\)</span> بودیم مهره را به راسی ببرید که به <span class="math notranslate nohighlight">\(w\)</span> یال ورودی دارد. اگر <span class="math notranslate nohighlight">\(w \neq u\)</span> باشد آنگاه این راس یکتا است.</p>
+<p>اول از همه می توان نتیجه گرفت در هر مرحله یک راس جدید را می بینیم (زیرا در درخت دور نداریم و اگر راس تکراری ببینیم یک دور را طی کرده ایم) سپس می توان نتیجه گرفت مراحل متناهی است (زیرا در هر مرحله یک راس جدید را می بینیم و تعداد راس ها متناهی است) و در نهایت می توان گفت مهره به <span class="math notranslate nohighlight">\(u\)</span> خواهد رسید.</p>
+<p>به صورت شهودی می توانید تصور کنید درخت را از <span class="math notranslate nohighlight">\(u\)</span> <strong>آویزان</strong> کرده اید و به ازای هر یال <span class="math notranslate nohighlight">\(ab\)</span> اگر <span class="math notranslate nohighlight">\(a\)</span> در ارتفاع بالاتری نسبت به <span class="math notranslate nohighlight">\(b\)</span> بود یال را از <span class="math notranslate nohighlight">\(a\)</span> به <span class="math notranslate nohighlight">\(b\)</span> جهت دهی کرده ایم. در اینصورت جهت دهی مذکور همان جهت دهی خواهد بود که در بالا به آن اشاره کردیم. برای شهود بیشتر می توانید به اینصورت فکر کنید. در جهت دهی بالا راس <span class="math notranslate nohighlight">\(u\)</span> ورودی ندارد پس تمام یال های مجاور <span class="math notranslate nohighlight">\(u\)</span> باید از <span class="math notranslate nohighlight">\(u\)</span> به خارج جهت دهی شوند. در اینصورت به راس های مجاور <span class="math notranslate nohighlight">\(u\)</span> لایه اول می گوییم. حالا تمام لایه اول دقیقا یک ورودی دارند‌ (که آن ورودی <span class="math notranslate nohighlight">\(u\)</span> است) پس تمام یال های مجاور دیگر آن ها باید از لایه اول به خارج جهت دهی شوند که به آن ها لایه دوم می گوییم. به همین شکل می توان لایه سوم را تعریف کرد. هر راس لایه دوم دقیقا یک ورودی دارد که در لایه اول قرار دارد. پس تمام مجاور های دیگر آن را در لایه سوم قرار می دهیم و یال ها را از لایه دوم و سوم جهت دهی می کنیم. به همین شکل می توانید جهت دهی کردن و لایه بندی را ادامه دهید. یال های لایه <span class="math notranslate nohighlight">\(h\)</span> ام به <span class="math notranslate nohighlight">\(h+1\)</span> ام را در نظر بگیرید و توجه کنید که تعداد یال های ورودی هر راس لایه <span class="math notranslate nohighlight">\(h+1\)</span> ام باید دقیقا 1 باشد پس به هر راس در لایه <span class="math notranslate nohighlight">\(h+1\)</span> ام دقیقا یک یال از لایه <span class="math notranslate nohighlight">\(h\)</span> ام می رسد.در نهایت نتیجه می گیرید که جهت دهی که در ابتدا تصور کردیم همان جهت دهی است که با شهود <strong>آویزان کردن</strong> از راس <span class="math notranslate nohighlight">\(u\)</span> به دست آوردیم.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/rooted_tree.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/rooted_tree.png" style="width: 50%;" /></a>
+</div>
+<p>به این عمل آویزان کردن درخت از راس <span class="math notranslate nohighlight">\(u\)</span>، ریشه دار کردن درخت از راس <span class="math notranslate nohighlight">\(u\)</span> هم می گویند. در اینصورت به راس <span class="math notranslate nohighlight">\(u\)</span> <strong>ریشه</strong> می گوییم. همچنین گفتیم در جهت دهی هر راس به جز <span class="math notranslate nohighlight">\(u\)</span> تنها یک یال ورودی دارد. به ازای راس <span class="math notranslate nohighlight">\(b\)</span> اگر یال ورودی به آن <span class="math notranslate nohighlight">\(ab\)</span> باشد به راس <span class="math notranslate nohighlight">\(a\)</span> <strong>پدر</strong> راس <span class="math notranslate nohighlight">\(b\)</span> می گوییم و هر دو راسی که پدر مشترک داشته باشند را <strong>برادر</strong> می نامیم. همچنین به فاصله بین <span class="math notranslate nohighlight">\(u\)</span> و هر راس (تعداد یال های مسیر بین آن ها) <strong>ارتفاع</strong> آن راس می گوییم. به ازای یک راس خاص مثل <span class="math notranslate nohighlight">\(v\)</span> به مجموعه راس هایی که مسیرشان (که این مسیر یکتا است) به ریشه از <span class="math notranslate nohighlight">\(v\)</span> می گذرد زیردرخت <span class="math notranslate nohighlight">\(v\)</span> می گوییم. به طور شهودی وقتی درخت را از <span class="math notranslate nohighlight">\(u\)</span> آویزان کردیم به مجموعه راس هایی که از <span class="math notranslate nohighlight">\(v\)</span> آویزان شده اند زیردرخت <span class="math notranslate nohighlight">\(v\)</span> می گوییم.</p>
 </div>
 </div>
 
