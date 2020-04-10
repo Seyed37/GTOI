@@ -55,7 +55,6 @@
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -264,19 +263,139 @@
   <div class="section" id="id1">
 <h1>تطابق در گراف دوبخشی<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
 <p>در بخش قبل گفتیم که شرط لازم و کافی برای داشتن یک تطابق ماکسیمم این است که مسیر افزوده وجود نداشته باشد. این شرط در گراف دوبخشی به راحتی قابل بررسی است (چرا؟).</p>
-<p>در نتیجه بررسی کردن تطابق در گراف های دوبخشی (به عنوان حالت خاصی از گراف) سودمند است.</p>
+<p>در نتیجه بررسی کردن تطابق در گراف های دوبخشی (به عنوان حالت خاصی از گراف) به علت کاربرد زیادشان سودمند است.</p>
 <div class="section" id="id2">
 <h2>الگوریتم<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>در این الگوریتم از تطابق خالی شروع می‌کنیم و تا زمانی که مسیری افزایشی در گراف وجود داشت تطابق را بزرگ‌تر می‌کنیم. به راحتی قابل مشاهده است که در این صورت ماکسیمم بودن تطابق نهایی ما بدیهی است. برای پیدا کردن مسیر افزایشیبه این صورت عمل میکنیم:</p>
+<p>فرض کنید گراف ما شامل دو بخش <span class="math notranslate nohighlight">\(n_1\)</span> راسی و <span class="math notranslate nohighlight">\(n_2\)</span> راسی باشد. به ازای <span class="math notranslate nohighlight">\(v = 1 ... n_1\)</span> در گراف حال حاضرمان به دنبال مسیر افزایشی می‌گردیم. در مرحله <span class="math notranslate nohighlight">\(i\)</span> ام می‌توان ادعا کرد تطابقی که بین <span class="math notranslate nohighlight">\(i\)</span> راس بخش اول و بقیه رئوس بخش دوم است ماکسیمم است، در نتیجه در آخر نیز تطابق ما ماکسیمم خواهد بود. پیاده‌سازی آن به شکل زیر است:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* In the name of Allah */</span>
+<span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">2e3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">match</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="kt">bool</span> <span class="n">mark</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="kt">bool</span> <span class="nf">try_kuhn</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">match</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span> <span class="o">&amp;&amp;</span> <span class="n">try_kuhn</span><span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="n">v</span><span class="p">])))</span> <span class="p">{</span>
+            <span class="n">match</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">read_input</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n1</span> <span class="o">&gt;&gt;</span> <span class="n">n2</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+        <span class="n">adj</span><span class="p">[</span><span class="o">--</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="o">--</span><span class="n">v</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">calc</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">match</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">mark</span><span class="p">);</span>
+        <span class="n">k</span> <span class="o">+=</span> <span class="n">try_kuhn</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">write_output</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">k</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">match</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ios</span><span class="o">::</span> <span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">cout</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">read_input</span><span class="p">(),</span> <span class="n">calc</span><span class="p">(),</span> <span class="n">write_output</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>در الگوریتم ذکر شده به ازای هر راس از بخش بالا، <span class="math notranslate nohighlight">\(O(m)\)</span> گام انجام می‌شود، پس پیچیدگی زمانی آن برابر <span class="math notranslate nohighlight">\(O(nm)\)</span> است. البته یک نوع پیاده‌سازی دیگر همین الگوریتم نیز وجود دارد که سرعت آن حداقل دوبرابر سریع‌تر از الگوریتم بالا است (چرا؟):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* In the name of Allah */</span>
+<span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">2e3</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">match</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="kt">bool</span> <span class="n">mark</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="kt">bool</span> <span class="nf">try_kuhn</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">match</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span> <span class="o">&amp;&amp;</span> <span class="n">try_kuhn</span><span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="n">v</span><span class="p">])))</span> <span class="p">{</span>
+            <span class="n">match</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">read_input</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n1</span> <span class="o">&gt;&gt;</span> <span class="n">n2</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+        <span class="n">adj</span><span class="p">[</span><span class="o">--</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="o">--</span><span class="n">v</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">calc</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">match</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="k">sizeof</span> <span class="n">mark</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="n">n1</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+                <span class="n">k</span> <span class="o">+=</span> <span class="n">try_kuhn</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">flag</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">write_output</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">k</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">match</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ios</span><span class="o">::</span> <span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">cout</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">read_input</span><span class="p">(),</span> <span class="n">calc</span><span class="p">(),</span> <span class="n">write_output</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="id3">
 <h2>قضیه هال<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>این قضیه شرط لازم و کافی دیگری برای ماکسیمم بودن یک تطابق در یک گراف دوبخشی را بیان می‌کند که اولین بار توسط فیلیپ هال مطرح شد و به قضیه ازدواج معروف است. این قضیه به شرح زیر است:</p>
+<p>فرض کنید <span class="math notranslate nohighlight">\(X\)</span> مجموعه‌ای از رئوس یک گراف باشد. مجموعه <span class="math notranslate nohighlight">\(X\)</span> در گراف تطابق کامل دارد، اگر و تنها اگر به ازای هر زیرمجموعه از آن مثل <span class="math notranslate nohighlight">\(S\)</span> و مجموعه همسایه‌های خارج <span class="math notranslate nohighlight">\(X\)</span> آن‌ها در گراف به نام <span class="math notranslate nohighlight">\(T\)</span>، داشته باشیم <span class="math notranslate nohighlight">\(|S| \leq |T|\)</span>.</p>
+<p>لازم بودن شرط بالا بدیهی است (در غیر این صورت تعداد رئوس مجاور یک مجموعه برای تطابق دادنشان کافی نخواهد بود). برای اثبات کافی بودن نیز از برهان خلف استفاده می‌کنیم و فرض می‌کنیم گرافی با چنین خاصیتی باشد که تطابق کامل نداشته باشد؛</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/marriage_theorem.jpeg"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/marriage_theorem.jpeg" style="width: 50%;" /></a>
+</div>
+<p>یک تطابق ماکسیمم را درنظر می‌گیریم و راس دلخواهی مثل <span class="math notranslate nohighlight">\(u\)</span> که غیراشباع است را درنظر می‌گیریم (حتماً وجود دارد!). از آنجا که این راس با کسی منطبق نشده، راس منطبق یک راس دلخواه مجاور آن را درنظر میگیریم. این دو راس طبق فرض مسئله یک راس مجاور دیگر دارند که یا منطبق نشده (که در این صورت مسیر افزایشی داریم) و یا منطبق شده که راس منطبق آن را نیز به این دو راس اضافه می‌کنیم. این کار را تا جای ممکن ادامه می‌دهیم و از آنجا که تعداد رئوس مجاور <span class="math notranslate nohighlight">\(X\)</span> حداقل اندازه خودشان است، در آخر به مرحله‌ای میرسیم که مجموعه حال حاضرمان یک راس مجاور دارند که اشباع نشده که در این صورت مسیر افزایشی داریم که این با ماکسیمم بودن تطابقمان در تناقض است.</p>
 </div>
 <div class="section" id="k">
 <h2>تطابق در گراف دوبخشی k منتظم<a class="headerlink" href="#k" title="لینک ثابت به این سر مقاله">¶</a></h2>
 </div>
 <div class="section" id="id4">
 <h2>تعمیم قضیه هال<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>not yet</p>
+<p>فرض کنید گراف <span class="math notranslate nohighlight">\(G\)</span> را به شما داده‌اند و می‌خواهید ببینید آیا در آن زیردرختی وجود دارد که درجه راس <span class="math notranslate nohighlight">\(i\)</span> ام در آن برابر <span class="math notranslate nohighlight">\(a_i\)</span> باشد و یا نه (در اصل مسئله تطابق کامل همین مسئله در حالت <span class="math notranslate nohighlight">\(a_i = 1\)</span> است)! در این مسئله می‌توان از روی گراف <span class="math notranslate nohighlight">\(G\)</span> گراف دیگری به نام <span class="math notranslate nohighlight">\(G'\)</span> ساخت که در آن تطابق کامل وجود دارد،‌ اگر و تنها اگر در <span class="math notranslate nohighlight">\(G\)</span> تطابقی با مشخصات موردنظر وجود داشته باشد (برای فهمیدن این نیز کافیست شرط هال را روی این گراف <span class="math notranslate nohighlight">\(G'\)</span> چک کنیم):</p>
+<p>گراف <span class="math notranslate nohighlight">\(G'\)</span> را بدین گونه می‌سازیم که به ازای هر راس <span class="math notranslate nohighlight">\(u\)</span> در گراف <span class="math notranslate nohighlight">\(G\)</span>، یک <span class="math notranslate nohighlight">\(K_{d_u, d_u - a_u}\)</span> می‌کشیم (<span class="math notranslate nohighlight">\(d_u\)</span> برابر درجه راس <span class="math notranslate nohighlight">\(u\)</span> در گراف <span class="math notranslate nohighlight">\(G\)</span> است). به بخش با تعداد راس <span class="math notranslate nohighlight">\(d_u\)</span> در گراف کشیده برای هر راس <span class="math notranslate nohighlight">\(u\)</span>، بخش حساس <span class="math notranslate nohighlight">\(u\)</span> می‌گوییم. سپس به ازای هر یال <span class="math notranslate nohighlight">\((u, v)\)</span> در گراف، یکی از رئوس بخش حساس آن‌ها که به راس حساس دیگری وصل نیست را به یکدیگر وصل می‌کنیم (از آنجا که تعداد رئوس بخش حساس هر راس اندازه درجه آن راس هست حتماً می‌توان دو راس با چنین خاصیتی برداشت):</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/k_factor.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/k_factor.png" style="width: 50%;" /></a>
+</div>
+<p>حال در گراف <span class="math notranslate nohighlight">\(G\)</span> اگر تطابق کاملی وجود داشت، تطابق موردنظر خود در گراف <span class="math notranslate nohighlight">\(G\)</span> را بدین گونه می‌سازیم که به ازای هر یال بین دو بخش حساس هر راس، یال بین آن دو راس را انتخاب می‌کنیم. از آنجا که دقیقن <span class="math notranslate nohighlight">\(d_u - a_u\)</span> تا از آن‌ها با بخش غیرحساس راس <span class="math notranslate nohighlight">\(u\)</span> منطبق شده‌اند، درجه راس <span class="math notranslate nohighlight">\(G\)</span> در تطابق انتخاب‌شده برابر <span class="math notranslate nohighlight">\(a_u\)</span> می‌شود و مسئله حل می‌شود. اثبات وجود نداشتن چنین تطابقی در صورت تطابق کامل نداشتن گراف <span class="math notranslate nohighlight">\(G'\)</span> نیز به همین ترتیب قابل انجام است.</p>
 </div>
 </div>
 
