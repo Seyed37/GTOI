@@ -55,6 +55,7 @@
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -390,12 +391,7 @@
 </div>
 <div class="section" id="id4">
 <h2>تعمیم قضیه هال<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>فرض کنید گراف <span class="math notranslate nohighlight">\(G\)</span> را به شما داده‌اند و می‌خواهید ببینید آیا در آن زیردرختی وجود دارد که درجه راس <span class="math notranslate nohighlight">\(i\)</span> ام در آن برابر <span class="math notranslate nohighlight">\(a_i\)</span> باشد و یا نه (در اصل مسئله تطابق کامل همین مسئله در حالت <span class="math notranslate nohighlight">\(a_i = 1\)</span> است)! در این مسئله می‌توان از روی گراف <span class="math notranslate nohighlight">\(G\)</span> گراف دیگری به نام <span class="math notranslate nohighlight">\(G'\)</span> ساخت که در آن تطابق کامل وجود دارد،‌ اگر و تنها اگر در <span class="math notranslate nohighlight">\(G\)</span> تطابقی با مشخصات موردنظر وجود داشته باشد (برای فهمیدن این نیز کافیست شرط هال را روی این گراف <span class="math notranslate nohighlight">\(G'\)</span> چک کنیم):</p>
-<p>گراف <span class="math notranslate nohighlight">\(G'\)</span> را بدین گونه می‌سازیم که به ازای هر راس <span class="math notranslate nohighlight">\(u\)</span> در گراف <span class="math notranslate nohighlight">\(G\)</span>، یک <span class="math notranslate nohighlight">\(K_{d_u, d_u - a_u}\)</span> می‌کشیم (<span class="math notranslate nohighlight">\(d_u\)</span> برابر درجه راس <span class="math notranslate nohighlight">\(u\)</span> در گراف <span class="math notranslate nohighlight">\(G\)</span> است). به بخش با تعداد راس <span class="math notranslate nohighlight">\(d_u\)</span> در گراف کشیده برای هر راس <span class="math notranslate nohighlight">\(u\)</span>، بخش حساس <span class="math notranslate nohighlight">\(u\)</span> می‌گوییم. سپس به ازای هر یال <span class="math notranslate nohighlight">\((u, v)\)</span> در گراف، یکی از رئوس بخش حساس آن‌ها که به راس حساس دیگری وصل نیست را به یکدیگر وصل می‌کنیم (از آنجا که تعداد رئوس بخش حساس هر راس اندازه درجه آن راس هست حتماً می‌توان دو راس با چنین خاصیتی برداشت):</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/k_factor.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/k_factor.png" style="width: 50%;" /></a>
-</div>
-<p>حال در گراف <span class="math notranslate nohighlight">\(G\)</span> اگر تطابق کاملی وجود داشت، تطابق موردنظر خود در گراف <span class="math notranslate nohighlight">\(G\)</span> را بدین گونه می‌سازیم که به ازای هر یال بین دو بخش حساس هر راس، یال بین آن دو راس را انتخاب می‌کنیم. از آنجا که دقیقن <span class="math notranslate nohighlight">\(d_u - a_u\)</span> تا از آن‌ها با بخش غیرحساس راس <span class="math notranslate nohighlight">\(u\)</span> منطبق شده‌اند، درجه راس <span class="math notranslate nohighlight">\(G\)</span> در تطابق انتخاب‌شده برابر <span class="math notranslate nohighlight">\(a_u\)</span> می‌شود و مسئله حل می‌شود. اثبات وجود نداشتن چنین تطابقی در صورت تطابق کامل نداشتن گراف <span class="math notranslate nohighlight">\(G'\)</span> نیز به همین ترتیب قابل انجام است.</p>
+<p>یک گراف دوبخشی به نام <span class="math notranslate nohighlight">\(G\)</span> داریم و می‌خواهیم روی یال‌های آن اعدادی صحیح و نامنفی قرار دهیم، به طوری که به ازای هر راس بخش اول در گراف <span class="math notranslate nohighlight">\(G\)</span> مثل <span class="math notranslate nohighlight">\(u\)</span>، مجموع اعداد نوشته شده روی یال‌های مجاور راس <span class="math notranslate nohighlight">\(u\)</span> برابر <span class="math notranslate nohighlight">\(a_u\)</span> شود (به ازای هر <span class="math notranslate nohighlight">\(u\)</span> از بخش اول). برای حل این مسئله می‌توان گراف</p>
 </div>
 </div>
 
