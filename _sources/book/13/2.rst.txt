@@ -13,15 +13,16 @@
 فرض کنید گراف ما شامل دو بخش :math:`n1` راسی و :math:`n2` راسی باشد. به ازای :math:`v = 1 ... n1` در گراف حال حاضرمان به دنبال مسیر افزایشی می‌گردیم. در مرحله :math:`i` ام می‌توان ادعا کرد تطابقی که بین :math:`i` راس بخش اول و بقیه رئوس بخش دوم است ماکسیمم است، در نتیجه در آخر نیز تطابق ما ماکسیمم خواهد بود. پیاده‌سازی آن به شکل زیر است:
 
 .. code-block:: cpp
+
   /* In the name of Allah */
   #include<bits/stdc++.h>
   using namespace std;
-  
+
   const int N = 2e3 + 5;
   int n1, n2, m, k, match[N];
   vector<int> adj[N];
   bool mark[N];
-  
+
   bool try_kuhn(int u) {
       mark[u] = true;
       for (auto v: adj[u])
@@ -31,7 +32,7 @@
           }
       return false;
   }
-  
+
   void read_input() {
       cin >> n1 >> n2 >> m;
       for (int i = 0; i < m; i++) {
@@ -40,7 +41,7 @@
           adj[--u].push_back(--v);
       }
   }
-  
+
   void calc() {
       memset(match, -1, sizeof match);
       for (int u = 0; u < n1; u++) {
@@ -48,14 +49,14 @@
           k += try_kuhn(u);
       }
   }
-  
+
   void write_output() {
       cout << k << endl;
       for (int u = 0; u < n2; u++)
           if (match[u] != -1)
               cout << match[u] + 1 << ' ' << u + 1 << endl;
   }
-  
+
   int main() {
       ios:: sync_with_stdio(0), cin.tie(0), cout.tie(0);
       read_input(), calc(), write_output();
@@ -65,15 +66,16 @@
 در الگوریتم ذکر شده به ازای هر راس از بخش بالا، :math:`O(m)` گام انجام می‌شود، پس پیچیدگی زمانی آن برابر :math:`O(nm)` است. البته یک نوع پیاده‌سازی دیگر همین الگوریتم نیز وجود دارد که سرعت آن حداقل دوبرابر سریع‌تر از الگوریتم بالا است (چرا؟):
 
 .. code-block:: cpp
+
   /* In the name of Allah */
   #include<bits/stdc++.h>
   using namespace std;
-  
+
   const int N = 2e3 + 5;
   int n1, n2, m, k, match[N];
   vector<int> adj[N];
   bool mark[N];
-  
+
   bool try_kuhn(int u) {
       mark[u] = true;
       for (auto v: adj[u])
@@ -83,7 +85,7 @@
           }
       return false;
   }
-  
+
   void read_input() {
       cin >> n1 >> n2 >> m;
       for (int i = 0; i < m; i++) {
@@ -92,7 +94,7 @@
           adj[--u].push_back(--v);
       }
   }
-  
+
   void calc() {
       memset(match, -1, sizeof match);
       while (true) {
@@ -105,14 +107,14 @@
               break;
       }
   }
-  
+
   void write_output() {
       cout << k << endl;
       for (int u = 0; u < n2; u++)
           if (match[u] != -1)
               cout << match[u] + 1 << ' ' << u + 1 << endl;
   }
-  
+
   int main() {
       ios:: sync_with_stdio(0), cin.tie(0), cout.tie(0);
       read_input(), calc(), write_output();
