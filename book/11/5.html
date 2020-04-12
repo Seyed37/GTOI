@@ -55,7 +55,6 @@
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -263,6 +262,68 @@
 				    
   <div class="section" id="id1">
 <h1>هش درخت<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>در این قسمت چک کردن تساوی دو درخت را بررسی می کنیم. فرض کنید دو درخت <span class="math notranslate nohighlight">\(T_1\)</span> و <span class="math notranslate nohighlight">\(T_2\)</span> به ما داده شده است و می خواهیم الگوریتمی خطی ارائه دهیم که بررسی کند <span class="math notranslate nohighlight">\(T_1,T_2\)</span> با هم برابر هستند یا خیر. منظور از برابری در اینجا این است که اگر شماره راس ها را در نظر نگیریم بتوان دو درخت را طوری کشید که شکل آن ها عینا یکسان شود.</p>
+<div class="section" id="id2">
+<h2>تبدیل به برابری دو درخت ریشه دار<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید می دانیم راس <span class="math notranslate nohighlight">\(u_1\)</span> از درخت <span class="math notranslate nohighlight">\(T_1\)</span> قرار است برابر با راس <span class="math notranslate nohighlight">\(u_2\)</span> از درخت <span class="math notranslate nohighlight">\(T_2\)</span> شود. آنگاه می توانیم برابر بودن دو درخت ریشه دار را بررسی کنیم که به نظر می رسد ساده تر از مسئله فعلی باشد.</p>
+<p>پس حالا اگر بتوانیم مسئله برابری دو درخت ریشه دار <span class="math notranslate nohighlight">\(n\)</span> راسی را در <span class="math notranslate nohighlight">\(O(f(n))\)</span> حل کنیم راه حلی داریم که مسئله فعلی را در <span class="math notranslate nohighlight">\(O(n \times f(n))\)</span> حل می کند. تنها کافیست <span class="math notranslate nohighlight">\(u_1\)</span> را یک راس ثابت در نظر بگیریم و روی <span class="math notranslate nohighlight">\(u_2\)</span> حالت بندی کنیم.</p>
+<p>ایده کلیدی در اینجا این است که <span class="math notranslate nohighlight">\(u_1,u_2\)</span> را با ویژگی خاصی انتخاب کنیم که تعداد راس های درخت با این ویژگی کم باشد. مثلا اگر <span class="math notranslate nohighlight">\(u_1\)</span> را یک برگ در نظر بگیریم آنگاه <span class="math notranslate nohighlight">\(u_2\)</span> نیز باید برگ باشد پس به جای <span class="math notranslate nohighlight">\(n\)</span> بار حالت بندی روی <span class="math notranslate nohighlight">\(u_2\)</span> کافی است به تعداد برگ های <span class="math notranslate nohighlight">\(T_2\)</span> بار حالت بندی کنیم.</p>
+<p>در قسمت های قبل یاد گرفتیم که هر درخت حداکثر 2 سنتروید دارد. در نتیجه اگر ویژگی مورد نظر را سنتروید بودن در نظر بگیریم کافی است <span class="math notranslate nohighlight">\(u_1\)</span> را یکی از سنتروید های درخت <span class="math notranslate nohighlight">\(T_1\)</span> در نظر بگیریم و برای <span class="math notranslate nohighlight">\(u_2\)</span> روی تمام سنتروید های درخت <span class="math notranslate nohighlight">\(T_2\)</span> حالت بندی کنیم (که حداکثر 2 تا هستند). پس توانستیم مسئله را در <span class="math notranslate nohighlight">\(O(f(n))\)</span> حل کنیم.</p>
+</div>
+<div class="section" id="id3">
+<h2>حل مسئله برابری دو درخت ریشه دار<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید <span class="math notranslate nohighlight">\(r_1\)</span> ریشه درخت <span class="math notranslate nohighlight">\(T_1\)</span> و <span class="math notranslate nohighlight">\(r_2\)</span> ریشه درخت <span class="math notranslate nohighlight">\(T_2\)</span> باشد و حالا می خواهیم برابری این دو درخت را بررسی کنیم. در ابتدا اگر تعداد بچه های <span class="math notranslate nohighlight">\(r_1,r_2\)</span> مساوی نباشند که دو درخت به وضوح نابرابرند. در صورت مساوی بودن تعداد بچه ها باید بفهمیم که هر کدام از بچه های <span class="math notranslate nohighlight">\(r_1\)</span> به کدام یک از بچه های <span class="math notranslate nohighlight">\(r_2\)</span> متناظر شده است. اگر این موضوع را بفهمیم می توان به صورت بازگشتی مسئله را حل کرد به اینصورت که به ازای تمام بچه های <span class="math notranslate nohighlight">\(r_1\)</span> باید برابری زیردرخت آن با زیردرخت راس متناظرش در درخت <span class="math notranslate nohighlight">\(T_2\)</span> را بررسی کنیم.</p>
+<p>به عبارتی باید دنباله بچه های <span class="math notranslate nohighlight">\(r_1,r_2\)</span> را به طریقی جایگشت بدهیم سپس به ازای هر <span class="math notranslate nohighlight">\(i\)</span> برابری زیردرخت بچه <span class="math notranslate nohighlight">\(i\)</span> ام <span class="math notranslate nohighlight">\(r_1,r_2\)</span> را بررسی می کنیم.</p>
+<p>حالا از این ایده استفاده می کنیم که ترتیب بچه های هر راس را بر حسب ویژگی خاصی مرتب کنیم. در اینصورت دیگر نیاز نیست تمام جایگشت های بچه های <span class="math notranslate nohighlight">\(r_1,r_2\)</span> را بررسی کنیم و تنها کافیست ترتیب فعلی را بررسی کنیم.</p>
+<p>به هر درخت ریشه دار مثل <span class="math notranslate nohighlight">\(T\)</span> با ریشه <span class="math notranslate nohighlight">\(r\)</span> یک دنباله از پرانتزگذاری ها را نسبت می دهیم. به اینصورت که ابتدا زیردرخت مربوط به بچه های <span class="math notranslate nohighlight">\(r\)</span> را به صورت بازگشتی حساب می کنیم سپس بچه های <span class="math notranslate nohighlight">\(r\)</span> را بر اساس ترتیب کتابخانه ای (lexicographical order) رشته آن ها مرتب می کنیم. <strong>این همان ترتیب ثابتی است که می خواستیم به بچه های هر راس نسبت بدهیم.</strong> در نهایت دنباله پرانتز گذاری <span class="math notranslate nohighlight">\(T\)</span> به صورت <span class="math notranslate nohighlight">\(S = (S_1S_2...S_k)\)</span> می باشد که <span class="math notranslate nohighlight">\(S_i\)</span> ها دنباله پرانتزگذاری مربوط به زیردرخت بچه <span class="math notranslate nohighlight">\(i\)</span> ام <span class="math notranslate nohighlight">\(r\)</span> است.</p>
+<p>می توانید بررسی کنید که دو درخت ریشه دار با هم برابر هستند اگر و تنها اگر دنباله پرانتزگذاری نسبت داده شده به آن دو با هم برابر باشند.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/hashTree.jpg"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/hashTree.jpg" style="width: 70%;" /></a>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>محاسبه هش درخت ریشه دار<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>از آنجایی که کار کردن با یک رشته (چسباندن دو رشته به هم یا چک کردن تساوی دو رشته) نیاز به <span class="math notranslate nohighlight">\(O(n)\)</span> عملیات دارد ما را به فکر می اندازد تا به جای اینکه به هر راس یک رشته نسبت دهیم، به هر راس یک عدد نسبت دهیم که هر عدد نماینده یک رشته باشد!</p>
+<p>پس از منطق بالا استفاده می کنیم و به عدد مربوط به هر راس را به اینصورت به دست خواهیم آورد. ابتدا اعداد بچه ها را به دست می آوریم سپس آن ها را مرتب کرده و با فرض اینکه <span class="math notranslate nohighlight">\(H_1,...,H_k\)</span> باشند عدد ما برابر با  <span class="math notranslate nohighlight">\(H = 1 + \sum H_i \times P^i\)</span> به پیمانه <span class="math notranslate nohighlight">\(M\)</span> خواهد بود که <span class="math notranslate nohighlight">\(M, P\)</span> دو عدد اول تصادفی هستند. به این تکنیک هش کردن (hash) می گویند. از آنجایی که <span class="math notranslate nohighlight">\(M,P\)</span> اعداد تصادفی هستند می توان فرض کرد اعداد به دست آمده تصادفی هستند و احتمال اینکه به دو درخت متفاوت اعداد یکسان نسبت دهیم بسیار ناچیز خواهد بود. (برای اطمینان می توان با <span class="math notranslate nohighlight">\(M,P\)</span> های بیشتر این کار را انجام داد تا احتمال خراب شدن کار کم و کمتر شود).</p>
+<p>پیاده سازی الگوریتمی که بیان کردیم به این صورت می باشد :</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">maxn</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="mi">101</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">9</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">calc</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">par</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+      <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">;</span>
+      <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">y</span> <span class="p">:</span> <span class="n">v</span><span class="p">[</span><span class="n">u</span><span class="p">]){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">y</span> <span class="o">!=</span> <span class="n">par</span><span class="p">)</span>
+            <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">calc</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="kt">int</span> <span class="n">H</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">vec</span><span class="p">){</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ll</span> <span class="o">*</span> <span class="n">H</span> <span class="o">*</span> <span class="n">P</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="n">M</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">H</span><span class="p">)</span> <span class="o">%</span> <span class="n">M</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">H</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">a</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+        <span class="n">v</span><span class="p">[</span><span class="n">b</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">calc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span> <span class="c1">// hash derakht rishe dar az 1</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -303,7 +364,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در آوریل 12, 2020.
+                        آخرین به روز رسانی در آوریل 13, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
