@@ -17,14 +17,21 @@
     در آن قرار دارد نمی رسید. ممکن است برخی به صورت گمنام مشارکت کرده باشند یا به دلیل
     اشتباهی از ما، اسم آن ها در این فهرست نیامده باشد. اما ما قدردان زحمات همه آنان هستیم.
     <h2>آمار</h2>
-    <h3>اسامی مشارکت کنندگان</h3>
-    <a href="www.google.com"><span style="color:hsl(0,100%,50%)">حمیدرضا کلباسی</span></a>،<a href="www.google.com"><span style="color:hsl(51.42857142857142,100%,50%)">مهدی قائم پناه</span></a>،<a href="www.google.com"><span style="color:hsl(102.85714285714285,100%,50%)">شایان پردیس</span></a>،<a href="www.google.com"><span style="color:hsl(154.28571428571428,100%,50%)">ارشیا دادرس</span></a>،<a href="www.google.com"><span style="color:hsl(205.7142857142857,100%,50%)">پدرام صادقیان</span></a>،<a href="www.google.com"><span style="color:hsl(257.14285714285717,100%,50%)">ابولفضل سلطانی</span></a>،<a href="www.google.com"><span style="color:hsl(308.57142857142856,100%,50%)">علی توسلی</span></a>
-    <h3>درسنامه</h3>
+    <h3>نویسندگان</h3>
+    <a href="https://hkalbasi.github.io/"><span style="color:hsl(0,100%,50%)">حمیدرضا کلباسی</span></a>،<a href="https://shaazzz.ir"><span style="color:hsl(51.42857142857142,100%,50%)">مهدی قائم پناه</span></a>،<a href="https://shaazzz.ir"><span style="color:hsl(102.85714285714285,100%,50%)">شایان پردیس</span></a>
     <canvas id="text-chart"></canvas>
-    <h3>سوالات تئوری</h3>
-    <canvas id="problem-chart"></canvas>
-    <h3>سوالات کد</h3>
-    <canvas id="code-chart"></canvas>
+    <h3>گرد آورندگان سوال</h3>
+    <a href="https://hkalbasi.github.io/"><span style="color:hsl(0,100%,50%)">حمیدرضا کلباسی</span></a>،<a href="https://shaazzz.ir"><span style="color:hsl(102.85714285714285,100%,50%)">شایان پردیس</span></a>،<a href="https://shaazzz.ir"><span style="color:hsl(308.57142857142856,100%,50%)">علی توسلی</span></a>
+    <table style="width:100%">
+      <tr>
+        <th style="width:50%">سوالات تئوری</th>
+        <th style="width:50%">سوالات کد</th>
+      </tr>
+      <tr>
+        <td><canvas id="problem-chart"></canvas></td>
+        <td><canvas id="code-chart"></canvas></td>
+      </tr>
+    </table>
     <script defer>
       const cf = function(context) {
         var index = context.dataIndex;
@@ -38,7 +45,7 @@
         data: {
           datasets: [{
             backgroundColor: cf,
-            data: [5,0,1,0,0,0,0]
+            data: [5,1,6,0,0,0,0]
           }],
           labels: ["حمیدرضا کلباسی","مهدی قائم پناه","شایان پردیس","ارشیا دادرس","پدرام صادقیان","ابولفضل سلطانی","علی توسلی"],
         },
@@ -50,7 +57,7 @@
         data: {
           datasets: [{
             backgroundColor: cf,
-            data: [2,0,0,0,0,0,0]
+            data: [5,0,5,0,0,0,0]
           }],
           labels: ["حمیدرضا کلباسی","مهدی قائم پناه","شایان پردیس","ارشیا دادرس","پدرام صادقیان","ابولفضل سلطانی","علی توسلی"],
         },
