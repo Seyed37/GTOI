@@ -278,11 +278,139 @@
 در هر گراف جریان بیشینه با برش کمینه برابر است.</p>
 <div class="section" id="id3">
 <h3>اثبات<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>ابتدا واضح است که اندازه هر برشی از اندازه هر جریانی بیشتر است. زیرا حذف هر یال حداکثر
+به اندازه ظرفیتش از میزان جریان کم می کند و تا زمانی که جریان وجود داشته باشد
+ما به یک برش نرسیده ایم. برای اثبات اینکه جریان بیشینه با برش کمینه برابر است
+یک جریان بیشینه را در نظر می گیریم و یک برش به اندازه آن به دست می آوریم.</p>
+<p>جریان بیشینه را در نظر بگیرید. یک مسیر افزایش دهنده مسیری است با این شرط که اگر
+از یک یال در جهت خودش در مسیر استفاده کرده ایم، نباید از تمام ظرفیتش استفاده شده باشد
+و اگر در جهت برعکس از آن استفاده می کنیم، باید حتما جریانی از آن رد شده باشد، برای
+مثال مسیر زیر یک مسیر افزایش دهنده است:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/flow_path.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/flow_path.png" style="width: 50%;" /></a>
+</div>
+<p>در یک جریان بیشینه، مسیر افزایش دهنده از مبدا به مقصد وجود ندارد. زیرا اگر وجود داشته
+باشد می توان جریان گذرنده را بیشتر کرد، کافیست که جریان یال هایی که در جهت مسیر هستند
+(یال های آبی)
+را یک واحد زیاد و جریان بقیه یال ها را یک واحد کم کنیم. با این کار جریان یک واحد بیشتر
+می شود.</p>
+<p>حال برای پیدا کردن یک برش به اندازه جریان بیشینه = f، می توانید رئوسی را در نظر بگیرید که
+از راس مبدا به آن مسیر افزایش دهنده وجود دارد. طبق مطلب بالا راس مقصد در این مجموعه
+نیست. جریان ورودی این مجموعه ۰ است زیرا اگر یالی از خارج این مجموعه وجود داشته باشد
+که از آن جریان گذشته باشد و به داخل این مجموعه باشد، آنگاه راس خارج مجموعه این یال نیز
+باید داخل این مجموعه باشد چون مسیر افزایش دهنده به آن وجود دارد. جمع جریان ورودی و خروجی
+هر مجموعه برابر جمع جریان ورودی و خروجی هر راس در آن مجموعه است. و جمع جریان ورودی و خروجی
+هر راس دقیقا ۰ است به جز راس ورودی و خروجی. راس ورودی
+f
+واحد جریان خروجی دارد پس جمع جریان ورودی و خروجی مجموعه ای که ما در نظر گرفتیم دقیقا
+f
+است و چون جریان ورودی این مجموعه ۰ است، در نتیجه جریان خروجی این مجموعه f
+است. یال های خروجی این مجموعه را در نظر بگیرید، همه ظرفیتشان تماما تکمیل است
+(وگرنه مسیر افزایش دهنده به رئوس خروجی این یال ها وجود داشت)
+و جمع ظرفیت هایشان دقیقا f است. این یال ها را قطع کنید، دیگر مسیری از مبدا به بیرون این مجموعه
+و در نتیجه به مقصد وجود ندارد. پس ما برشی به اندازه f یعنی اندازه بزرگترین جریان بیشینه
+پیدا کردیم. پس جریان بیشینه برابر برش کمینه است.</p>
 </div>
 </div>
 <div class="section" id="id4">
 <h2>الگوریتم فورد فلکرسون برای جریان بیشینه<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>not yet</p>
+<p>سعی می کنیم که یک مسیر افزایش دهنده از مبدا به مقصد پیدا کنیم و به کمک آن
+یک واحد به جریان اضافه کنیم. آن قدر این کار را ادامه می دهیم تا دیگر مسیر افزایش دهنده
+وجود ندارد. یک جریان به دست می آید که برشی به اندازه آن وجود دارد. و چون می دانیم
+که همه برش ها بزرگتر مساوی همه جریان ها هستند، جریانی که پیدا کرده ایم قطعا جریان
+بیشینه است.</p>
+<p>قطعه کد زیر پیاده سازی این الگوریتم است. برای سادگی کار، به جای این که برای پیدا کردن
+مسیر حالت های در جهت و در خلاف جهت را جداگانه بررسی کنیم، به ازای هر یال یک یال در خلاف
+جهت آن و با وزن ۰ قرار می دهیم. هر گاه که از یک یال جریانی گذراندیم، ظرفیت خودش را کم
+می کنیم و به ظرفیت یال دوگان آن یال اضافه می کنیم.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="n">cnt</span><span class="p">,</span><span class="n">head</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">pre</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">cap</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">to</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">from</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<span class="n">ll</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="n">ll</span> <span class="n">u</span><span class="p">,</span><span class="n">ll</span> <span class="n">v</span><span class="p">,</span><span class="n">ll</span> <span class="n">w</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// ezafe kardane yale asli</span>
+    <span class="n">from</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">=</span><span class="n">u</span><span class="p">;</span><span class="n">to</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">=</span><span class="n">v</span><span class="p">;</span><span class="n">pre</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">=</span><span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">];</span><span class="n">cap</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">=</span><span class="n">w</span><span class="p">;</span><span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+    <span class="c1">// ezafe kardane yale dogaan</span>
+    <span class="n">from</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">=</span><span class="n">v</span><span class="p">;</span><span class="n">to</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">=</span><span class="n">u</span><span class="p">;</span><span class="n">pre</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">=</span><span class="n">head</span><span class="p">[</span><span class="n">v</span><span class="p">];</span><span class="n">cap</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">head</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ll</span> <span class="n">tnod</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">bitset</span><span class="o">&lt;</span><span class="n">M</span><span class="o">&gt;</span> <span class="n">mark</span><span class="p">;</span>
+
+<span class="c1">// say mikonim ke masir afzaayesh dahande peydaa konim</span>
+<span class="n">ll</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">ll</span> <span class="n">u</span><span class="p">,</span><span class="n">ll</span> <span class="n">mn</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">u</span><span class="o">==</span><span class="n">tnod</span><span class="p">)</span> <span class="k">return</span> <span class="n">mn</span><span class="p">;</span>
+    <span class="c1">// yal haye ras u dar yek link list rikhte shode and.</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">ll</span> <span class="n">i</span><span class="o">=</span><span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">];</span><span class="n">i</span><span class="o">!=-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">=</span><span class="n">pre</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">{</span>
+        <span class="c1">// agar yale hadaf zarfiat nadasht bikhiaale aan mishavim</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cap</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span> <span class="o">||</span> <span class="n">mark</span><span class="p">[</span><span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="c1">// say mikonim ke jaryani be maghsad peyda konim</span>
+        <span class="n">ll</span> <span class="n">s</span><span class="o">=</span><span class="n">dfs</span><span class="p">(</span><span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">min</span><span class="p">(</span><span class="n">mn</span><span class="p">,</span><span class="n">cap</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+        <span class="c1">// agar s = 0 nabashad, masir afzayesh dahande i vojood darad ke</span>
+        <span class="c1">// kam zarfiat tarin yale aan s vahed zarfiat darad</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// az zarfiate yal s vahed kam mikonim</span>
+            <span class="n">cap</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-=</span><span class="n">s</span><span class="p">;</span>
+            <span class="c1">// be zarfiate yaale dogan s vahed ezafe mikonim</span>
+            <span class="n">cap</span><span class="p">[</span><span class="n">i</span><span class="o">^</span><span class="mi">1</span><span class="p">]</span><span class="o">+=</span><span class="n">s</span><span class="p">;</span>
+            <span class="c1">// elam mikonim ke masir s vahedi peyda shode ast</span>
+            <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// masiri peyda nakardim</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ll</span> <span class="nf">maxflow</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">ll</span> <span class="n">flow</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">mark</span><span class="o">&amp;=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="n">ll</span> <span class="n">s</span><span class="o">=</span><span class="n">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">inf</span><span class="p">);</span>
+        <span class="c1">// agar masiri peyda nashode bood flow = maxflow</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">)</span> <span class="k">return</span> <span class="n">flow</span><span class="p">;</span>
+        <span class="n">flow</span><span class="o">+=</span><span class="n">s</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>در این الگوریتم برای پیدا کردن مسیر افزایش دهنده از الگوریتم DFS استفاده کرده ایم. این
+الگوریتم در هر مرحله حداقل یک واحد به جریان موجود اضافه می کند و چون زمان
+DFS خطی است این الگوریتم پیچیدگی زمانی
+<span class="math notranslate nohighlight">\(O(ef)\)</span>
+دارد که e تعداد یال ها و f مقدار بیشینه جریان است.
+اگر به جای الگوریتم
+DFS از الگوریتم BFS
+استفاده می کردیم کران
+<span class="math notranslate nohighlight">\(O(ve^2)\)</span>
+نیز ثابت شده بود که به اثبات آن نمی پردازیم.</p>
+</div>
+<div class="section" id="id5">
+<h2>پیدا کردن عدد همبندی راسی و یالی<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>به کمک الگوریتم جریان بیشینه می توان عدد همبندی راسی و یالی را در زمان چند جمله ای
+به دست آورد.</p>
+<p>برای به دست آوردن عدد همبندی یالی، به ازای هر یال دو یال جهت دار با وزن ۱ در خلاف جهت
+هم بین این دو راس اضافه می کنیم. سپس بین هر دو راس جریان بیشینه را پیدا می کنیم که برابر
+برش کمینه نیز هست. با توجه به این که برش کمینه هر دو جهت یال را قطع نمی کند، برش
+کمینه این گراف با گراف بی جهت برابر است. و هر برش دو راس را ناهمبند می کند پس از عدد همبندی
+یالی گراف بیشتر است و چون کمینه یال های لازم برای ناهمبند کردن یک گراف دو راس را از
+هم جدا می کند کمینه این برش ها همان عدد همبندی یالی گراف است. پیچیدگی زمانی این الگوریتم
+<span class="math notranslate nohighlight">\(O(v^3e)\)</span>
+است زیرا جواب از تعداد راس ها کمتر است.</p>
+<p>برای به دست آوردن عدد همبندی راسی گراف، یک گراف جدید می سازیم که به ازای هر راس دو راس
+دارد. یک راس ورودی و یک راس خروجی. به ازای هر یال نیز دو یال اضافه می کنیم. از راس های
+ورودی متناظر به راس های خروجی متناظر. برای هر راس نیز از ورودی به خروجی یال می کشیم.
+یال های متناظر با یال ها ظرفیت بینهایت و یال های درون هر راس ظرفیت ۱ دارد. برای این که
+به دست بیاوریم که چه میزان راس مورد نیاز است حذف شود تا دو راس مورد نظر ناهمبند شوند،
+می توان برش کمینه بین این دو راس را در گراف به دست آورد. برای هر دو راس این مقدار را
+محاسبه می کنیم و عدد همبندی راسی به دست می آید. پیچیدگی زمانی این الگوریتم
+<span class="math notranslate nohighlight">\(O(v^3e)\)</span>
+است زیرا جواب از تعداد راس ها کمتر است.</p>
 </div>
 </div>
 
@@ -324,7 +452,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در آوریل 13, 2020.
+                        آخرین به روز رسانی در آوریل 14, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
