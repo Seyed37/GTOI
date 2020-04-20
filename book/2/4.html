@@ -332,10 +332,32 @@
 </div>
 <div class="section" id="id11">
 <h2>شمردن انشعاب ها<a class="headerlink" href="#id11" title="لینک ثابت به این سر مقاله">¶</a></h2>
-</div>
 <div class="section" id="id12">
-<h2>تابع بازگشتی<a class="headerlink" href="#id12" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>هنوز کامل نیست :))</p>
+<h3>راهنمایی<a class="headerlink" href="#id12" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>سعی می کنیم تعداد انشعاب ها (درخت های ریشه دار که هر راس به جز ریشه به پدرش یال جهت دار دارد) بشماریم همچینین فرض کنید یال های درخت هم دارای ترتیب هستند یعنی جایگشتی <span class="math notranslate nohighlight">\(n-1\)</span> تایی روی یال های درخت نوشته ایم.</p>
+<p>در اینصورت اگر تعداد انشعاب هایی که شمردیم (با احتساب ترتیب یال ها) برابر با <span class="math notranslate nohighlight">\(T\)</span> باشد آنگاه تعداد درخت ها برابر با <span class="math notranslate nohighlight">\(\frac {T} {(n-1)! \times n}\)</span> خواهد بود. به عبارتی هر درخت را <span class="math notranslate nohighlight">\((n-1)! \times n\)</span> بار می شماریم. ضریب <span class="math notranslate nohighlight">\(n\)</span> به خاطر حالت بندی روی ریشه درخت است و <span class="math notranslate nohighlight">\((n-1)!\)</span> به خاطر حالت بندی روی جایگشت نوشته شده روی یال های درخت می باشد.</p>
+</div>
+<div class="section" id="id13">
+<h3>حل<a class="headerlink" href="#id13" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>سعی می کنیم <span class="math notranslate nohighlight">\(T\)</span> را محاسبه کنیم. یک انشعاب خاص را در نظر بگیرید و فرایند ساختن آن را به شکل زیر در نظر بگیرید‌ :</p>
+<ul class="simple">
+<li>ابتدا گرافی <span class="math notranslate nohighlight">\(n\)</span> راسی و بدون یال در نظر بگیرید. یال ها را یکی یکی اضافه می کنیم. پس در هر مرحله تعدادی درخت جهت دار خواهیم داشت.</li>
+<li>در مرحله <span class="math notranslate nohighlight">\(i\)</span> ام یالی که روی آن عدد <span class="math notranslate nohighlight">\(i\)</span> نوشته شده را در نظر بگیرید. فرض کنید <span class="math notranslate nohighlight">\(uv\)</span> باشد.</li>
+<li>در اینصورت لازم و کافی است که در هر مرحله <span class="math notranslate nohighlight">\(u, v\)</span> مربوط به دو مولفه متفاوت باشند و همچنین <span class="math notranslate nohighlight">\(v\)</span> راسی باشد که ریشه یکی از درخت های جهت دار ما است.</li>
+</ul>
+<p>برای شمردن تعداد انشعاب های ممکن کافی است بفهمیم فرایند ساختن انشعاب چند حالت مختلف می تواند داشته باشد.</p>
+<p>در شروع مرحله <span class="math notranslate nohighlight">\(i\)</span> (با شمارش از 1) دقیقا <span class="math notranslate nohighlight">\(n-i+1\)</span> درخت ریشه دار داریم. اگر روی <span class="math notranslate nohighlight">\(u\)</span> حالت بندی کنید (که <span class="math notranslate nohighlight">\(n\)</span> حالت دارد) برای انتخاب <span class="math notranslate nohighlight">\(v\)</span> دقیقا <span class="math notranslate nohighlight">\(n-i\)</span> حالت داریم زیرا که <span class="math notranslate nohighlight">\(v\)</span> باید ریشه یکی از درخت ها باشد و نباید ریشه درختی باشد که <span class="math notranslate nohighlight">\(u\)</span> در آن است. بنابراین مرحله <span class="math notranslate nohighlight">\(i\)</span> ام فرایند ساختن گراف <span class="math notranslate nohighlight">\(n \times (n-i)\)</span> حالت دارد. پس در نهایت داریم
+<span class="math notranslate nohighlight">\(T = n^{n-1} * (n-1)!\)</span></p>
+<p>پس همانطور که گفتیم تعداد درخت ها باید برابر با <span class="math notranslate nohighlight">\(\frac {T} {(n-1)! \times n}\)</span> باشد که همان <span class="math notranslate nohighlight">\(n^{n-2}\)</span> است. همانطور که می خواستیم!</p>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>تابع بازگشتی<a class="headerlink" href="#id14" title="لینک ثابت به این سر مقاله">¶</a></h2>
+</div>
+<div class="section" id="id15">
+<h2>بیشتر<a class="headerlink" href="#id15" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>تمام مطالبی که در بالا گفتیم مربوط به تعداد زیردرخت های فراگیر گراف <span class="math notranslate nohighlight">\(K_n\)</span> بود. در اینجا یک ذهن کنجکاو می پرسد آیا می توان به جای <span class="math notranslate nohighlight">\(K_n\)</span> تعداد زیردرخت های فراگیر هر گرافی را شمرد؟</p>
+<p>انجام این کار با استفاده از ماتریس کیرشهف (kirchhoff matrix) قابل انجام است. به اینصورت که ماتریس <span class="math notranslate nohighlight">\(A\)</span> را با توجه به گراف <span class="math notranslate nohighlight">\(G\)</span> به اینصورت می سازیم. در این ماتریس <span class="math notranslate nohighlight">\(A_{i,i}\)</span> برابر است با درجه راس <span class="math notranslate nohighlight">\(i\)</span> می باشد و <span class="math notranslate nohighlight">\(A_{i,j}\)</span> با فرض <span class="math notranslate nohighlight">\(i \neq j\)</span> برابر با <strong>قرینه</strong> تعداد یال های بین راس های <span class="math notranslate nohighlight">\(i,j\)</span> می باشد. می توان اثبات کرد که دترمینان ماتریس <span class="math notranslate nohighlight">\(A\)</span> برابر با تعداد زیردرخت های فراگیر گراف <span class="math notranslate nohighlight">\(G\)</span> خواهد بود. از بیان مطالب بیشتر درباره ماتریس کیرشهف اجتناب می کنیم زیرا این موضوع از حوصله کتاب خارج است.</p>
 </div>
 </div>
 
@@ -377,7 +399,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در آوریل 20, 2020.
+                        آخرین به روز رسانی در آوریل 21, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
