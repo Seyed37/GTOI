@@ -11,7 +11,7 @@
 
 
     
-         <title>گراف دو بخشی &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>همبندی، یال برشی و راس برشی &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -34,8 +34,8 @@
         <link rel="search" title="جستجو" href="../../search.html" />
         <link rel="top" title="نظریه گراف‌ها برای المپیاد کامپیوتر" href="../../index.html" />
         <link rel="up" title="تعاریف اولیه" href="index.html" />
-        <link rel="next" title="گشت، گذر، مسیر، اکسترمال" href="5.html" />
-        <link rel="prev" title="همبندی، یال برشی و راس برشی" href="3.html" />
+        <link rel="next" title="زیر گراف ها" href="5.html" />
+        <link rel="prev" title="گشت، گذر، مسیر، اکسترمال" href="3.html" />
 
 
 
@@ -55,7 +55,6 @@
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -110,9 +109,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">تعاریف اولیه</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">مقدمات و پیاده سازی گراف</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2.html">مدل سازی با گراف</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.html">همبندی، یال برشی و راس برشی</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">گراف دو بخشی</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5.html">گشت، گذر، مسیر، اکسترمال</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.html">گشت، گذر، مسیر، اکسترمال</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">همبندی، یال برشی و راس برشی</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5.html">زیر گراف ها</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.html">گراف دو بخشی</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../2/index.html">درخت ها</a><ul>
@@ -247,7 +247,7 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; گراف دو بخشی</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; همبندی، یال برشی و راس برشی</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
@@ -263,29 +263,7 @@
 			        <div class="col-lg-12">
 				    
   <div class="section" id="id1">
-<h1>گراف دو بخشی<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
-<p>گراف دو بخشی گرافی است که بتوان رئوس آن را به دو دسته افراز کرد، به طوری که درون هر دسته
-هیچ یالی نباشد و تمام یال ها بین دسته ها باشند.</p>
-<div class="section" id="id2">
-<h2>ارتباط با دور فرد<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>یک گراف دوبخشی است اگر و تنها اگر دور فرد نداشته باشد. یک طرف این قضیه واضح است
-چون اگر یک گراف دور فرد داشته باشد، آن گاه در هر افراز به دو دسته، یک دسته بیش از
-نیمی از رئوس این دور را خواهد داشت و در نتیجه درون آن دسته یال پیدا می شود و یعنی
-گراف دو بخشی نیست.</p>
-<p>پس به سراغ قسمت دوم می رویم. اگر دور فرد نداشته باشد، می دانیم زوجیت مسیر های بین دو راس
-همواره ثابت است، برای اثبات این مطلب، فرض کنید بین دو راس هم مسیر زوج یالی و هم
-مسیر فرد یالی وجود داشته باشد. با چسباندن این دو مسیر به هم یک گشت فرد یالی به دست می آید
-و در قسمت قبل دیدیم که اگر گشت فرد یالی در گراف وجود داشته باشد، دور فرد نیز وجود دارد
-که این مطلب با فرض در تناقض است.</p>
-<p>در ادامه فرض می کنیم که گراف همبند است، زیرا اگر همبند نباشد، می توان حکم را برای
-مولفه های آن ثابت کرد و نتیجه گرفت که هر مولفه دو بخشی است و سپس بخش اول هر مولفه
-را به عنوان بخش یک و بخش دوم را به عنوان بخش دو معرفی می کنیم.</p>
-<p>یک راس دلخواه را در نظر بگیرید. چون گراف همبند است، این راس یا به هر کسی مسیر فرد یالی
-دارد و یا مسیر زوج یالی. رئوس با مسیر فرد را درون دسته یک و رئوس با مسیر زوج را
-درون دسته دو قرار می دهیم. برای این که نشان دهیم گراف با این دسته ها دو بخشی است، برهان
-خلف می زنیم و فرض می کنیم که درون یک دسته یال وجود داشته باشد. در آن صورت
-هم مسیر فرد از راس اولیه به راس ها وجود خواهد داشت و هم مسیر زوج، که تناقض است.</p>
-</div>
+<h1>همبندی، یال برشی و راس برشی<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
 </div>
 
 
@@ -300,10 +278,10 @@
             <div id="body-btn">
                 
                     
-                    <a href="3.html" style="float:right;" title="همبندی، یال برشی و راس برشی" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
+                    <a href="3.html" style="float:right;" title="گشت، گذر، مسیر، اکسترمال" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
-                    <a href="5.html" style="float:left;" title="گشت، گذر، مسیر، اکسترمال" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
+                    <a href="5.html" style="float:left;" title="زیر گراف ها" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
                     
                 
             </div>
