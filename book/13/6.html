@@ -55,6 +55,7 @@
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -123,6 +124,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../2/6.html">bfs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2/7.html">الگوریتم پیدا کردن قطر درخت</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2/8.html">الگوریتم های راس و یال برشی</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2/9.html">کارگاه پرورش ایده</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../3/index.html">گراف جهت‌دار</a><ul>
@@ -264,9 +266,10 @@
 <h1>Poset<a class="headerlink" href="#poset" title="لینک ثابت به این سر مقاله">¶</a></h1>
 <div class="section" id="id1">
 <h2>تعریف<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>به گراف جهت داری که دارای ویژگی های زیر باشد Poset (Partially ordered set) می گوییم.
-- هر راس به خودش یال دارد.
-- اگر <span class="math notranslate nohighlight">\(ab\)</span> و <span class="math notranslate nohighlight">\(bc\)</span> یال های این گراف باشد آنگاه <span class="math notranslate nohighlight">\(ac\)</span> هم یال این گراف است.</p>
+<p>به گراف جهت داری که دارای ویژگی زیر باشد Poset (Partially ordered set) می گوییم.</p>
+<ul class="simple">
+<li>اگر <span class="math notranslate nohighlight">\(ab\)</span> و <span class="math notranslate nohighlight">\(bc\)</span> یال های این گراف باشد آنگاه <span class="math notranslate nohighlight">\(ac\)</span> هم یال این گراف است.</li>
+</ul>
 <p>از آنجایی که بسیاری از مفاهیم ریاضی به poset تبدیل می شوند بررسی کردن آن ها مفید است.</p>
 <div class="section" id="id2">
 <h3>اولین مسئله<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h3>
@@ -291,19 +294,37 @@
 </div>
 <div class="section" id="id5">
 <h2>ماکسیمم پادزنجیر = مینیمم افراز به زنجیر<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>فرض کنید اندازه ماکسیمم پادزنجیر <span class="math notranslate nohighlight">\(L\)</span> باشد و یک ماکسیمم پادزنجیر دلخواه مثل <span class="math notranslate nohighlight">\(A\)</span> را در نظر بگیرید. قضیه های زیر برقرارند.
-- هر راس خارج از <span class="math notranslate nohighlight">\(A\)</span> مثل <span class="math notranslate nohighlight">\(u\)</span> را در نظر بگیرید. بین <span class="math notranslate nohighlight">\(u\)</span> و مجموعه <span class="math notranslate nohighlight">\(A\)</span> قطعا یال وجود دارد (در غیر اینصورت با ماکسیمم بودن <span class="math notranslate nohighlight">\(A\)</span> در تناقض است).
-- هر راس خارج از <span class="math notranslate nohighlight">\(A\)</span> مثل <span class="math notranslate nohighlight">\(u\)</span> را در نظر بگیرید. امکان ندارد هم از <span class="math notranslate nohighlight">\(u\)</span> به یکی از رئوس <span class="math notranslate nohighlight">\(A\)</span> یال جهت دار باشد هم از یکی از رئوس <span class="math notranslate nohighlight">\(A\)</span> به <span class="math notranslate nohighlight">\(u\)</span> یال جهت دار باشد. (زیرا در اینصورت طبق ویژگی poset یالی درون <span class="math notranslate nohighlight">\(A\)</span> خواهیم داشت.</p>
-<p>طبق حرف های بالا می توان راس های خارج <span class="math notranslate nohighlight">\(A\)</span> را به دو دسته <span class="math notranslate nohighlight">\(D, U\)</span> افراز کرد که هر راس های <span class="math notranslate nohighlight">\(U\)</span> به <span class="math notranslate nohighlight">\(A\)</span> <strong>یال جهت دار دارد</strong> و هر راس <span class="math notranslate nohighlight">\(D\)</span> از <span class="math notranslate nohighlight">\(A\)</span> <strong>یال جهت دار میگیرد</strong>.</p>
-<p>اگر هر دوی <span class="math notranslate nohighlight">\(D,U\)</span> تهی باشند که مسئله حل است. حالا حالت های زیر را در نظر بگیرید.</p>
-<div class="section" id="d-u">
-<h3>اگر هر دوی <span class="math notranslate nohighlight">\(D,U\)</span> ناتهی باشند<a class="headerlink" href="#d-u" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>در اینصورت با استقرا روی تعداد راس ها یک بار <span class="math notranslate nohighlight">\(A \cup D\)</span> و بار دیگر <span class="math notranslate nohighlight">\(A \cup U\)</span> را در نظر بگیرید. در هر کدام از آنها به صورت استقرایی افرازی به زنجیر ها پیدا کنید که برابر با ماکسیمم پادزنجیر (یا همان <span class="math notranslate nohighlight">\(L\)</span>) است. از آنجایی که در <span class="math notranslate nohighlight">\(A \cup D\)</span> رئوس <span class="math notranslate nohighlight">\(A\)</span> یال ورودی ندارند پس ابتدای تمام زنجیر ها (در افراز مینیمم به زنجیر ها) در <span class="math notranslate nohighlight">\(A\)</span> است. مشابها اگر <span class="math notranslate nohighlight">\(A \cup U\)</span> را در نظر بگیرید انتهای تمام زنجیر ها در <span class="math notranslate nohighlight">\(A\)</span> است. حالا گراف اصلی را اینگونه افراز می کنیم که به ازای هر راس <span class="math notranslate nohighlight">\(A\)</span> مثل <span class="math notranslate nohighlight">\(v\)</span> زنجیری که در <span class="math notranslate nohighlight">\(A \cup U\)</span> به <span class="math notranslate nohighlight">\(v\)</span> ختم می شود را با زنجیری که در <span class="math notranslate nohighlight">\(A \cup D\)</span> از <span class="math notranslate nohighlight">\(v\)</span> شروع می شود را اجتماع گرفته و به عنوان یک زنجیر در افراز گراف اصلی قرار می دهیم. در اینصورت کل گراف به <span class="math notranslate nohighlight">\(L\)</span> زنجیر افراز می شود.</p>
-</div>
+<p>مثل قبل می توان ابتدا به این نتیجه رسید که مینیمم افراز به زنجیر ها حداقل به اندازه ماکسیمم پادزنجیر است. (زیرا در هر زنجیر ماکسیمم یکی از راس های پادزنجیر را می توانیم استفاده کنیم). حالا می خواهیم برای اثبات تساوی یک مثال ارائه دهیم.</p>
+<p>در مورد مسئله افراز راس های گراف به مینیمم تعداد مسیر در بخش 4 صحبت کردیم. کافی بود که گراف را به فرم دوبخشی در بیاوریم و ماکسیمم تطابق را پیدا کنیم. حالا می دانیم که در poset ها هر زنجیر معادل با یک مسیر است. پس مسئله مینیمم افراز به زنجیر با پیدا کردن مینیمم افراز راس ها به مسیر ها حل می شود.</p>
 <div class="section" id="id6">
-<h3>اگر یکی از <span class="math notranslate nohighlight">\(D,U\)</span> تهی باشند<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>بدون کم شدن از کلیت اثبات فرض کنید <span class="math notranslate nohighlight">\(U\)</span> تهی باشد.</p>
-<p>not yet</p>
+<h3>مسیر شبه افزایشی<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>پس حالا فرض کنید poset ما یک گراف جهت دار به اسم <span class="math notranslate nohighlight">\(P\)</span> باشد. گراف دوبخشی معادل آن را <span class="math notranslate nohighlight">\(G\)</span> بنامید. یک مینیمم افراز به مسیر ها در <span class="math notranslate nohighlight">\(P\)</span> را در نظر بگیرید. یال های جهت داری که در مسیر هایمان وجود دارد را مجموعه <span class="math notranslate nohighlight">\(M\)</span> بنامید. می دانیم که یال های <span class="math notranslate nohighlight">\(M\)</span> معادل با یال های یک تطابق بیشینه در <span class="math notranslate nohighlight">\(G\)</span> می باشد. شرط لازم و کافی برای بیشینه بودن یک تطابق این بود که مسیر افزایشی نداشته باشیم. بررسی می کنیم که معادل یک مسیر افزایشی در گراف جهت دارمان به چه شکل خواهد بود. یک راس آزاد در بخش اول <span class="math notranslate nohighlight">\(G\)</span> معادل است با راسی در <span class="math notranslate nohighlight">\(P\)</span> که پایان یک مسیر است. یک راس آزاد در بخش دوم <span class="math notranslate nohighlight">\(G\)</span> معادل است با راسی که در <span class="math notranslate nohighlight">\(P\)</span> شروع یک مسیر است.</p>
+<p>پس می خواهیم معادل یک مسیر افزایشی که در <span class="math notranslate nohighlight">\(G\)</span> که از بخش اول شروع می شود و به بخش دوم می رود را در گراف <span class="math notranslate nohighlight">\(P\)</span> بفهمیم. <strong>مسیر شبه افزایشی</strong> در <span class="math notranslate nohighlight">\(P\)</span> را اینطور تعریف می کنیم :</p>
+<p>دنباله راس های <span class="math notranslate nohighlight">\(u_1,u_2,...,u_{2k+1}\)</span> به طوریکه <span class="math notranslate nohighlight">\(u_1\)</span> ابتدای و <span class="math notranslate nohighlight">\(u_k\)</span> انتهای یک مسیر انتخاب شده در افراز مینیمم باشد. همچنین به ازای <span class="math notranslate nohighlight">\(u_{2i-1},u_{2i}\)</span> در <span class="math notranslate nohighlight">\(P\)</span> یال <span class="math notranslate nohighlight">\(u_{2i-1}u_{2i}\)</span> موجود باشد و عضو <span class="math notranslate nohighlight">\(M\)</span> نباشد و به ازای <span class="math notranslate nohighlight">\(u_{2i},u_{2i+1}\)</span> یال <span class="math notranslate nohighlight">\(u_{2i+1}u_{2i}\)</span> در <span class="math notranslate nohighlight">\(M\)</span> آمده باشد! (به عوض شدن ترتیب دقت کنید).</p>
+<p>پس حالا می توان فرض کرد که راس های <span class="math notranslate nohighlight">\(P\)</span> را به کمینه تعداد مسیر ها افراز کردیم به طوریکه در <span class="math notranslate nohighlight">\(P\)</span> مسیر شبه افزایشی وجود ندارد.</p>
+</div>
+<div class="section" id="id7">
+<h3>الگوریتم<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>حالا هدف ما این است که از هر کدام از زنجیر ها دقیقا یک راس را انتخاب کنیم به صورتیکه راس های انتخاب شده پادزنجیر باشند. در اینصورت می توانیم به حالت تساوی برسیم.</p>
+<p>الگوریتم زیر را در نظر بگیرید :</p>
+<ul class="simple">
+<li>راس های اول مسیر را در نظر بگیرید. اگر بین آنها هیچ یالی نبود تنها کافیست آنها را انتخاب کنید.‌ اگر نه یعنی یالی مثل <span class="math notranslate nohighlight">\(uv\)</span> وجود دارد که <span class="math notranslate nohighlight">\(u,v\)</span> هر دو اول دو مسیر در افرازمان هستند.</li>
+<li>حالا باید راس <span class="math notranslate nohighlight">\(u\)</span> را حذف کنیم. زیرا که با توجه به اینکه <span class="math notranslate nohighlight">\(u\)</span> به <span class="math notranslate nohighlight">\(v\)</span> یال دارد و <span class="math notranslate nohighlight">\(v\)</span> اول یک مسیر است پس طبق خاصیت poset می توان نتیجه گرفت <span class="math notranslate nohighlight">\(u\)</span> به تمام راس های مسیر <span class="math notranslate nohighlight">\(v\)</span> یال دارد پس اگر <span class="math notranslate nohighlight">\(u\)</span> را در پادزنجیر انتخاب کنیم هیچکدام از راس های مسیری که <span class="math notranslate nohighlight">\(v\)</span> اول آن است را نمی توانیم انتخاب کنیم پس نمی توانیم به هدفمان که انتخاب یک راس از هر مسیر است برسیم. پس <span class="math notranslate nohighlight">\(u\)</span> را حذف کنید.</li>
+</ul>
+<p>آنقدر این فرایند را ادامه دهید که بین راس های اول مسیر (بعد از حذف ها) هیچ یالی نباشد و یک پادزنجیر به اندازه تعداد مسیر ها بیابیم. تنها حالتی که کار ما را خراب می کند این است که یک مسیر به طور کامل حذف شود. (در این صورت پادزنجیر به اندازه تعداد مسیر های اولیه نخواهد بود).</p>
+</div>
+<div class="section" id="id8">
+<h3>هیچ مسیری کاملا حذف نمی شود<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>پس ثابت می کنیم که هیچکدام از مسیر ها طی الگوریتم به طور کامل حذف نمی شوند. ایده اثبات این است که با برهان خلف فرض کنیم یک مسیر کامل حذف شده و سپس یک مسیر شبه افزایشی در گراف اولیه پیدا کنیم که با مینیمم بودن افرازمان در تناقض خواهد بود.</p>
+<p>به ازای هر راس <span class="math notranslate nohighlight">\(a\)</span> به راسی مثل <span class="math notranslate nohighlight">\(b\)</span> پدر راس <span class="math notranslate nohighlight">\(a\)</span> می گوییم اگر در الگوریتم <span class="math notranslate nohighlight">\(a\)</span> به خاطر یال <span class="math notranslate nohighlight">\(ab\)</span> حذف شده باشد. یعنی در مرحله ای از الگوریتم <span class="math notranslate nohighlight">\(a,b\)</span> هر دو اول دو مسیر باشند و یال <span class="math notranslate nohighlight">\(ab\)</span> عضو <span class="math notranslate nohighlight">\(P\)</span> باشد و طبق الگوریتم بالا ما راس <span class="math notranslate nohighlight">\(a\)</span> را حذف کنیم.</p>
+<p>به ازای هر راس <span class="math notranslate nohighlight">\(a\)</span> مسیری که <span class="math notranslate nohighlight">\(a\)</span> در آن است را در نظر بگیرید و راسی که در مسیر قبل از <span class="math notranslate nohighlight">\(a\)</span> است (مثل <span class="math notranslate nohighlight">\(b\)</span>) را رئیس <span class="math notranslate nohighlight">\(a\)</span> بنامید. (یعنی <span class="math notranslate nohighlight">\(ba\)</span> یالی عضو <span class="math notranslate nohighlight">\(M\)</span> باشد).</p>
+<p>توجه کنید که به ازای هر راس <span class="math notranslate nohighlight">\(a\)</span> زمان حذف شدن <span class="math notranslate nohighlight">\(a\)</span> بعد از زمان حذف شدن رئیس پدر <span class="math notranslate nohighlight">\(a\)</span> است. زیرا زمانی که <span class="math notranslate nohighlight">\(a\)</span> حذف شده توسط پدرش باید اول یک مسیر باشد. این یعنی ریئس پدر (در صورت وجود) قبل از این حذف شده است.</p>
+<p>حالا فرض کنید در مرحله ای راس <span class="math notranslate nohighlight">\(a\)</span> حذف شود که انتهای یک مسیر از افرازمان است. از راس <span class="math notranslate nohighlight">\(a\)</span> شروع کنید و یک مهره روی <span class="math notranslate nohighlight">\(a\)</span> بگذارید. در هر مرحله اگر مهره روی <span class="math notranslate nohighlight">\(u\)</span> باشد ابتدا مهره را به پدر <span class="math notranslate nohighlight">\(u\)</span> ببرید اگر پدر <span class="math notranslate nohighlight">\(u\)</span> اول یکی از مسیر ها باشد که مسیر شبه افزایشیمان را پیدا کردیم در غیر اینصورت مهره را به رئیس پدر <span class="math notranslate nohighlight">\(u\)</span> ببرید. به دو مورد توجه کنید :</p>
+<ul class="simple">
+<li>فرایند پایان پذیر است زیرا طبق آنچه گفتیم بعد از هر مرحله مهره روی راسی قرار می گیرد که زمان حذف شدن آن در الگوریتم کمتر است.</li>
+<li>در هر مرحله راسی که مهره روی آن قرار دارد پدر دارد. زیرا که در الگوریتممان این راس زمانی حذف می شود (زیرا که زمان حذف شدن آن از <span class="math notranslate nohighlight">\(a\)</span> کم تر است و گفتیم <span class="math notranslate nohighlight">\(a\)</span> هم حذف می شود).</li>
+</ul>
+<p>پس توانستیم یک مسیر شبه افزایشی پیدا کنیم. همانطور که گفتیم تناقض حاصله نشان می دهد هیچ مسیری کاملا حذف نمی شود!</p>
 </div>
 </div>
 </div>
@@ -346,7 +367,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در آوریل 21, 2020.
+                        آخرین به روز رسانی در آوریل 25, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
