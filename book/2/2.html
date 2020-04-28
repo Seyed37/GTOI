@@ -272,16 +272,81 @@
 <p>سنتروید چیست؟‌(در حالت کلی و در درخت)</p>
 <p>خروج از مبدا چیست؟</p>
 <p>بیشترین فاصله از هر راس یکی از دو سر قطر است.</p>
-<p>بیشترین / کمترین مجموع فاصله مربوط به چه درختی است؟</p>
-<p>حذف یال T و اضافه کردن از <a href="#id2"><span class="problematic" id="id3">`</span></a>T</p>
-<p>افراز درخت 2k راس فردی به k مسیر دو به دو مجزا.</p>
-<p>افراز یال های درخت به برگ/۲ تا مسیر نه لزوما مجزا.</p>
-<p>جا کردن درخت n راسی توی گراف delta &gt;= n</p>
+<div class="section" id="id2">
+<h2>مجموع فاصله ها<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید در مسئله ای هدف مینیمم یا ماکسیمم کردن مجموع فاصله بین هر دو راس است فرض کنید به این مجموع چگالی گراف بگوییم. به صورت شهودی هر چه چگالی گراف کمتر باشد گراف جمع و جور تر و هر چه چگالی گراف بیشتر باشد گراف پهن و پخش تر است.</p>
+<p>در ضمن برای اینکه فاصله تعریف شده باشد فرض کنید موضوع بحث ما گراف های همبند می باشد.</p>
+<div class="section" id="id3">
+<h3>کمینه کردن چگالی گراف<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>فاصله بین دو راس حداقل 1 است. و در گراف <span class="math notranslate nohighlight">\(K_n\)</span> فاصله بین هر دو راس دقیقا 1 است. پس کمترین چگالی ممکن در گراف <span class="math notranslate nohighlight">\(K_n\)</span> به دست می آید که برابر با <span class="math notranslate nohighlight">\(n \choose 2\)</span> می باشد.</p>
+<p>حالا اگر دامنه بحث را به درخت ها محدود کنیم مسئله کمی سخت تر می شود. اما همچنان می توان اینگونه استنتاج کرد.</p>
+<ul class="simple">
+<li>دقیقا <span class="math notranslate nohighlight">\(n-1\)</span> جفت از راس ها هستند که فاصله اشان دقیقا 1 است. زیرا درخت <span class="math notranslate nohighlight">\(n-1\)</span> یال دارد.</li>
+<li>هر جفتی از راس ها که به همدیگر یال ندارند دارای فاصله حداقل 2 هستند.</li>
+</ul>
+<p>در نتیجه کمترین چگالی ممکن حداقل <span class="math notranslate nohighlight">\(2 \times {n \choose 2} - (n-1)\)</span> می باشد و تنها مثالی که در حالت این کران صدق می کند حالتی است که فاصله بین هر دو راس <strong>حداکثر</strong> برابر با 2 است. تنها درختی که این ویژگی را دارد ستاره می باشد (همانطور که در عکس می بینید). زیرا که اگر در این گراف دو برگ باشند که پدر مشترک نداشته باشند در اینصورت فاصله آنها حداقل 3 خواهد بود.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/star.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/star.png" style="width: 50%;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h3>بیشینه کردن چگالی گراف<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>در این حالت توجه کنید که اگر یالی را حذف کنیم و حذف این یال گراف را ناهمبند نکند باید اینکار را بکنیم. زیرا که حذف یال باعث بیشتر شدن چگالی می شود (چرا؟). پس گرافی که چگالی آن بیشینه است را باید در میان درخت ها جست و جو کرد (زیرا همانطور که گفتیم همه یال های آن باید برشی باشد).</p>
+<p>حالا یک راس خاص مثل <span class="math notranslate nohighlight">\(u\)</span> را در نظر بگیرید. ادعا می کنیم جمع فواصل همه راس ها از <span class="math notranslate nohighlight">\(u\)</span> حداکثر برابر با <span class="math notranslate nohighlight">\(n \choose 2\)</span> است.</p>
+<p>برای اثبات فرض کنید درخت را از <span class="math notranslate nohighlight">\(u\)</span> آویزان کرده ایم و به ازای هر ارتفاع می دانیم که چند راس در این ارتفاع قرار دارند و بیشترین ارتفاع <span class="math notranslate nohighlight">\(H\)</span> باشد. در اینصورت به ازای هر ارتفاعی از 0 تا <span class="math notranslate nohighlight">\(H\)</span> حداقل یک راس از این ارتفاع باید داشته باشیم. حالا اگر حداقل دو راس در یک ارتفاع داشتیم می توان یکی از آن ها را به ارتفاع بالاتر برد و در اینصورت جمع ارتفاع ها بیشتر خواهد شد. با تکرار این فرایند به حالتی می رسیم که در هر ارتفاع 0 تا <span class="math notranslate nohighlight">\(n-1\)</span> دقیقا یک راس باشد (یعنی درخت یک مسیر شده) که در این حالت جمع فاصله ها از <span class="math notranslate nohighlight">\(u\)</span> برابر با <span class="math notranslate nohighlight">\(1 + 2 + ... + (n-1) = {n \choose 2}\)</span> خواهد بود. پس ثابت کردیم که جمع فاصله ها از هر راس <span class="math notranslate nohighlight">\(u\)</span> حداکثر <span class="math notranslate nohighlight">\(n \choose 2\)</span> است.</p>
+<p>پس حالا برای اینکه به یک کران برسیم در هر مرحله یک <strong>برگ</strong> را از درخت حذف کنید و جمع فاصله ها از این برگ را محاسبه کنید. جمع تمام مقادیر برابر با چگالی گراف خواهد بود که طبق آنچه گفتیم حداکثر <span class="math notranslate nohighlight">\(\sum\limits_{i=1}^{n} {i \choose 2} = {{n+1} \choose 3}\)</span> خواهد بود (طبق اتحاد چوشی چی).</p>
+<p>می توان نتیجه گرفت تنها گرافی که در حالت تساوی این کران صدق می کند گراف مسیر است.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>درخت پشتیبانی<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید یک شبکه ارتباطی داریم که <span class="math notranslate nohighlight">\(n\)</span> شهر را به هم وصل می کنند. برای اطمینان یک شبکه ارتباطی پشتیبانی هم آماده کرده ایم که در صورت ایجاد اختلال در شبکه اصلی از شبکه پشتیبانی استفاده کنیم تا ارتباط قطع نشود.</p>
+<p>به زبان گراف دو درخت <span class="math notranslate nohighlight">\(n\)</span> راسی <span class="math notranslate nohighlight">\(T\)</span> و <span class="math notranslate nohighlight">\(T ^ {\prime}\)</span> داریم. می خواهیم ثابت کنیم در صورتیکه یکی از یال های <span class="math notranslate nohighlight">\(T\)</span> مثل <span class="math notranslate nohighlight">\(uv\)</span> قطع شوند می توان یکی از یال های <span class="math notranslate nohighlight">\(T ^ {\prime}\)</span> مثل <span class="math notranslate nohighlight">\(u^{\prime}v^{\prime}\)</span> را به درخت <span class="math notranslate nohighlight">\(T\)</span> اضافه کرد که ساختار همچنان همبند باقی بماند.</p>
+<p>پس فرض کنید <span class="math notranslate nohighlight">\(uv\)</span> را از <span class="math notranslate nohighlight">\(T\)</span> حذف کردیم در اینصورت درخت ما دارای دو مولفه همبندی خواهد شد یکی از مولفه ها را آبی و دیگری را قرمز در نظر بگیرید. حالا می توان در درخت <span class="math notranslate nohighlight">\(T^{\prime}\)</span> مسیری بین <span class="math notranslate nohighlight">\(u,v\)</span> یافت.
+در این مسیر یالی وجود خواهد داشت که یک سر آن آبی و یک سر آن قرمز باشد (چرا؟). حالا اگر این یال <span class="math notranslate nohighlight">\(u^{\prime}v^{\prime}\)</span> باشد می توانیم این یال را به <span class="math notranslate nohighlight">\(T\)</span> اضافه کنیم و دوباره آن را همبند کنیم!</p>
+</div>
+<div class="section" id="id6">
+<h2>افراز درخت به مسیر ها<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>درخت <span class="math notranslate nohighlight">\(T\)</span> را در نظر بگیرید. در این قسمت هدف ما این است که یال های این درخت را به کمترین تعداد تعدادی مسیر افراز کنیم. برای شهود بهتر فرض کنید یال های مسیر ها را یکی یکی از درخت حدف می کنیم تا به گرافی بدون یال برسیم.</p>
+<p>اول از همه توجه کنید که بعد از حذف هر مسیر تنها زوجیت درجه دو سر مسیر تغییر می کند همچنین در انتها درجه تمام راس ها زوج (صفر) خواهد بود. پس یک راس درجه فرد باید فرد بار و یک راس درجه زوج باید زوج بار به عنوان یک سر مسیر انتخاب شود. پس اگر تعداد راس های درجه فرد درخت <span class="math notranslate nohighlight">\(X\)</span> باشد آنگاه حداقل <span class="math notranslate nohighlight">\(\frac X 2\)</span> مسیر نیاز داریم. (می دانیم که تعداد راس های درجه فرد هر گرافی زوج است پس <span class="math notranslate nohighlight">\(X\)</span> زوج است).</p>
+<p>حالا اگر در هر مرحله مسیر بین دو راس درجه فرد را حذف کنیم می توانیم به حالت بهینه برسیم! فقط باید توجه داشته باشیم که دو راس درجه فرد ما مربوط به یک مولفه همبندی باشد.</p>
+<p>حالا سوالی که پیش می آید این است که درخت بودن طی این فرایند به ما چه کمکی کرد؟</p>
+<p>در نهایت ما از این موضوع استفاده کردیم که اگر درختی راس درجه فرد نداشته باشد یالی ندارد (اما این قضیه در گراف به صورت کلی برقرار نیست). چرا که اگر تعداد راس های گراف حداقل دو باشد در اینصورت برگی خواهد داشت که درجه آن 1 (و فرد) است.</p>
+</div>
+<div class="section" id="id7">
+<h2>پوشاندن یال های درخت با مسیر ها<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>در ابن قسمت می خواهیم کمترین تعداد مسیر را پیدا کنیم که اجتماع آن ها کل یال های <span class="math notranslate nohighlight">\(T\)</span> را شامل شود. این مسئله مشابه حالت قبل است با این تفاوت که در حالت قبل یال ها را به مسیر ها افراز می کردیم یعنی هر یال متعلق به یک مسیر بود. در اینجا این آزادی را داریم که یک مسیر چند بار یالی را بپوشاند. می توان نتیجه گرفت که جواب این مسئله کمتر از مسئله قبل است.</p>
+<p>در نگاه اول متوجه می شوید که چون طولانی کردن مسیر ها ضرری با ما نمی زند پس حالت بهینه ای وجود دارد که دو سر هر مسیر برگ باشد!</p>
+<p>از طرف دیگر به ازای هر برگ یالی که از این برگ به راس مجاورش می رود را در نظر بگیرید. هر مسیر حداکثر 2 تا از این یال ها را می پوشاند. پس اگر <span class="math notranslate nohighlight">\(X\)</span> تا برگ داشته باشیم حداقل <span class="math notranslate nohighlight">\(\frac X 2\)</span> تا مسیر نیاز داریم حالا تلاش می کنیم تا این کران را بر آورده کنیم. یعنی اگر <span class="math notranslate nohighlight">\(X\)</span> زوج باشد با <span class="math notranslate nohighlight">\(\frac X 2\)</span> مسیر و اگر <span class="math notranslate nohighlight">\(X\)</span> فرد بود با <span class="math notranslate nohighlight">\(\frac {X+1} 2\)</span> مسیر یال های درخت را بپوشانیم.</p>
+<p>پس سعی می کنیم در هر مرحله پس از انتخاب مسیر درختمان را به درختی تبدیل کنیم که تعداد برگ هایش دو تا کمتر است(البته در حالتی که <span class="math notranslate nohighlight">\(X\)</span> فرد باشد مرحله آخر نمی توانیم اینکار را بکنیم). اگر بتوانیم این کار را بکنیم تعداد مسیر هایی که انتخاب کردیم نصف تعداد برگ ها خواهد بود همانطور که می خواستیم.</p>
+<p>دو برگ دلخواه مثل <span class="math notranslate nohighlight">\(u,v\)</span> را در نظر بگیرید و درخت را از این مسیر آویزان کنید. ابتدا این مسیر را انتخاب کنید (که یال های بین <span class="math notranslate nohighlight">\(u,v\)</span> را بپوشاند). فرض کنید راس های مسیر ما <span class="math notranslate nohighlight">\(a_1,...,a_k\)</span> باشد حالا درختی می سازیم که به جای <span class="math notranslate nohighlight">\(a_1,...,a_k\)</span> یک راس دارد! بین این راس و یک راس مثل <span class="math notranslate nohighlight">\(w\)</span> یال است اگر و تنها اگر بین <span class="math notranslate nohighlight">\(w\)</span> و یکی از <span class="math notranslate nohighlight">\(a_1,...,a_k\)</span> یال باشد.‌ (به صورت شهودی مثل این است که کل راس های مسیر را فشرده کردیم و به یک راس تبدیل کردیم). حالا هر مسیر در گراف جدیدمان معادل با یک مسیر در گراف اولیه است و الان تنها کافیست کل یال ها در درخت جدید را با مسیر ها بپوشانیم!</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/compress.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/compress.png" style="width: 50%;" /></a>
+</div>
+</div></blockquote>
+<p>پس در هر مرحله یک مسیر که دو سر آن برگ است را فشرده می کنیم و به صورت یک راس در می آوریم. در هر مرحله تعداد برگ های گراف جدیدمان دو تا کم می شود مگر اینکه راسی که جدید اضافه کردیم (راس فشرده) برگ باشد. در صورتی این اتفاق می افتد که راس های مسیر بین <span class="math notranslate nohighlight">\(u,v\)</span> همه درجه 2 باشند به جز یکی از آنها که باید درجه 3 باشد. به <span class="math notranslate nohighlight">\(u,v\)</span> که مسیر بین آن چنین خاصیتی داشته باشد یک زوج ناسازگار می گوییم.</p>
+<p>پس اگر بتوانیم در هر مرحله دو برگ <span class="math notranslate nohighlight">\(u,v\)</span> را طوری انتخاب کنیم که زوج ناسازگار نباشند این کار را می کنیم (‌که پس از فشرده سازی از تعداد برگ ها 2 تا کم می کند). اگر نتوانستیم اینکار را بکنیم چه؟ در اینصورت ادعا می کنیم تنها یک راس درجه 3 داریم و باقی راس ها دارای درجه 1 یا 2 هستند (چرا؟). در اینصورت همانطور که در شکل می بینید درخت ما دقیقا 3 برگ خواهد داشت و می توانیم آن را با 2 مسیر بپوشانیم.</p>
+<blockquote>
+<div><div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/sepaye.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/sepaye.png" style="width: 50%;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h2>درخت چپانی<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید درختی <span class="math notranslate nohighlight">\(n\)</span> راسی به نام <span class="math notranslate nohighlight">\(T\)</span> داریم. همچنین گرافی مثل <span class="math notranslate nohighlight">\(G\)</span> داریم که <span class="math notranslate nohighlight">\(\delta(G) \geq n-1\)</span>. می خواهیم ثابت کنیم زیرمجموعه ای از یال های <span class="math notranslate nohighlight">\(G\)</span> وجود دارد که <span class="math notranslate nohighlight">\(T\)</span> را بسازد. (به صورت شهودی یک درخت <span class="math notranslate nohighlight">\(T\)</span> در گراف <span class="math notranslate nohighlight">\(G\)</span> بتوان پیدا کرد).</p>
+<p>یک برگ دلخواه مثل <span class="math notranslate nohighlight">\(u\)</span> که تنها مجاور آن <span class="math notranslate nohighlight">\(v\)</span> است را در نظر بگیرید و <span class="math notranslate nohighlight">\(u\)</span> را از درخت حذف کنید! سپس به صورت استقرایی درخت <span class="math notranslate nohighlight">\(T-u\)</span> را در <span class="math notranslate nohighlight">\(G\)</span> پیدا کنید. حالا می خواهیم یال <span class="math notranslate nohighlight">\(uv\)</span> را به درختمان اضافه کنیم. فرض کنید راس <span class="math notranslate nohighlight">\(v\)</span> در گراف <span class="math notranslate nohighlight">\(G\)</span> متناظر با <span class="math notranslate nohighlight">\(v^{\prime}\)</span> شده باشد. حالا کافیست از بین مجاور های <span class="math notranslate nohighlight">\(v^{\prime}\)</span> راسی را انتخاب کنید که قبلا با هیچ راس درخت متناظر نشده است. سپس می توان این راس را متناظر با <span class="math notranslate nohighlight">\(u\)</span> قرار داد که فرض استقرای ما را ثابت می کند.</p>
+<p>برای یافتن چنین راسی کافیست از فرض <span class="math notranslate nohighlight">\(\delta(G) \geq n-1\)</span> استفاده کنیم. پس <span class="math notranslate nohighlight">\(v^{\prime}\)</span> حداقل <span class="math notranslate nohighlight">\(n-1\)</span> مجاور دارد و حداکثر <span class="math notranslate nohighlight">\(n-2\)</span> تا از آن ها قبلا به راس های درخت متناظر شده اند. پس یکی از مجاور های <span class="math notranslate nohighlight">\(v\)</span> تا حالا به راس های درخت متناظر نشده که حالا می توانیم همانطور که گفتیم <span class="math notranslate nohighlight">\(u\)</span> را به آن متناظر کنیم.</p>
+<p>این مسئله به منظور آشنایی شما با ساختار استقرا پذیر درخت مطرح شد. دیدید که چطور می توان یک برگ از درخت را حذف کرد و فرض استقرا را برای درخت باقی مانده به کار برد.</p>
 <p>درخت ها به عنوان اسکلت گراف</p>
 <p>درخت فراگیر</p>
 <p>پاک کردن هر یال مولفه ها رو زیاد میکنه. اضافه کردن یک یال دقیقا یک دور ایجاد می کنه.</p>
 <p>min(diam(G, G`)) &lt;= 3</p>
 <p>not yet</p>
+</div>
 </div>
 
 
@@ -322,7 +387,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در آوریل 28, 2020.
+                        آخرین به روز رسانی در آوریل 29, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
