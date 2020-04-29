@@ -265,19 +265,94 @@
 				    
   <div class="section" id="id1">
 <h1>فاصله در درخت و گراف<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
-<p>دو راس <span class="math notranslate nohighlight">\(u,v\)</span> در گراف را در نظر بگیرید. فاصله این دو راس طول (تعداد یال ها) کوتاه ترین مسیر بین این دو راس تعریف می شود. در درخت ها صحبت در مورد فاصله به مراتب راحت تر از گراف در حالت کلی است چرا که در درخت مسیر بین هر دو راس یکتا است.</p>
-<p>قطر چیست؟</p>
-<p>شعاع چیست؟</p>
-<p>مرکز چیست؟</p>
-<p>سنتروید چیست؟‌(در حالت کلی و در درخت)</p>
-<p>خروج از مبدا چیست؟</p>
-<p>بیشترین فاصله از هر راس یکی از دو سر قطر است.</p>
+<p>در این بخش با معرفی فاصله در گراف به بررسی تعریف های مرتبط با فاصله چه در حالت کلی و چه در حالت خاص آن(یعنی در درخت) میپردازیم. در درخت ها صحبت در مورد فاصله به مراتب راحت تر از گراف در حالت کلی است چرا که همانطور که در بخش قبل بررسی کردیم در درخت مسیر بین هر دو راس یکتا است.</p>
 <div class="section" id="id2">
-<h2>مجموع فاصله ها<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<h2>فاصله چیست؟<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>دو راس <span class="math notranslate nohighlight">\(u,v\)</span> در گراف را در نظر بگیرید. فاصله این دو راس طول (تعداد یال ها) کوتاه ترین مسیر بین این دو راس تعریف می شود.</p>
+<p>نکته : اگر دو راس در دو مولفه همبندی جدا باشند فاصله آن ها بینهایت است.</p>
+<p>فاصله دو راس <span class="math notranslate nohighlight">\(u,v\)</span> را به صورت <span class="math notranslate nohighlight">\(d(u,v)\)</span> نشان میدهند.</p>
+</div>
+<div class="section" id="id3">
+<h2>قطر<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>تعریف : قطر گراف برابر است با <span class="math notranslate nohighlight">\(Max_u,v d(u,v)\)</span> یا به عبارتی ماکسیمم فاصله دو به دو راس ها در گراف.</p>
+<p>توجه کنید که قطر بلندترین مسیر نیست و در واقع بلند ترین <strong>فاصله</strong> است ولی در درخت بلندترین مسیر و قطر یکی است زیرا اگر دو سر بلندترین مسیر را بگیرید
+چون بین آن دو دقیقا یک مسیر وجود دارد و بلندترین مسیر , آن مسیر است در واقع طول بلندترین مسیر برابر فاصله آن دو راس است پس قطر برابر بلندترین مسیر است.
+تفاوت بلند ترین مسیر و قطر جایی به چشم می اید که در حالت کلی  پیدا کردن قطر یک گراف از اوردر چند جمله ای حل میشود ولی پیدا کردن بلند ترین مسیر یک مسئله <span class="math notranslate nohighlight">\(np\)</span> است.</p>
+</div>
+<div class="section" id="id4">
+<h2>خروج از مرکز یک راس<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>اگر نام راس را <span class="math notranslate nohighlight">\(u\)</span> در نظر بگیریم خروج از مرکز <span class="math notranslate nohighlight">\(u\)</span> برابر <span class="math notranslate nohighlight">\(Max_v d(u,v)\)</span> یا به عبارتی فاصلش با راسی که از ان بیشترین فاصله را دارد میشود.</p>
+<p>گراف اگر درخت باشد و درخت را از <span class="math notranslate nohighlight">\(u\)</span> اویزان کنیم خروج از مرکز <span class="math notranslate nohighlight">\(u\)</span> میشود ارتفاع راسی که بیشترین ارتفاع را در درخت دارد.</p>
+<p>خروج از مرکز راس <span class="math notranslate nohighlight">\(u\)</span> را با :math:'varepsilon{(u)}` نشان میدهند.</p>
+</div>
+<div class="section" id="id5">
+<h2>قضیه 2.2.1<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>صورت قضیه : در درخت خروج از مرکز یک راس برابر ماکسیمم فاصله آن از دو سر قطر است.</p>
+<p>اثبات : برهان خلف میزنیم. فرض کنید راس ما <span class="math notranslate nohighlight">\(A\)</span>  است و دو سر قطر هم راس های <span class="math notranslate nohighlight">\(u , v\)</span> هستند . و راسی که فاصله اش با
+<span class="math notranslate nohighlight">\(A\)</span> برابر 'varepsilon (A)` است <span class="math notranslate nohighlight">\(B\)</span> نام دارد . واضح هم است <span class="math notranslate nohighlight">\(A\)</span> اگر یکی از دو سر قطر بود حکم درست است پس فرض میکنیم هیج یک از دو سر قطر نیست.</p>
+<p>درخت را از <span class="math notranslate nohighlight">\(A\)</span> آویزان میکنیم. فرض کنید راس <span class="math notranslate nohighlight">\(Mh\)</span> راسی با بیشترین ارتفاع باشد که سه راس <span class="math notranslate nohighlight">\(B,u,v\)</span> داخل زیر درخت آن هستند.
+چون <span class="math notranslate nohighlight">\(Mh\)</span> بیشترین ارتفاع از پدر های مشترک این سه راس دارد یعنی یا <span class="math notranslate nohighlight">\(Mh = B\)</span> است یا بچه ای از <span class="math notranslate nohighlight">\(Mh\)</span> که جد <span class="math notranslate nohighlight">\(B\)</span> است در زیر درختش حداقل یکی از دو راس
+<span class="math notranslate nohighlight">\(u , v\)</span> را ندارد.که یعنی <span class="math notranslate nohighlight">\(Mh = lca(u,B) or lca(v,B)\)</span> .بدون از دست دادن کلیت مسئله فرض کنید <span class="math notranslate nohighlight">\(Mh = lca(u,B)\)</span>. حال ثابت میکنیم <span class="math notranslate nohighlight">\(d(B,u) &gt; d(u,v)\)</span>
+با اثبات این بخش با تناقض بدست امده در طول قطر قضیه اثبات میشود.</p>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(d(B,u) &gt; d(u,v)\)</span></li>
+<li><span class="math notranslate nohighlight">\(Mh = lca(B,u) --&gt; h(B) + h(u) - 2*h(Mh) &gt; d(u,v)\)</span></li>
+<li>اگر <span class="math notranslate nohighlight">\(Mh != lca(u,v)\)</span> هم باشد باز جد مشترکشان است پس <span class="math notranslate nohighlight">\(d(u,v) &lt;= h(u) + h(v) - 2*h(Mh)\)</span></li>
+<li>در نتیجه :math:` h(B) + h(u) - 2*h(Mh) &gt; h(u) + h(v) - 2*h(Mh) --&gt; h(B) &gt; h(u)` که فرض سوال است پس عبارت درست است. با تناقض بدست امده قضیه اثبات شد.</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>شعاع و مرکز<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>به راسی که مینیمم خروج از مرکز را را در بین راس های گراف دارد مرکز گراف گوییم و به خروج از مرکز آن شعاع گراف.</p>
+</div>
+<div class="section" id="id7">
+<h2>قضیه 2.2.2<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<ul class="simple">
+<li>الف) در درخت اگر قطر برابر <span class="math notranslate nohighlight">\(Q\)</span> باشد شعاع برابر <span class="math notranslate nohighlight">\(\lceil{Q/2}\rceil\)</span> است.</li>
+<li>ب) در درخت اگر <span class="math notranslate nohighlight">\(Q\)</span> فرد باشد دو راس وسط مسیر دو سر قطر مرکز هستند و اگر زوج باشد راس وسط قطر.</li>
+</ul>
+<p>اثبات : در ابتدا ثابت میکنیم راسی که در مسیر دو سر قطر نیست نمیتواند مرکز باشد. راسی مانند <span class="math notranslate nohighlight">\(u\)</span> را در نظر بگیرید که در مسیر دو سر قطر نیست و راس <span class="math notranslate nohighlight">\(v\)</span> را راسی از مسیر دو سر قطر در نظر بگیرید که فاصله اش با
+<span class="math notranslate nohighlight">\(u\)</span> مینیمم است با توجه به قضیه 2.2.1 میتوان فهمید <span class="math notranslate nohighlight">\(\varepsilon{(u)} = \varepsilon{(v)} + d(u,v)\)</span> پس <span class="math notranslate nohighlight">\(v\)</span> قطعا مرکز نیست.
+حال بیایبد راس های درون مسیر دو سر قطر را از یک سر قطر به ترتیب شماره گزاری کنید(یعنی از 0 تا <span class="math notranslate nohighlight">\(Q\)</span>. طبق  قضیه 2.2.1 میدانیم راس خروج از مرکز راس <span class="math notranslate nohighlight">\(i\)</span> ام در مسیر دو سر قطر برابر <span class="math notranslate nohighlight">\(max(i,Q-i)\)</span>
+است.میدانیم مینیمم عبارت بالا زمانی است که <span class="math notranslate nohighlight">\(i , Q-i\)</span> کمترین اختلاف را با هم داشته باشند پس</p>
+<ul class="simple">
+<li>اگر <span class="math notranslate nohighlight">\(Q\)</span> زوج باشد جواب میشود <span class="math notranslate nohighlight">\(min(Q - Q/2 , Q/2) = Q/2\)</span> پس شعاع برابر <span class="math notranslate nohighlight">\(Q/2\)</span> است و تنها مرکز هم راس وسط قطر است (راس <span class="math notranslate nohighlight">\(Q/2\)</span> مسیر دو سر قطر.</li>
+<li>اگر <span class="math notranslate nohighlight">\(Q\)</span> فرد باشد شعاع میشود <span class="math notranslate nohighlight">\(min(Q-1/2 , Q+1/2) = Q+1/2\)</span> و تنها راس هایی در مسیر در سر قطر که چنین ویژگی دارد راس های <span class="math notranslate nohighlight">\(Q-1/2,Q+1/2\)</span> مسیر دو سر قطر هستند.</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>سنتروید<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>به راسی در گراف که مجموع فاصله هایش از دیگر راس ها مینیمم است سنتروید گراف میگویند . به مانند تعاریف بالا سنتروید در درخت نیز دارای ویژگی جالبی است که در قضیه زیر آمده.</p>
+</div>
+<div class="section" id="id9">
+<h2>قضیه 2.2.3<a class="headerlink" href="#id9" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<ul class="simple">
+<li>الف) در درخت یک راس سنتروید است اگر و تنها اگر وقتی او را از درخت حذف کنیم سایز هر مولفه <span class="math notranslate nohighlight">\(&lt;= n/2\)</span> باشد.</li>
+<li>ب) در درخت حداکثر دو سنتروید داریم و اگر دو تا باشند گراف زوج راسی است و ان دو به هم یال دارند .</li>
+</ul>
+<p>اثبات : راس ها را شماره گزاری میکنیم و <span class="math notranslate nohighlight">\(a_i\)</span> برابر مجموع فاصله های راس <span class="math notranslate nohighlight">\(i\)</span> از دیگر راس های خواهد بود.حال ابتدا بخش اگر الف را اثبات میکنیم. فرض کنید سنتروید راس <span class="math notranslate nohighlight">\(u\)</span> باشد و وقتی ان را حذف کنیم
+مولفه همبندی با سایز بیشتر از <span class="math notranslate nohighlight">\(n/2\)</span> بوجود بیاید حال میگویم راسی که از ان مولفه با <span class="math notranslate nohighlight">\(u\)</span> همسایه است را در نظر بگیرید و نام آن را <span class="math notranslate nohighlight">\(v\)</span> بگزارید . فاصله <span class="math notranslate nohighlight">\(v\)</span> از راس های داخل این مولفه همبندی
+یکی کمتر از فاصله <span class="math notranslate nohighlight">\(u\)</span> از ان ها است و برای دیگر راس ها هم فاصله آن یکی بیشتر از فاصله <span class="math notranslate nohighlight">\(u\)</span> است پس <span class="math notranslate nohighlight">\(a_v = a_u - sz + (n-sz)\)</span> که <span class="math notranslate nohighlight">\(sz\)</span> برابر سایز آن مولفه همبندی است.
+و چون :math:` sz &gt; n/2 --&gt; n - 2*sz &lt; 0 --&gt; a_v &gt; a_u` با تناقض بدست امده اگر الف اثبات شد.</p>
+<p>حال ثابت میکنم هر دو راسی مانند <span class="math notranslate nohighlight">\(i , j\)</span> که ویژگی اگر بخش الف را دارند در ان ها <span class="math notranslate nohighlight">\(a_i = a_j\)</span> و چون میدانیم سنتروید ما ویژگی اگر الف را دارد پس همه راس ها با ویژگی اگر الف سنتروید هستند.
+درخت را از راس <span class="math notranslate nohighlight">\(i\)</span> اویزان میکنیم.حال یک متغیر به نام <span class="math notranslate nohighlight">\(A\)</span> داریم که وقتی روی راس <span class="math notranslate nohighlight">\(z\)</span> هستیم <span class="math notranslate nohighlight">\(A = a_z\)</span> حال از راس ریشه یعنی <span class="math notranslate nohighlight">\(i\)</span> به سمت راس <span class="math notranslate nohighlight">\(j\)</span> حرکت میکنیم
+(یعنی در واقع مسیر بین این دو راس را با شروع از <span class="math notranslate nohighlight">\(i\)</span> طی میکنیم) حال زمانی که از یک راس به بچه اش میرویم :math:'A' به اندازه سایز زیر درخت بچه اش کم میشود و به اندازه :math:<a href="#id10"><span class="problematic" id="id11">`</span></a>n - <a href="#id12"><span class="problematic" id="id13">`</span></a>سایز زیر درخت بچه اش اضافه</p>
+<blockquote>
+<div>ما میدانیم سایز زیر درخت <span class="math notranslate nohighlight">\(j\)</span> بیشترمساوی از <span class="math notranslate nohighlight">\(n/2\)</span> است زیرا وقتی <span class="math notranslate nohighlight">\(j\)</span> را از درخت حذف کنیم سایز مولفه همبندی که پدرش در آن قرار دارد طبق فرض کمتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است پس تعداد راس های که در این مولفه نیستند (با احتساب <span class="math notranslate nohighlight">\(j\)</span>)</div></blockquote>
+<p>بیشتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است.پس سایز زیر درخت تمام جد های <span class="math notranslate nohighlight">\(j\)</span> که ما طی کردیم هم این بیشتر مساوی بیشتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است پس میتوان نتیجه گرفت مقدار <span class="math notranslate nohighlight">\(A\)</span> همیشه یا کمتر میشد یا تغییر نمیکرد.
+پس :math:` a_i &gt;= a_j <cite>. اگر ما درخت را از :math:`j</cite> هم اویزان کنیم و مسیر بین ان دو را طی کنیم به نتیجه :math:` a_j &gt;= a_i ` میرسیم که در نتیجه <span class="math notranslate nohighlight">\(a_i = a_j\)</span> است.</p>
+<p>حال به اثبات بخش ب میرویم فرض کنید دو راس <span class="math notranslate nohighlight">\(i,j\)</span> سنتروید هستند و درخت را از  <span class="math notranslate nohighlight">\(i\)</span> اویزان کردیم و داریم الگوریتم بالا را طی میکنیم حال میگوییم وقتی از یک راس به بچه اش میرویم <span class="math notranslate nohighlight">\(A\)</span> در صورتی تغییر نمیکند
+که سایز زیر درخت بچه دقیقا برابر <span class="math notranslate nohighlight">\(n/2\)</span> باشد و چون سایز زیر درخت <span class="math notranslate nohighlight">\(j\)</span> بیشتر مساوی از <span class="math notranslate nohighlight">\(\lceil{n/2}\rceil\)</span> است پس باید برای آن که <span class="math notranslate nohighlight">\(A\)</span> در کل مسیر تغییر نکند <span class="math notranslate nohighlight">\(j\)</span> بچه
+<span class="math notranslate nohighlight">\(i\)</span> باشد و سایز زیر درختش  دقیقا <span class="math notranslate nohighlight">\(n/2\)</span> باشد . پس درخت زوج راسی است زیرا سایز زیر درخت <span class="math notranslate nohighlight">\(j\)</span> بیشتر مساوی <span class="math notranslate nohighlight">\(\lceil{n/2}\rceil\)</span> است و سایز زیر درخت بچه های
+<span class="math notranslate nohighlight">\(i\)</span> باید کمتر مساوی <span class="math notranslate nohighlight">\(\lfloor{n/2}\rfloor\)</span> باشد پس باید <span class="math notranslate nohighlight">\(\lfloor{n/2}\rfloor = \lceil{n/2}\rceil \)</span> زوج است.
+همچنین فهمیدیم در بالا هر دو سنتروید با هم همسایه اند پس واضح است که خداکثر میتوانیم دو سنتروید داشته باشیم و اگر نه دور داریم.</p>
+</div>
+<div class="section" id="id14">
+<h2>مجموع فاصله ها<a class="headerlink" href="#id14" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>فرض کنید در مسئله ای هدف مینیمم یا ماکسیمم کردن مجموع فاصله بین هر دو راس است فرض کنید به این مجموع چگالی گراف بگوییم. به صورت شهودی هر چه چگالی گراف کمتر باشد گراف جمع و جور تر و هر چه چگالی گراف بیشتر باشد گراف پهن و پخش تر است.</p>
 <p>در ضمن برای اینکه فاصله تعریف شده باشد فرض کنید موضوع بحث ما گراف های همبند می باشد.</p>
-<div class="section" id="id3">
-<h3>کمینه کردن چگالی گراف<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<div class="section" id="id15">
+<h3>کمینه کردن چگالی گراف<a class="headerlink" href="#id15" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>فاصله بین دو راس حداقل 1 است. و در گراف <span class="math notranslate nohighlight">\(K_n\)</span> فاصله بین هر دو راس دقیقا 1 است. پس کمترین چگالی ممکن در گراف <span class="math notranslate nohighlight">\(K_n\)</span> به دست می آید که برابر با <span class="math notranslate nohighlight">\(n \choose 2\)</span> می باشد.</p>
 <p>حالا اگر دامنه بحث را به درخت ها محدود کنیم مسئله کمی سخت تر می شود. اما همچنان می توان اینگونه استنتاج کرد.</p>
 <ul class="simple">
@@ -291,8 +366,8 @@
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id4">
-<h3>بیشینه کردن چگالی گراف<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<div class="section" id="id16">
+<h3>بیشینه کردن چگالی گراف<a class="headerlink" href="#id16" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>در این حالت توجه کنید که اگر یالی را حذف کنیم و حذف این یال گراف را ناهمبند نکند باید اینکار را بکنیم. زیرا که حذف یال باعث بیشتر شدن چگالی می شود (چرا؟). پس گرافی که چگالی آن بیشینه است را باید در میان درخت ها جست و جو کرد (زیرا همانطور که گفتیم همه یال های آن باید برشی باشد).</p>
 <p>حالا یک راس خاص مثل <span class="math notranslate nohighlight">\(u\)</span> را در نظر بگیرید. ادعا می کنیم جمع فواصل همه راس ها از <span class="math notranslate nohighlight">\(u\)</span> حداکثر برابر با <span class="math notranslate nohighlight">\(n \choose 2\)</span> است.</p>
 <p>برای اثبات فرض کنید درخت را از <span class="math notranslate nohighlight">\(u\)</span> آویزان کرده ایم و به ازای هر ارتفاع می دانیم که چند راس در این ارتفاع قرار دارند و بیشترین ارتفاع <span class="math notranslate nohighlight">\(H\)</span> باشد. در اینصورت به ازای هر ارتفاعی از 0 تا <span class="math notranslate nohighlight">\(H\)</span> حداقل یک راس از این ارتفاع باید داشته باشیم. حالا اگر حداقل دو راس در یک ارتفاع داشتیم می توان یکی از آن ها را به ارتفاع بالاتر برد و در اینصورت جمع ارتفاع ها بیشتر خواهد شد. با تکرار این فرایند به حالتی می رسیم که در هر ارتفاع 0 تا <span class="math notranslate nohighlight">\(n-1\)</span> دقیقا یک راس باشد (یعنی درخت یک مسیر شده) که در این حالت جمع فاصله ها از <span class="math notranslate nohighlight">\(u\)</span> برابر با <span class="math notranslate nohighlight">\(1 + 2 + ... + (n-1) = {n \choose 2}\)</span> خواهد بود. پس ثابت کردیم که جمع فاصله ها از هر راس <span class="math notranslate nohighlight">\(u\)</span> حداکثر <span class="math notranslate nohighlight">\(n \choose 2\)</span> است.</p>
@@ -300,23 +375,23 @@
 <p>می توان نتیجه گرفت تنها گرافی که در حالت تساوی این کران صدق می کند گراف مسیر است.</p>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>درخت پشتیبانی<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id17">
+<h2>درخت پشتیبانی<a class="headerlink" href="#id17" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>فرض کنید یک شبکه ارتباطی داریم که <span class="math notranslate nohighlight">\(n\)</span> شهر را به هم وصل می کنند. برای اطمینان یک شبکه ارتباطی پشتیبانی هم آماده کرده ایم که در صورت ایجاد اختلال در شبکه اصلی از شبکه پشتیبانی استفاده کنیم تا ارتباط قطع نشود.</p>
 <p>به زبان گراف دو درخت <span class="math notranslate nohighlight">\(n\)</span> راسی <span class="math notranslate nohighlight">\(T\)</span> و <span class="math notranslate nohighlight">\(T ^ {\prime}\)</span> داریم. می خواهیم ثابت کنیم در صورتیکه یکی از یال های <span class="math notranslate nohighlight">\(T\)</span> مثل <span class="math notranslate nohighlight">\(uv\)</span> قطع شوند می توان یکی از یال های <span class="math notranslate nohighlight">\(T ^ {\prime}\)</span> مثل <span class="math notranslate nohighlight">\(u^{\prime}v^{\prime}\)</span> را به درخت <span class="math notranslate nohighlight">\(T\)</span> اضافه کرد که ساختار همچنان همبند باقی بماند.</p>
 <p>پس فرض کنید <span class="math notranslate nohighlight">\(uv\)</span> را از <span class="math notranslate nohighlight">\(T\)</span> حذف کردیم در اینصورت درخت ما دارای دو مولفه همبندی خواهد شد یکی از مولفه ها را آبی و دیگری را قرمز در نظر بگیرید. حالا می توان در درخت <span class="math notranslate nohighlight">\(T^{\prime}\)</span> مسیری بین <span class="math notranslate nohighlight">\(u,v\)</span> یافت.
 در این مسیر یالی وجود خواهد داشت که یک سر آن آبی و یک سر آن قرمز باشد (چرا؟). حالا اگر این یال <span class="math notranslate nohighlight">\(u^{\prime}v^{\prime}\)</span> باشد می توانیم این یال را به <span class="math notranslate nohighlight">\(T\)</span> اضافه کنیم و دوباره آن را همبند کنیم!</p>
 </div>
-<div class="section" id="id6">
-<h2>افراز درخت به مسیر ها<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id18">
+<h2>افراز درخت به مسیر ها<a class="headerlink" href="#id18" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>درخت <span class="math notranslate nohighlight">\(T\)</span> را در نظر بگیرید. در این قسمت هدف ما این است که یال های این درخت را به کمترین تعداد تعدادی مسیر افراز کنیم. برای شهود بهتر فرض کنید یال های مسیر ها را یکی یکی از درخت حدف می کنیم تا به گرافی بدون یال برسیم.</p>
 <p>اول از همه توجه کنید که بعد از حذف هر مسیر تنها زوجیت درجه دو سر مسیر تغییر می کند همچنین در انتها درجه تمام راس ها زوج (صفر) خواهد بود. پس یک راس درجه فرد باید فرد بار و یک راس درجه زوج باید زوج بار به عنوان یک سر مسیر انتخاب شود. پس اگر تعداد راس های درجه فرد درخت <span class="math notranslate nohighlight">\(X\)</span> باشد آنگاه حداقل <span class="math notranslate nohighlight">\(\frac X 2\)</span> مسیر نیاز داریم. (می دانیم که تعداد راس های درجه فرد هر گرافی زوج است پس <span class="math notranslate nohighlight">\(X\)</span> زوج است).</p>
 <p>حالا اگر در هر مرحله مسیر بین دو راس درجه فرد را حذف کنیم می توانیم به حالت بهینه برسیم! فقط باید توجه داشته باشیم که دو راس درجه فرد ما مربوط به یک مولفه همبندی باشد.</p>
 <p>حالا سوالی که پیش می آید این است که درخت بودن طی این فرایند به ما چه کمکی کرد؟</p>
 <p>در نهایت ما از این موضوع استفاده کردیم که اگر درختی راس درجه فرد نداشته باشد یالی ندارد (اما این قضیه در گراف به صورت کلی برقرار نیست). چرا که اگر تعداد راس های گراف حداقل دو باشد در اینصورت برگی خواهد داشت که درجه آن 1 (و فرد) است.</p>
 </div>
-<div class="section" id="id7">
-<h2>پوشاندن یال های درخت با مسیر ها<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id19">
+<h2>پوشاندن یال های درخت با مسیر ها<a class="headerlink" href="#id19" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>در ابن قسمت می خواهیم کمترین تعداد مسیر را پیدا کنیم که اجتماع آن ها کل یال های <span class="math notranslate nohighlight">\(T\)</span> را شامل شود. این مسئله مشابه حالت قبل است با این تفاوت که در حالت قبل یال ها را به مسیر ها افراز می کردیم یعنی هر یال متعلق به یک مسیر بود. در اینجا این آزادی را داریم که یک مسیر چند بار یالی را بپوشاند. می توان نتیجه گرفت که جواب این مسئله کمتر از مسئله قبل است.</p>
 <p>در نگاه اول متوجه می شوید که چون طولانی کردن مسیر ها ضرری با ما نمی زند پس حالت بهینه ای وجود دارد که دو سر هر مسیر برگ باشد!</p>
 <p>از طرف دیگر به ازای هر برگ یالی که از این برگ به راس مجاورش می رود را در نظر بگیرید. هر مسیر حداکثر 2 تا از این یال ها را می پوشاند. پس اگر <span class="math notranslate nohighlight">\(X\)</span> تا برگ داشته باشیم حداقل <span class="math notranslate nohighlight">\(\frac X 2\)</span> تا مسیر نیاز داریم حالا تلاش می کنیم تا این کران را بر آورده کنیم. یعنی اگر <span class="math notranslate nohighlight">\(X\)</span> زوج باشد با <span class="math notranslate nohighlight">\(\frac X 2\)</span> مسیر و اگر <span class="math notranslate nohighlight">\(X\)</span> فرد بود با <span class="math notranslate nohighlight">\(\frac {X+1} 2\)</span> مسیر یال های درخت را بپوشانیم.</p>
@@ -335,17 +410,12 @@
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id8">
-<h2>درخت چپانی<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id20">
+<h2>درخت چپانی<a class="headerlink" href="#id20" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>فرض کنید درختی <span class="math notranslate nohighlight">\(n\)</span> راسی به نام <span class="math notranslate nohighlight">\(T\)</span> داریم. همچنین گرافی مثل <span class="math notranslate nohighlight">\(G\)</span> داریم که <span class="math notranslate nohighlight">\(\delta(G) \geq n-1\)</span>. می خواهیم ثابت کنیم زیرمجموعه ای از یال های <span class="math notranslate nohighlight">\(G\)</span> وجود دارد که <span class="math notranslate nohighlight">\(T\)</span> را بسازد. (به صورت شهودی یک درخت <span class="math notranslate nohighlight">\(T\)</span> در گراف <span class="math notranslate nohighlight">\(G\)</span> بتوان پیدا کرد).</p>
 <p>یک برگ دلخواه مثل <span class="math notranslate nohighlight">\(u\)</span> که تنها مجاور آن <span class="math notranslate nohighlight">\(v\)</span> است را در نظر بگیرید و <span class="math notranslate nohighlight">\(u\)</span> را از درخت حذف کنید! سپس به صورت استقرایی درخت <span class="math notranslate nohighlight">\(T-u\)</span> را در <span class="math notranslate nohighlight">\(G\)</span> پیدا کنید. حالا می خواهیم یال <span class="math notranslate nohighlight">\(uv\)</span> را به درختمان اضافه کنیم. فرض کنید راس <span class="math notranslate nohighlight">\(v\)</span> در گراف <span class="math notranslate nohighlight">\(G\)</span> متناظر با <span class="math notranslate nohighlight">\(v^{\prime}\)</span> شده باشد. حالا کافیست از بین مجاور های <span class="math notranslate nohighlight">\(v^{\prime}\)</span> راسی را انتخاب کنید که قبلا با هیچ راس درخت متناظر نشده است. سپس می توان این راس را متناظر با <span class="math notranslate nohighlight">\(u\)</span> قرار داد که فرض استقرای ما را ثابت می کند.</p>
 <p>برای یافتن چنین راسی کافیست از فرض <span class="math notranslate nohighlight">\(\delta(G) \geq n-1\)</span> استفاده کنیم. پس <span class="math notranslate nohighlight">\(v^{\prime}\)</span> حداقل <span class="math notranslate nohighlight">\(n-1\)</span> مجاور دارد و حداکثر <span class="math notranslate nohighlight">\(n-2\)</span> تا از آن ها قبلا به راس های درخت متناظر شده اند. پس یکی از مجاور های <span class="math notranslate nohighlight">\(v\)</span> تا حالا به راس های درخت متناظر نشده که حالا می توانیم همانطور که گفتیم <span class="math notranslate nohighlight">\(u\)</span> را به آن متناظر کنیم.</p>
 <p>این مسئله به منظور آشنایی شما با ساختار استقرا پذیر درخت مطرح شد. دیدید که چطور می توان یک برگ از درخت را حذف کرد و فرض استقرا را برای درخت باقی مانده به کار برد.</p>
-<p>درخت ها به عنوان اسکلت گراف</p>
-<p>درخت فراگیر</p>
-<p>پاک کردن هر یال مولفه ها رو زیاد میکنه. اضافه کردن یک یال دقیقا یک دور ایجاد می کنه.</p>
-<p>min(diam(G, G`)) &lt;= 3</p>
-<p>not yet</p>
 </div>
 </div>
 
