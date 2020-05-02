@@ -11,7 +11,7 @@
 
 
     
-         <title>Segment tree &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>انتخاب های اکسترمالی &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -33,9 +33,9 @@
         <link rel="index" title="فهرست" href="../../genindex.html" />
         <link rel="search" title="جستجو" href="../../search.html" />
         <link rel="top" title="نظریه گراف‌ها برای المپیاد کامپیوتر" href="../../index.html" />
-        <link rel="up" title="داده ساختار های درختی" href="index.html" />
-        <link rel="next" title="trie" href="5.html" />
-        <link rel="prev" title="DSU" href="3.html" />
+        <link rel="up" title="تکنیک های اثبات مسائل گراف" href="index.html" />
+        <link rel="next" title="تور اویلری و دور همیلتونی" href="../5/index.html" />
+        <link rel="prev" title="تکنیک های اثبات مسائل گراف" href="index.html" />
 
 
 
@@ -138,8 +138,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../3/7.html">گراف تابعی و گراف جایگشت</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../4/index.html">تکنیک های اثبات مسائل گراف</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../4/1.html">انتخاب های اکسترمالی</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">تکنیک های اثبات مسائل گراف</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">انتخاب های اکسترمالی</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../5/index.html">تور اویلری و دور همیلتونی</a><ul>
@@ -163,12 +163,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../7/3.html">به دست آوردن توابع بازگشتی به کمک گراف و ماتریس</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">داده ساختار های درختی</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1.html">BST</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.html">heap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.html">DSU</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Segment tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5.html">trie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../8/index.html">داده ساختار های درختی</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../8/1.html">BST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8/2.html">heap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8/3.html">DSU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8/4.html">Segment tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../8/5.html">trie</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../9/index.html">MST</a><ul>
@@ -252,12 +252,12 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; Segment tree</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; انتخاب های اکسترمالی</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
         
-            <a href="../../_sources/book/8/4.rst.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
+            <a href="../../_sources/book/4/1.rst.txt" rel="nofollow" id="top-src" target="_blank"><i class="fa fa-code"></i>&nbsp; سورس</a>
         
     
 </div>
@@ -267,8 +267,56 @@
                             <div class="row-fluid">
 			        <div class="col-lg-12">
 				    
-  <div class="section" id="segment-tree">
-<h1>Segment tree<a class="headerlink" href="#segment-tree" title="لینک ثابت به این سر مقاله">¶</a></h1>
+  <div class="section" id="id1">
+<h1>انتخاب های اکسترمالی<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>در فصل های قبل دیدیم که چگونه می توان با انتخاب یک چیز که خاصیت بزرگترین یا کوچکترین
+بودن را دارد، می توان مسائل را به راحتی اثبات کرد. برای مثال بلند ترین مسیر یک
+انتخاب اکسترمالی متداول است که خاصیت های آن در حل مسائل به ما کمک می کند. در این
+بخش با انتخاب های اکسترمالی دیگر آشنا می شویم.</p>
+<p>هر انتخاب اکسترمالی خواصی دارد که می تواند در حل مسائل به ما کمک کند. در ادامه صرفا
+خواص را ذکر می کنیم و اثبات این خواص (که عموما ساده است) به خواننده واگذار می شود.</p>
+<div class="section" id="id2">
+<h2>کوتاه ترین مسیر بین دو راس<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id3">
+<h3>خواص<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<ul class="simple">
+<li>هیچ راسی از خارج این مسیر دو راس در این مسیر که ۳ یال یا بیشتر فاصله دارند یال ندارد</li>
+<li>در نتیجه گزاره بالا، هر راس از خارج به حداکثر ۳ راس درون این مسیر یال دارد</li>
+<li>زیر گراف القایی رئوس این مسیر خود این مسیر است و هیچ یال دیگری در آن وجود ندارد</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>بلند ترین مسیر گراف<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id5">
+<h3>خواص<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<ul class="simple">
+<li>تمام رئوس مجاور راس های ابتدا و انتهای این مسیر، درون این مسیر هستند.</li>
+<li>هیچ دو راس متوالی همسایه مشترک خارج از مسیر ندارند.</li>
+<li>اگر سر و ته این مسیر به هم متصل باشند، این مسیر تمام رئوس مولفه اش را داراست.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>کوچک ترین دور<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id7">
+<h3>خواص<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<ul class="simple">
+<li>زیر گراف القایی رئوس این دور خود این دور است و هیچ یال دیگری در آن وجود ندارد</li>
+<li>اگر طول این دور از ۴ بیشتر باشد، هر راس از بیرون این دور حداکثر به یک راس از این دور یال دارد.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>پایین ترین برگ در درخت ریشه دار<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>منظور برگی از درخت است که بیشترین ارتفاع را دارد.</p>
+<div class="section" id="id9">
+<h3>خواص<a class="headerlink" href="#id9" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<ul class="simple">
+<li>تمام فرزندان پدر این برگ، برگ هستند.</li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -283,10 +331,10 @@
             <div id="body-btn">
                 
                     
-                    <a href="3.html" style="float:right;" title="DSU" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
+                    <a href="index.html" style="float:right;" title="تکنیک های اثبات مسائل گراف" accesskey="p"><i class="fa fa-chevron-right"></i>&nbsp; قبلی</a>
                     
                     
-                    <a href="5.html" style="float:left;" title="trie" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
+                    <a href="../5/index.html" style="float:left;" title="تور اویلری و دور همیلتونی" accesskey="n">بعدی &nbsp;<i class="fa fa-chevron-left"></i></a>
                     
                 
             </div>
