@@ -141,6 +141,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../4/index.html">تکنیک های اثبات مسائل گراف</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../4/1.html">انتخاب های اکسترمالی</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../4/2.html">منقبض کردن</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4/3.html">گراف و جادو</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../5/index.html">تور اویلری و دور همیلتونی</a><ul>
@@ -282,19 +283,18 @@
 <p>تعریف : قطر گراف برابر است با <span class="math notranslate nohighlight">\(Max_{u,v}\)</span> <span class="math notranslate nohighlight">\(d(u,v)\)</span> یا به عبارتی ماکسیمم فاصله دو به دو راس ها در گراف.</p>
 <p>توجه کنید که قطر بلندترین مسیر نیست و در واقع بلند ترین <strong>فاصله</strong> است ولی در درخت بلندترین مسیر و قطر یکی است زیرا اگر دو سر بلندترین مسیر را بگیرید
 چون بین آن دو دقیقا یک مسیر وجود دارد و بلندترین مسیر , آن مسیر است در واقع طول بلندترین مسیر برابر فاصله آن دو راس است پس قطر برابر بلندترین مسیر است.
-تفاوت بلند ترین مسیر و قطر جایی به چشم می اید که در حالت کلی  پیدا کردن قطر یک گراف از اوردر چند جمله ای حل میشود ولی پیدا کردن بلند ترین مسیر یک مسئله <span class="math notranslate nohighlight">\(np\)</span> است.</p>
+تفاوت بلند ترین مسیر و قطر جایی به چشم می اید که در حالت کلی  پیدا کردن قطر یک گراف از اوردر چند جمله ای حل میشود ولی پیدا کردن بلند ترین مسیر یک مسئله NP است.</p>
 </div>
 <div class="section" id="id4">
 <h2>خروج از مرکز<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>اگر نام راس را <span class="math notranslate nohighlight">\(u\)</span> در نظر بگیریم خروج از مرکز <span class="math notranslate nohighlight">\(u\)</span> برابر  <span class="math notranslate nohighlight">\(Max_v\)</span> <span class="math notranslate nohighlight">\(d(u,v)\)</span>  یا به عبارتی فاصلش با راسی که از ان بیشترین فاصله را دارد میشود.</p>
+<p>اگر نام راس را <span class="math notranslate nohighlight">\(u\)</span> در نظر بگیریم خروج از مرکز <span class="math notranslate nohighlight">\(u\)</span> برابر ماکسیمم <span class="math notranslate nohighlight">\(d(u,v)\)</span> به ازای همه <span class="math notranslate nohighlight">\(v\)</span> هاست.</p>
 <p>گراف اگر درخت باشد و درخت را از <span class="math notranslate nohighlight">\(u\)</span> اویزان کنیم خروج از مرکز <span class="math notranslate nohighlight">\(u\)</span> میشود ارتفاع راسی که بیشترین ارتفاع را در درخت دارد.</p>
 <p>خروج از مرکز راس <span class="math notranslate nohighlight">\(u\)</span> را با  <span class="math notranslate nohighlight">\(\varepsilon{(u)}\)</span>  نشان میدهند.</p>
 </div>
 <div class="section" id="id5">
 <h2>قضیه 2.2.1<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>صورت قضیه : در درخت خروج از مرکز یک راس برابر ماکسیمم فاصله آن از دو سر قطر است.</p>
-<p>اثبات : برهان خلف میزنیم. فرض کنید راس ما <span class="math notranslate nohighlight">\(a\)</span>  است و دو سر قطر هم راس های <span class="math notranslate nohighlight">\(u , v\)</span> هستند . و راسی که فاصله اش با
-<span class="math notranslate nohighlight">\(a\)</span> برابر <cite>varepsilon (a)</cite> است <span class="math notranslate nohighlight">\(b\)</span> نام دارد . واضح هم است <span class="math notranslate nohighlight">\(a\)</span> اگر یکی از دو سر قطر بود حکم درست است پس فرض میکنیم هیج یک از دو سر قطر نیست.</p>
+<p>اثبات : برهان خلف میزنیم. فرض کنید راس ما <span class="math notranslate nohighlight">\(a\)</span>  است و دو سر قطر هم راس های <span class="math notranslate nohighlight">\(u , v\)</span> هستند . و راسی که فاصله اش با <span class="math notranslate nohighlight">\(a\)</span> برابر <span class="math notranslate nohighlight">\(\varepsilon(a)\)</span> است <span class="math notranslate nohighlight">\(b\)</span> نام دارد . واضح هم است <span class="math notranslate nohighlight">\(a\)</span> اگر یکی از دو سر قطر بود حکم درست است پس فرض میکنیم هیج یک از دو سر قطر نیست.</p>
 <p>درخت را از <span class="math notranslate nohighlight">\(a\)</span> آویزان میکنیم. فرض کنید راس <span class="math notranslate nohighlight">\(mh\)</span> راسی با بیشترین ارتفاع باشد که سه راس <span class="math notranslate nohighlight">\(b,u,v\)</span> داخل زیر درخت آن هستند.
 چون <span class="math notranslate nohighlight">\(mh\)</span> بیشترین ارتفاع از پدر های مشترک این سه راس دارد یعنی یا <span class="math notranslate nohighlight">\(mh = b\)</span> است یا بچه ای از <span class="math notranslate nohighlight">\(mh\)</span> که جد <span class="math notranslate nohighlight">\(b\)</span> است در زیر درختش حداقل یکی از دو راس
 <span class="math notranslate nohighlight">\(u , v\)</span> را ندارد.که یعنی <span class="math notranslate nohighlight">\(mh = lca(u,b)\)</span>  or <span class="math notranslate nohighlight">\(lca(v,b)\)</span> .بدون از دست دادن کلیت مسئله فرض کنید <span class="math notranslate nohighlight">\(mh = lca(u,b)\)</span>. حال ثابت میکنیم <span class="math notranslate nohighlight">\(d(b,u)\)</span> &gt; <span class="math notranslate nohighlight">\(d(u,v)\)</span>
@@ -303,8 +303,12 @@
 <li><span class="math notranslate nohighlight">\(d(b,u)\)</span> &gt; <span class="math notranslate nohighlight">\(d(u,v)\)</span></li>
 <li><span class="math notranslate nohighlight">\(mh = lca(b,u)\)</span> <span class="math notranslate nohighlight">\(\longrightarrow\)</span>  <span class="math notranslate nohighlight">\(h(b)+h(u)-2×h(Mh)\)</span> &gt; <span class="math notranslate nohighlight">\(d(u,v)\)</span></li>
 <li>اگر <span class="math notranslate nohighlight">\(mh \neq lca(u,v)\)</span> هم باشد باز جد مشترکشان است پس <span class="math notranslate nohighlight">\(d(u,v)\)</span> <span class="math notranslate nohighlight">\(\leqslant\)</span> <span class="math notranslate nohighlight">\(h(u)+h(v)-2×h(mh)\)</span></li>
-<li>در نتیجه :math:` h(B) + h(u) - 2×h(mh) &gt; h(u) + h(v) - 2×h(mh)` <span class="math notranslate nohighlight">\(\longrightarrow\)</span> <span class="math notranslate nohighlight">\(h(B) &gt; h(u)\)</span> که فرض سوال است پس عبارت درست است. با تناقض بدست امده قضیه اثبات شد.</li>
+<li>در نتیجه</li>
 </ul>
+<dl class="docutils">
+<dt><span class="math notranslate nohighlight">\(h(B) + h(u) - 2×h(mh) &gt; h(u) + h(v) - 2×h(mh) \longrightarrow h(B) &gt; h(u)\)</span></dt>
+<dd>که فرض سوال است پس عبارت درست است. با تناقض بدست امده قضیه اثبات شد.</dd>
+</dl>
 </div>
 <div class="section" id="id6">
 <h2>شعاع و مرکز<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
@@ -343,14 +347,14 @@
 درخت را از راس <span class="math notranslate nohighlight">\(i\)</span> اویزان میکنیم.حال یک متغیر به نام <span class="math notranslate nohighlight">\(A\)</span> داریم که وقتی روی راس <span class="math notranslate nohighlight">\(z\)</span> هستیم <span class="math notranslate nohighlight">\(A = a_z\)</span> حال از راس ریشه یعنی <span class="math notranslate nohighlight">\(i\)</span> به سمت راس <span class="math notranslate nohighlight">\(j\)</span> حرکت میکنیم
 (یعنی در واقع مسیر بین این دو راس را با شروع از <span class="math notranslate nohighlight">\(i\)</span> طی میکنیم) حال زمانی که از یک راس به بچه اش میرویم <span class="math notranslate nohighlight">\(A\)</span> به اندازه سایز زیر درخت بچه اش کم میشود و به اندازه تعداد راس های منهای سایز زیر درخت بچه اش به <span class="math notranslate nohighlight">\(A\)</span> اضافه میشود.</p>
 <blockquote>
-<div>ما میدانیم سایز زیر درخت <span class="math notranslate nohighlight">\(j\)</span> بیشترمساوی از <span class="math notranslate nohighlight">\(n/2\)</span> است زیرا وقتی <span class="math notranslate nohighlight">\(j\)</span> را از درخت حذف کنیم سایز مولفه همبندی که پدرش در آن قرار دارد طبق فرض کمتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است پس تعداد راس های که در این مولفه نیستند(با احتساب:math:<cite>j</cite>)</div></blockquote>
+<div>ما میدانیم سایز زیر درخت <span class="math notranslate nohighlight">\(j\)</span> بیشترمساوی از <span class="math notranslate nohighlight">\(n/2\)</span> است زیرا وقتی <span class="math notranslate nohighlight">\(j\)</span> را از درخت حذف کنیم سایز مولفه همبندی که پدرش در آن قرار دارد طبق فرض کمتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است پس تعداد راس های که در این مولفه نیستند(با احتساب <span class="math notranslate nohighlight">\(j\)</span>)</div></blockquote>
 <p>بیشتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است.پس سایز زیر درخت تمام جد های <span class="math notranslate nohighlight">\(j\)</span> که ما طی کردیم هم این بیشتر مساوی بیشتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است پس میتوان نتیجه گرفت مقدار <span class="math notranslate nohighlight">\(A\)</span> همیشه یا کمتر میشود یا تغییر نمیکند.
-پس :math:` a_i &gt;= a_j <cite>. اگر ما درخت را از :math:`j</cite> هم اویزان کنیم و مسیر بین ان دو را طی کنیم به نتیجه :math:` a_j &gt;= a_i ` میرسیم که در نتیجه <span class="math notranslate nohighlight">\(a_i = a_j\)</span> است.</p>
+پس :math:` a_i &gt;= a_j <cite>. اگر ما درخت را از :math:`j</cite> هم اویزان کنیم و مسیر بین ان دو را طی کنیم به نتیجه :math:` a_j geq a_i ` میرسیم که در نتیجه <span class="math notranslate nohighlight">\(a_i = a_j\)</span> است.</p>
 <p>حال به اثبات بخش ب میرویم فرض کنید دو راس <span class="math notranslate nohighlight">\(i,j\)</span> سنتروید هستند و درخت را از  <span class="math notranslate nohighlight">\(i\)</span> اویزان کردیم و داریم الگوریتم بالا را طی میکنیم حال میگوییم وقتی از یک راس به بچه اش میرویم <span class="math notranslate nohighlight">\(A\)</span> در صورتی تغییر نمیکند
 که سایز زیر درخت بچه دقیقا برابر <span class="math notranslate nohighlight">\(n/2\)</span> باشد و چون سایز زیر درخت <span class="math notranslate nohighlight">\(j\)</span> بیشتر مساوی از <span class="math notranslate nohighlight">\(\lceil{n/2}\rceil\)</span> است پس باید برای آن که <span class="math notranslate nohighlight">\(A\)</span> در کل مسیر تغییر نکند <span class="math notranslate nohighlight">\(j\)</span> بچه
 <span class="math notranslate nohighlight">\(i\)</span> باشد و سایز زیر درختش  دقیقا <span class="math notranslate nohighlight">\(n/2\)</span> باشد . پس درخت زوج راسی است زیرا سایز زیر درخت <span class="math notranslate nohighlight">\(j\)</span> بیشتر مساوی <span class="math notranslate nohighlight">\(\lceil{n/2}\rceil\)</span> است و سایز زیر درخت بچه های
 <span class="math notranslate nohighlight">\(i\)</span> باید کمتر مساوی <span class="math notranslate nohighlight">\(\lfloor{n/2}\rfloor\)</span> باشد پس باید <span class="math notranslate nohighlight">\(\lfloor{n/2}\rfloor = \lceil{n/2}\rceil \)</span> زوج است.
-همچنین فهمیدیم در بالا هر دو سنتروید با هم همسایه اند پس واضح است که خداکثر میتوانیم دو سمنترید داشته باشیم و اگر نه دور داریم.</p>
+همچنین فهمیدیم در بالا هر دو سنتروید با هم همسایه اند پس واضح است که حداکثر میتوانیم دو سمنترید داشته باشیم و اگر نه دور داریم.</p>
 </div>
 <div class="section" id="id10">
 <h2>مجموع فاصله ها<a class="headerlink" href="#id10" title="لینک ثابت به این سر مقاله">¶</a></h2>
@@ -462,7 +466,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 06, 2020.
+                        آخرین به روز رسانی در مهٔ 07, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
