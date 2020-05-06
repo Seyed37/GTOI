@@ -11,7 +11,7 @@
 
 
     
-         <title>تعداد مسیر ها به طول n &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>تعداد گشت ها به طول n &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -160,7 +160,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ماتریس ها</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1.html">ماتریس مجاورت</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">تعداد مسیر ها به طول n</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">تعداد گشت ها به طول n</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">به دست آوردن توابع بازگشتی به کمک گراف و ماتریس</a></li>
 </ul>
 </li>
@@ -253,7 +253,7 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; تعداد مسیر ها به طول n</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; تعداد گشت ها به طول n</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
@@ -269,7 +269,104 @@
 			        <div class="col-lg-12">
 				    
   <div class="section" id="n">
-<h1>تعداد مسیر ها به طول n<a class="headerlink" href="#n" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<h1>تعداد گشت ها به طول n<a class="headerlink" href="#n" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>به کمک ماتریس مجاورت گراف و عملیات هایی که روی ماتریس ها تعریف می شود می توان
+الگوریتمی برای به دست آوردن تعداد گشت ها به طول
+n
+ارائه داد. برای درک این قسمت، لازم است با عملیات ضرب ماتریسی که یک عملیات معروف است
+آشنا باشید و شهود خوبی روی آن داشته باشید. می توانید ضرب ماتریس را درون اینترنت
+جستجو کرده تا با آن آشنا شوید.</p>
+<div class="section" id="id1">
+<h2>معنی ضرب ماتریس در گراف ها<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>دو گراف
+n
+راسی را در نظر بگیرید. برای مثال این دو گراف را گراف آبی با ماتریس مجاورت
+A
+و قرمز با ماتریس مجاورت B
+می نامیم. می خواهیم تعداد گشت های بین دو راس
+i و j
+را به دست بیاوریم. به طوری که دو یال داشته باشند و یال اول آن ها آبی و یال دوم آن ها قرمز
+باشد. این تعداد را
+<span class="math notranslate nohighlight">\(C_{i,j}\)</span>
+می نامیم. واضح است که برای محاسبه این مقدار می توان روی راس میانی این گشت حالت بندی کرد
+(راسی مانند k)
+و سپس یال های آبی از i به k را در یال های قرمز از k به j ضرب کرد و مقادیر به دست آمده را
+به ازای تمام k های ممکن جمع زد. به زبان ریاضی:</p>
+<div class="math notranslate nohighlight">
+\[C_{i,j} = \sum\limits_{k=1}^{n} A_{i,k}B_{k,j}\]</div>
+<p>که با کمی دقت می توان دریافت که ماتریس
+C
+برابر ضرب ماتریس A در B است.</p>
+</div>
+<div class="section" id="id2">
+<h2>توان ماتریس<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>توان ماتریس را مانند توان اعداد، به این صورت تعریف می کنیم که
+<span class="math notranslate nohighlight">\(A^n\)</span>
+یعنی n بار ضرب A در خودش.
+طبق قضیه ای که در بالا نشان دادیم می توان دریافت که تعداد گشت های به طول
+n از i به j
+برابر درایه (i,j) در
+<span class="math notranslate nohighlight">\(A^n\)</span>
+است. برای اثبات به ازای هر گشت به طول
+n-1
+یک یال قرمز بگذارید و به ازای هر یال گراف یک یال آبی. به وضوح هر گشت به طول
+n
+معادل یک گشت با یک یال قرمز و یک یال آبی است. و چون
+<span class="math notranslate nohighlight">\(A^n = A^{n-1}A\)</span>
+حکم را با استقرا می توان ثابت کرد.</p>
+</div>
+<div class="section" id="id3">
+<h2>الگوریتم و پیچیدگی<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>پس برای حل مساله کافیست تا بتوانیم توان ماتریس را در زمان خوبی محاسبه کنیم.
+چون ضرب ماتریس ها خاصیت شرکت پذیری دارد ( یعنی
+<span class="math notranslate nohighlight">\((AB)C = A(BC)\)</span> )
+پس مهم نیست که به چه ترتیبی توان را حساب می کنیم. اگر توان زوج باشد داریم:</p>
+<div class="math notranslate nohighlight">
+\[A^{2k} = (A^k)^2\]</div>
+<p>و اگر فرد باشد، داریم:</p>
+<div class="math notranslate nohighlight">
+\[A^{2k+1} = A(A^k)(A^k)\]</div>
+<p>اگر ضرب ماتریس را با الگوریتم بدیهی اش، یعنی
+<span class="math notranslate nohighlight">\(O(n^3)\)</span>
+محاسبه کنیم، می توان به صورت بازگشتی برای محاسبه
+<span class="math notranslate nohighlight">\(A^k\)</span>
+ابتدا توان
+<span class="math notranslate nohighlight">\(A^{\lfloor\frac{k}{2}\rfloor}\)</span>
+را محاسبه کنیم و سپس به وسیله روابط بالا جواب مساله را حساب کنیم. زمان اجرای
+این الگوریتم بازگشتی برابر است با:</p>
+<div class="math notranslate nohighlight">
+\[T(k) = T(\frac{k}{2}) + O(n^3) = O(n^3lg(k))\]</div>
+<p>نام این الگوریتم الگوریتم توان رسانی سریع است که در جایی که می خواهیم یک عملیات شرکت پذیر
+را روی یک عضو چندین بار تکرار کنیم می توانیم از آن استفاده کنیم.
+مثلا برای توان اعداد نیز می توانید از همین الگوریتم استفاده کنید.</p>
+</div>
+<div class="section" id="id4">
+<h2>تعمیم<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>الگوریتمی که در این جا بررسی کردیم تنها برای محاسبه تعداد گشت های به طول ثابت کاربرد
+ندارد، بلکه می توان با آن خواص دیگری از گشت های به طول ثابت را نیز
+(مانند بزرگ ترین گشت یا گشت با کم وزن ترین یال)
+به دست آورد. برای مثال می خواهیم بین دو راس گشتی به طول
+k
+پیدا کنیم که جمع وزن یال های آن بیشینه باشد.
+اگر بخواهیم این مساله را برای گرافی حل کنیم که یال های آن قرمز و آبی باشد و گشت های با
+یک یال قرمز و یک یال آبی مد نظر مان باشد پاسخ به این صورت به دست می آید:</p>
+<div class="math notranslate nohighlight">
+\[C_{i,j} = \max\limits_{k=1}^{n} A_{i,k} + B_{k,j}\]</div>
+<p>می توانیم ماتریس
+C
+را به عنوان ترکیب ماتریس
+A و B
+تعریف کنیم. با کمی دقت می توان دریافت که عمل ترکیب مانند عمل ضرب ماتریس شرکت پذیر است.
+برای اثبات می توانید یک گراف با یال های قرمز و آبی و سبز در نظر بگیرید و گشتی که
+قرمز - آبی - سبز باشد و جمع وزن یال هایش بیشینه باشد را از دو روش به دست آورید.
+پس می توان مشابه قبل توان ماتریس را تعریف کرد و با استقرا ثابت کرد که
+<span class="math notranslate nohighlight">\(A^k_{i,j}\)</span>
+برابر بزرگترین گشت به طول
+k بین دو راس i و j
+است و الگوریتم
+<span class="math notranslate nohighlight">\(O(n^3lg(k))\)</span>
+برای محاسبه این ماتریس وجود دارد.</p>
+</div>
 </div>
 
 
