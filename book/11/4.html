@@ -277,8 +277,8 @@
 <p>به فرایند تبدیل دنباله ای از حروف به دنباله ای از 0,1 ها رمزگذاری می گوییم و به برعکس این فرایند (یعنی تبدیل دنباله 0,1 ها به دنباله حروف) رمزگشایی می گوییم.</p>
 <p>اولین سوالی که در ذهنمان پیش می آید این است که چگونه هر حرف را به یک دنباله دودویی تناظر دهیم تا عملیات رمزگشایی به صورت یکتا و درست انجام شود؟ یک ایده هوشمندانه در اینجا استفاده از درخت ها است. یک درخت ریشه دودویی تعریف می کنیم و به آن درخت رمزگذاری می گوییم که خاصیت های زیر را دارد.</p>
 <ul class="simple">
-<li>هر راس این درخت حداکثر دو بچه دارد. به ازای هر راس روی یال های این راس که به بچه هایش می رود عدد 0,1 نوشته ایم (0 برای بچه چپ و 1 برای بچه راست).</li>
-<li>هر برگ این درخت (ریشه هیچگاه برگ محسوب نمی شود) متناظر با یکی از حروف الفبای ما  خواهد بود.</li>
+<li><p>هر راس این درخت حداکثر دو بچه دارد. به ازای هر راس روی یال های این راس که به بچه هایش می رود عدد 0,1 نوشته ایم (0 برای بچه چپ و 1 برای بچه راست).</p></li>
+<li><p>هر برگ این درخت (ریشه هیچگاه برگ محسوب نمی شود) متناظر با یکی از حروف الفبای ما  خواهد بود.</p></li>
 </ul>
 <p>در اینصورت به ازای هر حرف <span class="math notranslate nohighlight">\(x\)</span> الفبا فرض کنید <span class="math notranslate nohighlight">\(u\)</span> برگ متناظر با <span class="math notranslate nohighlight">\(x\)</span> باشد. در اینصورت دنباله 0,1 هایی که از ریشه تا راس <span class="math notranslate nohighlight">\(u\)</span> می بینیم را متناظر با حرف <span class="math notranslate nohighlight">\(x\)</span> قرار دهید.</p>
 <p>حالا چگونه می توان یک متن دودویی را رمزگشایی کرد؟ کافی است ابتدا یک مهره را روی راس ریشه قرار دهید و شروع به خواندن متن دودویی کنید. سپس اگر 0 دیدید به یال سمت چپ بروید و اگر 1 دیدید به یال سمت راست بروید تا زمانی که به یک برگ برسید که به یک حرف متناظر شده است. و به این معنی است که حرف اول متنمان همان حرفی است که به آن رسیدیم. (دقت کنید که هیچ راس غیربرگی به حروف متناظر نشده پس اولین حرف متن نمی توانسته هیچ حرف دیگری باشد). سپس دوباره مهره را به ریشه برگردانید و دوباره شروع به خواندن رشته دودویی کنید تا حرف دوم رشته اصلی را متوجه شوید. با ادامه این فرایند می توان رشته را رمزگشایی کرد. اگر در این فرایند ها مهره می خواست به یالی برود که وجود ندارد‌ (مثلا اگر 0 نوشته شده بود ولی یال سمت چپ نداشتیم) یا اگر در آخر کار مهره روی ریشه نباشد به این معنی است که متن دودویی ما اشتباه است و هیچ متنی وجود ندارد که بعد از رمزگذاری به این رشته تبدیل شود.</p>
@@ -292,9 +292,9 @@
 <p>به صورت دقیق تر فرض کنید می خواهیم درخت رمزگذاری ارائه دهیم که متن <span class="math notranslate nohighlight">\(s\)</span> را به دنباله دودویی <span class="math notranslate nohighlight">\(p\)</span> تبدیل کند به طوریکه طول <span class="math notranslate nohighlight">\(p\)</span> کمینه شود. فرض کنید از حرف <span class="math notranslate nohighlight">\(i\)</span> ام <span class="math notranslate nohighlight">\(c_i\)</span> تا در رشته <span class="math notranslate nohighlight">\(s\)</span> داشته باشیم. حالا طول <span class="math notranslate nohighlight">\(p\)</span> برابر با <span class="math notranslate nohighlight">\(\sum h_i \times c_i\)</span> خواهد بود پس می خواهیم این مقدار را کمینه کنیم.</p>
 <p>فرض کنید درخت رمزگذاری مورد نظر <span class="math notranslate nohighlight">\(T\)</span> باشد. به چند نکته زیر توجه کنید :</p>
 <ul class="simple">
-<li>اگر حرف ها را بر اساس تعداد تکرار های آن ها (<span class="math notranslate nohighlight">\(c_i\)</span>) از کم به زیاد مرتب کنیم <span class="math notranslate nohighlight">\(h_i\)</span> ها از زیاد به کم مرتب خواهند بود. (در غیر اینصورت می توانیم راس متناظر به دو حرف را جا به جا کنیم تا طول <span class="math notranslate nohighlight">\(p\)</span> کم تر شود).</li>
-<li>تمام برگ ها برادر دارند (مگر اینکه تنها یک برگ داشته باشیم). در غیراینصورت می توان آن برگ را حدف کرد حرفی که به آن نسبت داده شده را به پدرش نسبت دهیم. در اینصورت طول <span class="math notranslate nohighlight">\(p\)</span> کم می شود.</li>
-<li>اگر دو برگ <span class="math notranslate nohighlight">\(a\)</span> و <span class="math notranslate nohighlight">\(b\)</span> در یک ارتفاع باشند می توان حرف هایی که به <span class="math notranslate nohighlight">\(a,b\)</span> نسبت داده شده را با هم جا به جا کرد و تغییری در اندازه <span class="math notranslate nohighlight">\(p\)</span> ایجاد نمی شود.</li>
+<li><p>اگر حرف ها را بر اساس تعداد تکرار های آن ها (<span class="math notranslate nohighlight">\(c_i\)</span>) از کم به زیاد مرتب کنیم <span class="math notranslate nohighlight">\(h_i\)</span> ها از زیاد به کم مرتب خواهند بود. (در غیر اینصورت می توانیم راس متناظر به دو حرف را جا به جا کنیم تا طول <span class="math notranslate nohighlight">\(p\)</span> کم تر شود).</p></li>
+<li><p>تمام برگ ها برادر دارند (مگر اینکه تنها یک برگ داشته باشیم). در غیراینصورت می توان آن برگ را حدف کرد حرفی که به آن نسبت داده شده را به پدرش نسبت دهیم. در اینصورت طول <span class="math notranslate nohighlight">\(p\)</span> کم می شود.</p></li>
+<li><p>اگر دو برگ <span class="math notranslate nohighlight">\(a\)</span> و <span class="math notranslate nohighlight">\(b\)</span> در یک ارتفاع باشند می توان حرف هایی که به <span class="math notranslate nohighlight">\(a,b\)</span> نسبت داده شده را با هم جا به جا کرد و تغییری در اندازه <span class="math notranslate nohighlight">\(p\)</span> ایجاد نمی شود.</p></li>
 </ul>
 <p>پس می توان نتیجه گرفت اگر دو حرفی که تعداد تکرار های آن ها کمینه است را <span class="math notranslate nohighlight">\(x,y\)</span> در نظر بگیریم آن ها در پایین ترین ارتفاع درخت هستند.همچنین می توان راس های نسبت داده شده به آن ها را طوری جا به جا کرد که آن دو برادر باشند!</p>
 <p>پس حالت بهینه ای وجود دارد که برگ های متناظر با <span class="math notranslate nohighlight">\(x,y\)</span> دو برادر در پایین ترین ارتفاع درخت باشند. فرض کنید ارتفاع راس متناظر با <span class="math notranslate nohighlight">\(x,y\)</span> برابر با <span class="math notranslate nohighlight">\(h\)</span> باشد. از آنجایی که رشته دودویی متناظر به <span class="math notranslate nohighlight">\(x,y\)</span> تنها در یک رقم آخر (یعنی رقم <span class="math notranslate nohighlight">\(h\)</span> ام) با هم تفاوت دارند پس می توان فهمید رقم <span class="math notranslate nohighlight">\(h\)</span> ام آن دو روی هم <span class="math notranslate nohighlight">\(c_x + c_y\)</span> بار آمده است.</p>
@@ -385,11 +385,11 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 07, 2020.
+                        آخرین به روز رسانی در مهٔ 08, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.8.5) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

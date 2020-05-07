@@ -280,15 +280,15 @@
 <p>شرط تات به وضوح برای وجود تطابق کامل لازم است. برای اثبات به ازای یک مجموعه <span class="math notranslate nohighlight">\(S\)</span> داشته باشیم <span class="math notranslate nohighlight">\(|S| &lt; O(S)\)</span>. در اینصورت برای وجود تطابق کامل باید از هر مولفه فرد که در <span class="math notranslate nohighlight">\(O(S)\)</span> شمردیم باید یک راس به راسی در <span class="math notranslate nohighlight">\(S\)</span> مطابق شده باشد. از آنجایی که گفتیم <span class="math notranslate nohighlight">\(|S| &lt; O(S)\)</span> پس پیدا کردن تطابق کامل امکان پذیر نیست.</p>
 <p>برای اثبات کافی بودن شرط از اکسترمال استفاده می کنیم. یعنی با استفاده از برهان خلف فرض کنید گراف <span class="math notranslate nohighlight">\(G\)</span> تطابق کامل ندارد و شرط تات در آن صدق می کند. توجه کنید که با اضافه کردن یال به گراف <span class="math notranslate nohighlight">\(G\)</span> شرط تات برقرار می ماند‌ (چرا؟). پس ایده کلی ما به این صورت است که تا زمانی که در گرافمان تطابق کامل به وجود نیاید یک یال که در آن حضور ندارد را به آن اضافه خواهیم کرد. در نهایت به گراف ماکسیمال <span class="math notranslate nohighlight">\(H\)</span> می رسیم که :</p>
 <ul class="simple">
-<li>شرط تات در آن صدق می کند.</li>
-<li>در آن تطابق کامل وجود ندارد.</li>
-<li>به ازای هر یال <span class="math notranslate nohighlight">\(uv\)</span> که در <span class="math notranslate nohighlight">\(H\)</span> نیست در صورتی که آن را به <span class="math notranslate nohighlight">\(H\)</span> اضافه کنیم تطابق کامل به وجود خواهد آمد.</li>
+<li><p>شرط تات در آن صدق می کند.</p></li>
+<li><p>در آن تطابق کامل وجود ندارد.</p></li>
+<li><p>به ازای هر یال <span class="math notranslate nohighlight">\(uv\)</span> که در <span class="math notranslate nohighlight">\(H\)</span> نیست در صورتی که آن را به <span class="math notranslate nohighlight">\(H\)</span> اضافه کنیم تطابق کامل به وجود خواهد آمد.</p></li>
 </ul>
 <p>حالا هدف ما این است که ثابت کنیم گراف <span class="math notranslate nohighlight">\(H\)</span> همین حالا هم تطابق کامل دارد (در اینصورت با فرض خلف به تناقض می خوریم و مسئله اثبات می شود).</p>
 <p>ابتدا توجه کنید که برقرار بودن شرط تات به ازای <span class="math notranslate nohighlight">\(S = \phi\)</span> به ما نتیجه می دهد که <span class="math notranslate nohighlight">\(H\)</span> دارای هیچ مولفه همبندی با فرد راس نیست در نتیجه تعداد راس های گراف زوج است.</p>
 <ul class="simple">
-<li><strong>گلابی</strong> : راس های <span class="math notranslate nohighlight">\(a,b,c,d\)</span> به طوریکه <span class="math notranslate nohighlight">\(ab,ac\)</span> یال‌های گراف باشند ولی <span class="math notranslate nohighlight">\(bc,ad\)</span> یال‌های گراف نباشند.</li>
-<li><strong>سیب</strong> : راس های <span class="math notranslate nohighlight">\(a,b,c\)</span> به طوریکه <span class="math notranslate nohighlight">\(ab,ac\)</span> یال‌های گراف باشند ولی <span class="math notranslate nohighlight">\(bc\)</span> یال‌ گراف نباشد.</li>
+<li><p><strong>گلابی</strong> : راس های <span class="math notranslate nohighlight">\(a,b,c,d\)</span> به طوریکه <span class="math notranslate nohighlight">\(ab,ac\)</span> یال‌های گراف باشند ولی <span class="math notranslate nohighlight">\(bc,ad\)</span> یال‌های گراف نباشند.</p></li>
+<li><p><strong>سیب</strong> : راس های <span class="math notranslate nohighlight">\(a,b,c\)</span> به طوریکه <span class="math notranslate nohighlight">\(ab,ac\)</span> یال‌های گراف باشند ولی <span class="math notranslate nohighlight">\(bc\)</span> یال‌ گراف نباشد.</p></li>
 </ul>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/sib_golabi.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/sib_golabi.png" style="width: 50%;" /></a>
@@ -332,8 +332,8 @@
 <p>فرض کنید <span class="math notranslate nohighlight">\(d_u\)</span> درجه راس <span class="math notranslate nohighlight">\(u\)</span> باشد. از گراف <span class="math notranslate nohighlight">\(G\)</span> گراف <span class="math notranslate nohighlight">\(G^{\prime}\)</span> را به اینصورت می سازیم :</p>
 <p>به ازای هر راس <span class="math notranslate nohighlight">\(u\)</span> یک گراف دوبخشی کامل قرار می دهیم! به صورتی که بخش اول آن دارای <span class="math notranslate nohighlight">\(d_u - a_u\)</span> راس قرار داشته باشد و در بخش دوم آن <span class="math notranslate nohighlight">\(d_u\)</span> راس قرار داشته باشد. به گراف دوبخشی متناظر با راس <span class="math notranslate nohighlight">\(u\)</span> ، <span class="math notranslate nohighlight">\(B_u\)</span> گوییم. سپس یال های گراف <span class="math notranslate nohighlight">\(G\)</span> را به ترتیبی دلخواه در نظر بگیرید و متناظر آن را (به صورتی که خواهیم گفت) به گراف <span class="math notranslate nohighlight">\(G^{\prime}\)</span> اضافه کنید. فرض کنید <span class="math notranslate nohighlight">\(i\)</span> امین یالی که بررسی می کنیم <span class="math notranslate nohighlight">\(uv\)</span> باشد و قبل از آن <span class="math notranslate nohighlight">\(c1\)</span> تا از یال های مجاور <span class="math notranslate nohighlight">\(u\)</span> و <span class="math notranslate nohighlight">\(c2\)</span> تا از یال های مجاور <span class="math notranslate nohighlight">\(v\)</span> را بررسی کرده ایم. حالا متناظر یال <span class="math notranslate nohighlight">\(uv\)</span> برابر خواهد بود با یالی که بین دو راس زیر است :</p>
 <ul class="simple">
-<li>راس <span class="math notranslate nohighlight">\(c1\)</span> ام <strong>بخش دوم</strong> گراف <span class="math notranslate nohighlight">\(B_u\)</span></li>
-<li>راس <span class="math notranslate nohighlight">\(c2\)</span> ام <strong>بخش دوم</strong> گراف <span class="math notranslate nohighlight">\(B_v\)</span></li>
+<li><p>راس <span class="math notranslate nohighlight">\(c1\)</span> ام <strong>بخش دوم</strong> گراف <span class="math notranslate nohighlight">\(B_u\)</span></p></li>
+<li><p>راس <span class="math notranslate nohighlight">\(c2\)</span> ام <strong>بخش دوم</strong> گراف <span class="math notranslate nohighlight">\(B_v\)</span></p></li>
 </ul>
 <p>حالا ادعا می کنیم وجود داشتن زیرمجموعه <span class="math notranslate nohighlight">\(M\)</span> از یال ها که شرط مسئله را برآورده کند معادل است با وجود داشتن یک تطابق کامل در گراف <span class="math notranslate nohighlight">\(G^{\prime}\)</span>!</p>
 <p>توجه کنید که در این گراف هر یال در گراف اصلی دقیقا یک یال متناظر دارد پس مشکل قبل (چند بار استفاده کردن از یک یال) پیش نمی آید. اثبات کامل درستی قضیه بالا به عهده خواننده واگذار می شود.</p>
@@ -382,11 +382,11 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 07, 2020.
+                        آخرین به روز رسانی در مهٔ 08, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.8.5) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>
