@@ -271,6 +271,176 @@
 				    
   <div class="section" id="id1">
 <h1>گراف جهت‌دار بدون دور<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<div class="section" id="dag">
+<h2>تعریف 3.3.1 (DAG)<a class="headerlink" href="#dag" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید یک بازی تفنگی داریم. سازنده بازی قرار است برای هر دست از بازی, تاریخچه آن دست از بازی را ذخیره کند. به عبارتی اگر نفر
+<span class="math notranslate nohighlight">\(A\)</span>
+نفر
+<span class="math notranslate nohighlight">\(B\)</span>
+را کشت, یک یال جهت دار از
+<span class="math notranslate nohighlight">\(A\)</span>
+به
+<span class="math notranslate nohighlight">\(B\)</span>
+رسم می‌کنیم.</p>
+<p>با فرض اینکه دو نفر نمی‌توانند همزمان همدیگر را بکشند, گرافی که این کاربر ها با یکدیگر تشکیل می‌دهند یک گراف جهت دار بدون دور است(چرا؟).</p>
+<p>همانطور که از اسم بخش مشخص است, به گراف جهت داری که دور نداشته باشد یک گراف جهت دار بدون دور یا به اصطلاح
+<span class="math notranslate nohighlight">\(DAG\)</span>
+(directed acyclic graph)
+گوییم.</p>
+</div>
+<div class="section" id="id2">
+<h2>یک خاصیت مهم<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id3">
+<h3><strong>قضیه 3.3.1</strong><a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p><strong>صورت قضیه :</strong> اگر
+<span class="math notranslate nohighlight">\(G\)</span>
+یک گراف جهت دار بدون دور باشد, آنگاه میتوان راس های
+<span class="math notranslate nohighlight">\(G\)</span>
+را طوری به ترتیب
+<span class="math notranslate nohighlight">\(v_{1}, v_{2}, ..., v_{n}\)</span>
+نوشت به طوری که اگر یال
+<span class="math notranslate nohighlight">\((v_{i}, v_{j})\)</span>
+در گراف باشد, انگار
+<span class="math notranslate nohighlight">\(i &lt; j\)</span>
+باشد. (شکل۱ و شکل۲ را ببینید. شکل۲ یک ترتیب مرتب کردن راس ها برای گراف شکل۱ می‌باشد.)</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/dag1.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/dag1.png" style="width: 50%;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/dag2.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/dag2.png" style="width: 50%;" /></a>
+</div>
+<p><strong>اثبات قضیه :</strong> برای اثبات این قضیه از استقرا کمک می‌گیریم. پایه استقرا
+<span class="math notranslate nohighlight">\(n = 1\)</span>
+می‌باشد. که گرافی یک راسی می‌باشد. که حکم برای این گراف واضح است.</p>
+<p>طبق قضیه
+<span class="math notranslate nohighlight">\(3.1.2\)</span>
+که در تعاریف گراف ثابت کردیم, در
+<span class="math notranslate nohighlight">\(G\)</span>
+یک راس وجود دارد که درجه ورودی آن
+<span class="math notranslate nohighlight">\(0\)</span>
+می‌باشد(زیرا اگر درجه ورودی همه راس ها حداقل یک باشد, آنگاه این گراف دور دارد که با فرض سوال در تناقض است).</p>
+<p>حال  فرض کنید
+<span class="math notranslate nohighlight">\(d^{-}(x) = 0\)</span>
+. راس
+<span class="math notranslate nohighlight">\(x\)</span>
+را در جایگاه
+<span class="math notranslate nohighlight">\(v_{1}\)</span>
+قرار میدهیم و از گراف حذف میکنیم(به همراه تمام یال های متصل به آن).</p>
+<p>چون گراف اولیه دور نداشت, با حذف راس
+<span class="math notranslate nohighlight">\(x\)</span>
+دوری ایجاد نمی‌شود و شرایط استقرا برقرار است. پس طبق استقرا گراف باقی‌مانده را می‌توان طوری در یک ردیف چید که شرط سوال برقرار باشد. این ترتیب چیدن راس ها را به ترتیب در
+<span class="math notranslate nohighlight">\(v_{2}, v_{3}, ..., v_{n}\)</span>
+قرار می‌دهیم. از طرفی
+<span class="math notranslate nohighlight">\(v_{1} = x\)</span>
+است.</p>
+<p>اکنون کافی است ثابت کنیم این ترتیب راس ها, از شرط سوال پیروی می‌کند.
+راس های
+<span class="math notranslate nohighlight">\(v_{2}, v_{3}, ..., v_{n}\)</span>
+که تکلیفشان مشخص است چون طبق استقرا چیده شده اند. حال کافی است راس
+<span class="math notranslate nohighlight">\(v_{1}\)</span>
+شرط را رعایت کند. که این هم واضح است. چون این راس یال ورودی ندارد. پس حکم ثابت شد!</p>
+<p><strong>پی نوشت :</strong> صورت شهودی تر این قضیه به این‌صورت است که می‌توان راس های گراف بدون دور را در یک ردیف چید به طوری که همه یال ها از چپ به راست(یا از راست به چپ) باشند! هم‌چنین به این ترتیب از راس ها یک
+topological sort
+یا ترتیب توپولوژیک
+گوییم!</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>الگوریتم مرتب سازی توپولوژیک<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MX</span> <span class="o">=</span> <span class="mf">5e5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span> <span class="c1">/// Tedad ra&#39;s ha va yal ha</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">gr</span><span class="p">[</span><span class="n">MX</span><span class="p">];</span> <span class="c1">/// vector mojaverat</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">topologic</span><span class="p">;</span> <span class="c1">/// topological sort</span>
+<span class="kt">bool</span> <span class="n">mark</span><span class="p">[</span><span class="n">MX</span><span class="p">];</span>
+
+<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span>
+    <span class="n">mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">u</span><span class="p">:</span> <span class="n">gr</span><span class="p">[</span><span class="n">v</span><span class="p">]){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">topologic</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="c1">// in array yek topological sort baraie DAG ast!</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="o">&gt;&gt;</span> <span class="n">u</span><span class="p">;</span> <span class="c1">// Ra&#39;s ha 0-based hastand!</span>
+        <span class="n">gr</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// Graph vorodi baiad DAG bashad!</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// topological sort ro khoroji midahim!</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">topologic</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+          <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">topologic</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>پی نوشت۱ :</strong> دقت کنید که الگوریتم بالا در صورتی جواب درست را می‌دهد که گرافی بدون دور به عنوان ورودی بگیرد. بعد‌ها الگوریتم پیدا کردن دور در گراف جهت دار را شرح خواهیم داد.</p>
+<p><strong>پی نوشت۲ :</strong> در آخر ترتیب توپولوژیکی که به دست می‌اوریم, یال ها از راست به چپ هستند(به عبارتی یال ها از ایندکس بزرگ تر به ایندکس کوچک تر هستند. برعکس ترتیبی که در <strong>قضیه 3.3.1</strong> آوردیم).</p>
+</div>
+<div class="section" id="id5">
+<h2>توضیح الگوریتم<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>این الگوریتم همان الگوریتم
+<span class="math notranslate nohighlight">\(DFS\)</span>
+است. صرفا هنگام تمام شدن پیمایش از یک راس, آن را در یک پشته(در اینجا برای افزایش سرعت برنامه از پشته استفاده نکردیم. توصیه می‌شود استفاده از پشته به حداقل برسد), می‌اندازیم.</p>
+</div>
+<div class="section" id="id6">
+<h2>اثبات درستی الگوریتم<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید ترتیبی که الگوریتم به ما می‌دهد اینگونه باشد <span class="math notranslate nohighlight">\(v_{1}, v_{2}, ..., v_{n}\)</span>
+به لم زیر توجه کنید :</p>
+<p><strong>لم ۱ :</strong> وقتی راسی مانند
+<span class="math notranslate nohighlight">\(x\)</span>
+را در آرایه می‌اندازیم که همه راس هایی که از x می‌توان به آنها رسید(یعنی همه راس هایی مثل
+<span class="math notranslate nohighlight">\(v\)</span>
+که از
+<span class="math notranslate nohighlight">\(x\)</span>
+به
+<span class="math notranslate nohighlight">\(v\)</span>
+مسیر هست) , پیمایش آنها تمام شده باشد و در آرایه انداخته شده باشند!(چرا؟)</p>
+<p>برای اثبات الگوریتم بالا از برهان خلف و <strong>لم ۱</strong> استفاده می‌کنیم. فرض کنید ترتیبی که به دست آوردیم مطلوب نباشد. یعنی وجود دارند
+<span class="math notranslate nohighlight">\(i &lt; j\)</span>
+به طوری که یال
+<span class="math notranslate nohighlight">\((v_{i}, v_{j})\)</span>
+متعلق به گراف باشد(یعنی یک یال از چپ به راست).</p>
+<p>اما این ممکن نیست! زیرا وقتی
+<span class="math notranslate nohighlight">\(v_{i}\)</span>
+در آرایه انداخته شده, طبق <strong>لم ۱</strong>, تمام راس هایی که از
+<span class="math notranslate nohighlight">\(v_{i}\)</span>
+به آنها مسیر هست, باید در آرایه انداخته شده باشند. اما از
+<span class="math notranslate nohighlight">\(v_{i}\)</span>
+به
+<span class="math notranslate nohighlight">\(v_{j}\)</span>
+یک یال است(و بدیهتا مسیر هم هست), و
+<span class="math notranslate nohighlight">\(v_{j}\)</span>
+هنوز در آرایه انداخته نشده! که این خلاف <strong>لم ۱</strong> می‌باشد. پس حکم باطل است و چنین
+<span class="math notranslate nohighlight">\(i, j\)</span>
+وجود ندارند!</p>
+</div>
+<div class="section" id="id7">
+<h2>پیچیدگی الگوریتم<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>پیچیدگی الگوریتم بالا, همان پیچیدگی الگوریتم
+<span class="math notranslate nohighlight">\(DFS\)</span>
+است یعنی
+<span class="math notranslate nohighlight">\(O(n + m)\)</span>
+که
+<span class="math notranslate nohighlight">\(m, n\)</span>
+به ترتیب تعداد راس ها و یال ها می‌باشند.</p>
+</div>
 </div>
 
 
@@ -311,7 +481,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 09, 2020.
+                        آخرین به روز رسانی در مهٔ 10, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
