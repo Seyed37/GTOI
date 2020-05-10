@@ -53,7 +53,9 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -277,23 +279,23 @@ LCA را به RMQ
 را در زمان خطی حل می کنیم که از آن نتیجه می شود که
 LCA و RMQ
 نیز در زمان
-
+<span class="math notranslate nohighlight">\(O(n+q)\)</span>
 حل می شوند. توجه کنید که این راه ارزش تئوری دارد و با توجه به پیچیدگی پیاده سازی
 و ضریب بالا، در عمل استفاده نمی شود.</p>
 <p>در این راه آرایه را به دسته های
-
+<span class="math notranslate nohighlight">\(\frac{lg(n)}{2}\)</span>
 تایی تقسیم می کنیم. چون اختلاف هر دو عضو متوالی دقیقا ۱ است، این آرایه از لحاظ
 ساختار در کل
-
+<span class="math notranslate nohighlight">\(2^{\frac{lg(n)}{2}} = \sqrt{n}\)</span>
 حالت ممکن می تواند داشته باشد. برای هر کدام از زیر بازه های
 این حالات عضو مینیمم را به دست می آوریم که با پیاده سازی خوب پیچیدگی زمانی و حافظه ای
-
+<span class="math notranslate nohighlight">\(O(\sqrt{n} * lg^2(n))\)</span>
 خواهد داشت.
 برای هر بازه نیز به دست بیاورید که شبیه کدام یک از رادیکال حالت ممکن است. این کار
 نیز در زمان خطی قابل اجراست.
 سپس هر دسته را یک عضو از یک آرایه جدید بگیرید و روی آن یک جدول پراکنده مشابه آن چه
 در بخش قبل بررسی کردیم بسازید. این کار نیز در زمان
-
+<span class="math notranslate nohighlight">\(O(\frac{2*n}{lg(n)}*lg(\frac{2*n}{lg(n)})) = O(n)\)</span>
 قابل اجراست.</p>
 <p>حال می خواهیم به پرسش ها پاسخ دهیم. یک بازه را در نظر بگیرید. یا کاملا
 درون یکی از دسته های کوچک می افتد که جواب آن را از قبل حساب کرده ایم.
@@ -345,7 +347,7 @@ LCA و RMQ
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

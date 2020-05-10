@@ -53,7 +53,9 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -272,15 +274,15 @@
 <div class="section" id="id2">
 <h2><strong>تعریف 3.4.1 (جفت راس قویا همبند)</strong><a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>در گراف جهت‌­دار به جفت راس
-
+<span class="math notranslate nohighlight">\((v, u)\)</span>
 قویا همبند گوییم اگر و تنها اگر مسیری از
-
+<span class="math notranslate nohighlight">\(v\)</span>
 به
-
+<span class="math notranslate nohighlight">\(u\)</span>
 و مسیری از
-
+<span class="math notranslate nohighlight">\(u\)</span>
 به
-
+<span class="math notranslate nohighlight">\(v\)</span>
 وجود داشته باشد.</p>
 <p>به عنوان مثال در شکل 1، راس­‌های 2 و 4 یک جفت راس قویا همبند هستند.</p>
 </div>
@@ -294,58 +296,58 @@
 <div class="section" id="strongly-connected-component-scc">
 <h2><strong>تعریف 3.4.3 (مولفه قویا همبند (strongly connected component یا به اختصار scc))</strong><a class="headerlink" href="#strongly-connected-component-scc" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>یک مولفه قویا همبند در گراف جهت­‌دار
-
+<span class="math notranslate nohighlight">\(G\)</span>
 ، زیرمجموعه­‌ای از رئوس
-
+<span class="math notranslate nohighlight">\(G\)</span>
 می­‌باشند که در زیرگراف القایی آن­‌ها تشکیل یک گراف قویا همبند را دهد و همچنین ماکسیمال باشد، یعنی نتوان راس دیگری به آن اضافه کرد.</p>
 </div>
 <div class="section" id="id4">
 <h2><strong>لم 3.4.4</strong><a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p><strong>صورت لم:</strong> هر راس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 در گراف جهت­‌دار
-
+<span class="math notranslate nohighlight">\(G\)</span>
 ، تنها در یک مولفه قویا همبند یکتا قرار دارد.</p>
 <p><strong>اثبات:</strong> از برهان خلف استفاده می­‌کنیم. فرض کنید که
-
+<span class="math notranslate nohighlight">\(v\)</span>
 در دو مولفه قویا همبند
-
+<span class="math notranslate nohighlight">\(H\)</span>
 و
-
+<span class="math notranslate nohighlight">\(L\)</span>
 قرار دارد و
-
+<span class="math notranslate nohighlight">\(u\)</span>
 راسی در
-
+<span class="math notranslate nohighlight">\(L\)</span>
 باشد که در
-
+<span class="math notranslate nohighlight">\(H\)</span>
 قرار ندارد. چون
-
+<span class="math notranslate nohighlight">\(u\)</span>
 و
-
+<span class="math notranslate nohighlight">\(v\)</span>
 در یک مولفه قویا همبند قرار دارند، در نتیجه از هر راسی در
-
+<span class="math notranslate nohighlight">\(H\)</span>
 می­‌توان با مسیری به
-
+<span class="math notranslate nohighlight">\(v\)</span>
 آمد و سپس با مسیری به
-
+<span class="math notranslate nohighlight">\(u\)</span>
 رفت و همچنین با مسیری از
-
+<span class="math notranslate nohighlight">\(u\)</span>
 به
-
+<span class="math notranslate nohighlight">\(v\)</span>
 آمد و با مسیری به هر راس دلخواه در
-
+<span class="math notranslate nohighlight">\(H\)</span>
 رفت. پس درنتیجه می­‌توان راس
-
+<span class="math notranslate nohighlight">\(u\)</span>
 را به مولفه
-
+<span class="math notranslate nohighlight">\(H\)</span>
 اضافه کرد که این با ماکسیمال بودن
-
+<span class="math notranslate nohighlight">\(H\)</span>
 در تناقض است. از تناقض حاصل درستی حکم نتیجه می‌­شود.</p>
 </div>
 <div class="section" id="id5">
 <h2><strong>نتیجه 3.4.5</strong><a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>می­‌توان هر گراف جهت‌­دار
-
+<span class="math notranslate nohighlight">\(G\)</span>
 را به مولفه‌­های قویا همبند افراز کرد. شکل 2 گراف جهت­‌داری را نمایش می­‌دهد که مولفه‌­های قویا همبند آن مشخص شده­‌اند.</p>
 <div class="figure align-left">
 <a class="reference internal image-reference" href="../../_images/scc_2.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/scc_2.png" style="width: 50%;" /></a>
@@ -354,9 +356,9 @@
 <div class="section" id="id6">
 <h2><strong>تعریف 3.4.6 (گراف معکوس)</strong><a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>گراف معکوس
-
+<span class="math notranslate nohighlight">\(G\)</span>
 ، گرافی است که از معکوس کردن جهت یال‌های گراف
-
+<span class="math notranslate nohighlight">\(G\)</span>
 بدست می‌آید. توجه کنید یک گراف قویا همبند است اگر و تنها اگر معکوس آن نیز قویا همبند باشد.</p>
 <div class="section" id="id7">
 <h3>بدون دور بودن مولفه‌­های قویا همبند<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
@@ -365,84 +367,84 @@
 <div class="section" id="id8">
 <h2><strong>تعریف 3.4.7 (گراف فشرده شده مولفه­های قویا همبند)</strong><a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>فرض کنید
-
+<span class="math notranslate nohighlight">\(G\)</span>
 ، یک گراف جهت­‌دار دلخواه باشد و گراف جهت­‌دار
-
+<span class="math notranslate nohighlight">\(H\)</span>
 گرافی باشد که هر راس آن متناظر با یک مولفه قویا همبند در
-
+<span class="math notranslate nohighlight">\(G\)</span>
 است و هر مولفه قویا همبند در
-
+<span class="math notranslate nohighlight">\(G\)</span>
 به دقیقا یک راس در
-
+<span class="math notranslate nohighlight">\(H\)</span>
 متناظر شود. اگر
-
+<span class="math notranslate nohighlight">\(v\)</span>
 راسی در
-
+<span class="math notranslate nohighlight">\(H\)</span>
 باشد، مولفه قویا همبند متناظر با راس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 در
-
+<span class="math notranslate nohighlight">\(G\)</span>
 را با
-
+<span class="math notranslate nohighlight">\(F(v)\)</span>
 نمایش می‌­دهیم. اگر
-
+<span class="math notranslate nohighlight">\(v\)</span>
 و
-
+<span class="math notranslate nohighlight">\(u\)</span>
 دو راس از
-
+<span class="math notranslate nohighlight">\(H\)</span>
 باشند، به ازای هر یال جهت‌­دار از رئوس
-
+<span class="math notranslate nohighlight">\(F(v)\)</span>
 به رئوس
-
+<span class="math notranslate nohighlight">\(F(u)\)</span>
 ، یالی جهت­‌دار از
-
+<span class="math notranslate nohighlight">\(v\)</span>
 به
-
+<span class="math notranslate nohighlight">\(u\)</span>
 قرار دارد و همچنین هر یالی که از
-
+<span class="math notranslate nohighlight">\(v\)</span>
 به
-
+<span class="math notranslate nohighlight">\(u\)</span>
 است، متناظر با یالی از رئوس
-
+<span class="math notranslate nohighlight">\(F(v)\)</span>
 به رئوس
-
+<span class="math notranslate nohighlight">\(F(u)\)</span>
 می­‌باشد. در این صورت به
-
+<span class="math notranslate nohighlight">\(H\)</span>
 ، یک گراف فشرده شده مولفه‌­های قویا همبند
-
+<span class="math notranslate nohighlight">\(G\)</span>
 می‌­گوییم.</p>
 </div>
 <div class="section" id="id9">
 <h2><strong>قضیه 3.4.8</strong><a class="headerlink" href="#id9" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p><strong>صورت قضیه:</strong> هر گراف فشرده شده مولفه­‌های قویا همبند، دور ندارد.</p>
 <p><strong>اثبات:</strong> فرض کنید
-
+<span class="math notranslate nohighlight">\(G\)</span>
 یک گراف جهت‌­دار دلخواه است و
-
+<span class="math notranslate nohighlight">\(H\)</span>
 ، گراف فشرده شده مولفه­‌های قویا همبند
-
+<span class="math notranslate nohighlight">\(G\)</span>
 باشد.از برهان خلف استفاده می‌­کنیم. فرض کنید
-
+<span class="math notranslate nohighlight">\(H\)</span>
 دور داشته باشد و دو راس مانند
-
+<span class="math notranslate nohighlight">\(v\)</span>
 و
-
+<span class="math notranslate nohighlight">\(u\)</span>
 از
-
+<span class="math notranslate nohighlight">\(H\)</span>
 در یک دور قرار داشته باشند. چون از هر راس در یک مولفه قویا همبند به هر راس آن مولفه مسیر هست، پس در نتیجه می‌­توان از هر راس در
-
+<span class="math notranslate nohighlight">\(F(v)\)</span>
 به هر راس در
-
+<span class="math notranslate nohighlight">\(F(u)\)</span>
 رفت و همچنین از هر راس در
-
+<span class="math notranslate nohighlight">\(F(u)\)</span>
 به هر راس در
-
+<span class="math notranslate nohighlight">\(F(v)\)</span>
 مسیری جهت­‌دار وجود دارد (چرا؟) که یعنی رئوس
-
+<span class="math notranslate nohighlight">\(F(v)\)</span>
 و
-
+<span class="math notranslate nohighlight">\(F(u)\)</span>
 باید در یک مولفه قویا همبند قرار بگیرند که این با فرض ماکسیمال بودن مولفه‌­های قویا همبند در تناقض است. پس در نتیجه
-
+<span class="math notranslate nohighlight">\(H\)</span>
 دور ندارد و حکم اثبات می‌­شود.</p>
 </div>
 <div class="section" id="id10">
@@ -459,206 +461,224 @@
 <div class="section" id="id12">
 <h2><strong>الگوریتم کساراجو</strong><a class="headerlink" href="#id12" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p><strong>شرح:</strong> ابتدا روی کل گراف
-
+<span class="math notranslate nohighlight">\(DFS\)</span>
 می­‌زنیم و هربار هنگام خروج از هر راس آن را در یک پشته می‌­اندازیم (توجه کنید هر چه از راسی دیرتر خارج شویم، در پشته بالاتر قرار می‌گیرد). حال گراف معکوس را درنظر می­‌گیریم و در هر مرحله از بین تمام راس‌های دیده نشده، راسی که در پشته بالاتر از بقیه قرار دارد (مانند
-
+<span class="math notranslate nohighlight">\(v\)</span>
 ) را برداشته و از آن در گراف معکوس،
-
+<span class="math notranslate nohighlight">\(DFS\)</span>
 می‌­زنیم و
-
+<span class="math notranslate nohighlight">\(v\)</span>
 و تمام راس­‌هایی که دیده می‌­شوند (از طریق
-
+<span class="math notranslate nohighlight">\(DFS\)</span>
 زدن از راس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 ) را در یک مولفه جدید قرار می‌­دهیم و این کار را تا پیدا شدن تمام مولفه­‌های قویا همبند ادامه می‌­دهیم. توجه کنید که هنگام
-
+<span class="math notranslate nohighlight">\(DFS\)</span>
 زدن بر روی گراف معکوس، زمانی که راسی دیده می‌­شود، آن را به عنوان دیده شده علامت زده و در سری‌­های بعد از آن
-
+<span class="math notranslate nohighlight">\(DFS\)</span>
 نمی­‌زنیم و یا به آن وارد نمی‌­شویم.</p>
 <p><strong>اثبات درستی:</strong> برای اثبات این الگوریتم, ابتدا به لم زیر که مشابه آن را در بخش قبل داشتیم توجه کنید.</p>
 <p>تعریف می‌کنیم
-
+<span class="math notranslate nohighlight">\(f(v)\)</span>
 به معنای زمان تمام شدن پیمایش برای راس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 . به عبارتی داریم موقعیت یک راس را در پشته مشخص می‌کنیم(هر چه
-
+<span class="math notranslate nohighlight">\(f(v)\)</span>
 بیشتر باشد, راس در پشته در جایگاه پایین‌تری قرار می‌گیرد).</p>
 <p><strong>لم ۱:</strong> اگر
-
+<span class="math notranslate nohighlight">\(f(u) &gt; f(v)\)</span>
 و به عبارتی راس
-
+<span class="math notranslate nohighlight">\(u\)</span>
 در پشته, بالا تر از راس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 باشد, و همچنین مسیری از
-
+<span class="math notranslate nohighlight">\(v\)</span>
 به
-
+<span class="math notranslate nohighlight">\(u\)</span>
 باشد, آنگاه مسیری از
-
+<span class="math notranslate nohighlight">\(u\)</span>
 به
-
+<span class="math notranslate nohighlight">\(v\)</span>
 نیز وجود دارد.</p>
 <p><strong>برهان لم۱:</strong> از برهان خلف استفاده می‌کنیم. فرض کنید مسیری از
-
+<span class="math notranslate nohighlight">\(v\)</span>
 به
-
+<span class="math notranslate nohighlight">\(u\)</span>
 است و  هیچ مسیری از
-
+<span class="math notranslate nohighlight">\(u\)</span>
 به
-
+<span class="math notranslate nohighlight">\(v\)</span>
 نباشد.</p>
 <p>آنگاه چون ما در ابتدا راس
-
+<span class="math notranslate nohighlight">\(u\)</span>
 را در پیمایش دیده‌ایم(چرا؟) و مسیری از
-
+<span class="math notranslate nohighlight">\(u\)</span>
 به
-
+<span class="math notranslate nohighlight">\(v\)</span>
 نیست, پس هیچگاه راس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 را پیمایش نمیکنیم, مگر اینکه پیمایش راس
-
+<span class="math notranslate nohighlight">\(u\)</span>
 تمام شود. از طرفی اگر پیمایش راس
-
+<span class="math notranslate nohighlight">\(u\)</span>
 تمام شود و هنوز راس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 را ندیده باشیم, نتیجه می‌شود که اول
-
+<span class="math notranslate nohighlight">\(u\)</span>
 به پشته اضافه می‌شود و بعد
-
+<span class="math notranslate nohighlight">\(v\)</span>
 به عبارتی
-
+<span class="math notranslate nohighlight">\(f(u) &lt; f(v)\)</span>
 که این خلاف فرض است. پس لم ثابت شد!</p>
 <p>حال توجه داشته باشید در هنگام پیمایش گراف معکوس, روی معکوس یال‌ها حرکت می‌کنیم. یعنی عضو بالای پشته که راس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 باشد را برمی‌داریم و روی همه راس‌هایی مثل
-
+<span class="math notranslate nohighlight">\(x\)</span>
 که از
-
+<span class="math notranslate nohighlight">\(x\)</span>
 به
-
+<span class="math notranslate nohighlight">\(v\)</span>
 مسیر هست پیمایش می‌کنیم. در این‌صورت طبق لم۱، راس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 هم به راس
-
+<span class="math notranslate nohighlight">\(x\)</span>
 مسیر دارد!</p>
 <p>پس
-
+<span class="math notranslate nohighlight">\(v\)</span>
 و همه رئوسی که در پیمایش گراف معکوس از
-
+<span class="math notranslate nohighlight">\(v\)</span>
 دیده شدند در یک مولفه قرار می‌گیرند!</p>
 <p>از طرفی هیچ راس دیگری در این مولفه نیست. زیرا در غیر این صورت اگر راس دیگری در این مولفه قرار می‌گرفت، باید حداقل یک مسیر به
-
+<span class="math notranslate nohighlight">\(v\)</span>
 می‌داشت و جزو ر‌ئوس دیده‌شده از
-
+<span class="math notranslate nohighlight">\(v\)</span>
 شمرده می‌شد.</p>
 </div>
 <div class="section" id="id13">
 <h2><strong>پیچیدگی الگوریتم</strong><a class="headerlink" href="#id13" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>در الگوریتم بالا صرفا ۲ بار از
-
+<span class="math notranslate nohighlight">\(DFS\)</span>
 استفاده کردیم, در نتیجه پیچیدگی الگوریتم برابر با
-
+<span class="math notranslate nohighlight">\(O(n + m)\)</span>
 است که
-
+<span class="math notranslate nohighlight">\(m, n\)</span>
 به ترتیب تعداد راس‌ها و یال‌ها می‌باشند.</p>
 </div>
 <div class="section" id="id14">
 <h2><strong>لم 3.4.10</strong><a class="headerlink" href="#id14" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p><strong>صورت لم:</strong> الگوریتم کساراجو، مولفه‌های قویا همبند را به ترتیب توپولوژیک سورت آن‌ها آن‌ها پیدا می‌کند.</p>
 <p><strong>اثبات:</strong> به استقرا بر روی تعداد مولفه‌های قویا همبند حکم را ثابت می‌کنیم. به ازای یک مولفه که درستی حکم بدیهی است. حال اگر فرض بر درستی حکم به ازای
-
+<span class="math notranslate nohighlight">\(n-1\)</span>
 مولفه باشد، حکم را به ازای
-
+<span class="math notranslate nohighlight">\(n\)</span>
 مولفه ثابت می‌کنیم. اگر به مولفه اولی که در الگوریتم پیدا می‌کنیم (مانند
-
+<span class="math notranslate nohighlight">\(H\)</span>
 ) از مولفه دیگری مانند
-
+<span class="math notranslate nohighlight">\(L\)</span>
 یالی وارد شود، در این صورت در گراف معکوس، از
-
+<span class="math notranslate nohighlight">\(H\)</span>
 به
-
+<span class="math notranslate nohighlight">\(L\)</span>
 یال هست و چون در الگوریتم،
-
+<span class="math notranslate nohighlight">\(L\)</span>
 بعد از
-
+<span class="math notranslate nohighlight">\(H\)</span>
 پیدا می‌شود، پس در هنگام پیمایش
-
+<span class="math notranslate nohighlight">\(H\)</span>
 در گراف معکوس، باید تعدادی از راس‌های
-
+<span class="math notranslate nohighlight">\(L\)</span>
 دیده شوند و در
-
+<span class="math notranslate nohighlight">\(H\)</span>
 قرار گیرند در صورتی که مولفه‌ها نمی‌توانند اشتراک داشته باشند. پس در نتیجه مولفه اولی که پیدا می‌کنیم یالی از سمت مولفه‌های دیگر به آن وارد نمی‌شود و اولین مولفه در توپولوژیک سورت می‌باشد. حال طبق فرض استقرا باقی مولفه‌ها نیز به ترتیب توپولوژیک سورت پیدا می‌شوند (چرا؟) و حکم اثبات می‌شود.</p>
 </div>
 <div class="section" id="id15">
 <h2><strong>پیاده‌سازی الگوریتم</strong><a class="headerlink" href="#id15" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>توجه کنید انتها کد، مولفه ها را به ترتیب توپولوژیک سورت آن‌ها خروجی می‌دهیم.</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
-
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">const</span> <span class="kt">int</span> <span class="n">MX</span> <span class="o">=</span> <span class="mf">5e5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span> <span class="c1">/// tedad ras ha va yal ha</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">gr</span><span class="p">[</span><span class="n">MX</span><span class="p">],</span> <span class="n">back_gr</span><span class="p">[</span><span class="n">MX</span><span class="p">],</span> <span class="n">comp</span><span class="p">[</span><span class="n">MX</span><span class="p">];</span> <span class="c1">/// vector mojaverat, vector mojaverat(yal haie barax), moalefe haie ghavian hamband</span>
-<span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sk</span><span class="p">;</span> <span class="c1">/// moratab kardan ras ha barhasbe tamam shodan dfs</span>
-<span class="kt">bool</span> <span class="n">mark</span><span class="p">[</span><span class="n">MX</span><span class="p">];</span> <span class="c1">/// array mark baraie check kardane dide shodan ras ha</span>
-
-<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span>  <span class="c1">/// dfs mamoli!</span>
-    <span class="n">mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">u</span><span class="p">:</span> <span class="n">gr</span><span class="p">[</span><span class="n">v</span><span class="p">]){</span>
-        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
-            <span class="n">dfs</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">sk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">back_dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cnt</span><span class="p">){</span>  <span class="c1">/// dfs roie yal haie barax!</span>
-    <span class="n">mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">comp</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">u</span><span class="p">:</span> <span class="n">back_gr</span><span class="p">[</span><span class="n">v</span><span class="p">]){</span>
-        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
-            <span class="n">back_dfs</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">cnt</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">;</span>
-        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="o">&gt;&gt;</span> <span class="n">u</span><span class="p">;</span> <span class="c1">/// shomare ras ha 0-based hast.</span>
-        <span class="n">gr</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span> <span class="c1">/// in vector yal ha ra zakhire mikonad</span>
-        <span class="n">back_gr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="c1">/// in vector barax yal ha ra zakhire mikonad</span>
-    <span class="p">}</span>
-
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="n">fill</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="n">mark</span> <span class="o">+</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">/// chon mikhahim dfs jadid bezanim, mark ra 0 mikonim.</span>
-
-    <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">while</span><span class="p">(</span><span class="n">sk</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span> <span class="c1">/// stack kheili kond ast. dar inja serfan baraie dark behtar stack estefade shode. behtar ast az vector estefade konid.</span>
-        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">sk</span><span class="p">.</span><span class="n">top</span><span class="p">()]){</span>
-            <span class="n">back_dfs</span><span class="p">(</span><span class="n">sk</span><span class="p">.</span><span class="n">top</span><span class="p">(),</span> <span class="n">cnt</span><span class="p">);</span> <span class="c1">/// yek moalefe ra peida mikonim</span>
-            <span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">sk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-    <span class="p">}</span>
-
-
-    <span class="c1">/// moalefe hara be tartib topo sort eshan chap mikonim</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">cnt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;: &quot;</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">comp</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
-            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<p>توجه کنید انتها کد، مولفه ها را به ترتیب توپولوژیک سورت آن‌ها خروجی می‌دهیم.
+.. code-block:: cpp</p>
+<blockquote>
+<div><p>#include &lt;bits/stdc++.h&gt;</p>
+<p>using namespace std;</p>
+<p>const int MX = 5e5 + 5;</p>
+<p>int n, m; /// tedad ras ha va yal ha
+vector&lt;int&gt; gr[MX], back_gr[MX], comp[MX]; /// vector mojaverat, vector mojaverat(yal haie barax), moalefe haie ghavian hamband
+stack&lt;int&gt; sk; /// moratab kardan ras ha barhasbe tamam shodan dfs
+bool mark[MX]; /// array mark baraie check kardane dide shodan ras ha</p>
+<dl>
+<dt>void dfs(int v){  /// dfs mamoli!</dt><dd><p>mark[v] = 1;
+for(int u: gr[v]){</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if(!mark[u])</dt><dd><p>dfs(u);</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}
+sk.push(v);</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>void back_dfs(int v, int cnt){  /// dfs roie yal haie barax!</dt><dd><p>mark[v] = 1;
+comp[cnt].push_back(v);
+for(int u: back_gr[v]){</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if(!mark[u])</dt><dd><p>back_dfs(u, cnt);</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>int main(){</dt><dd><p>cin &gt;&gt; n &gt;&gt; m;
+for(int i = 0; i &lt; m; i++){</p>
+<blockquote>
+<div><p>int v, u;
+cin &gt;&gt; v &gt;&gt; u; /// shomare ras ha 0-based hast.
+gr[v].push_back(u); /// in vector yal ha ra zakhire mikonad
+back_gr[u].push_back(v); /// in vector barax yal ha ra zakhire mikonad</p>
+</div></blockquote>
+<p>}</p>
+<dl class="simple">
+<dt>for(int i = 0; i &lt; n; i++){</dt><dd><dl class="simple">
+<dt>if(!mark[i])</dt><dd><p>dfs(i);</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>}</p>
+<p>fill(mark, mark + n, 0); /// chon mikhahim dfs jadid bezanim, mark ra 0 mikonim.</p>
+<p>int cnt = 0;
+while(sk.size() != 0){ /// stack kheili kond ast. dar inja serfan baraie dark behtar stack estefade shode. behtar ast az vector estefade konid.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if(!mark[sk.top()]){</dt><dd><p>back_dfs(sk.top(), cnt); /// yek moalefe ra peida mikonim
+cnt++;</p>
+</dd>
+</dl>
+<p>}
+sk.pop();</p>
+</div></blockquote>
+<p>}</p>
+<p>/// moalefe hara be tartib topo sort eshan chap mikonim
+for(int i = 0; i &lt; cnt; i++){</p>
+<blockquote>
+<div><p>cout &lt;&lt; i &lt;&lt; &quot;: &quot;;
+for(auto v: comp[i]){</p>
+<blockquote>
+<div><p>cout &lt;&lt; v &lt;&lt; ' ';</p>
+</div></blockquote>
+<p>}
+cout &lt;&lt; endl;</p>
+</div></blockquote>
+<p>}
+return 0;</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
 </div>
 </div>
 
@@ -704,7 +724,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

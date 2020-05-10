@@ -53,7 +53,9 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -275,10 +277,10 @@
 <p>به فرایند تبدیل دنباله ای از حروف به دنباله ای از 0,1 ها رمزگذاری می گوییم و به برعکس این فرایند (یعنی تبدیل دنباله 0,1 ها به دنباله حروف) رمزگشایی می گوییم.</p>
 <p>اولین سوالی که در ذهنمان پیش می آید این است که چگونه هر حرف را به یک دنباله دودویی تناظر دهیم تا عملیات رمزگشایی به صورت یکتا و درست انجام شود؟ یک ایده هوشمندانه در اینجا استفاده از درخت ها است. یک درخت ریشه دودویی تعریف می کنیم و به آن درخت رمزگذاری می گوییم که خاصیت های زیر را دارد.</p>
 <ul class="simple">
-<li>هر راس این درخت حداکثر دو بچه دارد. به ازای هر راس روی یال های این راس که به بچه هایش می رود عدد 0,1 نوشته ایم (0 برای بچه چپ و 1 برای بچه راست).</li>
-<li>هر برگ این درخت (ریشه هیچگاه برگ محسوب نمی شود) متناظر با یکی از حروف الفبای ما  خواهد بود.</li>
+<li><p>هر راس این درخت حداکثر دو بچه دارد. به ازای هر راس روی یال های این راس که به بچه هایش می رود عدد 0,1 نوشته ایم (0 برای بچه چپ و 1 برای بچه راست).</p></li>
+<li><p>هر برگ این درخت (ریشه هیچگاه برگ محسوب نمی شود) متناظر با یکی از حروف الفبای ما  خواهد بود.</p></li>
 </ul>
-<p>در اینصورت به ازای هر حرف  الفبا فرض کنید  برگ متناظر با  باشد. در اینصورت دنباله 0,1 هایی که از ریشه تا راس  می بینیم را متناظر با حرف  قرار دهید.</p>
+<p>در اینصورت به ازای هر حرف <span class="math notranslate nohighlight">\(x\)</span> الفبا فرض کنید <span class="math notranslate nohighlight">\(u\)</span> برگ متناظر با <span class="math notranslate nohighlight">\(x\)</span> باشد. در اینصورت دنباله 0,1 هایی که از ریشه تا راس <span class="math notranslate nohighlight">\(u\)</span> می بینیم را متناظر با حرف <span class="math notranslate nohighlight">\(x\)</span> قرار دهید.</p>
 <p>حالا چگونه می توان یک متن دودویی را رمزگشایی کرد؟ کافی است ابتدا یک مهره را روی راس ریشه قرار دهید و شروع به خواندن متن دودویی کنید. سپس اگر 0 دیدید به یال سمت چپ بروید و اگر 1 دیدید به یال سمت راست بروید تا زمانی که به یک برگ برسید که به یک حرف متناظر شده است. و به این معنی است که حرف اول متنمان همان حرفی است که به آن رسیدیم. (دقت کنید که هیچ راس غیربرگی به حروف متناظر نشده پس اولین حرف متن نمی توانسته هیچ حرف دیگری باشد). سپس دوباره مهره را به ریشه برگردانید و دوباره شروع به خواندن رشته دودویی کنید تا حرف دوم رشته اصلی را متوجه شوید. با ادامه این فرایند می توان رشته را رمزگشایی کرد. اگر در این فرایند ها مهره می خواست به یالی برود که وجود ندارد‌ (مثلا اگر 0 نوشته شده بود ولی یال سمت چپ نداشتیم) یا اگر در آخر کار مهره روی ریشه نباشد به این معنی است که متن دودویی ما اشتباه است و هیچ متنی وجود ندارد که بعد از رمزگذاری به این رشته تبدیل شود.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/derakht_ramz.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/derakht_ramz.png" style="width: 50%;" /></a>
@@ -287,23 +289,23 @@
 <div class="section" id="id3">
 <h2>یک درخت کمینه<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>حال با دانستن اینکه می توان تناظر حروف به رشته های دودویی را با ساختن یک درخت رمزگذاری انجام داد، به مسئله اصلی بر می گردیم. حالا هدف ما این است که یک درخت رمزگذاری ارائه دهیم که طول رشته دودویی رمزشده مان را کمینه کند.</p>
-<p>به صورت دقیق تر فرض کنید می خواهیم درخت رمزگذاری ارائه دهیم که متن  را به دنباله دودویی  تبدیل کند به طوریکه طول  کمینه شود. فرض کنید از حرف  ام  تا در رشته  داشته باشیم. حالا طول  برابر با  خواهد بود پس می خواهیم این مقدار را کمینه کنیم.</p>
-<p>فرض کنید درخت رمزگذاری مورد نظر  باشد. به چند نکته زیر توجه کنید :</p>
+<p>به صورت دقیق تر فرض کنید می خواهیم درخت رمزگذاری ارائه دهیم که متن <span class="math notranslate nohighlight">\(s\)</span> را به دنباله دودویی <span class="math notranslate nohighlight">\(p\)</span> تبدیل کند به طوریکه طول <span class="math notranslate nohighlight">\(p\)</span> کمینه شود. فرض کنید از حرف <span class="math notranslate nohighlight">\(i\)</span> ام <span class="math notranslate nohighlight">\(c_i\)</span> تا در رشته <span class="math notranslate nohighlight">\(s\)</span> داشته باشیم. حالا طول <span class="math notranslate nohighlight">\(p\)</span> برابر با <span class="math notranslate nohighlight">\(\sum h_i \times c_i\)</span> خواهد بود پس می خواهیم این مقدار را کمینه کنیم.</p>
+<p>فرض کنید درخت رمزگذاری مورد نظر <span class="math notranslate nohighlight">\(T\)</span> باشد. به چند نکته زیر توجه کنید :</p>
 <ul class="simple">
-<li>اگر حرف ها را بر اساس تعداد تکرار های آن ها () از کم به زیاد مرتب کنیم  ها از زیاد به کم مرتب خواهند بود. (در غیر اینصورت می توانیم راس متناظر به دو حرف را جا به جا کنیم تا طول  کم تر شود).</li>
-<li>تمام برگ ها برادر دارند (مگر اینکه تنها یک برگ داشته باشیم). در غیراینصورت می توان آن برگ را حدف کرد حرفی که به آن نسبت داده شده را به پدرش نسبت دهیم. در اینصورت طول  کم می شود.</li>
-<li>اگر دو برگ  و  در یک ارتفاع باشند می توان حرف هایی که به  نسبت داده شده را با هم جا به جا کرد و تغییری در اندازه  ایجاد نمی شود.</li>
+<li><p>اگر حرف ها را بر اساس تعداد تکرار های آن ها (<span class="math notranslate nohighlight">\(c_i\)</span>) از کم به زیاد مرتب کنیم <span class="math notranslate nohighlight">\(h_i\)</span> ها از زیاد به کم مرتب خواهند بود. (در غیر اینصورت می توانیم راس متناظر به دو حرف را جا به جا کنیم تا طول <span class="math notranslate nohighlight">\(p\)</span> کم تر شود).</p></li>
+<li><p>تمام برگ ها برادر دارند (مگر اینکه تنها یک برگ داشته باشیم). در غیراینصورت می توان آن برگ را حدف کرد حرفی که به آن نسبت داده شده را به پدرش نسبت دهیم. در اینصورت طول <span class="math notranslate nohighlight">\(p\)</span> کم می شود.</p></li>
+<li><p>اگر دو برگ <span class="math notranslate nohighlight">\(a\)</span> و <span class="math notranslate nohighlight">\(b\)</span> در یک ارتفاع باشند می توان حرف هایی که به <span class="math notranslate nohighlight">\(a,b\)</span> نسبت داده شده را با هم جا به جا کرد و تغییری در اندازه <span class="math notranslate nohighlight">\(p\)</span> ایجاد نمی شود.</p></li>
 </ul>
-<p>پس می توان نتیجه گرفت اگر دو حرفی که تعداد تکرار های آن ها کمینه است را  در نظر بگیریم آن ها در پایین ترین ارتفاع درخت هستند.همچنین می توان راس های نسبت داده شده به آن ها را طوری جا به جا کرد که آن دو برادر باشند!</p>
-<p>پس حالت بهینه ای وجود دارد که برگ های متناظر با  دو برادر در پایین ترین ارتفاع درخت باشند. فرض کنید ارتفاع راس متناظر با  برابر با  باشد. از آنجایی که رشته دودویی متناظر به  تنها در یک رقم آخر (یعنی رقم  ام) با هم تفاوت دارند پس می توان فهمید رقم  ام آن دو روی هم  بار آمده است.</p>
-<p>در ادامه می توان دو حرف  و  را حذف کرد و یک حرف جدید مثلا  تعریف کرد که به جای  می آید و قرار است راس متناظر با  همان پدر مشترک  باشد پس حالا از تعداد حروف الفبا ای که داشتیم یکی کم کردیم و می توان مسئله را بازگشتی برای آن ها حل کرد. اگر جواب مسئله جدید (مینیمم طول ) را  فرض کنید جواب مسئله فعلی ما  خواهد بود.</p>
-<p>همچنین می توانید ببینید که درخت بهینه  که به صورت وجودی آن را فرض کرده بودیم در طی مراحل الگوریتم خود به خود ساخته خواهد شد!</p>
+<p>پس می توان نتیجه گرفت اگر دو حرفی که تعداد تکرار های آن ها کمینه است را <span class="math notranslate nohighlight">\(x,y\)</span> در نظر بگیریم آن ها در پایین ترین ارتفاع درخت هستند.همچنین می توان راس های نسبت داده شده به آن ها را طوری جا به جا کرد که آن دو برادر باشند!</p>
+<p>پس حالت بهینه ای وجود دارد که برگ های متناظر با <span class="math notranslate nohighlight">\(x,y\)</span> دو برادر در پایین ترین ارتفاع درخت باشند. فرض کنید ارتفاع راس متناظر با <span class="math notranslate nohighlight">\(x,y\)</span> برابر با <span class="math notranslate nohighlight">\(h\)</span> باشد. از آنجایی که رشته دودویی متناظر به <span class="math notranslate nohighlight">\(x,y\)</span> تنها در یک رقم آخر (یعنی رقم <span class="math notranslate nohighlight">\(h\)</span> ام) با هم تفاوت دارند پس می توان فهمید رقم <span class="math notranslate nohighlight">\(h\)</span> ام آن دو روی هم <span class="math notranslate nohighlight">\(c_x + c_y\)</span> بار آمده است.</p>
+<p>در ادامه می توان دو حرف <span class="math notranslate nohighlight">\(x\)</span> و <span class="math notranslate nohighlight">\(y\)</span> را حذف کرد و یک حرف جدید مثلا <span class="math notranslate nohighlight">\(z\)</span> تعریف کرد که به جای <span class="math notranslate nohighlight">\(x,y\)</span> می آید و قرار است راس متناظر با <span class="math notranslate nohighlight">\(z\)</span> همان پدر مشترک <span class="math notranslate nohighlight">\(x,y\)</span> باشد پس حالا از تعداد حروف الفبا ای که داشتیم یکی کم کردیم و می توان مسئله را بازگشتی برای آن ها حل کرد. اگر جواب مسئله جدید (مینیمم طول <span class="math notranslate nohighlight">\(p\)</span>) را <span class="math notranslate nohighlight">\(ans ^ {\prime}\)</span> فرض کنید جواب مسئله فعلی ما <span class="math notranslate nohighlight">\(ans = ans ^ {\prime} + c_x + c_y\)</span> خواهد بود.</p>
+<p>همچنین می توانید ببینید که درخت بهینه <span class="math notranslate nohighlight">\(T\)</span> که به صورت وجودی آن را فرض کرده بودیم در طی مراحل الگوریتم خود به خود ساخته خواهد شد!</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/huffman.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/huffman.png" style="width: 50%;" /></a>
 </div>
-<p>پس الگوریتم به اینصورت است که در هر مرحله دو حرفی که کمترین تعداد تکرار را دارند (مثلا ) با هم ترکیب کرده و یک حرف جدید جایگزین آن می کنیم که تعداد تکرار های آن  است و سپس  را به جواب اضافه می کنیم.</p>
+<p>پس الگوریتم به اینصورت است که در هر مرحله دو حرفی که کمترین تعداد تکرار را دارند (مثلا <span class="math notranslate nohighlight">\(x,y\)</span>) با هم ترکیب کرده و یک حرف جدید جایگزین آن می کنیم که تعداد تکرار های آن <span class="math notranslate nohighlight">\(c_x + c_y\)</span> است و سپس <span class="math notranslate nohighlight">\(c_x + c_y\)</span> را به جواب اضافه می کنیم.</p>
 <p>پیاده سازی این الگوریتم را می توانید در ادامه ببینید.</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 <span class="k">typedef</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">pii</span><span class="p">;</span>
@@ -387,7 +389,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

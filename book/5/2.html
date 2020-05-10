@@ -53,7 +53,9 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -276,41 +278,41 @@
 <p>در ابتدا فرض کنید گراف مورد بحث یک گراف بدون جهت است. حالا شرط لازم و کافی وجود داشتن تور اویلری را بررسی می کنیم.
 ابتدا راس های ایزوله گراف را حذف کنید. حالا لازم و کافی است که :‌</p>
 <ul class="simple">
-<li>الف) گراف همبند باشد.</li>
-<li>ب) درجه هر راس زوج باشد.</li>
+<li><p>الف) گراف همبند باشد.</p></li>
+<li><p>ب) درجه هر راس زوج باشد.</p></li>
 </ul>
 <p>ابتدا ثابت می کنیم دو شرط بالا لازم هستند.</p>
 <p>شرط الف به وضوح لازم است چون اگر دو یال در دو مولفه همبندی متفاوت باشد یک گذر نمی تواند همزمان شامل هر دوی آنها باشد.</p>
 <p>برای اثبات لازم بودن شرط ب توجه کنید که هر گاه به یک یال وارد می شویم باید بلافاصله از آن خارج شویم.(در مورد راس شروع دقت کنید) بنابرین تعداد یال های مجاور هر راس باید مضربی از ۲ باشند.</p>
 <p>حالا ثابت می کنیم دو شرط بالا کافی هستند. برای این کار از استقرا روی تعداد یال ها استفاده می کنیم.</p>
-<p>ابتدا فرض کنید یک گذر بسته داریم که از راس  شروع شده و به همان راس باز می گردد.
-
+<p>ابتدا فرض کنید یک گذر بسته داریم که از راس <span class="math notranslate nohighlight">\(start\)</span> شروع شده و به همان راس باز می گردد.
+<span class="math notranslate nohighlight">\(a_1 = start, a_2, ..., a_k = start\)</span>
 که لزوما شامل همه یال ها نیست.</p>
-<p>حالا یال های این گذر را از گراف حذف کنید. گراف به چند مولفه همبندی افراز می شود. به هر مولفه اولین  را نسبت دهید که  درون آن مولفه باشد.</p>
-<p>حالا شروع به طی کردن گشتی که حذف کردیم بکنید. هر گاه به راس  رسیدیم به صورت استقرایی تور اویلری مولفه هایی که  به آن ها نسبت داده شده است را بسازید و آنها را طی کنید.</p>
+<p>حالا یال های این گذر را از گراف حذف کنید. گراف به چند مولفه همبندی افراز می شود. به هر مولفه اولین <span class="math notranslate nohighlight">\(i\)</span> را نسبت دهید که <span class="math notranslate nohighlight">\(a_i\)</span> درون آن مولفه باشد.</p>
+<p>حالا شروع به طی کردن گشتی که حذف کردیم بکنید. هر گاه به راس <span class="math notranslate nohighlight">\(a_i\)</span> رسیدیم به صورت استقرایی تور اویلری مولفه هایی که <span class="math notranslate nohighlight">\(i\)</span> به آن ها نسبت داده شده است را بسازید و آنها را طی کنید.</p>
 <p>در نهایت گشتی که طی کرده ایم تور اویلری گراف ما است!</p>
-<p>تنها یک قسمت از اثبات باقی می ماند. چرا توانستیم فرض کنیم یک گشت بسته شامل  وجود دارد؟</p>
-<p>کافیست از  شروع کنیم و در هر مرحله اگر در راس  باشیم که
-
-یک یال مجاور  را طی کنیم که قبلا طی نشده است و این کار را تا زمانی ادامه دهیم که دوباره به  برسیم.</p>
-<p>چرا چنین یالی وجود دارد؟ زیرا وقتی به راس  رسیده ایم فرد بار به این راس وارد شده ایم و زوج بار خارج شده ایم. پس تعداد یال هایی که قبلا طی شده است فرد است و از طرفی طبق فرق درجه هر راس زوج است. پس باید یک یال که قبلا طی نشده است وجود داشته باشد!</p>
+<p>تنها یک قسمت از اثبات باقی می ماند. چرا توانستیم فرض کنیم یک گشت بسته شامل <span class="math notranslate nohighlight">\(start\)</span> وجود دارد؟</p>
+<p>کافیست از <span class="math notranslate nohighlight">\(start\)</span> شروع کنیم و در هر مرحله اگر در راس <span class="math notranslate nohighlight">\(u\)</span> باشیم که
+<span class="math notranslate nohighlight">\(u \neq start\)</span>
+یک یال مجاور <span class="math notranslate nohighlight">\(u\)</span> را طی کنیم که قبلا طی نشده است و این کار را تا زمانی ادامه دهیم که دوباره به <span class="math notranslate nohighlight">\(start\)</span> برسیم.</p>
+<p>چرا چنین یالی وجود دارد؟ زیرا وقتی به راس <span class="math notranslate nohighlight">\(u\)</span> رسیده ایم فرد بار به این راس وارد شده ایم و زوج بار خارج شده ایم. پس تعداد یال هایی که قبلا طی شده است فرد است و از طرفی طبق فرق درجه هر راس زوج است. پس باید یک یال که قبلا طی نشده است وجود داشته باشد!</p>
 </div>
 <div class="section" id="id4">
 <h3>گراف جهت دار<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>بررسی تور اویلری در گراف جهت دار بسیار مشابه گراف بدون جهت است. مشابه بالا ابتدا راس های ایزوله را حذف کنید سپس لازم و کافی است که :</p>
 <ul class="simple">
-<li>الف) گراف زمینه (جهت دهی ها را در نظر نگیرید) همبند باشد.</li>
-<li>ب) </li>
+<li><p>الف) گراف زمینه (جهت دهی ها را در نظر نگیرید) همبند باشد.</p></li>
+<li><p>ب) <span class="math notranslate nohighlight">\({d^+}_u = {d^-}_u\)</span></p></li>
 </ul>
-<p>در اینجا  درجه خروجی راس  و  درجه ورودی راس  می باشد.</p>
+<p>در اینجا <span class="math notranslate nohighlight">\({d^+}_u\)</span> درجه خروجی راس <span class="math notranslate nohighlight">\(u\)</span> و <span class="math notranslate nohighlight">\({d^-}_u\)</span> درجه ورودی راس <span class="math notranslate nohighlight">\(u\)</span> می باشد.</p>
 <p>اثبات لازم و کافی بودن مشابه اثبات برای گراف های بی جهت انجام می شود.</p>
 </div>
 </div>
 <div class="section" id="id5">
 <h2>پیاده سازی<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>ابتدا گراف را با لینکد لیست ذخیره سازی می کنیم. در تابع <code class="docutils literal"><span class="pre">add_edge</span></code> (که در اینجا برای گراف جهت دار نوشته شده است) دو راس داده می شود به عنوان ورودی داده می شود و تابع یالی بین آن دو می کشد. (جهت دار یا بی جهت)</p>
-<p>توجه کنید که تفاوت کد پیدا کردن تور اویلری گراف جهت دار و بدون جهت تنها در تابع <code class="docutils literal"><span class="pre">add_edge</span></code> است.</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<p>ابتدا گراف را با لینکد لیست ذخیره سازی می کنیم. در تابع <code class="docutils literal notranslate"><span class="pre">add_edge</span></code> (که در اینجا برای گراف جهت دار نوشته شده است) دو راس داده می شود به عنوان ورودی داده می شود و تابع یالی بین آن دو می کشد. (جهت دار یا بی جهت)</p>
+<p>توجه کنید که تفاوت کد پیدا کردن تور اویلری گراف جهت دار و بدون جهت تنها در تابع <code class="docutils literal notranslate"><span class="pre">add_edge</span></code> است.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -366,8 +368,8 @@
 </div>
 <div class="section" id="id6">
 <h2>اگر راس شروع و پایان یکسان نباشند چه؟<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>فرض کنید می خواهید یک گذر پیدا کنید که از راس  شروع شده و به راس  ختم شود و تمام یال ها را ببینیم و .</p>
-<p>حالا برای تبدیل مسئله جدید به مسئله تور اویلری کافی است یک یال بین  و  اضافه کنید. (اگر گراف جهت دار بود از  به ).</p>
+<p>فرض کنید می خواهید یک گذر پیدا کنید که از راس <span class="math notranslate nohighlight">\(a\)</span> شروع شده و به راس <span class="math notranslate nohighlight">\(b\)</span> ختم شود و تمام یال ها را ببینیم و <span class="math notranslate nohighlight">\(a \neq b\)</span>.</p>
+<p>حالا برای تبدیل مسئله جدید به مسئله تور اویلری کافی است یک یال بین <span class="math notranslate nohighlight">\(a\)</span> و <span class="math notranslate nohighlight">\(b\)</span> اضافه کنید. (اگر گراف جهت دار بود از <span class="math notranslate nohighlight">\(b\)</span> به <span class="math notranslate nohighlight">\(a\)</span>).</p>
 <p>حالا اگر فرض کنید در ابتدا یال جدید را طی می کنیم(در تور اویلری مهم نیست که از کدام یال شروع می کنیم) بقیه گذر همان چیزی است که دنبالش بودیم.(چرا؟) پس توانستیم این مسئله را به مسئله تور اویلری تبدیل کنیم.</p>
 </div>
 </div>
@@ -414,7 +416,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

@@ -53,7 +53,9 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -269,69 +271,69 @@
 				    
   <div class="section" id="id1">
 <h1>شمردن تعداد درخت ها<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
-<p>شمردن تعداد درخت های  راسی یکی از مسائل بسیار جذاب ترکیبیات هستند و راه های متنوع و خلاقانه ای برای آن وجود دارد. در این قسمت موضوع بحث درخت هایی با راس های برچسب دار هستند. (می توانید آنها را به صورت تعداد زیردرخت های فراگیر گراف  در نظر بگیرید). در واقع به چندین روش اثبات خواهیم کرد که تعداد درخت های  راسی برابر با  است. قبل از خواندن راه حل هر بخش راهنمایی ها را بخوانید و سعی کنید خودتان راه حلی ارائه دهید.</p>
+<p>شمردن تعداد درخت های <span class="math notranslate nohighlight">\(n\)</span> راسی یکی از مسائل بسیار جذاب ترکیبیات هستند و راه های متنوع و خلاقانه ای برای آن وجود دارد. در این قسمت موضوع بحث درخت هایی با راس های برچسب دار هستند. (می توانید آنها را به صورت تعداد زیردرخت های فراگیر گراف <span class="math notranslate nohighlight">\(K_n\)</span> در نظر بگیرید). در واقع به چندین روش اثبات خواهیم کرد که تعداد درخت های <span class="math notranslate nohighlight">\(n\)</span> راسی برابر با <span class="math notranslate nohighlight">\(n^{n-2}\)</span> است. قبل از خواندن راه حل هر بخش راهنمایی ها را بخوانید و سعی کنید خودتان راه حلی ارائه دهید.</p>
 <div class="section" id="id2">
 <h2>شمردن با دنباله درجه ای<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <div class="section" id="id3">
 <h3>راهنمایی<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>رابطه ای ارائه دهید که تعداد درخت های با دنباله درجه ای  را بشمارد. برای اثبات این رابطه به صورت استقرایی برگ حذف می کنیم!</p>
+<p>رابطه ای ارائه دهید که تعداد درخت های با دنباله درجه ای <span class="math notranslate nohighlight">\(d_1, d_2, ..., d_n\)</span> را بشمارد. برای اثبات این رابطه به صورت استقرایی برگ حذف می کنیم!</p>
 </div>
 <div class="section" id="id4">
 <h3>حل<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>رابطه مورد نظر برابر است با
-
+<span class="math notranslate nohighlight">\(\frac {(n-2)!} {(d_1-1)! \times (d_2-1)! \times ... (d_n-1)!}\)</span>
 . توجه کنید که
-
-برابر با همان  است پس عبارت بالا در واقع یک ترکیب با تکرار است!</p>
-<p>برای اثبات رابطه از استقرا روی  استفاده کنید. به عنوان پایه در نظر داشته باشید که به ازای  رابطه برقرار است. حالا کافیست تنها یک برگ خاص را در نظر بگیرید (راسی مثل  که  است). سپس حالت بندی کنید که تنها مجاور این راس چه راسی باشد.‌ اگر تنها مجاور راس  راس  باشد (توجه کنید چون  می توان نتیجه گرفت  نباید برگ باشد) آنگاه تعداد درخت های ممکن در این حالت برابر است با
-
+<span class="math notranslate nohighlight">\(\sum d_i-1\)</span>
+برابر با همان <span class="math notranslate nohighlight">\(n-2\)</span> است پس عبارت بالا در واقع یک ترکیب با تکرار است!</p>
+<p>برای اثبات رابطه از استقرا روی <span class="math notranslate nohighlight">\(n\)</span> استفاده کنید. به عنوان پایه در نظر داشته باشید که به ازای <span class="math notranslate nohighlight">\(n \leq 2\)</span> رابطه برقرار است. حالا کافیست تنها یک برگ خاص را در نظر بگیرید (راسی مثل <span class="math notranslate nohighlight">\(u\)</span> که <span class="math notranslate nohighlight">\(d_u = 1\)</span> است). سپس حالت بندی کنید که تنها مجاور این راس چه راسی باشد.‌ اگر تنها مجاور راس <span class="math notranslate nohighlight">\(u\)</span> راس <span class="math notranslate nohighlight">\(v\)</span> باشد (توجه کنید چون <span class="math notranslate nohighlight">\(n &gt; 2\)</span> می توان نتیجه گرفت <span class="math notranslate nohighlight">\(v\)</span> نباید برگ باشد) آنگاه تعداد درخت های ممکن در این حالت برابر است با
+<span class="math notranslate nohighlight">\(\frac {(n-2)!} {(d_1-1)! \times (d_2-1)! \times ... (d_v-2)! (d_n-1)!}\)</span>
 . همانطور که گفتیم عبارت بالا شبیه به یک ترکیب با تکرار است. طبق اتحاد تعمیم اتحاد پاسکال جمع عبارات (بعد از حالت بندی ها) برابر با
-
+<span class="math notranslate nohighlight">\(\frac {(n-2)!} {(d_1-1)! \times (d_2-1)! \times ... (d_n-1)!}\)</span>
 خواهد شد. همانطور که می خواستیم.</p>
-<p>حالا توجه کنید که عبارت بالا در واقع تعداد رشته های متفاوتی را می شمارد که از حرف  به تعداد  بار در آن آمده است. پس مثل این است که هر درخت را به یک دنباله  تایی از اعداد  تا  نسبت دادیم. پس اگر به ازای همه  های ممکن عبارت را جمع کنیم حاصل برابر با  خواهد شد که تعداد کل درخت های متفاوت  راسی است.</p>
+<p>حالا توجه کنید که عبارت بالا در واقع تعداد رشته های متفاوتی را می شمارد که از حرف <span class="math notranslate nohighlight">\(i\)</span> به تعداد <span class="math notranslate nohighlight">\(d_i-1\)</span> بار در آن آمده است. پس مثل این است که هر درخت را به یک دنباله <span class="math notranslate nohighlight">\(n-2\)</span> تایی از اعداد <span class="math notranslate nohighlight">\(1\)</span> تا <span class="math notranslate nohighlight">\(n\)</span> نسبت دادیم. پس اگر به ازای همه <span class="math notranslate nohighlight">\(d_1,d_2,...,d_n\)</span> های ممکن عبارت را جمع کنیم حاصل برابر با <span class="math notranslate nohighlight">\(n^{n-2}\)</span> خواهد شد که تعداد کل درخت های متفاوت <span class="math notranslate nohighlight">\(n\)</span> راسی است.</p>
 </div>
 </div>
 <div class="section" id="id5">
 <h2>کد پروفر<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <div class="section" id="id6">
 <h3>راهنمایی<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>تناظری یک به یک از درخت های  راسی به دنباله های  تایی از اعداد  تا  ایجاد می کنیم.</p>
+<p>تناظری یک به یک از درخت های <span class="math notranslate nohighlight">\(n\)</span> راسی به دنباله های <span class="math notranslate nohighlight">\(n-2\)</span> تایی از اعداد <span class="math notranslate nohighlight">\(1\)</span> تا <span class="math notranslate nohighlight">\(n\)</span> ایجاد می کنیم.</p>
 </div>
 <div class="section" id="id7">
 <h3>حل<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>تابع تناظر ما به اینصورت عمل می کند که در ابتدا درخت  را در نظر می گیریم و تا زمانی که تعداد راس های آن بیشتر از 2 است هر بار برگ  که برچسب آن کمینه است را حذف می کنیم. سپس برچسب تنها راس مجاور  را در روی کاغذ می نویسیم. در انتها  عددی که روی کاغذ نوشتیم را به ترتیب نوشتن در نظر بگیرید. آن ها دنباله  ما را تشکیل می دهند.</p>
-<p>برای اثبات یک به یک بودن تناظر باید ثابت کنیم هر دنباله  تایی از اعداد  تا  به صورت یکتایی به درخت های  راسی متناظر شده اند. دنباله  را در نظر بگیرید. می خواهیم درختی که به آن تناظر داده شده است را پیدا کنیم.</p>
-<p>اول از همه توجه کنید که در فرایند تناظر دادن ما راس  دقیقا  بار در رشته ظاهر شده است(چرا؟).</p>
-<p>پس اعدادی که در بین  ظاهر نشده اند باید برگ های درخت باشند. در فرایند تناظر در اولین گام برگی که برچسب آن کمینه بود را حذف کردیم. پس کمترین عددی که در بین  ظاهر نشده است را  بنامید. ابتدا باید  حذف شده باشد و تنها مجاور  راس  می باشد. حالا به صورت استقرایی می توان درخت متناظر با  را به صورت یافت. سپس یال بین  را به درخت اضافه می کنیم و درخت متناظر با  به دست خواهد آمد.</p>
+<p>تابع تناظر ما به اینصورت عمل می کند که در ابتدا درخت <span class="math notranslate nohighlight">\(T\)</span> را در نظر می گیریم و تا زمانی که تعداد راس های آن بیشتر از 2 است هر بار برگ <span class="math notranslate nohighlight">\(u\)</span> که برچسب آن کمینه است را حذف می کنیم. سپس برچسب تنها راس مجاور <span class="math notranslate nohighlight">\(u\)</span> را در روی کاغذ می نویسیم. در انتها <span class="math notranslate nohighlight">\(n-2\)</span> عددی که روی کاغذ نوشتیم را به ترتیب نوشتن در نظر بگیرید. آن ها دنباله <span class="math notranslate nohighlight">\(n-2\)</span> ما را تشکیل می دهند.</p>
+<p>برای اثبات یک به یک بودن تناظر باید ثابت کنیم هر دنباله <span class="math notranslate nohighlight">\(n-2\)</span> تایی از اعداد <span class="math notranslate nohighlight">\(1\)</span> تا <span class="math notranslate nohighlight">\(n\)</span> به صورت یکتایی به درخت های <span class="math notranslate nohighlight">\(n\)</span> راسی متناظر شده اند. دنباله <span class="math notranslate nohighlight">\(s_1,s_2,...,s_{n-2}\)</span> را در نظر بگیرید. می خواهیم درختی که به آن تناظر داده شده است را پیدا کنیم.</p>
+<p>اول از همه توجه کنید که در فرایند تناظر دادن ما راس <span class="math notranslate nohighlight">\(i\)</span> دقیقا <span class="math notranslate nohighlight">\(d_i-1\)</span> بار در رشته ظاهر شده است(چرا؟).</p>
+<p>پس اعدادی که در بین <span class="math notranslate nohighlight">\(s_1,s_2,...,s_{n-2}\)</span> ظاهر نشده اند باید برگ های درخت باشند. در فرایند تناظر در اولین گام برگی که برچسب آن کمینه بود را حذف کردیم. پس کمترین عددی که در بین <span class="math notranslate nohighlight">\(s_1,s_2,...,s_{n-2}\)</span> ظاهر نشده است را <span class="math notranslate nohighlight">\(u\)</span> بنامید. ابتدا باید <span class="math notranslate nohighlight">\(u\)</span> حذف شده باشد و تنها مجاور <span class="math notranslate nohighlight">\(u\)</span> راس <span class="math notranslate nohighlight">\(s_1\)</span> می باشد. حالا به صورت استقرایی می توان درخت متناظر با <span class="math notranslate nohighlight">\(s_2,...,s_{n-2}\)</span> را به صورت یافت. سپس یال بین <span class="math notranslate nohighlight">\(u,s_1\)</span> را به درخت اضافه می کنیم و درخت متناظر با <span class="math notranslate nohighlight">\(s_1,s_2,...,s_{n-2}\)</span> به دست خواهد آمد.</p>
 </div>
 </div>
 <div class="section" id="id8">
 <h2>تناظر به گراف تابعی<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <div class="section" id="id9">
 <h3>راهنمایی<a class="headerlink" href="#id9" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>درخت دو رنگ را درختی تعریف می کنیم که راس  در آن به رنگ آبی در آمده و رنگ  به رنگ قرمز (حتی ممکن است  یک راس باشند).</p>
-<p>واضح است که به ازای هر درخت  راسی دقیقا  درخت دورنگ داریم پس اگر  تا درخت  راسی داشته باشیم آنگاه  تا درخت دورنگ  راسی داریم.</p>
-<p>در این قسمت تناظری یک به یک بین گراف های تابعی  راسی (که تعداد آن ها  تا است) و درخت های دو رنگ ایجاد می کنیم.</p>
+<p>درخت دو رنگ را درختی تعریف می کنیم که راس <span class="math notranslate nohighlight">\(A\)</span> در آن به رنگ آبی در آمده و رنگ <span class="math notranslate nohighlight">\(B\)</span> به رنگ قرمز (حتی ممکن است <span class="math notranslate nohighlight">\(A, B\)</span> یک راس باشند).</p>
+<p>واضح است که به ازای هر درخت <span class="math notranslate nohighlight">\(n\)</span> راسی دقیقا <span class="math notranslate nohighlight">\(n^2\)</span> درخت دورنگ داریم پس اگر <span class="math notranslate nohighlight">\(c\)</span> تا درخت <span class="math notranslate nohighlight">\(n\)</span> راسی داشته باشیم آنگاه <span class="math notranslate nohighlight">\(c \times n^2\)</span> تا درخت دورنگ <span class="math notranslate nohighlight">\(n\)</span> راسی داریم.</p>
+<p>در این قسمت تناظری یک به یک بین گراف های تابعی <span class="math notranslate nohighlight">\(n\)</span> راسی (که تعداد آن ها <span class="math notranslate nohighlight">\(n^n\)</span> تا است) و درخت های دو رنگ ایجاد می کنیم.</p>
 </div>
 <div class="section" id="id10">
 <h3>حل<a class="headerlink" href="#id10" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>گراف تابعی را در نظر بگیرید. همانطور که می دانید در هر گراف تابعی از هر مولفه همبندی (در گراف زمینه) از یک دور جهت دار تشکیل شده است که از هر راس آن یک درخت آویزان است. شهودا برای تبدیل این گراف تابعی به درخت کافیست یک یال از هر دور را حذف کنیم سپس مولفه های همبندی گراف تابعی را به هم وصل کنیم تا تبدیل به درخت شود اما باید طوری این فرایند را انجام دهیم که تناظر یک به یک باشد و بتوان از روی درخت دو رنگ فهمید کدام یال حذف شده است!</p>
 <p>فرض کنید به ازای هر مولفه همبندی گراف تابعی (در گراف زمینه) کمترین برچسب در دور آن را زیبایی مولفه می نامیم و راسی که این برچسب کمینه را دارد راس زیبای مولفه بنامید. حالا برای تناظر فرایند زیر را انجام دهید.</p>
 <ul class="simple">
-<li>مولفه ها طوری چپ به راس مرتب کنید که زیبایی مولفه ها از چپ به راست <strong>نزولی</strong> باشد.</li>
-<li>در هر کدام از مولفه ها فرض کنید دور آن  باشد به طوریکه  راس زیبای مولفه باشد. ابتدا یال  را حذف کنید. سپس  را به راس زیبای مولفه بعدی (در سمت راست) وصل کنید.</li>
-<li>راس  در چپ ترین مولفه را آبی کنید و راس  در راست ترین مولفه را قرمز کنید. سپس جهت دهی یال ها را از بین ببرید.</li>
+<li><p>مولفه ها طوری چپ به راس مرتب کنید که زیبایی مولفه ها از چپ به راست <strong>نزولی</strong> باشد.</p></li>
+<li><p>در هر کدام از مولفه ها فرض کنید دور آن <span class="math notranslate nohighlight">\(p_1,p_2,...,p_k\)</span> باشد به طوریکه <span class="math notranslate nohighlight">\(p_1\)</span> راس زیبای مولفه باشد. ابتدا یال <span class="math notranslate nohighlight">\(p_kp_1\)</span> را حذف کنید. سپس <span class="math notranslate nohighlight">\(p_k\)</span> را به راس زیبای مولفه بعدی (در سمت راست) وصل کنید.</p></li>
+<li><p>راس <span class="math notranslate nohighlight">\(p_1\)</span> در چپ ترین مولفه را آبی کنید و راس <span class="math notranslate nohighlight">\(p_k\)</span> در راست ترین مولفه را قرمز کنید. سپس جهت دهی یال ها را از بین ببرید.</p></li>
 </ul>
 <p>به این صورت از گراف تابعی که داشتیم یک درخت دو رنگ ساختیم.</p>
 <p>چرا زیبایی مولفه را <strong>کوچکترین</strong> راس دور تعریف کردیم و چرا مولفه ها را طوری مرتب کردیم که زیبایی ها <strong>نزولی</strong> باشد؟ دلیل این کار تنها این بود که مسیر راس آبی به قرمز این ویژگی را داشته باشد که به آن ویژگی جذاب می گوییم.</p>
-<p><strong>ویژگی جذاب</strong> : ابتدا توجه کنید که هر کدام از دور های گراف تابعی در واقع الان یک بازه از مسیر بین راس آبی و قرمز هستند. از راس آبی شروع کنید و به سمت راس قرمز بروید و برچسب ها را نگاه کنید. فرض کنید الان روی راس  هستیم و کمترین برچسبی که قبل از  در طول مسیر دیده ایم  باشد. اگر  باشد (یا به عبارتی  بعد از این مرحله کم شود) به این معنی است که وارد راسی شدیم که متعلق به یک دور دیگر (از گراف تابعی) بوده است(چرا؟)!</p>
+<p><strong>ویژگی جذاب</strong> : ابتدا توجه کنید که هر کدام از دور های گراف تابعی در واقع الان یک بازه از مسیر بین راس آبی و قرمز هستند. از راس آبی شروع کنید و به سمت راس قرمز بروید و برچسب ها را نگاه کنید. فرض کنید الان روی راس <span class="math notranslate nohighlight">\(u\)</span> هستیم و کمترین برچسبی که قبل از <span class="math notranslate nohighlight">\(u\)</span> در طول مسیر دیده ایم <span class="math notranslate nohighlight">\(X\)</span> باشد. اگر <span class="math notranslate nohighlight">\(u&lt;X\)</span> باشد (یا به عبارتی <span class="math notranslate nohighlight">\(X\)</span> بعد از این مرحله کم شود) به این معنی است که وارد راسی شدیم که متعلق به یک دور دیگر (از گراف تابعی) بوده است(چرا؟)!</p>
 <p>برای اینکه ثابت کنیم تناظر برگشت پذیر است باید از روی یک درخت دو رنگ بتوانیم به صورت یکتا گراف تابعی را بسازیم.</p>
-<p>همانطور که گفتیم راس آبی را  در نظر بگیرید و راس قرمز را  در نظر بگیرید.</p>
-<p>مراحل تناظر را یکی یکی به عقب بر می گردانیم تا به گراف تابعی برسیم. اول از همه درخت را از مسیر  به  آویزان کنید. راس  را در سمت چپ در نظر بگیرید و راس  را در سمت راست در نظر بگیرید.</p>
+<p>همانطور که گفتیم راس آبی را <span class="math notranslate nohighlight">\(A\)</span> در نظر بگیرید و راس قرمز را <span class="math notranslate nohighlight">\(B\)</span> در نظر بگیرید.</p>
+<p>مراحل تناظر را یکی یکی به عقب بر می گردانیم تا به گراف تابعی برسیم. اول از همه درخت را از مسیر <span class="math notranslate nohighlight">\(A\)</span> به <span class="math notranslate nohighlight">\(B\)</span> آویزان کنید. راس <span class="math notranslate nohighlight">\(A\)</span> را در سمت چپ در نظر بگیرید و راس <span class="math notranslate nohighlight">\(B\)</span> را در سمت راست در نظر بگیرید.</p>
 <ul class="simple">
-<li>مسیر  باید از چپ به راست جهت دهی شده باشد.</li>
-<li>سپس تمام درخت هایی که از رئوس مسیر  آویزان شده اند باید از پایین به بالا جهت دهی شده باشند (هر راس به پدرش یال دارد).</li>
-<li>در اینجا از <strong>ویژگی جذاب</strong> که در بالا گفتیم استفاده می کنیم. با طی کردن مسیر از  به  می توانیم مسیر را به بازه هایی افراز کنیم که قبلا (در گراف تابعی) متعلق به یک مولفه بوده اند. حالا می دانیم که هر کدام از بازه ها قبلا یک دور بوده اند که راس های آن به ترتیب  بوده اند و یال  حذف شده است. پس کافیست یک یال از راس آخر بازه (که همان  است) به راس اول بازه (که همان  است) بکشیم.</li>
+<li><p>مسیر <span class="math notranslate nohighlight">\(AB\)</span> باید از چپ به راست جهت دهی شده باشد.</p></li>
+<li><p>سپس تمام درخت هایی که از رئوس مسیر <span class="math notranslate nohighlight">\(AB\)</span> آویزان شده اند باید از پایین به بالا جهت دهی شده باشند (هر راس به پدرش یال دارد).</p></li>
+<li><p>در اینجا از <strong>ویژگی جذاب</strong> که در بالا گفتیم استفاده می کنیم. با طی کردن مسیر از <span class="math notranslate nohighlight">\(A\)</span> به <span class="math notranslate nohighlight">\(B\)</span> می توانیم مسیر را به بازه هایی افراز کنیم که قبلا (در گراف تابعی) متعلق به یک مولفه بوده اند. حالا می دانیم که هر کدام از بازه ها قبلا یک دور بوده اند که راس های آن به ترتیب <span class="math notranslate nohighlight">\(p_1,...,p_k\)</span> بوده اند و یال <span class="math notranslate nohighlight">\(p_kp_1\)</span> حذف شده است. پس کافیست یک یال از راس آخر بازه (که همان <span class="math notranslate nohighlight">\(p_k\)</span> است) به راس اول بازه (که همان <span class="math notranslate nohighlight">\(p_1\)</span> است) بکشیم.</p></li>
 </ul>
 <p>پس توانستیم با معکوس تابع تناظر از هر درخت دو رنگ به یک گراف تابعی برسیم. پس توانستیم یک به یک بودن تناظر را ثابت کنیم.</p>
 </div>
@@ -340,21 +342,21 @@
 <h2>شمردن انشعاب ها<a class="headerlink" href="#id11" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <div class="section" id="id12">
 <h3>راهنمایی<a class="headerlink" href="#id12" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>سعی می کنیم تعداد انشعاب ها (درخت های ریشه دار که هر راس به جز ریشه به پدرش یال جهت دار دارد) بشماریم همچینین فرض کنید یال های درخت هم دارای ترتیب هستند یعنی جایگشتی  تایی روی یال های درخت نوشته ایم.</p>
-<p>در اینصورت اگر تعداد انشعاب هایی که شمردیم (با احتساب ترتیب یال ها) برابر با  باشد آنگاه تعداد درخت ها برابر با  خواهد بود. به عبارتی هر درخت را  بار می شماریم. ضریب  به خاطر حالت بندی روی ریشه درخت است و  به خاطر حالت بندی روی جایگشت نوشته شده روی یال های درخت می باشد.</p>
+<p>سعی می کنیم تعداد انشعاب ها (درخت های ریشه دار که هر راس به جز ریشه به پدرش یال جهت دار دارد) بشماریم همچینین فرض کنید یال های درخت هم دارای ترتیب هستند یعنی جایگشتی <span class="math notranslate nohighlight">\(n-1\)</span> تایی روی یال های درخت نوشته ایم.</p>
+<p>در اینصورت اگر تعداد انشعاب هایی که شمردیم (با احتساب ترتیب یال ها) برابر با <span class="math notranslate nohighlight">\(T\)</span> باشد آنگاه تعداد درخت ها برابر با <span class="math notranslate nohighlight">\(\frac {T} {(n-1)! \times n}\)</span> خواهد بود. به عبارتی هر درخت را <span class="math notranslate nohighlight">\((n-1)! \times n\)</span> بار می شماریم. ضریب <span class="math notranslate nohighlight">\(n\)</span> به خاطر حالت بندی روی ریشه درخت است و <span class="math notranslate nohighlight">\((n-1)!\)</span> به خاطر حالت بندی روی جایگشت نوشته شده روی یال های درخت می باشد.</p>
 </div>
 <div class="section" id="id13">
 <h3>حل<a class="headerlink" href="#id13" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>سعی می کنیم  را محاسبه کنیم. یک انشعاب خاص را در نظر بگیرید و فرایند ساختن آن را به شکل زیر در نظر بگیرید‌ :</p>
+<p>سعی می کنیم <span class="math notranslate nohighlight">\(T\)</span> را محاسبه کنیم. یک انشعاب خاص را در نظر بگیرید و فرایند ساختن آن را به شکل زیر در نظر بگیرید‌ :</p>
 <ul class="simple">
-<li>ابتدا گرافی  راسی و بدون یال در نظر بگیرید. یال ها را یکی یکی اضافه می کنیم. پس در هر مرحله تعدادی درخت جهت دار خواهیم داشت.</li>
-<li>در مرحله  ام یالی که روی آن عدد  نوشته شده را در نظر بگیرید. فرض کنید  باشد.</li>
-<li>در اینصورت لازم و کافی است که در هر مرحله  مربوط به دو مولفه متفاوت باشند و همچنین  راسی باشد که ریشه یکی از درخت های جهت دار ما است.</li>
+<li><p>ابتدا گرافی <span class="math notranslate nohighlight">\(n\)</span> راسی و بدون یال در نظر بگیرید. یال ها را یکی یکی اضافه می کنیم. پس در هر مرحله تعدادی درخت جهت دار خواهیم داشت.</p></li>
+<li><p>در مرحله <span class="math notranslate nohighlight">\(i\)</span> ام یالی که روی آن عدد <span class="math notranslate nohighlight">\(i\)</span> نوشته شده را در نظر بگیرید. فرض کنید <span class="math notranslate nohighlight">\(uv\)</span> باشد.</p></li>
+<li><p>در اینصورت لازم و کافی است که در هر مرحله <span class="math notranslate nohighlight">\(u, v\)</span> مربوط به دو مولفه متفاوت باشند و همچنین <span class="math notranslate nohighlight">\(v\)</span> راسی باشد که ریشه یکی از درخت های جهت دار ما است.</p></li>
 </ul>
 <p>برای شمردن تعداد انشعاب های ممکن کافی است بفهمیم فرایند ساختن انشعاب چند حالت مختلف می تواند داشته باشد.</p>
-<p>در شروع مرحله  (با شمارش از 1) دقیقا  درخت ریشه دار داریم. اگر روی  حالت بندی کنید (که  حالت دارد) برای انتخاب  دقیقا  حالت داریم زیرا که  باید ریشه یکی از درخت ها باشد و نباید ریشه درختی باشد که  در آن است. بنابراین مرحله  ام فرایند ساختن گراف  حالت دارد. پس در نهایت داریم
-</p>
-<p>پس همانطور که گفتیم تعداد درخت ها باید برابر با  باشد که همان  است. همانطور که می خواستیم!</p>
+<p>در شروع مرحله <span class="math notranslate nohighlight">\(i\)</span> (با شمارش از 1) دقیقا <span class="math notranslate nohighlight">\(n-i+1\)</span> درخت ریشه دار داریم. اگر روی <span class="math notranslate nohighlight">\(u\)</span> حالت بندی کنید (که <span class="math notranslate nohighlight">\(n\)</span> حالت دارد) برای انتخاب <span class="math notranslate nohighlight">\(v\)</span> دقیقا <span class="math notranslate nohighlight">\(n-i\)</span> حالت داریم زیرا که <span class="math notranslate nohighlight">\(v\)</span> باید ریشه یکی از درخت ها باشد و نباید ریشه درختی باشد که <span class="math notranslate nohighlight">\(u\)</span> در آن است. بنابراین مرحله <span class="math notranslate nohighlight">\(i\)</span> ام فرایند ساختن گراف <span class="math notranslate nohighlight">\(n \times (n-i)\)</span> حالت دارد. پس در نهایت داریم
+<span class="math notranslate nohighlight">\(T = n^{n-1} * (n-1)!\)</span></p>
+<p>پس همانطور که گفتیم تعداد درخت ها باید برابر با <span class="math notranslate nohighlight">\(\frac {T} {(n-1)! \times n}\)</span> باشد که همان <span class="math notranslate nohighlight">\(n^{n-2}\)</span> است. همانطور که می خواستیم!</p>
 </div>
 </div>
 <div class="section" id="id14">
@@ -362,8 +364,8 @@
 </div>
 <div class="section" id="id15">
 <h2>بیشتر<a class="headerlink" href="#id15" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>تمام مطالبی که در بالا گفتیم مربوط به تعداد زیردرخت های فراگیر گراف  بود. در اینجا یک ذهن کنجکاو می پرسد آیا می توان به جای  تعداد زیردرخت های فراگیر هر گرافی را شمرد؟</p>
-<p>انجام این کار با استفاده از ماتریس کیرشهف (kirchhoff matrix) قابل انجام است. به اینصورت که ماتریس  را با توجه به گراف  به اینصورت می سازیم. در این ماتریس  برابر است با درجه راس  می باشد و  با فرض  برابر با <strong>قرینه</strong> تعداد یال های بین راس های  می باشد. می توان اثبات کرد که دترمینان ماتریس  برابر با تعداد زیردرخت های فراگیر گراف  خواهد بود. از بیان مطالب بیشتر درباره ماتریس کیرشهف اجتناب می کنیم زیرا این موضوع از حوصله کتاب خارج است.</p>
+<p>تمام مطالبی که در بالا گفتیم مربوط به تعداد زیردرخت های فراگیر گراف <span class="math notranslate nohighlight">\(K_n\)</span> بود. در اینجا یک ذهن کنجکاو می پرسد آیا می توان به جای <span class="math notranslate nohighlight">\(K_n\)</span> تعداد زیردرخت های فراگیر هر گرافی را شمرد؟</p>
+<p>انجام این کار با استفاده از ماتریس کیرشهف (kirchhoff matrix) قابل انجام است. به اینصورت که ماتریس <span class="math notranslate nohighlight">\(A\)</span> را با توجه به گراف <span class="math notranslate nohighlight">\(G\)</span> به اینصورت می سازیم. در این ماتریس <span class="math notranslate nohighlight">\(A_{i,i}\)</span> برابر است با درجه راس <span class="math notranslate nohighlight">\(i\)</span> می باشد و <span class="math notranslate nohighlight">\(A_{i,j}\)</span> با فرض <span class="math notranslate nohighlight">\(i \neq j\)</span> برابر با <strong>قرینه</strong> تعداد یال های بین راس های <span class="math notranslate nohighlight">\(i,j\)</span> می باشد. می توان اثبات کرد که دترمینان ماتریس <span class="math notranslate nohighlight">\(A\)</span> برابر با تعداد زیردرخت های فراگیر گراف <span class="math notranslate nohighlight">\(G\)</span> خواهد بود. از بیان مطالب بیشتر درباره ماتریس کیرشهف اجتناب می کنیم زیرا این موضوع از حوصله کتاب خارج است.</p>
 </div>
 </div>
 
@@ -409,7 +411,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

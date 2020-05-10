@@ -53,7 +53,9 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -273,20 +275,20 @@
 <p>در این بخش قصد داریم شما را با چند مثال با جادوی مدل سازی با گراف آشنا کنیم!</p>
 <div class="section" id="id2">
 <h2>درخت؟<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>مجموعه  را مجموعه اعداد 1 تا  تعریف می کنیم و  زیرمجموعه  را از مجموعه  در نظر می گیریم که همه متمایزند. ثابت کنید عددی مثل  وجود دارد که اگر  را از  ها حذف کنیم همچنان  ها با هم متمایز باشند.</p>
+<p>مجموعه <span class="math notranslate nohighlight">\(S\)</span> را مجموعه اعداد 1 تا <span class="math notranslate nohighlight">\(n\)</span> تعریف می کنیم و <span class="math notranslate nohighlight">\(n\)</span> زیرمجموعه <span class="math notranslate nohighlight">\(A_1,A_2,...,A_n\)</span> را از مجموعه <span class="math notranslate nohighlight">\(S\)</span> در نظر می گیریم که همه متمایزند. ثابت کنید عددی مثل <span class="math notranslate nohighlight">\(x\)</span> وجود دارد که اگر <span class="math notranslate nohighlight">\(x\)</span> را از <span class="math notranslate nohighlight">\(A_i\)</span> ها حذف کنیم همچنان <span class="math notranslate nohighlight">\(A_i\)</span> ها با هم متمایز باشند.</p>
 <div class="section" id="id3">
 <h3>جواب<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>چه زمان حذف کردن عددی مثل  از مجموعه ها موجب ایجاد دو مجموعه مساوی می شود؟ تنها زمانی که دو مجموعه مثل  وجود داشته باشند که تنها تفاوت آن ها در  باشند. یعنی همه اعداد به جز  یا در هر دو آمده باشند یا در هیچکدام نیامده باشند.</p>
-<p>حالا مسئله را به اینصورت به گراف مدل سازی می کنیم که  راس در نظر می گیریم که هر کدام نماینده  ها هستند. بین دو راس  یالی با وزن  بکشید اگر تنها تفاوت  در عضو  باشد. حالا مسئله معادل این است که ثابت کنیم وزنی وجود دارد که بین یال ها نیامده است!</p>
-<p>طبق مدل سازی گرافمان هر بار که یالی با وزن  را طی کنیم عضو  از مجموعه فعلی مان حذف یا به آن اضافه می شود. پس در هر گذر بسته باید از هر وزن زوج تا داشته باشیم (زیرا وضعیت بودن یا نبودن هر عضو باید زوج بار تغییر کند تا بعد از طی کردن گذر به همان مجموعه اولیه برسیم).</p>
-<p>حالا برهان خلف بزنید که از هر وزن حداقل یک یال با این وزن داشته باشیم. پس از هر وزن یک یال دلخواه با این وزن را انتخاب کنید و گراف  یالی  را تشکیل دهید.</p>
-<p>ابتدا واضح است که گراف  دور ندارد. زیرا در صورت وجود دور باید از هر وزن زوج تا داشته باشیم که چون از هر وزن دقیقا یکی داریم ممکن نیست. پس  باید جنگل باشد. از طرفی گفتیم  دقیقا  یال دارد و می دانیم این ممکن نیست (زیرا بیشینه یال در جنگل مربوط به درخت است که  یال دارد).</p>
+<p>چه زمان حذف کردن عددی مثل <span class="math notranslate nohighlight">\(x\)</span> از مجموعه ها موجب ایجاد دو مجموعه مساوی می شود؟ تنها زمانی که دو مجموعه مثل <span class="math notranslate nohighlight">\(A_i, A_j\)</span> وجود داشته باشند که تنها تفاوت آن ها در <span class="math notranslate nohighlight">\(x\)</span> باشند. یعنی همه اعداد به جز <span class="math notranslate nohighlight">\(x\)</span> یا در هر دو آمده باشند یا در هیچکدام نیامده باشند.</p>
+<p>حالا مسئله را به اینصورت به گراف مدل سازی می کنیم که <span class="math notranslate nohighlight">\(n\)</span> راس در نظر می گیریم که هر کدام نماینده <span class="math notranslate nohighlight">\(A_i\)</span> ها هستند. بین دو راس <span class="math notranslate nohighlight">\(u,v\)</span> یالی با وزن <span class="math notranslate nohighlight">\(w\)</span> بکشید اگر تنها تفاوت <span class="math notranslate nohighlight">\(A_u, A_v\)</span> در عضو <span class="math notranslate nohighlight">\(w\)</span> باشد. حالا مسئله معادل این است که ثابت کنیم وزنی وجود دارد که بین یال ها نیامده است!</p>
+<p>طبق مدل سازی گرافمان هر بار که یالی با وزن <span class="math notranslate nohighlight">\(w\)</span> را طی کنیم عضو <span class="math notranslate nohighlight">\(w\)</span> از مجموعه فعلی مان حذف یا به آن اضافه می شود. پس در هر گذر بسته باید از هر وزن زوج تا داشته باشیم (زیرا وضعیت بودن یا نبودن هر عضو باید زوج بار تغییر کند تا بعد از طی کردن گذر به همان مجموعه اولیه برسیم).</p>
+<p>حالا برهان خلف بزنید که از هر وزن حداقل یک یال با این وزن داشته باشیم. پس از هر وزن یک یال دلخواه با این وزن را انتخاب کنید و گراف <span class="math notranslate nohighlight">\(n\)</span> یالی <span class="math notranslate nohighlight">\(G\)</span> را تشکیل دهید.</p>
+<p>ابتدا واضح است که گراف <span class="math notranslate nohighlight">\(G\)</span> دور ندارد. زیرا در صورت وجود دور باید از هر وزن زوج تا داشته باشیم که چون از هر وزن دقیقا یکی داریم ممکن نیست. پس <span class="math notranslate nohighlight">\(G\)</span> باید جنگل باشد. از طرفی گفتیم <span class="math notranslate nohighlight">\(G\)</span> دقیقا <span class="math notranslate nohighlight">\(n\)</span> یال دارد و می دانیم این ممکن نیست (زیرا بیشینه یال در جنگل مربوط به درخت است که <span class="math notranslate nohighlight">\(n-1\)</span> یال دارد).</p>
 <p>پس می توانیم از تناقض حاصل نتیجه بگیریم وزنی هست که در بین یال ها ظاهر نشده است که حکم مسئله مان را ثابت می کند.</p>
 </div>
 </div>
 <div class="section" id="id4">
 <h2>مثلث ها؟<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>فرض کنید  مجموعه ای  عضوی باشد و  تابعی باشد که ورودی آن یک زیرمجموعه دو عضوی از  است و خروجی آن یک عدد بین 0 تا  می باشد. همچنین می دانیم به ازای هر  که سه عضو متفاوت  هستند از بین  یکی از آنها برابر جمع دو تای دیگر است. شما باید ثابت کنید  وجود دارند که  هر سه برابر با 0 هستند.</p>
+<p>فرض کنید <span class="math notranslate nohighlight">\(S\)</span> مجموعه ای <span class="math notranslate nohighlight">\(2^n+1\)</span> عضوی باشد و <span class="math notranslate nohighlight">\(f({x,y})\)</span> تابعی باشد که ورودی آن یک زیرمجموعه دو عضوی از <span class="math notranslate nohighlight">\(S\)</span> است و خروجی آن یک عدد بین 0 تا <span class="math notranslate nohighlight">\(2^{n-1}-1\)</span> می باشد. همچنین می دانیم به ازای هر <span class="math notranslate nohighlight">\(x,y,z\)</span> که سه عضو متفاوت <span class="math notranslate nohighlight">\(S\)</span> هستند از بین <span class="math notranslate nohighlight">\(f({x,y}), f({x,z}), f({y,z})\)</span> یکی از آنها برابر جمع دو تای دیگر است. شما باید ثابت کنید <span class="math notranslate nohighlight">\(x,y,z\)</span> وجود دارند که <span class="math notranslate nohighlight">\(f({x,y}), f({x,z}), f({y, z})\)</span> هر سه برابر با 0 هستند.</p>
 <div class="section" id="id5">
 <h3>جواب<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>ناقص!</p>
@@ -336,7 +338,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

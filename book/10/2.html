@@ -53,7 +53,9 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -270,7 +272,7 @@
   <div class="section" id="o-n-q-lg-n">
 <h1>راه حل O(n+q*lg(n)) به کمک جداسازی سبک-سنگین<a class="headerlink" href="#o-n-q-lg-n" title="لینک ثابت به این سر مقاله">¶</a></h1>
 <p>در این بخش برای مساله‌های گفته شده یک راه حل
-
+<span class="math notranslate nohighlight">\(O(n+q*lg(n))\)</span>
 را بیان می‌کنیم.</p>
 <div class="section" id="id1">
 <h2>جداسازی سبک-سنگین<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h2>
@@ -282,7 +284,7 @@
 <div class="section" id="id2">
 <h3>تعداد یال های سبک در مسیر به ریشه<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>تعداد یال‌های سبک در مسیر هر راس به ریشه، حداکثر
-
+<span class="math notranslate nohighlight">\(O(lg(n))\)</span>
 است. (چرا؟)</p>
 </div>
 </div>
@@ -299,16 +301,16 @@ DFS
 <p>حال برای اینکه جد یک راس در ارتفاع خاصی را به دست بیاوریم، اگر تعداد پدر هایی
 که پشت این راس آمده اند از ارتفاع مطلوب بیشتر باشد، یا به عبارت دیگر همه یال ها
 به جد مطلوب، یال سنگین باشند. در این حالت می‌توانیم در زمان
-
+<span class="math notranslate nohighlight">\(O(1)\)</span>
 جد مطلوب را به دست بیاوریم. اما اگر یال سبکی این وسط بود باید به جدی که یال به پدرش سبک
 است برویم، سپس پدر آن را بدست آوریم و از آن پدر کار را ادامه دهیم. چون حداکثر
-
+<span class="math notranslate nohighlight">\(O(lg(n))\)</span>
 یال سبک در مسیر هر راس به ریشه وجود دارد، این کار در نهایت
-
+<span class="math notranslate nohighlight">\(O(lg(n))\)</span>
 به ازای هر پرسش طول می‌کشد و بنابراین پیچیدگی زمانی کل،
-
+<span class="math notranslate nohighlight">\(O(n+q*lg(n))\)</span>
 است.</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -367,7 +369,7 @@ DFS
 <div class="section" id="lca">
 <h2>حل مساله LCA<a class="headerlink" href="#lca" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>طبق چیزی که در قسمت قبل گفتیم با راه بالا می توان یک راه
-
+<span class="math notranslate nohighlight">\(O(n+q*lg^2(n))\)</span>
 برای مساله پایین ترین جد مشترک ارائه داد. اما به سادگی می‌توانیم راه حل را بهینه‌تر
 کنیم. پایین ترین جد مشترک را در نظر بگیرید. مسیر یکی از راس ها به این راس یالش
 حتما سبک است
@@ -378,9 +380,9 @@ DFS
 اگر مساوی بودند که ما جد مشترک را پیدا کرده‌ایم و در غیر این صورت با دو راس جدیدی که پیدا کردیم
 کار را ادامه می‌دهیم. چون حداکثر دو برابر لاگ رئوس درخت یال سبک در مسیر وجود خواهد داشت
 این الگوریتم پیچیدگی زمانی
-
+<span class="math notranslate nohighlight">\(O(n+q*lg(n))\)</span>
 دارد.</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -493,7 +495,7 @@ DFS
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>
