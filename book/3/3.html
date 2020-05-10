@@ -346,13 +346,57 @@ topological sort
 </div>
 </div>
 <div class="section" id="id4">
-<h2>توضیح الگوریتم<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<h2>مرتب سازی توپولوژیک<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id5">
+<h3>الگوریتم مرتب سازی توپولوژیک<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>این الگوریتم همان الگوریتم
 <span class="math notranslate nohighlight">\(DFS\)</span>
-است. صرفا هنگام تمام شدن پیمایش از یک راس, آن را در یک پشته می‌اندازیم.</p>
+است. صرفا هنگام تمام شدن پیمایش از یک راس, آن را در یک پشته(در اینجا برای افزایش سرعت برنامه از پشته استفاده نکردیم. توصیه می‌شود استفاده از پشته به حداقل برسد), می‌اندازیم.</p>
 </div>
-<div class="section" id="id5">
-<h2>الگوریتم مرتب سازی توپولوژیک<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<div class="section" id="id6">
+<h3>اثبات درستی الگوریتم<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>فرض کنید ترتیبی که الگوریتم به ما می‌دهد اینگونه باشد <span class="math notranslate nohighlight">\(v_{1}, v_{2}, ..., v_{n}\)</span>
+به لم زیر توجه کنید :</p>
+<p><strong>لم ۱ :</strong> وقتی راسی مانند
+<span class="math notranslate nohighlight">\(x\)</span>
+را در آرایه می‌اندازیم که همه راس هایی که از x می‌توان به آنها رسید(یعنی همه راس هایی مثل
+<span class="math notranslate nohighlight">\(v\)</span>
+که از
+<span class="math notranslate nohighlight">\(x\)</span>
+به
+<span class="math notranslate nohighlight">\(v\)</span>
+مسیر هست) , پیمایش آنها تمام شده باشد و در آرایه انداخته شده باشند!(چرا؟)</p>
+<p>برای اثبات الگوریتم بالا از برهان خلف و <strong>لم ۱</strong> استفاده می‌کنیم. فرض کنید ترتیبی که به دست آوردیم مطلوب نباشد. یعنی وجود دارند
+<span class="math notranslate nohighlight">\(i &lt; j\)</span>
+به طوری که یال
+<span class="math notranslate nohighlight">\((v_{i}, v_{j})\)</span>
+متعلق به گراف باشد(یعنی یک یال از چپ به راست).</p>
+<p>اما این ممکن نیست! زیرا وقتی
+<span class="math notranslate nohighlight">\(v_{i}\)</span>
+در آرایه انداخته شده, طبق <strong>لم ۱</strong>, تمام راس هایی که از
+<span class="math notranslate nohighlight">\(v_{i}\)</span>
+به آنها مسیر هست, باید در آرایه انداخته شده باشند. اما از
+<span class="math notranslate nohighlight">\(v_{i}\)</span>
+به
+<span class="math notranslate nohighlight">\(v_{j}\)</span>
+یک یال است(و بدیهتا مسیر هم هست), و
+<span class="math notranslate nohighlight">\(v_{j}\)</span>
+هنوز در آرایه انداخته نشده! که این خلاف <strong>لم ۱</strong> می‌باشد. پس حکم باطل است و چنین
+<span class="math notranslate nohighlight">\(i, j\)</span>
+وجود ندارند!</p>
+</div>
+<div class="section" id="id7">
+<h3>پیچیدگی الگوریتم<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>پیچیدگی الگوریتم بالا, همان پیچیدگی الگوریتم
+<span class="math notranslate nohighlight">\(DFS\)</span>
+است یعنی
+<span class="math notranslate nohighlight">\(O(n + m)\)</span>
+که
+<span class="math notranslate nohighlight">\(m, n\)</span>
+به ترتیب تعداد راس ها و یال ها می‌باشند.</p>
+</div>
+<div class="section" id="id8">
+<h3>پیاده‌سازی الگوریتم<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -397,49 +441,8 @@ topological sort
 </pre></div>
 </div>
 <p><strong>پی نوشت۱ :</strong> دقت کنید که الگوریتم بالا در صورتی جواب درست را می‌دهد که گرافی بدون دور به عنوان ورودی بگیرد. بعد‌ها الگوریتم پیدا کردن دور در گراف جهت دار را شرح خواهیم داد.</p>
-<p><strong>پی نوشت۲ :</strong> در آخر ترتیب توپولوژیکی که به دست می‌اوریم, یال ها از راست به چپ هستند(به عبارتی یال ها از ایندکس بزرگ تر به ایندکس کوچک تر هستند. برعکس ترتیبی که در <strong>قضیه 3.3.1</strong> آوردیم).</p>
+<p><strong>پی نوشت۲ :</strong> در آخر ترتیب توپولوژیکی که به دست می‌اوریم, یال ها از راست به چپ هستند(به عبارتی یال ها از ایندکس بزرگ تر به ایندکس کوچک تر هستند. برعکس ترتیبی که در <strong>قضیه 3.3.2</strong> آوردیم).</p>
 </div>
-<div class="section" id="id6">
-<h2>اثبات درستی الگوریتم<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>فرض کنید ترتیبی که الگوریتم به ما می‌دهد اینگونه باشد <span class="math notranslate nohighlight">\(v_{1}, v_{2}, ..., v_{n}\)</span>
-به لم زیر توجه کنید :</p>
-<p><strong>لم ۱ :</strong> وقتی راسی مانند
-<span class="math notranslate nohighlight">\(x\)</span>
-را در آرایه می‌اندازیم که همه راس هایی که از x می‌توان به آنها رسید(یعنی همه راس هایی مثل
-<span class="math notranslate nohighlight">\(v\)</span>
-که از
-<span class="math notranslate nohighlight">\(x\)</span>
-به
-<span class="math notranslate nohighlight">\(v\)</span>
-مسیر هست) , پیمایش آنها تمام شده باشد و در آرایه انداخته شده باشند!(چرا؟)</p>
-<p>برای اثبات الگوریتم بالا از برهان خلف و <strong>لم ۱</strong> استفاده می‌کنیم. فرض کنید ترتیبی که به دست آوردیم مطلوب نباشد. یعنی وجود دارند
-<span class="math notranslate nohighlight">\(i &lt; j\)</span>
-به طوری که یال
-<span class="math notranslate nohighlight">\((v_{i}, v_{j})\)</span>
-متعلق به گراف باشد(یعنی یک یال از چپ به راست).</p>
-<p>اما این ممکن نیست! زیرا وقتی
-<span class="math notranslate nohighlight">\(v_{i}\)</span>
-در آرایه انداخته شده, طبق <strong>لم ۱</strong>, تمام راس هایی که از
-<span class="math notranslate nohighlight">\(v_{i}\)</span>
-به آنها مسیر هست, باید در آرایه انداخته شده باشند. اما از
-<span class="math notranslate nohighlight">\(v_{i}\)</span>
-به
-<span class="math notranslate nohighlight">\(v_{j}\)</span>
-یک یال است(و بدیهتا مسیر هم هست), و
-<span class="math notranslate nohighlight">\(v_{j}\)</span>
-هنوز در آرایه انداخته نشده! که این خلاف <strong>لم ۱</strong> می‌باشد. پس حکم باطل است و چنین
-<span class="math notranslate nohighlight">\(i, j\)</span>
-وجود ندارند!</p>
-</div>
-<div class="section" id="id7">
-<h2>پیچیدگی الگوریتم<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>پیچیدگی الگوریتم بالا, همان پیچیدگی الگوریتم
-<span class="math notranslate nohighlight">\(DFS\)</span>
-است یعنی
-<span class="math notranslate nohighlight">\(O(n + m)\)</span>
-که
-<span class="math notranslate nohighlight">\(m, n\)</span>
-به ترتیب تعداد راس ها و یال ها می‌باشند.</p>
 </div>
 </div>
 
@@ -481,7 +484,7 @@ topological sort
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 10, 2020.
+                        آخرین به روز رسانی در مهٔ 11, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
