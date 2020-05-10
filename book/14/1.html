@@ -53,9 +53,7 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -305,17 +303,13 @@ N
 <h2>قضیه اویلر<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>قضیه اویلر رابطه ای برای به دست آوردن تعداد ناحیه های تشکیل شده در یک گراف مسطح است. این
 قضیه بیان می کند که:</p>
-<div class="math notranslate nohighlight">
-\[f = e + t + 1 - n\]</div>
 <p>که در آن f تعداد ناحیه ها، e تعداد یال ها، t تعداد مولفه ها و n تعداد رئوس است.
 به طور خاص در گراف همبند، داریم:</p>
-<div class="math notranslate nohighlight">
-\[f = e + 2 - n\]</div>
 <div class="section" id="id4">
 <h3>اثبات<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>اثبات این قضیه اصلا پیچیده نیست، بنابراین خوب است که ابتدا خودتان به آن فکر کنید.
 اگر گراف یک جنگل باشد، حکم برقرار است چون یک ناحیه وجود دارد و داریم
-<span class="math notranslate nohighlight">\(e = n - t\)</span>
+
 اما اگر جنگل نباشد، یکی از یال هایی که درون دور آمده و غیر برشی است را از گراف حذف
 می کنیم. تعداد رئوس و مولفه ها ثابت می ماند اما تعداد نواحی و تعداد یال ها دقیقا یک
 واحد کم می شود. پس اگر حکم در گراف جدید درست باشد، در گراف قبلی نیز درست بوده است. آن
@@ -339,20 +333,8 @@ N
 بماند. یک گراف که بیش از دو راس دارد
 اشباع است اگر و تنها اگر هر ناحیه سه ضلع داشته باشد یا به عبارت دیگر
 گراف دوگان آن سه منتظم باشد. در یک گراف اشباع داریم:</p>
-<div class="math notranslate nohighlight">
-\[3f = 2e\]</div>
 <p>که اگر آن را درون رابطه اویلر قرار دهیم ( گراف اشباع به وضوح همبند است ) به دست می آید:</p>
-<div class="math notranslate nohighlight">
-\[\frac{2e}{3} = e - n + 2\]</div>
-<div class="math notranslate nohighlight">
-\[\frac{e}{3} = n - 2\]</div>
-<div class="math notranslate nohighlight">
-\[e = 3n - 6\]</div>
 <p>که ثابت می کند که در هر گراف ساده مسطح</p>
-<div class="math notranslate nohighlight">
-\[e \le 3n - 6\]</div>
-<div class="math notranslate nohighlight">
-\[e = O(n)\]</div>
 </div>
 </div>
 
@@ -398,7 +380,7 @@ N
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

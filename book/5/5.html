@@ -53,9 +53,7 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -277,11 +275,11 @@
 <div class="section" id="id3">
 <h3>الگوریتم 1<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>از بخش های قبل متوجه شدیم که شرط لازم و کافی برای برای پیدا کردن دور و مسیر همیلتونی وجود ندارد. به عبارتی این یک مسئله np است و الگوریتم چند جمله ای برای آن وجود ندارد. حالا تلاش می کنیم الگوریتمی نمایی برای آن ارائه دهیم.</p>
-<p>حالا با استفاده از برنامه نویسی پویا <span class="math notranslate nohighlight">\(dp_{mask, a, b}\)</span> را تعریف می کنیم که یک آرایه boolean می باشد که نشان می دهد آیا با استفاده از راس های عضو مجموعه <span class="math notranslate nohighlight">\(mask\)</span> مسیری همیلتونی که از راس <span class="math notranslate nohighlight">\(a\)</span> شروع شود و به راس <span class="math notranslate nohighlight">\(b\)</span> ختم شود، وجود دارد یا خیر.</p>
-<p>برای آپدیت کردن این تابع کافی است روی راس قبل از <span class="math notranslate nohighlight">\(b\)</span> حالت بندی کنیم. فرض کنید این راس <span class="math notranslate nohighlight">\(c\)</span> باشد. لازم است <span class="math notranslate nohighlight">\(c\)</span> عضو مجموعه <span class="math notranslate nohighlight">\(mask\)</span> باشد همچنین یالی بین <span class="math notranslate nohighlight">\(b\)</span> و <span class="math notranslate nohighlight">\(c\)</span> وجود داشته باشد.
-در نهایت برای فهمیدن اینکه مسیر همیلتونی وجود دارد می توان <span class="math notranslate nohighlight">\(dp_{2^n-1,i,j}\)</span> ها را به ازای همه <span class="math notranslate nohighlight">\(i\)</span> و <span class="math notranslate nohighlight">\(j\)</span> های ممکن بررسی کرد.</p>
+<p>حالا با استفاده از برنامه نویسی پویا  را تعریف می کنیم که یک آرایه boolean می باشد که نشان می دهد آیا با استفاده از راس های عضو مجموعه  مسیری همیلتونی که از راس  شروع شود و به راس  ختم شود، وجود دارد یا خیر.</p>
+<p>برای آپدیت کردن این تابع کافی است روی راس قبل از  حالت بندی کنیم. فرض کنید این راس  باشد. لازم است  عضو مجموعه  باشد همچنین یالی بین  و  وجود داشته باشد.
+در نهایت برای فهمیدن اینکه مسیر همیلتونی وجود دارد می توان  ها را به ازای همه  و  های ممکن بررسی کرد.</p>
 <p>پس پیاده سازی الگوریتم به این شکل خواهد بود :</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="cp">#define bit(n,k) (((n)&gt;&gt;(k))&amp;1)</span>
 
@@ -338,14 +336,14 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>همانطور که مشاهده می کنید الگوریتمی با پیچیدگی زمانی <span class="math notranslate nohighlight">\(O(2^n * n^3)\)</span> ارائه دادیم.</p>
+<p>همانطور که مشاهده می کنید الگوریتمی با پیچیدگی زمانی  ارائه دادیم.</p>
 </div>
 <div class="section" id="id4">
 <h3>الگوریتم 2<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>حالا می خواهیم با عوض کردن تعریف تابع بازگشتی الگوریتمی بهتر ارائه دهیم.</p>
-<p>فرض کنید <span class="math notranslate nohighlight">\(dp_{mask,u}\)</span> برابر با زیرمجموعه ای از راس ها مثل <span class="math notranslate nohighlight">\(mask2\)</span> باشد به طوریکه به ازای هر عضو آن مثل <span class="math notranslate nohighlight">\(v\)</span> مسیری همیلتونی از <span class="math notranslate nohighlight">\(u\)</span> به <span class="math notranslate nohighlight">\(v\)</span> در راس های زیرمجموعه <span class="math notranslate nohighlight">\(mask\)</span> وجود داشته باشد.</p>
-<p>برای آپدیت کردن این تابع بازگشتی باید روی راسی که بعد از <span class="math notranslate nohighlight">\(u\)</span> می بینیم حالت بندی کنیم. در نهایت برای پیدا کردن جواب مسئله باید <span class="math notranslate nohighlight">\(dp_{2^n-1,u}\)</span> را به ازای همه <span class="math notranslate nohighlight">\(u\)</span> های ممکن بررسی کرد.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<p>فرض کنید  برابر با زیرمجموعه ای از راس ها مثل  باشد به طوریکه به ازای هر عضو آن مثل  مسیری همیلتونی از  به  در راس های زیرمجموعه  وجود داشته باشد.</p>
+<p>برای آپدیت کردن این تابع بازگشتی باید روی راسی که بعد از  می بینیم حالت بندی کنیم. در نهایت برای پیدا کردن جواب مسئله باید  را به ازای همه  های ممکن بررسی کرد.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="cp">#define bit(n,k) (((n)&gt;&gt;(k))&amp;1)</span>
 
@@ -397,20 +395,20 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>پس توانستیم پیچیدگی زمانی الگوریتم را به <span class="math notranslate nohighlight">\(O(2^n * n^2)\)</span> کاهش بدهیم.</p>
+<p>پس توانستیم پیچیدگی زمانی الگوریتم را به  کاهش بدهیم.</p>
 </div>
 </div>
 <div class="section" id="id5">
 <h2>دور همیلتونی<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <div class="section" id="id6">
 <h3>الگوریتم 1<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p>برای چک کردن اینکه در گراف دور همیلتونی وجود دارد یا خیر کافی است یک راس دلخواه مثل <span class="math notranslate nohighlight">\(a\)</span> را در نظر بگیریم. سپس به ازای همه مجاور های راس <span class="math notranslate nohighlight">\(a\)</span> مثل <span class="math notranslate nohighlight">\(b\)</span> بفهمیم که آیا مسیر همیلتونی از <span class="math notranslate nohighlight">\(a\)</span> به <span class="math notranslate nohighlight">\(b\)</span> وجود دارد یا خیر. (اگر وجود داشت ابتدا مسیر همیلتونی را طی کنید سپس یال <span class="math notranslate nohighlight">\(ab\)</span> را طی کنید).</p>
+<p>برای چک کردن اینکه در گراف دور همیلتونی وجود دارد یا خیر کافی است یک راس دلخواه مثل  را در نظر بگیریم. سپس به ازای همه مجاور های راس  مثل  بفهمیم که آیا مسیر همیلتونی از  به  وجود دارد یا خیر. (اگر وجود داشت ابتدا مسیر همیلتونی را طی کنید سپس یال  را طی کنید).</p>
 <p>می توان با استفاده از تابع بازگشتی که در الگوریتم 1 بخش قبل انجام دادیم این کار را انجام داد.</p>
-<p>حالا سعی می کنیم الگوریتم را بهبود ببخشیم. از آنجایی که راس <span class="math notranslate nohighlight">\(a\)</span> به صورت دلخواه انتخاب شده بود حدس می زنیم که می توان تعریف تابع بازگشتی را تغییر داد تا به الگوریتمی با پیچیدگی زمانی بهتری برسیم.</p>
-<p>تعریف می کنیم <span class="math notranslate nohighlight">\(dp_{mask,u}\)</span> یک آرایه boolean است که نشان می دهد آیا می توان از راس <span class="math notranslate nohighlight">\(u\)</span> شروع کرد و تمام رئوس مجموعه <span class="math notranslate nohighlight">\(mask\)</span> را دید و در نهایت به کوچکترین عضو مجموعه <span class="math notranslate nohighlight">\(mask\)</span> رسید یا خیر.</p>
-<p>تفاوت این تعریف با تعریف قبل این است که حالا راس انتهایی مسیر همیلتونی از روی <span class="math notranslate nohighlight">\(mask\)</span> مشخص می شود و نیازی نیست یک بعد اضافه تر به آن اختصاص داد.</p>
-<p>برای آپدیت کردن می توانید روی راس بعد از <span class="math notranslate nohighlight">\(u\)</span> حالت بندی کنید.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<p>حالا سعی می کنیم الگوریتم را بهبود ببخشیم. از آنجایی که راس  به صورت دلخواه انتخاب شده بود حدس می زنیم که می توان تعریف تابع بازگشتی را تغییر داد تا به الگوریتمی با پیچیدگی زمانی بهتری برسیم.</p>
+<p>تعریف می کنیم  یک آرایه boolean است که نشان می دهد آیا می توان از راس  شروع کرد و تمام رئوس مجموعه  را دید و در نهایت به کوچکترین عضو مجموعه  رسید یا خیر.</p>
+<p>تفاوت این تعریف با تعریف قبل این است که حالا راس انتهایی مسیر همیلتونی از روی  مشخص می شود و نیازی نیست یک بعد اضافه تر به آن اختصاص داد.</p>
+<p>برای آپدیت کردن می توانید روی راس بعد از  حالت بندی کنید.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="cp">#define bit(n,k) (((n)&gt;&gt;(k))&amp;1)</span>
 
@@ -463,15 +461,15 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>پس الگوریتمی با پیچیدگی زمانی <span class="math notranslate nohighlight">\(O(2^n * n^2)\)</span> رسیدیم.</p>
+<p>پس الگوریتمی با پیچیدگی زمانی  رسیدیم.</p>
 </div>
 <div class="section" id="id7">
 <h3>الگوریتم 2<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>حالا با الهام گرفتن از الگوریتم 2 بخش قبل پیچیدگی زمانی راه حل را بهبود می دهیم.</p>
-<p>تعریف می کنیم <span class="math notranslate nohighlight">\(dp_{mask}\)</span> زیرمجموعه ای از راس ها مثل <span class="math notranslate nohighlight">\(mask2\)</span> است که از هر راس <span class="math notranslate nohighlight">\(mask2\)</span> مثل <span class="math notranslate nohighlight">\(u\)</span> می توان شروع کرد و تمام راس های مجموعه <span class="math notranslate nohighlight">\(mask\)</span> را دید و در نهایت به کوچکترین عضو <span class="math notranslate nohighlight">\(mask\)</span> رسید.</p>
+<p>تعریف می کنیم  زیرمجموعه ای از راس ها مثل  است که از هر راس  مثل  می توان شروع کرد و تمام راس های مجموعه  را دید و در نهایت به کوچکترین عضو  رسید.</p>
 <p>برای آپدیت کردن می توان روی راس شروع مسیر همیلتونی حالت بندی کرد.</p>
-<p>به کد زیر توجه کنید. آرایه <span class="math notranslate nohighlight">\(adj\_mask_u\)</span> مجموعه راس هایی که مجاور راس <span class="math notranslate nohighlight">\(u\)</span> هستند را نشان می دهد.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<p>به کد زیر توجه کنید. آرایه  مجموعه راس هایی که مجاور راس  هستند را نشان می دهد.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 
 <span class="cp">#define bit(n,k) (((n)&gt;&gt;(k))&amp;1)</span>
 
@@ -524,7 +522,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>پس در نهایت به الگوریتمی با پیچیدگی زمانی <span class="math notranslate nohighlight">\(O(2^n * n)\)</span> رسیدیم.</p>
+<p>پس در نهایت به الگوریتمی با پیچیدگی زمانی  رسیدیم.</p>
 </div>
 </div>
 </div>
@@ -571,7 +569,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

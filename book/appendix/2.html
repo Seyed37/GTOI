@@ -52,9 +52,7 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -287,7 +285,7 @@
 <div class="section" id="id2">
 <h2>تحلیل پیچیدگی<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>سخت است که زمان اجرای یک برنامه را به طور دقیق حساب کنیم. برای مثال دستور</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">y</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>را در نظر بگیرید. این دستور چند عمل در سی پی یو است؟ پاسخ به این سوال بسیار سخت و نیازمند
@@ -301,7 +299,7 @@
 <p>بنابراین از محاسبه زمان دقیق اجرای کد صرف نظر می کنیم و تنها به این اکتفا می کنیم که
 دستورات سی پی یو مانند خواندن از آرایه یا جمع دو عدد، مقدار ثابتی از زمان طول می کشند.
 به همین صورت، دقت اندازه گیری ما در حد یک ضریب پایین می آید. برای مثال این کد را در نظر بگیرید</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
   <span class="p">}</span>
@@ -310,48 +308,34 @@
 </div>
 <p>ما نمی دانیم که تابع سوپ یا عمل مقایسه یا عمل پلاس پلاس هر کدام چند واحد زمانی طول می کشند
 اما می دانیم که هر کدام مقدار ثابتی از زمان طول می کشند. پس می توان گفت که زمان اجرای این کد
-<span class="math notranslate nohighlight">\(kn^2\)</span>
+
 است که k یک ضریب ثابت با واحد ثانیه است.
 در عموم موارد مقدار k برای ما اهمیتی ندارد و از آن چشم پوشی می کنیم.</p>
 <div class="section" id="id3">
 <h3>نماد ها<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>چون می توانیم از ضریب چشم پوشی کنیم، تعریف نماد های زیر خالی از لطف نیست:</p>
 <ul class="simple">
-<li><p>نماد
-<span class="math notranslate nohighlight">\(f(n) = O(g(n))\)</span>:
+<li>نماد
+:
 این نماد به این این معنی است که ضریبی مانند k وجود دارد به طوری که
-<span class="math notranslate nohighlight">\(f(n) \le kg(n)\)</span>
+
 به ازای تمامی n های بزرگ برقرار باشد.
-این نماد به صورت اِف اِن از او یِ جیِ اِن است خوانده می شود.</p></li>
-<li><p>نماد
-<span class="math notranslate nohighlight">\(f(n) = \Omega (g(n))\)</span>:
+این نماد به صورت اِف اِن از او یِ جیِ اِن است خوانده می شود.</li>
+<li>نماد
+:
 اگر و تنها اگر
-<span class="math notranslate nohighlight">\(g(n) = O(f(n))\)</span>
+
 بر قرار باشد برقرار است و می خوانیم
-اِف اِن از اُمِگا یِ جیِ اِن است</p></li>
-<li><p>نماد
-<span class="math notranslate nohighlight">\(f(n) = \theta (g(n))\)</span>:
+اِف اِن از اُمِگا یِ جیِ اِن است</li>
+<li>نماد
+:
 اگر و تنها اگر
-<span class="math notranslate nohighlight">\(f(n) = O(g(n))\)</span> و <span class="math notranslate nohighlight">\(f(n) = \Omega (g(n))\)</span>
+ و 
 بر قرار باشد برقرار است و می خوانیم
-اِف اِن از تِتا یِ جیِ اِن است</p></li>
+اِف اِن از تِتا یِ جیِ اِن است</li>
 </ul>
 <p>به این نماد ها می توانید به چشم علامت های کوچکتر مساوی، بزرگتر مساوی و مساوی نگاه کنید.
 مثال های زیر می تواند به درک بهتر این علامت ها کمک کند.</p>
-<div class="math notranslate nohighlight">
-\[1000n = O(0.00001n)\]</div>
-<div class="math notranslate nohighlight">
-\[1000n = \Omega(0.00001n)\]</div>
-<div class="math notranslate nohighlight">
-\[1000n = \theta(0.00001n)\]</div>
-<div class="math notranslate nohighlight">
-\[1000n^2 = O(n^5)\]</div>
-<div class="math notranslate nohighlight">
-\[1000n^2 \ne \Omega(n^5)\]</div>
-<div class="math notranslate nohighlight">
-\[n^5 = O(2^n)\]</div>
-<div class="math notranslate nohighlight">
-\[2*n^{10}+100*n^7+20*n^2 = \theta(n^{10})\]</div>
 </div>
 </div>
 <div class="section" id="id4">
@@ -374,33 +358,25 @@ n
 <h3>تابع لگاریتم<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>تابع لگاریتم تابعی است که در تحلیل پیچیدگی الگوریتم ها بسیار ظاهر می‌شود.
 این تابع به صورت معکوس تابع توان ۲ تعریف می‌شود. یعنی:
-<span class="math notranslate nohighlight">\(2^{lg(n)} = n\)</span>
+
 به سادگی می توان صحت گزاره های زیر را بررسی کرد.</p>
-<div class="math notranslate nohighlight">
-\[lg(a*b) = lg(a) + lg(b)\]</div>
-<div class="math notranslate nohighlight">
-\[lg(a^b) = b * lg(a)\]</div>
-<div class="math notranslate nohighlight">
-\[a^{\frac{lg(n)}{lg(a)}} = n\]</div>
-<div class="math notranslate nohighlight">
-\[lg(n)^k = O(n)\]</div>
 </div>
 <div class="section" id="id7">
 <h3>پیچدگی شبه خطی<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>به الگوریتمی که زمان اجرایش از
-<span class="math notranslate nohighlight">\(O(n*lg(n)^k)\)</span>
+
 باشد که k عددی ثابت است، این الگوریتم زمان اجرای شبه خطی دارد.</p>
 </div>
 <div class="section" id="id8">
 <h3>پیچیدگی چندجمله ای<a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>اگر زمان اجرای الگوریتم از
-<span class="math notranslate nohighlight">\(O(n^k)\)</span>
+
 باشد و k عددی ثابت باشد می گوییم زمان اجرای الگوریتم چند جمله ای است.</p>
 </div>
 <div class="section" id="id9">
 <h3>پیچیدگی نمایی<a class="headerlink" href="#id9" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>اگر زمان اجرای الگوریتم از
-<span class="math notranslate nohighlight">\(O(c^n)\)</span>
+
 باشد و c عددی ثابت باشد می گوییم زمان اجرای الگوریتم نمایی است.
 الگوریتم های نمایی عموما مناسب نیستند و برای
 n
@@ -449,7 +425,7 @@ n
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

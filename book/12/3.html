@@ -53,9 +53,7 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -331,7 +329,7 @@ f
 مسیر حالت های در جهت و در خلاف جهت را جداگانه بررسی کنیم، به ازای هر یال یک یال در خلاف
 جهت آن و با وزن ۰ قرار می دهیم. هر گاه که از یک یال جریانی گذراندیم، ظرفیت خودش را کم
 می کنیم و به ظرفیت یال دوگان آن یال اضافه می کنیم.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="n">cnt</span><span class="p">,</span><span class="n">head</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">pre</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">cap</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">to</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">from</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="n">cnt</span><span class="p">,</span><span class="n">head</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">pre</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">cap</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">to</span><span class="p">[</span><span class="n">M</span><span class="p">],</span><span class="n">from</span><span class="p">[</span><span class="n">M</span><span class="p">];</span>
 <span class="n">ll</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
 
 <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="n">ll</span> <span class="n">u</span><span class="p">,</span><span class="n">ll</span> <span class="n">v</span><span class="p">,</span><span class="n">ll</span> <span class="n">w</span><span class="p">)</span>
@@ -390,12 +388,12 @@ f
 <p>در این الگوریتم برای پیدا کردن مسیر افزایش دهنده از الگوریتم DFS استفاده کرده ایم. این
 الگوریتم در هر مرحله حداقل یک واحد به جریان موجود اضافه می کند و چون زمان
 DFS خطی است این الگوریتم پیچیدگی زمانی
-<span class="math notranslate nohighlight">\(O(ef)\)</span>
+
 دارد که e تعداد یال ها و f مقدار بیشینه جریان است.
 اگر به جای الگوریتم
 DFS از الگوریتم BFS
 استفاده می کردیم کران
-<span class="math notranslate nohighlight">\(O(ve^2)\)</span>
+
 نیز ثابت شده بود که به اثبات آن نمی پردازیم.</p>
 </div>
 <div class="section" id="id5">
@@ -408,7 +406,7 @@ DFS از الگوریتم BFS
 کمینه این گراف با گراف بی جهت برابر است. و هر برش دو راس را ناهمبند می کند پس از عدد همبندی
 یالی گراف بیشتر است و چون کمینه یال های لازم برای ناهمبند کردن یک گراف دو راس را از
 هم جدا می کند کمینه این برش ها همان عدد همبندی یالی گراف است. پیچیدگی زمانی این الگوریتم
-<span class="math notranslate nohighlight">\(O(v^3e)\)</span>
+
 است زیرا جواب از تعداد راس ها کمتر است.</p>
 <p>برای به دست آوردن عدد همبندی راسی گراف، یک گراف جدید می سازیم که به ازای هر راس دو راس
 دارد. یک راس ورودی و یک راس خروجی. به ازای هر یال نیز دو یال اضافه می کنیم. از راس های
@@ -417,7 +415,7 @@ DFS از الگوریتم BFS
 به دست بیاوریم که چه میزان راس مورد نیاز است حذف شود تا دو راس مورد نظر ناهمبند شوند،
 می توان برش کمینه بین این دو راس را در گراف به دست آورد. برای هر دو راس این مقدار را
 محاسبه می کنیم و عدد همبندی راسی به دست می آید. پیچیدگی زمانی این الگوریتم
-<span class="math notranslate nohighlight">\(O(v^3e)\)</span>
+
 است زیرا جواب از تعداد راس ها کمتر است.</p>
 </div>
 </div>
@@ -464,7 +462,7 @@ DFS از الگوریتم BFS
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

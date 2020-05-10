@@ -53,9 +53,7 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -282,46 +280,46 @@
 <a class="reference internal image-reference" href="../../_images/directed_city.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/directed_city.png" style="width: 50%;" /></a>
 </div>
 <p>به بیان دقیق تر, گراف جهت دار
-<span class="math notranslate nohighlight">\(G\)</span>
+
 یک زوج مرتب
-<span class="math notranslate nohighlight">\((V, E)\)</span>
-است که <span class="math notranslate nohighlight">\(V\)</span> مجموعه راس های گراف است. همچنین <span class="math notranslate nohighlight">\(E\)</span> یک مجموعه شامل زوج مرتب هایی به فرم
-<span class="math notranslate nohighlight">\((u, v)\)</span>
+
+است که  مجموعه راس های گراف است. همچنین  یک مجموعه شامل زوج مرتب هایی به فرم
+
 است به این معنا که یک یال جهت دار از
-<span class="math notranslate nohighlight">\(u\)</span>
+
 به
-<span class="math notranslate nohighlight">\(v\)</span>
+
 در گراف وجود دارد.</p>
 <p>به گراف جهت دار
-<span class="math notranslate nohighlight">\(G\)</span>
+
 ساده می‌گوییم اگر شامل یال های جهت دار چند گانه و طوقه نباشد. البته توجه داشته باشید که ممکن است
-<span class="math notranslate nohighlight">\(G\)</span>
-ساده باشد و <span class="math notranslate nohighlight">\(E\)</span> شامل
-<span class="math notranslate nohighlight">\((u, v)\)</span>
+
+ساده باشد و  شامل
+
 و
-<span class="math notranslate nohighlight">\((v, u)\)</span>
+
 باشد, ولی نمی‌تواند ۲ تا از زوج مرتب
-<span class="math notranslate nohighlight">\((u, v)\)</span>
+
 را داشته باشد.</p>
 <p>توجه داشته باشید که از این به بعد ما با گراف های جهت دار ساده کار خواهیم داشت و منظور ما از گراف جهت دار گراف جهت دار ساده خواهد بود, مگر اینکه در صورت سوال ذکر شود.</p>
 </div>
 <div class="section" id="id3">
 <h2>درجه در گراف جهت دار<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>در یک گراف جهت دار, هر راس یک درجه ورودی و یک درجه خروجی دارد. برای مثال در شکل۲, درجه ورودی راس سیب برابر با ۳ و درجه خروجی آن برابر با ۱ است!</p>
-<p>درجه ورودی راس <span class="math notranslate nohighlight">\(v\)</span> را با نماد
-<span class="math notranslate nohighlight">\(d^{−}(v)\)</span>
+<p>درجه ورودی راس  را با نماد
+
 یا
-<span class="math notranslate nohighlight">\(deg^{−}(v)\)</span>
+
 و درجه خروجی را با
-<span class="math notranslate nohighlight">\(d^{+}(v)\)</span>
+
 یا
-<span class="math notranslate nohighlight">\(deg^{+}(v)\)</span>
+
 نمایش می‌دهیم.</p>
 <p>منظور از
-<span class="math notranslate nohighlight">\(\delta^{+}, \delta^{-}\)</span>
+
 به ترتیب مینیمم درجه ورودی و مینیمم درجه خروجی است.</p>
 <p>به طور مشابه منظور از
-<span class="math notranslate nohighlight">\(\Delta^{+}, \Delta^{-}\)</span>
+
 به ترتیب ماکسیمم درجه ورودی و ماکسیمم درجه خروجی است.</p>
 </div>
 <div class="section" id="id4">
@@ -334,22 +332,22 @@
 <p>به بیان دقیق تر :</p>
 <p><strong>گشت :</strong>
 دنباله
-<span class="math notranslate nohighlight">\(v_{1}, v_{2}, ..., v_{l}\)</span>
+
 یک گشت در گراف جهت دار
-<span class="math notranslate nohighlight">\(G\)</span>
+
 است, اگر به ازای هر
-<span class="math notranslate nohighlight">\(1 \leq i &lt; l\)</span>
+
 یال
-<span class="math notranslate nohighlight">\((v_{i}, v_{i+1})\)</span>
-در <span class="math notranslate nohighlight">\(G\)</span> باشد(به عبارتی یال فوق متعلق به مجموعه <span class="math notranslate nohighlight">\(E\)</span> باشد) .</p>
+
+در  باشد(به عبارتی یال فوق متعلق به مجموعه  باشد) .</p>
 <p><strong>گشت بسته :</strong>
 اگر در دنباله ای که تعریف کردیم,
-<span class="math notranslate nohighlight">\(v_{1} = v_{l}\)</span>
+
 باشد, به این گشت یک گشت بسته گوییم.</p>
 <p><strong>گذر :</strong> اگر در دنباله ای که تعریف کردیم, هیچ یال تکراری نباشد, به این گشت یک گذر گوییم.</p>
 <p><strong>مسیر :</strong> اگر در دنباله ای که تعریف کردیم, هیچ راس تکراری نباشد(و در نتیجه یال تکراری هم نباشد), گشت حاصل یک مسیر است.</p>
 <p><strong>دور :</strong> در آخر اگر در یک مسیر, راس شروع و پایان یکسان باشند(
-<span class="math notranslate nohighlight">\(v_{1} = v_{l}\)</span>
+
 )
 به گشت حاصل یه دور گوییم.</p>
 <p>دقت کنید که تعاریف بالا دقیقا مانند تعاریف در گراف ساده هستند با این تفاوت که در گراف جهت دار باید جهت یال ها درست طی شوند!</p>
@@ -358,59 +356,59 @@
 <h2>قضایا و لم های مورد استفاده در این بخش<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <div class="section" id="id6">
 <h3><strong>قضیه 3.1.1</strong><a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p><strong>صورت قضیه :</strong> در گراف جهت دار <span class="math notranslate nohighlight">\(G\)</span>, داریم
-<span class="math notranslate nohighlight">\(\sum d^{-}(v) = \sum d^{+}(v)\)</span></p>
+<p><strong>صورت قضیه :</strong> در گراف جهت دار , داریم
+</p>
 <p><strong>اثبات قضیه :</strong> برهان این قضیه ساده است(این قضیه مشابه با زوج بودن مجموع درجات در گراف ساده است). هر یال از این گراف را که در نظر بگیرید, به راس شروع یک درجه خروجی اضافه می‌کند و به راس پایان یک درجه ورودی اضافه میکند. در نتیجه یک واحد به طرف راست تساوی و یک واحد به طرف چپ تساوی اضافه می‌شود!</p>
 </div>
 <div class="section" id="id7">
 <h3><strong>قضیه 3.1.2</strong><a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p><strong>صورت قضیه :</strong> اگر در گراف جهت دار <span class="math notranslate nohighlight">\(G\)</span>, درجه خروجی(یا درجه ورودی) هر راس حداقل ۱ باشد, آنگاه این گراف حداقل یک دور جهت‌دار دارد.</p>
+<p><strong>صورت قضیه :</strong> اگر در گراف جهت دار , درجه خروجی(یا درجه ورودی) هر راس حداقل ۱ باشد, آنگاه این گراف حداقل یک دور جهت‌دار دارد.</p>
 <p><strong>اثبات قضیه :</strong> این قضیه مشابه با دور داشتن گراف ساده‌ای است که درجه هر راس آن حداقل ۲ است. بلند ترین مسیر گراف را در نظر بگیرید.</p>
 <p>فرض کنید این بلند ترین مسیر به صورت
-<span class="math notranslate nohighlight">\(v_1, v_2, ..., v_l\)</span>
+
 باشد. طول این مسیر طبق تعاریف بالا برابر با‌
-<span class="math notranslate nohighlight">\(l-1\)</span>
+
 است.</p>
 <p>حال راس
-<span class="math notranslate nohighlight">\(v_l\)</span>
+
 را در نظر بگیرید. از آنجا که این راس حداقل یک درجه خروجی دارد, پس راسی مانند
-<span class="math notranslate nohighlight">\(x\)</span>
+
 وجود دارد به طوری که از
-<span class="math notranslate nohighlight">\(v_l\)</span>
+
 به
-<span class="math notranslate nohighlight">\(x\)</span>
+
 یک یال جهت دار است. از طرفی راس
-<span class="math notranslate nohighlight">\(x\)</span>
+
 نمی‌تواند خارج از مسیر بالا باشد(چرا؟).</p>
 <p>پس راس
-<span class="math notranslate nohighlight">\(x\)</span>
+
 یکی از راس های مسیر است. برای مثال فرض کنید
-<span class="math notranslate nohighlight">\(x = v_j\)</span></p>
+</p>
 <p>در نتیجه دنباله
-<span class="math notranslate nohighlight">\(v_{j}, v_{j+1}, ..., v_{l}, v_{j}\)</span>
+
 تشکیل یک دور می‌دهد!</p>
 </div>
 <div class="section" id="id8">
 <h3><strong>قضیه 3.1.3</strong><a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h3>
-<p><strong>صورت قضیه :</strong> اگر در گراف جهت دار <span class="math notranslate nohighlight">\(G\)</span>, درجه خروجی(یا درجه ورودی) هر راس حداقل <span class="math notranslate nohighlight">\(k\)</span> باشد, آنگاه این گراف یک دور به طول حداقل <span class="math notranslate nohighlight">\(k+1\)</span> دارد.</p>
+<p><strong>صورت قضیه :</strong> اگر در گراف جهت دار , درجه خروجی(یا درجه ورودی) هر راس حداقل  باشد, آنگاه این گراف یک دور به طول حداقل  دارد.</p>
 <p><strong>اثبات قضیه :</strong> این قضیه تعمیم قضیه 3.1.2 می‌باشد. اثبات این قضیه هم مشابه با قضیه 3.1.2 می‌باشد.</p>
-<p>به طور مشابه بلند ترین مسیر در <span class="math notranslate nohighlight">\(G\)</span> را در نظر بگیرید. فرض کنید دنباله ای به صورت
-<span class="math notranslate nohighlight">\(v_1, v_2, ..., v_l\)</span>
+<p>به طور مشابه بلند ترین مسیر در  را در نظر بگیرید. فرض کنید دنباله ای به صورت
+
 باشد.</p>
 <p>حال ادعا میکنیم
-<span class="math notranslate nohighlight">\(l &gt; k\)</span>
-(به عبارتی می‌گوییم طول بلند ترین مسیر حداقل برابر با <span class="math notranslate nohighlight">\(k\)</span> است).</p>
-<p>برهان ادعا واضح است, زیرا اگر راس <span class="math notranslate nohighlight">\(v_l\)</span> را در نظر بگیریم, حداقل  <span class="math notranslate nohighlight">\(k\)</span> یال از <span class="math notranslate nohighlight">\(v_l\)</span> خارج می‌شود. که همه این راس ها(راس هایی که یال ورودی از <span class="math notranslate nohighlight">\(v_l\)</span> دارند) داخل بلندترین مسیر هستند(چرا؟). پس این بلند ترین مسیر حداقل <span class="math notranslate nohighlight">\(k+1\)</span> راس دارد(k تا از همسایه های <span class="math notranslate nohighlight">\(v_l\)</span> و خود <span class="math notranslate nohighlight">\(v_l\)</span>).</p>
+
+(به عبارتی می‌گوییم طول بلند ترین مسیر حداقل برابر با  است).</p>
+<p>برهان ادعا واضح است, زیرا اگر راس  را در نظر بگیریم, حداقل   یال از  خارج می‌شود. که همه این راس ها(راس هایی که یال ورودی از  دارند) داخل بلندترین مسیر هستند(چرا؟). پس این بلند ترین مسیر حداقل  راس دارد(k تا از همسایه های  و خود ).</p>
 <p>حال کم‌ترین
-<span class="math notranslate nohighlight">\(j\)</span>
+
 را در نظر بگیرید به طوری از
-<span class="math notranslate nohighlight">\(v_l\)</span>
+
 به
-<span class="math notranslate nohighlight">\(v_j\)</span>
+
 یال باشد(به عبارتی سمت چپ ترین راس از مسیر را در نظر می‌گیریم تا در حد امکان طول دور را افزایش دهیم).
 حال دور رو به رو را در نظر بگیرید
-<span class="math notranslate nohighlight">\(v_{j}, v_{j + 1}, ..., v_{l}, v_{j}\)</span>
-ادعا می‌کنیم طول این دور حداقل برابر با <span class="math notranslate nohighlight">\(k+1\)</span> است(چرا؟).</p>
+
+ادعا می‌کنیم طول این دور حداقل برابر با  است(چرا؟).</p>
 </div>
 </div>
 <div class="section" id="id9">
@@ -462,7 +460,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

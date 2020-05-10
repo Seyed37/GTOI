@@ -53,9 +53,7 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -288,13 +286,11 @@ A
 i و j
 را به دست بیاوریم. به طوری که دو یال داشته باشند و یال اول آن ها آبی و یال دوم آن ها قرمز
 باشد. این تعداد را
-<span class="math notranslate nohighlight">\(C_{i,j}\)</span>
+
 می نامیم. واضح است که برای محاسبه این مقدار می توان روی راس میانی این گشت حالت بندی کرد
 (راسی مانند k)
 و سپس یال های آبی از i به k را در یال های قرمز از k به j ضرب کرد و مقادیر به دست آمده را
 به ازای تمام k های ممکن جمع زد. به زبان ریاضی:</p>
-<div class="math notranslate nohighlight">
-\[C_{i,j} = \sum\limits_{k=1}^{n} A_{i,k}B_{k,j}\]</div>
 <p>که با کمی دقت می توان دریافت که ماتریس
 C
 برابر ضرب ماتریس A در B است.</p>
@@ -302,41 +298,35 @@ C
 <div class="section" id="id2">
 <h2>توان ماتریس<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>توان ماتریس را مانند توان اعداد، به این صورت تعریف می کنیم که
-<span class="math notranslate nohighlight">\(A^n\)</span>
+
 یعنی n بار ضرب A در خودش.
 طبق قضیه ای که در بالا نشان دادیم می توان دریافت که تعداد گشت های به طول
 n از i به j
 برابر درایه (i,j) در
-<span class="math notranslate nohighlight">\(A^n\)</span>
+
 است. برای اثبات به ازای هر گشت به طول
 n-1
 یک یال قرمز بگذارید و به ازای هر یال گراف یک یال آبی. به وضوح هر گشت به طول
 n
 معادل یک گشت با یک یال قرمز و یک یال آبی است. و چون
-<span class="math notranslate nohighlight">\(A^n = A^{n-1}A\)</span>
+
 حکم را با استقرا می توان ثابت کرد.</p>
 </div>
 <div class="section" id="id3">
 <h2>الگوریتم و پیچیدگی<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>پس برای حل مساله کافیست تا بتوانیم توان ماتریس را در زمان خوبی محاسبه کنیم.
 چون ضرب ماتریس ها خاصیت شرکت پذیری دارد ( یعنی
-<span class="math notranslate nohighlight">\((AB)C = A(BC)\)</span> )
+ )
 پس مهم نیست که به چه ترتیبی توان را حساب می کنیم. اگر توان زوج باشد داریم:</p>
-<div class="math notranslate nohighlight">
-\[A^{2k} = (A^k)^2\]</div>
 <p>و اگر فرد باشد، داریم:</p>
-<div class="math notranslate nohighlight">
-\[A^{2k+1} = A(A^k)(A^k)\]</div>
 <p>اگر ضرب ماتریس را با الگوریتم بدیهی اش، یعنی
-<span class="math notranslate nohighlight">\(O(n^3)\)</span>
+
 محاسبه کنیم، می توان به صورت بازگشتی برای محاسبه
-<span class="math notranslate nohighlight">\(A^k\)</span>
+
 ابتدا توان
-<span class="math notranslate nohighlight">\(A^{\lfloor\frac{k}{2}\rfloor}\)</span>
+
 را محاسبه کنیم و سپس به وسیله روابط بالا جواب مساله را حساب کنیم. زمان اجرای
 این الگوریتم بازگشتی برابر است با:</p>
-<div class="math notranslate nohighlight">
-\[T(k) = T(\frac{k}{2}) + O(n^3) = O(n^3lg(k))\]</div>
 <p>نام این الگوریتم الگوریتم توان رسانی سریع است که در جایی که می خواهیم یک عملیات شرکت پذیر
 را روی یک عضو چندین بار تکرار کنیم می توانیم از آن استفاده کنیم.
 مثلا برای توان اعداد نیز می توانید از همین الگوریتم استفاده کنید.</p>
@@ -351,8 +341,6 @@ k
 پیدا کنیم که جمع وزن یال های آن بیشینه باشد.
 اگر بخواهیم این مساله را برای گرافی حل کنیم که یال های آن قرمز و آبی باشد و گشت های با
 یک یال قرمز و یک یال آبی مد نظر مان باشد پاسخ به این صورت به دست می آید:</p>
-<div class="math notranslate nohighlight">
-\[C_{i,j} = \max\limits_{k=1}^{n} A_{i,k} + B_{k,j}\]</div>
 <p>می توانیم ماتریس
 C
 را به عنوان ترکیب ماتریس
@@ -361,11 +349,11 @@ A و B
 برای اثبات می توانید یک گراف با یال های قرمز و آبی و سبز در نظر بگیرید و گشتی که
 قرمز - آبی - سبز باشد و جمع وزن یال هایش بیشینه باشد را از دو روش به دست آورید.
 پس می توان مشابه قبل توان ماتریس را تعریف کرد و با استقرا ثابت کرد که
-<span class="math notranslate nohighlight">\(A^k_{i,j}\)</span>
+
 برابر بزرگترین گشت به طول
 k بین دو راس i و j
 است و الگوریتم
-<span class="math notranslate nohighlight">\(O(n^3lg(k))\)</span>
+
 برای محاسبه این ماتریس وجود دارد.</p>
 </div>
 </div>
@@ -412,7 +400,7 @@ k بین دو راس i و j
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

@@ -53,9 +53,7 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -273,14 +271,14 @@
 <h1>سنتروید<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
 <div class="section" id="id2">
 <h2>تعریف<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>در درخت به راسی که با حذف آن تعداد راس های بزرگترین مولفه حداکثر <span class="math notranslate nohighlight">\(n/2\)</span> باشد سنتروید می گوییم.</p>
+<p>در درخت به راسی که با حذف آن تعداد راس های بزرگترین مولفه حداکثر  باشد سنتروید می گوییم.</p>
 </div>
 <div class="section" id="id3">
 <h2>اثبات وجود و یافتن سنتروید<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>ابتدا درخت را از راس یک ریشه دار می کنیم حال از ریشه شروع می کنیم و هر مرحله اگر راسی که در آن هستیم فرزندی داشت که اندازه اش از <span class="math notranslate nohighlight">\(n/2\)</span> بیشتر بود به آن راس می رویم حال در نهایت به سنتروید می رسیم.
-راسی که پیدا کردیم سنتروید است چون سایز زیر درختش از <span class="math notranslate nohighlight">\(n/2\)</span> بیشتر است که یعنی مولفه ی پدرش کمتر از <span class="math notranslate nohighlight">\(n/2\)</span> است و هیچ فرزندی هم با اندازه بیشتر از <span class="math notranslate nohighlight">\(n/2\)</span> ندارد.
+<p>ابتدا درخت را از راس یک ریشه دار می کنیم حال از ریشه شروع می کنیم و هر مرحله اگر راسی که در آن هستیم فرزندی داشت که اندازه اش از  بیشتر بود به آن راس می رویم حال در نهایت به سنتروید می رسیم.
+راسی که پیدا کردیم سنتروید است چون سایز زیر درختش از  بیشتر است که یعنی مولفه ی پدرش کمتر از  است و هیچ فرزندی هم با اندازه بیشتر از  ندارد.
 پیاده سازی الگوریتم را در ادامه ببینید</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp"># include&lt;bits/stdc++.h&gt;</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp"># include&lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -313,11 +311,11 @@
 </div>
 <div class="section" id="centroid-decomposition">
 <h2>Centroid Decomposition<a class="headerlink" href="#centroid-decomposition" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>فرض کنید می خواهیم روی درخت الگوریتم تقسیم و حل را پیاده سازی کنیم سنتروید درخت کمک بسیاری به ما خواهد کرد چون می توانیم با حذف آن و حل زیر درخت های باقی مانده به پیچیدگی <span class="math notranslate nohighlight">\(O(n log n)\)</span> برسیم .
-اگر دقت کنید با این تکنیک روی هر راس حداکثر <span class="math notranslate nohighlight">\(lg n\)</span> بار پیمایش کرده ایم چون با هر بار پیمایش روی آن رای اندازه مولفه اش کمتر از نصف می شود پس در کل پیچیدگی زمانی اش <span class="math notranslate nohighlight">\(O(n log n)\)</span> خواهد شد
+<p>فرض کنید می خواهیم روی درخت الگوریتم تقسیم و حل را پیاده سازی کنیم سنتروید درخت کمک بسیاری به ما خواهد کرد چون می توانیم با حذف آن و حل زیر درخت های باقی مانده به پیچیدگی  برسیم .
+اگر دقت کنید با این تکنیک روی هر راس حداکثر  بار پیمایش کرده ایم چون با هر بار پیمایش روی آن رای اندازه مولفه اش کمتر از نصف می شود پس در کل پیچیدگی زمانی اش  خواهد شد
 پیاده سازی این روش به این صورت است که ابتدا centroid درست را پیدا می کنیم حال هر کدام از مولفه ها را جداگانه حل می کنیم که همانند روش تقسیم و حل است.
 پیاده سازی الگوریتم را در ادامه ببینید</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp"># include&lt;bits/stdc++.h&gt;</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp"># include&lt;bits/stdc++.h&gt;</span>
 
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -410,7 +408,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

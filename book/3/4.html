@@ -53,9 +53,7 @@
         <script type="text/javascript" src="../../_static/jquery.js"></script>
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/javascript" src="../../_static/searchtools.js"></script>
 
 
@@ -271,6 +269,397 @@
 				    
   <div class="section" id="id1">
 <h1>مولفه‌های قویا همبند<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<div class="section" id="id2">
+<h2><strong>تعریف 3.4.1 (جفت راس قویا همبند)</strong><a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>در گراف جهت‌­دار به جفت راس
+
+قویا همبند گوییم اگر و تنها اگر مسیری از
+
+به
+
+و مسیری از
+
+به
+
+وجود داشته باشد.</p>
+<p>به عنوان مثال در شکل 1، راس­‌های 2 و 4 یک جفت راس قویا همبند هستند.</p>
+</div>
+<div class="section" id="id3">
+<h2><strong>تعریف 3.4.2 (گراف قویا همبند)</strong><a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>گراف قویا همبند، گراف جهت­‌داری است که هر جفت راس آن قویا همبند باشند (شکل 1).</p>
+<div class="figure align-left">
+<a class="reference internal image-reference" href="../../_images/scc_1.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/scc_1.png" style="width: 50%;" /></a>
+</div>
+</div>
+<div class="section" id="strongly-connected-component-scc">
+<h2><strong>تعریف 3.4.3 (مولفه قویا همبند (strongly connected component یا به اختصار scc))</strong><a class="headerlink" href="#strongly-connected-component-scc" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>یک مولفه قویا همبند در گراف جهت­‌دار
+
+، زیرمجموعه­‌ای از رئوس
+
+می­‌باشند که در زیرگراف القایی آن­‌ها تشکیل یک گراف قویا همبند را دهد و همچنین ماکسیمال باشد، یعنی نتوان راس دیگری به آن اضافه کرد.</p>
+</div>
+<div class="section" id="id4">
+<h2><strong>لم 3.4.4</strong><a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p><strong>صورت لم:</strong> هر راس
+
+در گراف جهت­‌دار
+
+، تنها در یک مولفه قویا همبند یکتا قرار دارد.</p>
+<p><strong>اثبات:</strong> از برهان خلف استفاده می­‌کنیم. فرض کنید که
+
+در دو مولفه قویا همبند
+
+و
+
+قرار دارد و
+
+راسی در
+
+باشد که در
+
+قرار ندارد. چون
+
+و
+
+در یک مولفه قویا همبند قرار دارند، در نتیجه از هر راسی در
+
+می­‌توان با مسیری به
+
+آمد و سپس با مسیری به
+
+رفت و همچنین با مسیری از
+
+به
+
+آمد و با مسیری به هر راس دلخواه در
+
+رفت. پس درنتیجه می­‌توان راس
+
+را به مولفه
+
+اضافه کرد که این با ماکسیمال بودن
+
+در تناقض است. از تناقض حاصل درستی حکم نتیجه می‌­شود.</p>
+</div>
+<div class="section" id="id5">
+<h2><strong>نتیجه 3.4.5</strong><a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>می­‌توان هر گراف جهت‌­دار
+
+را به مولفه‌­های قویا همبند افراز کرد. شکل 2 گراف جهت­‌داری را نمایش می­‌دهد که مولفه‌­های قویا همبند آن مشخص شده­‌اند.</p>
+<div class="figure align-left">
+<a class="reference internal image-reference" href="../../_images/scc_2.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/scc_2.png" style="width: 50%;" /></a>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><strong>تعریف 3.4.6 (گراف معکوس)</strong><a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>گراف معکوس
+
+، گرافی است که از معکوس کردن جهت یال‌های گراف
+
+بدست می‌آید. توجه کنید یک گراف قویا همبند است اگر و تنها اگر معکوس آن نیز قویا همبند باشد.</p>
+<div class="section" id="id7">
+<h3>بدون دور بودن مولفه‌­های قویا همبند<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h3>
+</div>
+</div>
+<div class="section" id="id8">
+<h2><strong>تعریف 3.4.7 (گراف فشرده شده مولفه­های قویا همبند)</strong><a class="headerlink" href="#id8" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید
+
+، یک گراف جهت­‌دار دلخواه باشد و گراف جهت­‌دار
+
+گرافی باشد که هر راس آن متناظر با یک مولفه قویا همبند در
+
+است و هر مولفه قویا همبند در
+
+به دقیقا یک راس در
+
+متناظر شود. اگر
+
+راسی در
+
+باشد، مولفه قویا همبند متناظر با راس
+
+در
+
+را با
+
+نمایش می‌­دهیم. اگر
+
+و
+
+دو راس از
+
+باشند، به ازای هر یال جهت‌­دار از رئوس
+
+به رئوس
+
+، یالی جهت­‌دار از
+
+به
+
+قرار دارد و همچنین هر یالی که از
+
+به
+
+است، متناظر با یالی از رئوس
+
+به رئوس
+
+می­‌باشد. در این صورت به
+
+، یک گراف فشرده شده مولفه‌­های قویا همبند
+
+می‌­گوییم.</p>
+</div>
+<div class="section" id="id9">
+<h2><strong>قضیه 3.4.8</strong><a class="headerlink" href="#id9" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p><strong>صورت قضیه:</strong> هر گراف فشرده شده مولفه­‌های قویا همبند، دور ندارد.</p>
+<p><strong>اثبات:</strong> فرض کنید
+
+یک گراف جهت‌­دار دلخواه است و
+
+، گراف فشرده شده مولفه­‌های قویا همبند
+
+باشد.از برهان خلف استفاده می‌­کنیم. فرض کنید
+
+دور داشته باشد و دو راس مانند
+
+و
+
+از
+
+در یک دور قرار داشته باشند. چون از هر راس در یک مولفه قویا همبند به هر راس آن مولفه مسیر هست، پس در نتیجه می‌­توان از هر راس در
+
+به هر راس در
+
+رفت و همچنین از هر راس در
+
+به هر راس در
+
+مسیری جهت­‌دار وجود دارد (چرا؟) که یعنی رئوس
+
+و
+
+باید در یک مولفه قویا همبند قرار بگیرند که این با فرض ماکسیمال بودن مولفه‌­های قویا همبند در تناقض است. پس در نتیجه
+
+دور ندارد و حکم اثبات می‌­شود.</p>
+</div>
+<div class="section" id="id10">
+<h2><strong>نتیجه 3.4.9</strong><a class="headerlink" href="#id10" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>طبق قضیه 3.3.2، می­‌توان رئوس هر گراف فشرده شده مولفه­‌های قویا همبند را توپولوژیک سورت کرد. پس در نتیجه می‌­توان مولفه­‌های قویا همبند هر گراف جهت‌داری را به صورت توپولوژیک سورت کنار هم قرار دهیم، یعنی به این صورت که جهت همه یال­‌هایی که بین دو مولفه متفاوت باشند، به یک سمت باشند (شکل 3).</p>
+<div class="figure align-left">
+<a class="reference internal image-reference" href="../../_images/scc_3.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/scc_3.png" style="width: 50%;" /></a>
+</div>
+<div class="section" id="id11">
+<h3>پیدا کردن مولفه­‌های قویا همبند<a class="headerlink" href="#id11" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>حال قصد داریم الگوریتمی با پیچیدگی زمانی مناسب برای پیدا کردن مولفه­‌های قویا همبند یک گراف ارائه دهیم.</p>
+</div>
+</div>
+<div class="section" id="id12">
+<h2><strong>الگوریتم کساراجو</strong><a class="headerlink" href="#id12" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p><strong>شرح:</strong> ابتدا روی کل گراف
+
+می­‌زنیم و هربار هنگام خروج از هر راس آن را در یک پشته می‌­اندازیم (توجه کنید هر چه از راسی دیرتر خارج شویم، در پشته بالاتر قرار می‌گیرد). حال گراف معکوس را درنظر می­‌گیریم و در هر مرحله از بین تمام راس‌های دیده نشده، راسی که در پشته بالاتر از بقیه قرار دارد (مانند
+
+) را برداشته و از آن در گراف معکوس،
+
+می‌­زنیم و
+
+و تمام راس­‌هایی که دیده می‌­شوند (از طریق
+
+زدن از راس
+
+) را در یک مولفه جدید قرار می‌­دهیم و این کار را تا پیدا شدن تمام مولفه­‌های قویا همبند ادامه می‌­دهیم. توجه کنید که هنگام
+
+زدن بر روی گراف معکوس، زمانی که راسی دیده می‌­شود، آن را به عنوان دیده شده علامت زده و در سری‌­های بعد از آن
+
+نمی­‌زنیم و یا به آن وارد نمی‌­شویم.</p>
+<p><strong>اثبات درستی:</strong> برای اثبات این الگوریتم, ابتدا به لم زیر که مشابه آن را در بخش قبل داشتیم توجه کنید.</p>
+<p>تعریف می‌کنیم
+
+به معنای زمان تمام شدن پیمایش برای راس
+
+. به عبارتی داریم موقعیت یک راس را در پشته مشخص می‌کنیم(هر چه
+
+بیشتر باشد, راس در پشته در جایگاه پایین‌تری قرار می‌گیرد).</p>
+<p><strong>لم ۱:</strong> اگر
+
+و به عبارتی راس
+
+در پشته, بالا تر از راس
+
+باشد, و همچنین مسیری از
+
+به
+
+باشد, آنگاه مسیری از
+
+به
+
+نیز وجود دارد.</p>
+<p><strong>برهان لم۱:</strong> از برهان خلف استفاده می‌کنیم. فرض کنید مسیری از
+
+به
+
+است و  هیچ مسیری از
+
+به
+
+نباشد.</p>
+<p>آنگاه چون ما در ابتدا راس
+
+را در پیمایش دیده‌ایم(چرا؟) و مسیری از
+
+به
+
+نیست, پس هیچگاه راس
+
+را پیمایش نمیکنیم, مگر اینکه پیمایش راس
+
+تمام شود. از طرفی اگر پیمایش راس
+
+تمام شود و هنوز راس
+
+را ندیده باشیم, نتیجه می‌شود که اول
+
+به پشته اضافه می‌شود و بعد
+
+به عبارتی
+
+که این خلاف فرض است. پس لم ثابت شد!</p>
+<p>حال توجه داشته باشید در هنگام پیمایش گراف معکوس, روی معکوس یال‌ها حرکت می‌کنیم. یعنی عضو بالای پشته که راس
+
+باشد را برمی‌داریم و روی همه راس‌هایی مثل
+
+که از
+
+به
+
+مسیر هست پیمایش می‌کنیم. در این‌صورت طبق لم۱، راس
+
+هم به راس
+
+مسیر دارد!</p>
+<p>پس
+
+و همه رئوسی که در پیمایش گراف معکوس از
+
+دیده شدند در یک مولفه قرار می‌گیرند!</p>
+<p>از طرفی هیچ راس دیگری در این مولفه نیست. زیرا در غیر این صورت اگر راس دیگری در این مولفه قرار می‌گرفت، باید حداقل یک مسیر به
+
+می‌داشت و جزو ر‌ئوس دیده‌شده از
+
+شمرده می‌شد.</p>
+</div>
+<div class="section" id="id13">
+<h2><strong>پیچیدگی الگوریتم</strong><a class="headerlink" href="#id13" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>در الگوریتم بالا صرفا ۲ بار از
+
+استفاده کردیم, در نتیجه پیچیدگی الگوریتم برابر با
+
+است که
+
+به ترتیب تعداد راس‌ها و یال‌ها می‌باشند.</p>
+</div>
+<div class="section" id="id14">
+<h2><strong>لم 3.4.10</strong><a class="headerlink" href="#id14" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p><strong>صورت لم:</strong> الگوریتم کساراجو، مولفه‌های قویا همبند را به ترتیب توپولوژیک سورت آن‌ها آن‌ها پیدا می‌کند.</p>
+<p><strong>اثبات:</strong> به استقرا بر روی تعداد مولفه‌های قویا همبند حکم را ثابت می‌کنیم. به ازای یک مولفه که درستی حکم بدیهی است. حال اگر فرض بر درستی حکم به ازای
+
+مولفه باشد، حکم را به ازای
+
+مولفه ثابت می‌کنیم. اگر به مولفه اولی که در الگوریتم پیدا می‌کنیم (مانند
+
+) از مولفه دیگری مانند
+
+یالی وارد شود، در این صورت در گراف معکوس، از
+
+به
+
+یال هست و چون در الگوریتم،
+
+بعد از
+
+پیدا می‌شود، پس در هنگام پیمایش
+
+در گراف معکوس، باید تعدادی از راس‌های
+
+دیده شوند و در
+
+قرار گیرند در صورتی که مولفه‌ها نمی‌توانند اشتراک داشته باشند. پس در نتیجه مولفه اولی که پیدا می‌کنیم یالی از سمت مولفه‌های دیگر به آن وارد نمی‌شود و اولین مولفه در توپولوژیک سورت می‌باشد. حال طبق فرض استقرا باقی مولفه‌ها نیز به ترتیب توپولوژیک سورت پیدا می‌شوند (چرا؟) و حکم اثبات می‌شود.</p>
+</div>
+<div class="section" id="id15">
+<h2><strong>پیاده‌سازی الگوریتم</strong><a class="headerlink" href="#id15" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>توجه کنید انتها کد، مولفه ها را به ترتیب توپولوژیک سورت آن‌ها خروجی می‌دهیم.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MX</span> <span class="o">=</span> <span class="mf">5e5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span> <span class="c1">/// tedad ras ha va yal ha</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">gr</span><span class="p">[</span><span class="n">MX</span><span class="p">],</span> <span class="n">back_gr</span><span class="p">[</span><span class="n">MX</span><span class="p">],</span> <span class="n">comp</span><span class="p">[</span><span class="n">MX</span><span class="p">];</span> <span class="c1">/// vector mojaverat, vector mojaverat(yal haie barax), moalefe haie ghavian hamband</span>
+<span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sk</span><span class="p">;</span> <span class="c1">/// moratab kardan ras ha barhasbe tamam shodan dfs</span>
+<span class="kt">bool</span> <span class="n">mark</span><span class="p">[</span><span class="n">MX</span><span class="p">];</span> <span class="c1">/// array mark baraie check kardane dide shodan ras ha</span>
+
+<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span>  <span class="c1">/// dfs mamoli!</span>
+    <span class="n">mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">u</span><span class="p">:</span> <span class="n">gr</span><span class="p">[</span><span class="n">v</span><span class="p">]){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">sk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">back_dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cnt</span><span class="p">){</span>  <span class="c1">/// dfs roie yal haie barax!</span>
+    <span class="n">mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">comp</span><span class="p">[</span><span class="n">cnt</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">u</span><span class="p">:</span> <span class="n">back_gr</span><span class="p">[</span><span class="n">v</span><span class="p">]){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+            <span class="n">back_dfs</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">cnt</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="o">&gt;&gt;</span> <span class="n">u</span><span class="p">;</span> <span class="c1">/// shomare ras ha 0-based hast.</span>
+        <span class="n">gr</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span> <span class="c1">/// in vector yal ha ra zakhire mikonad</span>
+        <span class="n">back_gr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="c1">/// in vector barax yal ha ra zakhire mikonad</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">fill</span><span class="p">(</span><span class="n">mark</span><span class="p">,</span> <span class="n">mark</span> <span class="o">+</span> <span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">/// chon mikhahim dfs jadid bezanim, mark ra 0 mikonim.</span>
+
+    <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">sk</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span> <span class="c1">/// stack kheili kond ast. dar inja serfan baraie dark behtar stack estefade shode. behtar ast az vector estefade konid.</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mark</span><span class="p">[</span><span class="n">sk</span><span class="p">.</span><span class="n">top</span><span class="p">()]){</span>
+            <span class="n">back_dfs</span><span class="p">(</span><span class="n">sk</span><span class="p">.</span><span class="n">top</span><span class="p">(),</span> <span class="n">cnt</span><span class="p">);</span> <span class="c1">/// yek moalefe ra peida mikonim</span>
+            <span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">sk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="p">}</span>
+
+
+    <span class="c1">/// moalefe hara be tartib topo sort eshan chap mikonim</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">cnt</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;: &quot;</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">v</span><span class="p">:</span> <span class="n">comp</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -315,7 +704,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.6.7) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>
