@@ -275,7 +275,7 @@
 <h2>تعریف<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>به گراف جهت داری که دارای ویژگی زیر باشد Poset (Partially ordered set) می گوییم.</p>
 <ul class="simple">
-<li><p>اگر <span class="math notranslate nohighlight">\(ab\)</span> و <span class="math notranslate nohighlight">\(bc\)</span> یال های این گراف باشد آنگاه <span class="math notranslate nohighlight">\(ac\)</span> هم یال این گراف است.</p></li>
+<li>اگر <span class="math notranslate nohighlight">\(ab\)</span> و <span class="math notranslate nohighlight">\(bc\)</span> یال های این گراف باشد آنگاه <span class="math notranslate nohighlight">\(ac\)</span> هم یال این گراف است.</li>
 </ul>
 <p>از آنجایی که بسیاری از مفاهیم ریاضی به poset تبدیل می شوند بررسی کردن آن ها مفید است.</p>
 <div class="section" id="id2">
@@ -315,8 +315,8 @@
 <p>حالا هدف ما این است که از هر کدام از زنجیر ها دقیقا یک راس را انتخاب کنیم به صورتیکه راس های انتخاب شده پادزنجیر باشند. در اینصورت می توانیم به حالت تساوی برسیم.</p>
 <p>الگوریتم زیر را در نظر بگیرید :</p>
 <ul class="simple">
-<li><p>راس های اول مسیر را در نظر بگیرید. اگر بین آنها هیچ یالی نبود تنها کافیست آنها را انتخاب کنید.‌ اگر نه یعنی یالی مثل <span class="math notranslate nohighlight">\(uv\)</span> وجود دارد که <span class="math notranslate nohighlight">\(u,v\)</span> هر دو اول دو مسیر در افرازمان هستند.</p></li>
-<li><p>حالا باید راس <span class="math notranslate nohighlight">\(u\)</span> را حذف کنیم. زیرا که با توجه به اینکه <span class="math notranslate nohighlight">\(u\)</span> به <span class="math notranslate nohighlight">\(v\)</span> یال دارد و <span class="math notranslate nohighlight">\(v\)</span> اول یک مسیر است پس طبق خاصیت poset می توان نتیجه گرفت <span class="math notranslate nohighlight">\(u\)</span> به تمام راس های مسیر <span class="math notranslate nohighlight">\(v\)</span> یال دارد پس اگر <span class="math notranslate nohighlight">\(u\)</span> را در پادزنجیر انتخاب کنیم هیچکدام از راس های مسیری که <span class="math notranslate nohighlight">\(v\)</span> اول آن است را نمی توانیم انتخاب کنیم پس نمی توانیم به هدفمان که انتخاب یک راس از هر مسیر است برسیم. پس <span class="math notranslate nohighlight">\(u\)</span> را حذف کنید.</p></li>
+<li>راس های اول مسیر را در نظر بگیرید. اگر بین آنها هیچ یالی نبود تنها کافیست آنها را انتخاب کنید.‌ اگر نه یعنی یالی مثل <span class="math notranslate nohighlight">\(uv\)</span> وجود دارد که <span class="math notranslate nohighlight">\(u,v\)</span> هر دو اول دو مسیر در افرازمان هستند.</li>
+<li>حالا باید راس <span class="math notranslate nohighlight">\(u\)</span> را حذف کنیم. زیرا که با توجه به اینکه <span class="math notranslate nohighlight">\(u\)</span> به <span class="math notranslate nohighlight">\(v\)</span> یال دارد و <span class="math notranslate nohighlight">\(v\)</span> اول یک مسیر است پس طبق خاصیت poset می توان نتیجه گرفت <span class="math notranslate nohighlight">\(u\)</span> به تمام راس های مسیر <span class="math notranslate nohighlight">\(v\)</span> یال دارد پس اگر <span class="math notranslate nohighlight">\(u\)</span> را در پادزنجیر انتخاب کنیم هیچکدام از راس های مسیری که <span class="math notranslate nohighlight">\(v\)</span> اول آن است را نمی توانیم انتخاب کنیم پس نمی توانیم به هدفمان که انتخاب یک راس از هر مسیر است برسیم. پس <span class="math notranslate nohighlight">\(u\)</span> را حذف کنید.</li>
 </ul>
 <p>آنقدر این فرایند را ادامه دهید که بین راس های اول مسیر (بعد از حذف ها) هیچ یالی نباشد و یک پادزنجیر به اندازه تعداد مسیر ها بیابیم. تنها حالتی که کار ما را خراب می کند این است که یک مسیر به طور کامل حذف شود. (در این صورت پادزنجیر به اندازه تعداد مسیر های اولیه نخواهد بود).</p>
 </div>
@@ -328,8 +328,8 @@
 <p>توجه کنید که به ازای هر راس <span class="math notranslate nohighlight">\(a\)</span> زمان حذف شدن <span class="math notranslate nohighlight">\(a\)</span> بعد از زمان حذف شدن رئیس پدر <span class="math notranslate nohighlight">\(a\)</span> است. زیرا زمانی که <span class="math notranslate nohighlight">\(a\)</span> حذف شده توسط پدرش باید اول یک مسیر باشد. این یعنی ریئس پدر (در صورت وجود) قبل از این حذف شده است.</p>
 <p>حالا فرض کنید در مرحله ای راس <span class="math notranslate nohighlight">\(a\)</span> حذف شود که انتهای یک مسیر از افرازمان است. از راس <span class="math notranslate nohighlight">\(a\)</span> شروع کنید و یک مهره روی <span class="math notranslate nohighlight">\(a\)</span> بگذارید. در هر مرحله اگر مهره روی <span class="math notranslate nohighlight">\(u\)</span> باشد ابتدا مهره را به پدر <span class="math notranslate nohighlight">\(u\)</span> ببرید اگر پدر <span class="math notranslate nohighlight">\(u\)</span> اول یکی از مسیر ها باشد که مسیر شبه افزایشیمان را پیدا کردیم در غیر اینصورت مهره را به رئیس پدر <span class="math notranslate nohighlight">\(u\)</span> ببرید. به دو مورد توجه کنید :</p>
 <ul class="simple">
-<li><p>فرایند پایان پذیر است زیرا طبق آنچه گفتیم بعد از هر مرحله مهره روی راسی قرار می گیرد که زمان حذف شدن آن در الگوریتم کمتر است.</p></li>
-<li><p>در هر مرحله راسی که مهره روی آن قرار دارد پدر دارد. زیرا که در الگوریتممان این راس زمانی حذف می شود (زیرا که زمان حذف شدن آن از <span class="math notranslate nohighlight">\(a\)</span> کم تر است و گفتیم <span class="math notranslate nohighlight">\(a\)</span> هم حذف می شود).</p></li>
+<li>فرایند پایان پذیر است زیرا طبق آنچه گفتیم بعد از هر مرحله مهره روی راسی قرار می گیرد که زمان حذف شدن آن در الگوریتم کمتر است.</li>
+<li>در هر مرحله راسی که مهره روی آن قرار دارد پدر دارد. زیرا که در الگوریتممان این راس زمانی حذف می شود (زیرا که زمان حذف شدن آن از <span class="math notranslate nohighlight">\(a\)</span> کم تر است و گفتیم <span class="math notranslate nohighlight">\(a\)</span> هم حذف می شود).</li>
 </ul>
 <p>پس توانستیم یک مسیر شبه افزایشی پیدا کنیم. همانطور که گفتیم تناقض حاصله نشان می دهد هیچ مسیری کاملا حذف نمی شود!</p>
 </div>
@@ -378,7 +378,7 @@
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.8.5) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>
