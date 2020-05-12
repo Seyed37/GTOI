@@ -133,8 +133,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../3/2.html">تورنومنت</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/3.html">گراف جهت‌دار بدون دور</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/4.html">مولفه‌های قویا همبند</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3/5.html">بازی‌ها و گراف جهت‌دار</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3/6.html">الگوریتم مسیر خاکستری</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3/5.html">الگوریتم مسیر خاکستری</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3/6.html">بازی‌ها و گراف جهت‌دار</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/7.html">گراف تابعی و گراف جایگشت</a></li>
 </ul>
 </li>
@@ -355,7 +355,12 @@
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/rooted_tree.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/rooted_tree.png" style="width: 50%;" /></a>
 </div>
-<p>به این عمل آویزان کردن درخت از راس <span class="math notranslate nohighlight">\(u\)</span>، ریشه دار کردن درخت از راس <span class="math notranslate nohighlight">\(u\)</span> هم می گویند. در اینصورت به راس <span class="math notranslate nohighlight">\(u\)</span> <strong>ریشه</strong> می گوییم. همچنین گفتیم در جهت دهی هر راس به جز <span class="math notranslate nohighlight">\(u\)</span> تنها یک یال ورودی دارد. به ازای راس <span class="math notranslate nohighlight">\(b\)</span> اگر یال ورودی به آن <span class="math notranslate nohighlight">\(ab\)</span> باشد به راس <span class="math notranslate nohighlight">\(a\)</span> <strong>پدر</strong> راس <span class="math notranslate nohighlight">\(b\)</span> می گوییم و هر دو راسی که پدر مشترک داشته باشند را <strong>برادر</strong> می نامیم. همچنین به فاصله بین <span class="math notranslate nohighlight">\(u\)</span> و هر راس (تعداد یال های مسیر بین آن ها) <strong>ارتفاع</strong> آن راس می گوییم. به ازای یک راس خاص مثل <span class="math notranslate nohighlight">\(v\)</span> به مجموعه راس هایی که مسیرشان (که این مسیر یکتا است) به ریشه از <span class="math notranslate nohighlight">\(v\)</span> می گذرد زیردرخت <span class="math notranslate nohighlight">\(v\)</span> می گوییم. به طور شهودی وقتی درخت را از <span class="math notranslate nohighlight">\(u\)</span> آویزان کردیم به مجموعه راس هایی که از <span class="math notranslate nohighlight">\(v\)</span> آویزان شده اند زیردرخت <span class="math notranslate nohighlight">\(v\)</span> می گوییم.</p>
+<p>به این عمل آویزان کردن درخت از راس <span class="math notranslate nohighlight">\(u\)</span>، ریشه دار کردن درخت از راس <span class="math notranslate nohighlight">\(u\)</span> هم می گویند. در اینصورت به راس <span class="math notranslate nohighlight">\(u\)</span> <strong>ریشه</strong> می گوییم. همچنین گفتیم در جهت دهی هر راس به جز <span class="math notranslate nohighlight">\(u\)</span> تنها یک یال ورودی دارد.</p>
+<p>به ازای راس <span class="math notranslate nohighlight">\(b\)</span> اگر یال ورودی به آن <span class="math notranslate nohighlight">\(ab\)</span> باشد به راس <span class="math notranslate nohighlight">\(a\)</span> <strong>پدر</strong> راس <span class="math notranslate nohighlight">\(b\)</span> می گوییم.</p>
+<p>هر دو راسی که پدر مشترک داشته باشند را <strong>برادر</strong> می نامیم.</p>
+<p>راس <span class="math notranslate nohighlight">\(u\)</span> <strong>جد</strong> راس <span class="math notranslate nohighlight">\(v\)</span> است اگر که یا <span class="math notranslate nohighlight">\(u\)</span> پدر راس <span class="math notranslate nohighlight">\(v\)</span> باشد یا اینکه <span class="math notranslate nohighlight">\(u\)</span> جد پدر <span class="math notranslate nohighlight">\(v\)</span> باشد. به عبارتی به مجموعه پدران یک راس جد های این راس می گوییم.</p>
+<p>به فاصله بین <span class="math notranslate nohighlight">\(u\)</span> و هر راس (تعداد یال های مسیر بین آن ها) <strong>ارتفاع</strong> آن راس می گوییم.</p>
+<p>به ازای یک راس خاص مثل <span class="math notranslate nohighlight">\(v\)</span> به مجموعه راس هایی که مسیرشان (که این مسیر یکتا است) به ریشه از <span class="math notranslate nohighlight">\(v\)</span> می گذرد <strong>زیردرخت</strong> راس <span class="math notranslate nohighlight">\(v\)</span> می گوییم. به طور شهودی وقتی درخت را از <span class="math notranslate nohighlight">\(u\)</span> آویزان کردیم به مجموعه راس هایی که از <span class="math notranslate nohighlight">\(v\)</span> آویزان شده اند زیردرخت <span class="math notranslate nohighlight">\(v\)</span> می گوییم.</p>
 <p>اویزان کردن درخت بسیار مهم است زیرا در ادامه فصل در الگوریتم ها از آن استفاده میشود و همچنین در حال حاظر بهترین روش برای شهود روی شکل درخت است است به این صورت که درخت یک ریشه
 دارد و ان ریشه با تعدادی شاخه با راس های دیگر همسایه است و ان ها نیز با تعدادی شاخه با راس های جدیدی همسایه هستند و ...(به مانند شکل بالا)</p>
 </div>
@@ -411,7 +416,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 11, 2020.
+                        آخرین به روز رسانی در مهٔ 13, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     

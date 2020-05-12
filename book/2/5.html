@@ -133,8 +133,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../3/2.html">تورنومنت</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/3.html">گراف جهت‌دار بدون دور</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/4.html">مولفه‌های قویا همبند</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3/5.html">بازی‌ها و گراف جهت‌دار</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3/6.html">الگوریتم مسیر خاکستری</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3/5.html">الگوریتم مسیر خاکستری</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3/6.html">بازی‌ها و گراف جهت‌دار</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/7.html">گراف تابعی و گراف جایگشت</a></li>
 </ul>
 </li>
@@ -271,6 +271,57 @@
 				    
   <div class="section" id="dfs">
 <h1>dfs<a class="headerlink" href="#dfs" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>الگوریتم dfs یکی از روش های پیمایش گراف است و یکی از ساده ترین و پایه ای ترین الگوریتم های گراف می باشد. این الگوریتم در عین سادگی ویژگی های جالبی دارد و برخلاف تصور در حل مسائل تئوری و عملی کاربرد فراوان دارد!</p>
+<div class="section" id="id1">
+<h2>اولین مسئله<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>فرض کنید در یک هزارتو گیر کرده اید که به صورت یک گراف است. یعنی در هر راس گراف یک اتاق قرار دارد و هر یال نشان دهنده یک راهرو بین دو اتاق است. همچنین حافظه شما به قدری قوی است که می توانید اگر به یک اتاق تکراری رفتید تشخیص بدهید که این اتاق تکراری است و هنگامی که در یک اتاق هستید تنها می توانید راهرو های مجاور آن را ببینید. همچنین یک نخ به همراه دارید که یک سر آن به اتاقی که اول کار در آن قرار دارید بسته شده است و سر دیگر در دستان شماست. در یکی از راس های گراف گنجی قرار دارد. هدف شما این است که گنج را بیابید. چگونه این کار را انجام می دهید؟</p>
+<p>پیدا کردن گنج به سادگی انجام الگوریتم زیر است. تا زمانی که به گنج نرسیدیم الگوریتم زیر را انجام دهید :</p>
+<ul class="simple">
+<li>اگر همه اتاق های مجاور تکراری بودند به اتاقی برو که برای اولین بار از آن به اتاق فعلی آمده ای. (کافی است نخی که دستمان است را دنبال کنیم).</li>
+<li>در غیراینصورت به یکی از اتاق های مجاور که تکرای نیست برو.</li>
+</ul>
+<p>چرا این الگوریتم مسئله ما را حل می کند؟ نکته اینجاست که زمانی که ما برای اولین بار در یک اتاق قرار می گیریم تمام تلاشمان را می کنیم که از آن اتاق مسیری به گنج پیدا کنیم. در نتیجه وقتی که همه اتاق های مجاور تکراری می شوند و ما نخ را دنبال کرده و بر می گردیم می توان نتیجه گرفت که هیچ مسیری از آن اتاق به گنج وجود ندارد. در نتیجه هیچ گاه دیگر نباید وارد این اتاق شویم. (و این منطق که نباید وارد اتاق تکراری شویم نیز از همینجا ناشی می شود).</p>
+<p>می توان با یک دید متفاوت تر هم به مسئله نگاه کرد. به ازای هر یال <span class="math notranslate nohighlight">\(uv\)</span> اگر یکی از <span class="math notranslate nohighlight">\(u,v\)</span> را ببینیم قطعا دیگری را نیز خواهیم دید. (زیرا زمانی کارمان با یک راس تمام می شود که تمام مجاور های آن تکراری باشند). در نتیجه اگر یک راس از مولفه همبندی را ببینیم تمام راس های دیگر آن را نیز خواهیم دید.</p>
+</div>
+<div class="section" id="id2">
+<h2>مولفه های همبندی<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>گراف <span class="math notranslate nohighlight">\(G\)</span> به شما ورودی داده شده است. شما باید تعداد مولفه های همبندی این گراف را بیابید.</p>
+<p>آنچه در این قسمت بررسی می کنیم تصویری کلی از الگوریتم dfs است. فرض کنید آرایه mark نشان می دهد که چه راس هایی قبلا دیده شده اند و در ابتدای کار تمام خانه های آن false است. حالا الگوریتم ما به اینصورت خواهد بود :</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span>
+   <span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+   <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">u</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">]){</span>
+       <span class="k">if</span><span class="p">(</span><span class="n">mark</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span>
+           <span class="n">dfs</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>از شهودی که با حل مسئله بالا به دست آوردیم استفاده کنید. وقتی dfs(v) صدا زده می شود الگوریتم تلاش می کند که به صورت بازگشتی تمام راس هایی که با <span class="math notranslate nohighlight">\(v\)</span> می توان به آن رسید را ببیند سپس dfs(v) به اتمام می رسد و به راسی به نام <span class="math notranslate nohighlight">\(par\)</span> بر می گردیم که از آن برای اولین بار به <span class="math notranslate nohighlight">\(v\)</span> رسیده بودیم.</p>
+<p>در نتیجه می توان دید که پس از اجرای این تابع تمام راس هایی که در مولفه همبندی راس شروع قرار دارند دیده می شوند. پس برای حل مسئله کافیست در هر مرحله راسی مثل <span class="math notranslate nohighlight">\(u\)</span> را انتخاب کنیم که mark آن false باشد. سپس dfs(u) را اجرا کرده و به جواب مسئله یکی اضافه کنیم.</p>
+</div>
+<div class="section" id="id3">
+<h2>درخت dfs<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>الگوریتم dfs علاوه بر اینکه گراف ما را پیمایش می کند این پیمایش را به صورت خاصی انجام می دهد! حالا با برخی از ویژگی های جالب این پیمایش آشنا می شویم.</p>
+<p>فرض کنید یال های گراف در ابتدا آبی هستند. حالا هر گاه که برنامه در راس <span class="math notranslate nohighlight">\(v\)</span> بود و با طی کردن یال <span class="math notranslate nohighlight">\(uv\)</span> به راس جدید <span class="math notranslate nohighlight">\(u\)</span> می رسید یال <span class="math notranslate nohighlight">\(uv\)</span> را قرمز کنید.</p>
+<p>در ابتدا توجه کنید که یال های قرمز تشکیل یک درخت می دهند! زیرا هر بار که یک یال قرمز می شود یک سر آن متصل یه راسی است که قبلا ندیده بودیم. پس مثل این است که یکی یکی به این درخت برگ اضافه می کنیم! به این درخت به دست آمده از الگوریتم dfs، درخت dfs می گوییم. ویژگی جالب dfs این است که وقتی اجرای dfs(u) شروع می شود راس <span class="math notranslate nohighlight">\(u\)</span> در درخت قرمز ها تنها یک برگ است و زمانی که اجرای dfs(u) به پایان می رسد زیردرخت <span class="math notranslate nohighlight">\(u\)</span> به طور کامل ساخته شده است. پس می توانید ببینید که</p>
+<p>پس می بینید که پس از اجرای الگوریتم dfs روی یک گراف همبند، یک درخت فراگیر از این گراف را به دست خواهیم آورد. این درخت فراگیر را از راس شروع ریشه دار کنید.</p>
+<p>حالا به ویژگی جالبی که روی یال های آبی به دست می آید توجه کنید.</p>
+<p>به یال <span class="math notranslate nohighlight">\(uv\)</span> بک اج (back edge) می گوییم اگر یکی از <span class="math notranslate nohighlight">\(u,v\)</span> جد دیگری باشد. در غیراینصورت به این یال کراس اج (cross edge) می گوییم.</p>
+<p>ادعا می کنیم در درخت dfs تمام یال ها بک اج هستند!</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/back_edge.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/back_edge.png" style="width: 50%;" /></a>
+</div>
+<p>برای اثبات اینکه تمام یال ها بعد از پیمایش dfs کراس اج هستند یک یال <span class="math notranslate nohighlight">\(uv\)</span> دلخواه را در نظر بگیرید. بدون کم شدن از کلیت مسئله فرض کنید در الگوریتم ابتدا به راس <span class="math notranslate nohighlight">\(u\)</span> وارد شده ایم. در اینصورت موقع شروع dfs(u) راس math:<cite>v</cite> هنوز دیده نشده است. همچنین زمانی که dfs(u) به پایان می رسد راس <span class="math notranslate nohighlight">\(v\)</span> باید دیده شده باشد (زیرا مجاور راس <span class="math notranslate nohighlight">\(u\)</span> است). بنابراین اگر درخت dfs را در نظر بگیرید راس <span class="math notranslate nohighlight">\(v\)</span> باید درون زیردرخت <span class="math notranslate nohighlight">\(u\)</span> باشد! در نتیجه <span class="math notranslate nohighlight">\(u\)</span> جد <span class="math notranslate nohighlight">\(v\)</span> است پس یال <span class="math notranslate nohighlight">\(uv\)</span> بک اج خواهد بود.</p>
+<p>در آینده از این قضیه که بعد از اجرای dfs تمام یال ها بک اج هستند استفاده های بسیاری خواهیم کرد!</p>
+</div>
+<div class="section" id="id4">
+<h2>مسیر ماکسیمال و dfs<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2>پیمایش درخت<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>یکی از حالات خاص مسئله پیمایش گراف، پیمایش درخت ها است. در این قسمت می بینیم که پیمایش درخت ها می تواند با الگوریتم dfs به صورت ساده تر انجام شود.</p>
+<p>not yet</p>
+</div>
 </div>
 
 
@@ -311,7 +362,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 11, 2020.
+                        آخرین به روز رسانی در مهٔ 13, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
