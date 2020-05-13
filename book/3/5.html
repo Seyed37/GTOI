@@ -11,7 +11,7 @@
 
 
     
-         <title>الگوریتم مسیر خاکستری &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
+         <title>تشخیص دور داشتن گراف جهت دار &mdash; نظریه گراف‌ها برای المپیاد کامپیوتر</title>
     
 
 
@@ -133,7 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="2.html">تورنومنت</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.html">گراف جهت‌دار بدون دور</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4.html">مولفه‌های قویا همبند</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">الگوریتم مسیر خاکستری</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">تشخیص دور داشتن گراف جهت دار</a></li>
 <li class="toctree-l2"><a class="reference internal" href="6.html">بازی‌ها و گراف جهت‌دار</a></li>
 <li class="toctree-l2"><a class="reference internal" href="7.html">گراف تابعی و گراف جایگشت</a></li>
 </ul>
@@ -254,7 +254,7 @@
     
         <a href="../../index.html"><i class="fa fa-folder-o"></i>&nbsp; فهرست</a>&nbsp;
         <a><i class="fa  fa-angle-left"></i></a>&nbsp;
-        <a><i class="fa fa-folder-open-o"></i>&nbsp; الگوریتم مسیر خاکستری</a>
+        <a><i class="fa fa-folder-open-o"></i>&nbsp; تشخیص دور داشتن گراف جهت دار</a>
     
     
         <a style="float: left; padding-right: 20px;" href="/problems/" id="problems-link"><i class="fa fa-question on fa-circle"></i>&nbsp;سوالات</a>
@@ -270,7 +270,256 @@
 			        <div class="col-lg-12">
 				    
   <div class="section" id="id1">
-<h1>الگوریتم مسیر خاکستری<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<h1>تشخیص دور داشتن گراف جهت دار<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<div class="section" id="id2">
+<h2>مقدمه<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>در بخش های قبلی, گاهی لازم می‌شد تشخیص دهیم یک گراف جهت‌دار دور دارد یا خیر! برای مثال برای اینکه یک ترتیب توپولوژیک از گراف ارائه دهیم, ابتدا باید مطمئن شویم گراف بدون دور است. زیرا گرافی که دور دارد, هیچ ترتیب توپولوژیکی ندارد!</p>
+<p>در اینجا به شرح دو الگوریتم می‌پردازیم که می‌توانند دوری بودن گراف را تشخیص دهند. از طرفی در الگوریتم اول, یک دور در گراف خروجی می‌دهیم!</p>
+</div>
+<div class="section" id="dfs">
+<h2>الگوریتم پیدا کردن دور با استفاده از DFS<a class="headerlink" href="#dfs" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p><strong>شرح:</strong> این الگوریتم مشابه با الگوریتم بخش 3.3 می‌باشد با این تفاوت که در اینجا  برای هر راس دو نوع علامت‌گذاری خواهیم داشت. به این صورت که گراف را با استفاده از
+<span class="math notranslate nohighlight">\(DFS\)</span>
+پیمایش می‌کنیم و هر راس را هنگامی که به آن وارد می‌شویم، به عنوان یک راس دیده شده و زمانی که از آن راس خارج می‌شویم، به عنوان یک راسی که از آن خارج شده‌ایم، علامت‌گذاری می‌کنیم. حال اگر در زمان پیمایش به راسی برسیم که از آن را دیده‌ایم ولی از آن خارج نشده‌ایم، به این نتیجه می‌رسیم که گراف دور دارد و در غیر این صورت گراف بدون دور است.</p>
+<p><strong>اثبات درستی:</strong> زمانی که در حال پیمایش گراف هستیم، اگر در راسی مانند
+<span class="math notranslate nohighlight">\(v\)</span>
+قرار داشتیم و به راسی مانند
+<span class="math notranslate nohighlight">\(u\)</span>
+رسیدیم که آن را دیده‌ایم ولی همچنان از آن خارج نشده‌ایم، این به این معناست که یالی جهت‌دار از
+<span class="math notranslate nohighlight">\(v\)</span>
+به
+<span class="math notranslate nohighlight">\(u\)</span>
+وجود دارد و
+<span class="math notranslate nohighlight">\(u\)</span>
+مسیری جهت‌دار به
+<span class="math notranslate nohighlight">\(v\)</span>
+دارد که در این صورت گراف دور خواهد داشت. همچنین اگر گراف دور داشته باشد، این الگوریتم حتما آن را پیدا خواهد کرد، زیرا در غیر این صورت اگر فرض کنیم
+<span class="math notranslate nohighlight">\(G\)</span>
+گرافی با حداقل یک دور باشد که الگوریتم دور را در آن پیدا نکرده باشد، اگر
+<span class="math notranslate nohighlight">\(v\)</span>
+اولین راسی باشد که از دور
+<span class="math notranslate nohighlight">\(C\)</span>
+به آن وارد شده‌ایم و
+<span class="math notranslate nohighlight">\(e\)</span>
+یالی از
+<span class="math notranslate nohighlight">\(u\)</span>
+به
+<span class="math notranslate nohighlight">\(v\)</span>
+باشد که در دور
+<span class="math notranslate nohighlight">\(C\)</span>
+قرار دارد، در این صورت در پیمایش، قبل از خارج شدن از
+<span class="math notranslate nohighlight">\(v\)</span>
+به
+<span class="math notranslate nohighlight">\(u\)</span>
+می‌رسیم (زیرا این دو راس در یک دور هستند و حتما از
+<span class="math notranslate nohighlight">\(v\)</span>
+به
+<span class="math notranslate nohighlight">\(u\)</span>
+مسیر هست) و با استفاده از یال
+<span class="math notranslate nohighlight">\(e\)</span>
+دوباره به
+<span class="math notranslate nohighlight">\(v\)</span>
+می‌رسیم که یعنی دور پیدا کرده‌ایم. پس از تناقض حاصل نتیجه می‌شود که الگوریتم دور را در هر گرافی که دور دارد، پیدا می‌کند.</p>
+<div class="figure align-left">
+<a class="reference internal image-reference" href="../../_images/gray_path_1.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/gray_path_1.png" style="width: 50%;" /></a>
+</div>
+<div class="section" id="id3">
+<h3>پیچیدگی الگوریتم<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>در الگوریتم یک بار از
+<span class="math notranslate nohighlight">\(DFS\)</span>
+استفاده کردیم که در نتیجه پیچیدگی آن برابر با
+<span class="math notranslate nohighlight">\(O(m+n)\)</span>
+است که
+<span class="math notranslate nohighlight">\(n\)</span>
+تعداد راس‌ها و
+<span class="math notranslate nohighlight">\(m\)</span>
+تعداد یال‌ها می‌باشد.</p>
+</div>
+<div class="section" id="id4">
+<h3>پیاده‌سازی الگوریتم<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>توجه کنید که در پیاده‌سازی زیر در صورت داشتن دور، دور پیدا شده و در صورت نداشتن دور، ترتیب توپولوژیک راس‌ها را خروجی می‌دهیم.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MX</span><span class="o">=</span><span class="mf">5e5</span><span class="o">+</span><span class="mi">200</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">gr</span><span class="p">[</span><span class="n">MX</span><span class="p">],</span> <span class="n">topo</span><span class="p">,</span> <span class="n">cycle</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">st</span><span class="p">[</span><span class="n">MX</span><span class="p">],</span> <span class="n">ed</span><span class="p">[</span><span class="n">MX</span><span class="p">];</span>
+
+<span class="kt">bool</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">){</span>
+    <span class="n">st</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">u</span><span class="p">:</span> <span class="n">gr</span><span class="p">[</span><span class="n">v</span><span class="p">]){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">ed</span><span class="p">[</span><span class="n">u</span><span class="p">]){</span>
+            <span class="n">cycle</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+            <span class="n">cycle</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">dfs</span><span class="p">(</span><span class="n">u</span><span class="p">)){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">cycle</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!=</span><span class="n">cycle</span><span class="p">[</span><span class="n">cycle</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">cycle</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">ed</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">topo</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">;</span>
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">v</span><span class="o">&gt;&gt;</span><span class="n">u</span><span class="p">;</span>
+        <span class="n">gr</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">check</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">)){</span>
+            <span class="n">check</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">check</span><span class="p">){</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;no cycle </span><span class="se">\n</span><span class="s">topo order: &quot;</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">v</span><span class="p">:</span> <span class="n">topo</span><span class="p">){</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">v</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span><span class="p">{</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;cycle: &quot;</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">cycle</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
+            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">cycle</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="kahn">
+<h2>الگوریتم کان (kahn)<a class="headerlink" href="#kahn" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p><strong>شرح:</strong> روش دیگری برای فهمیدن اینکه یک گراف دور دارد یا نه, الگوریتم کان است. این الگوریتم بر پایه استقرا عمل می‌کند. این روش با قضیه 3.3.2 بسیار شبیه می‌باشد!</p>
+<p>الگوریتم به اینصورت است که در ابتدا یک مجموعه خالی از راس ها داریم که آن را
+<span class="math notranslate nohighlight">\(zero\)</span>
+می‌نامیم. این مجموعه, مجموعه راس هایی هست که در گراف کنونی درجه ورودی‌شان 0 است.</p>
+<p>در ابتدا, راس هایی که درجه ورودی‌شان 0 است را به
+<span class="math notranslate nohighlight">\(zero\)</span>
+اضافه می‌کنیم.</p>
+<p>در هر مرحله, مجموعه راس هایی که در
+<span class="math notranslate nohighlight">\(zero\)</span>
+هستند را به همراه یال‌هایشان از گراف حذف می‌کنیم و به دنبال این‌کار, ممکن است یک سری راس جدید درجه ورودی‌شان 0 شود و به
+<span class="math notranslate nohighlight">\(zero\)</span>
+اضافه شوند. این‌کار را آنقدر ادامه می‌دهیم تا یا تعداد راس های گراف برابر با 0 شود و یا اینکه مجموعه
+<span class="math notranslate nohighlight">\(zero\)</span>
+خالی شود.</p>
+<p>اگر در یک مرحله اندازه مجموعه
+<span class="math notranslate nohighlight">\(zero\)</span>
+برابر با 0 بود و گراف کنونی هنوز شامل تعدادی راس بود, آنگاه گراف حتما دور دارد و اگر این اتفاق نیفتاد و همه راس ها از گراف حذف شدند, آنگاه گراف دور ندارد.</p>
+<p>برای درک بهتر, شکل۲ را ببینید. در این شکل, دور آبی رنگ هیچگاه به مجموعه
+<span class="math notranslate nohighlight">\(zero\)</span>
+وارد نمی‌شود و بنابراین گراف دوری تشخیص داده می‌شود!</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/kahn.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/kahn.png" style="width: 50%;" /></a>
+</div>
+<p><strong>اثبات درستی:</strong> برای اثبات الگوریتم دو حالت از گراف را در نظر می‌گیریم. ابتدا فرض کنید گراف
+<span class="math notranslate nohighlight">\(G\)</span>
+دور داشته باشد, آنگاه ادعا می‌کنیم الگوریتم به درستی دور داشتن را تشخیص می‌دهد.</p>
+<p>اگر
+<span class="math notranslate nohighlight">\(G\)</span>
+دور داشته باشد, آنگاه اگر این دور را
+<span class="math notranslate nohighlight">\(C\)</span>
+بنامیم, هیچکدام از راس های
+<span class="math notranslate nohighlight">\(C\)</span>
+هیچگاه به
+<span class="math notranslate nohighlight">\(zero\)</span>
+اضافه نمی‌شوند(چرا؟). پس به جایی می‌رسیم که گراف هنوز شامل تعدادی راس است, اما
+<span class="math notranslate nohighlight">\(zero\)</span>
+خالی است! پس الگوریتم دور داشتن را تشخیص می‌دهد.</p>
+<p>حال اگر گراف دور نداشته باشد, با استقرا روی تعداد راس ها ثابت می‌کنیم که همه راس ها حذف می‌شوند!</p>
+<p>اولا که اگر گراف دور نداشته باشد, طبق قضیه 3.1.3 تعداد راس در گراف
+<span class="math notranslate nohighlight">\(G\)</span>
+هستند که دردجه ورودی‌شان 0 است. پس این راس ها به مجموعه
+<span class="math notranslate nohighlight">\(zero\)</span>
+اضافه می‌شوند, سپس به همراه یال‌هایشان از گراف حذف می‌شوند. پس تعداد راس ها کم شد. از طرفی شرایط استقرا برقرار است و گراف کنونی دور ندارد. پس طبق استقرا همه راس ها از گراف حذف ‌می‌شوند و الگوریتم به درستی دور نداشتن را تشخیص می‌دهد.</p>
+<div class="section" id="id5">
+<h3>پیچیدگی الگوریتم<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>برای بررسی پیچیدگی الگوریتم, باید ببینیم که روی راس ها و یال ها چه مقدار پیمایش کردیم. ما زمانی روی یال ها پیمایش می‌کنیم که راسی در مجموعه
+<span class="math notranslate nohighlight">\(zero\)</span>
+باشد, آنگاه روی یال های مجاور آن راس پیمایش می‌کنیم. از طرفی هر راس فقط یکبار در
+<span class="math notranslate nohighlight">\(zero\)</span>
+می‌آید و پس از آن از گراف حذف می‌شود. پس ما روی هر یال یکبار پیمایش میکنیم.</p>
+<p>از طرفی هنگامی روی راس ها پیمایش میکنیم که  راس در مجموعه
+<span class="math notranslate nohighlight">\(zero\)</span>
+قرار گیرد. و مشابها, هر راس فقط یک بار به این مجموعه اضافه می‌شود و پس از آن از گراف حذف می‌شود.</p>
+<p>پس پیچیدگی الگوریتم بالا برابر است با
+<span class="math notranslate nohighlight">\(O(n + m)\)</span>
+است که مشابه با الگوریتم قبلی است!</p>
+</div>
+<div class="section" id="id6">
+<h3>پیاده‌سازی الگوریتم<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">maxn</span> <span class="o">=</span> <span class="mf">5e5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span> <span class="c1">// tedad ras ha va yal ha</span>
+<span class="kt">int</span> <span class="n">in_edge</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span> <span class="c1">// in_edge[v] daraje vorodi rase v hast!</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span> <span class="c1">// vector e mojaverat</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">zero</span><span class="p">;</span> <span class="c1">// ras haie ke daraje vorodi 0 daran va baiad hazf shan!</span>
+
+<span class="kt">bool</span> <span class="nf">has_cycle</span><span class="p">(){</span>
+      <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">in_edge</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+                  <span class="n">zero</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+            <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">zero</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+                  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">zero</span><span class="p">[</span><span class="n">zero</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span> <span class="c1">// ozve akhar az remove_set</span>
+            <span class="n">zero</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">u</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">v</span><span class="p">]){</span>
+                  <span class="n">in_edge</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+                  <span class="k">if</span><span class="p">(</span><span class="n">in_edge</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+                        <span class="n">zero</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+                  <span class="p">}</span>
+            <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+      <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+      <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
+            <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span> <span class="c1">// u, v 0-based hastan</span>
+            <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+            <span class="n">in_edge</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> <span class="c1">// yale (u, v) dar graph ast. pas daraje vorodi v yeki ziad mishe!</span>
+      <span class="p">}</span>
+
+      <span class="k">if</span><span class="p">(</span><span class="n">has_cycle</span><span class="p">()){</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;graph has at least one cycle!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;graph is acyclic!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 

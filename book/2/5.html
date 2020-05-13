@@ -133,7 +133,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../3/2.html">تورنومنت</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/3.html">گراف جهت‌دار بدون دور</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/4.html">مولفه‌های قویا همبند</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../3/5.html">الگوریتم مسیر خاکستری</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3/5.html">تشخیص دور داشتن گراف جهت دار</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/6.html">بازی‌ها و گراف جهت‌دار</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3/7.html">گراف تابعی و گراف جایگشت</a></li>
 </ul>
@@ -316,11 +316,63 @@
 </div>
 <div class="section" id="id4">
 <h2>مسیر ماکسیمال و dfs<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>در فصل 1 با اثبات هایی که توسط مسیر ماکسیمال انجام می شد آشنا شدیم. در اینجا یاد می گیریم که می توان به جای استفاده از مسیر ماکسیمال از برگ های درخت dfs استفاده کرد(که شهود بسیار قوی تری ایجاد می کند)!</p>
+<p>بعد از dfs زدن روی درخت بک اج هایی که <span class="math notranslate nohighlight">\(u\)</span> راس پایین آن است را <span class="math notranslate nohighlight">\(back_u\)</span> می نامیم. توجه کنید که یال های درخت dfs هم بک اج محسوب می شوند. همچنین ارتفاع راس <span class="math notranslate nohighlight">\(u\)</span> در درخت را <span class="math notranslate nohighlight">\(h_u\)</span> می نامیم.</p>
+<p>دو قضیه زیر به راحتی از ساختار خاص درخت نتیجه می شوند (قضیه دوم با فرض ساده بودن گراف برقرار است).</p>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\sum back_u = m\)</span></li>
+<li><span class="math notranslate nohighlight">\(\forall_u back_u \leq h_u\)</span></li>
+</ul>
+<div class="section" id="delta">
+<h3>مسیر به طول <span class="math notranslate nohighlight">\(\delta\)</span><a class="headerlink" href="#delta" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>ثابت می کنیم که یک گراف ساده مسیری به طول حداقل <span class="math notranslate nohighlight">\(\delta\)</span> دارد. کافیست ثابت کنیم ارتفاع درخت dfs حداقل <span class="math notranslate nohighlight">\(\delta\)</span> است. یک برگ دلخواه مثل <span class="math notranslate nohighlight">\(u\)</span> را در نظر بگیرید. واضح است که <span class="math notranslate nohighlight">\(back_u \geq \delta\)</span> در نتیجه <span class="math notranslate nohighlight">\(h_u \geq \delta\)</span> که حکم ما را به سادگی نتیجه می دهد!</p>
+</div>
+<div class="section" id="frac-m-n">
+<h3>مسیر به طول <span class="math notranslate nohighlight">\(\frac m n\)</span><a class="headerlink" href="#frac-m-n" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>ثابت می کنیم که یک گراف ساده مسیری به طول حداقل <span class="math notranslate nohighlight">\(\frac m n\)</span> دارد. مثل بالا ثابت می کنیم ارتفاع درخت dfs حداقل <span class="math notranslate nohighlight">\(\frac m n\)</span> است. برای اثبات از برهان حلف استفاده می کنیم. فرض کنید ارتفاع هر راس کمتر از <span class="math notranslate nohighlight">\(\frac m n\)</span> باشد. داریم :
+<span class="math notranslate nohighlight">\(m = \sum back_u \leq \sum h_u &lt; n \times \frac m n = m \Rightarrow m &lt; m\)</span></p>
+<p>که به ما تناقض می دهد. در نتیجه راسی با ارتفاع حداقل <span class="math notranslate nohighlight">\(\frac m n\)</span> وجود دارد که حکم مسئله ما را ثابت می کند.</p>
 </div>
 <div class="section" id="id5">
-<h2>پیمایش درخت<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>یکی از حالات خاص مسئله پیمایش گراف، پیمایش درخت ها است. در این قسمت می بینیم که پیمایش درخت ها می تواند با الگوریتم dfs به صورت ساده تر انجام شود.</p>
-<p>not yet</p>
+<h3>برگ ها و ارتفاع، مجموعه مستقل و طولانی ترین مسیر!<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>فرض کنید بعد از اعمال الگوریتم dfs ارتفاع درخت برابر با <span class="math notranslate nohighlight">\(H\)</span> شود(در واقع <span class="math notranslate nohighlight">\(H\)</span> بیشینه مقدار بین <span class="math notranslate nohighlight">\(h_u\)</span> ها است). همچنین فرض کنید تعداد برگ ها <span class="math notranslate nohighlight">\(S\)</span> باشد.</p>
+<p>در اینجا ثابت می کنیم که <span class="math notranslate nohighlight">\(H \times S \geq n-1\)</span>.</p>
+<p>به ازای هر برگ درخت مسیر این راس تا ریشه را طی کنید و روی هر راس این مسیر به جز ریشه یک سنگ قرار دهید. در اینصورت به ازای هر برگ مثل <span class="math notranslate nohighlight">\(u\)</span> به تعداد کل سنگ ها <span class="math notranslate nohighlight">\(h_u\)</span> تا اضافه می شود. از طرفی روی هر راس به جز ریشه حداقل یک سنگ قرار دادیم در نتیجه تعداد کل سنگ ها حداقل <span class="math notranslate nohighlight">\(n-1\)</span> می باشد. پس می توان نوشت :</p>
+<p><span class="math notranslate nohighlight">\(n-1 \leq \sum h_u \leq H \times S\)</span></p>
+<p>که حکم ما را ثابت می کند. اما تا الان از ویژگی خاصی که توسط درخت dfs به دست بیاید استفاده نکردیم! نکته جالب این است که برگ های درخت dfs تشکیل یک مجموعه مستقل می دهند. (زیرا وجود یال بین دو برگ موجب ایجاد کراس اج می شود).</p>
+<p>در نتیجه اگر اندازه مجموعه مستقل بیشینه <span class="math notranslate nohighlight">\(S^{\prime}\)</span> باشد در اینصورت <span class="math notranslate nohighlight">\(S \leq S^{\prime}\)</span> برقرار است.</p>
+<p>همینطور اگر اندازه طولانی ترین مسیر این گراف <span class="math notranslate nohighlight">\(H^{\prime}\)</span> باشد در اینصورت <span class="math notranslate nohighlight">\(H \leq H^{\prime}\)</span> برقرار است.</p>
+<p>پس حالا توانستیم به نامساوی جالب <span class="math notranslate nohighlight">\(n-1 \leq H \times S \leq H^{\prime} \times S^{\prime}\)</span> برسیم!</p>
+<p>نکته جالب این است که هر دو مسئله پیدا کردن مچموعه مستقل با بیشترین بیشینه و طولانی ترین مسیر در گراف np هستند! اما با روشی که ارائه دادیم می توانیم یا یک مجموعه مستقل به اندازه حداقل <span class="math notranslate nohighlight">\(\sqrt{n-1}\)</span> یا یک مسیر به اندازه حداقل <span class="math notranslate nohighlight">\(\sqrt{n-1}\)</span> ارائه دهیم!</p>
+</div>
+<div class="section" id="id6">
+<h3>راس نابرشی<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>ثابت می کنیم هر گراف با <span class="math notranslate nohighlight">\(n &gt; 1\)</span> حداقل دو راس برشی دارد.</p>
+<p>کافیست روی گراف dfs بزنید. سپس هر کدام از برگ های درخت dfs یک راس نابرشی خواهند بود (همچنین اگر این دو راس را با هم نیز حذف کنیم گراف ناهمبند نمی شود). زیرا که یال های درخت dfs بقیه گراف را همبند نگه می دارد (و حذف برگ از یک درخت همبندی آن را خراب نمی کند). همچنین هر درخت با <span class="math notranslate nohighlight">\(n&gt;1\)</span> حداقل دو برگ دارد که حکم ما را ثابت می کند. البته در این مسئله نیازی به استفاده از درخت dfs نبود و هر درخت فراگیر دلخواهی مسئله را برای ما حل می کرد.</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>پیمایش درخت<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>یکی از حالات خاص مسئله پیمایش گراف، پیمایش درخت ها است. در این قسمت می بینیم که پیمایش درخت ها می تواند با الگوریتم dfs به صورت ساده تر انجام شود. مثلا دیگر به آرایه mark نیازی نداریم. زیرا تنها مجاور یک راس که قبلا دیده شده است پدر این راس می باشد.</p>
+<p>همچنین می توان همزمان به اجرای dfs اطلاعات دیگری نیز درباره درخت به دست آورد. به عنوان مثال در کد زیر بعد از اجرای dfs روی درخت تعداد راس های زیردرخت هر راس در آرایه sz، و ارتفاع هر راس در آرایه h ذخیره سازی می شوند.</p>
+<p>توجه کنید که فرض کردیم اندیس راس های درخت از 1 شروع می شوند و راس با اندیس 0 نداریم.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">maxn</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">sz</span><span class="p">[</span><span class="n">maxn</span><span class="p">],</span> <span class="n">h</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+
+<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">par</span> <span class="o">=</span> <span class="mi">0</span><span class="p">){</span>
+   <span class="n">h</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">par</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="n">sz</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">u</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">]){</span>
+       <span class="k">if</span><span class="p">(</span><span class="n">u</span> <span class="o">!=</span> <span class="n">par</span><span class="p">){</span>
+           <span class="n">dfs</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+           <span class="n">sz</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">+=</span> <span class="n">sz</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 
