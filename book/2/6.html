@@ -275,31 +275,31 @@
 <p>الگوریتم bfs به شکل زیر است :</p>
 <p>ابتدا یک راس را مشخص میکنیم (نام ان را root میگزاریم) و آن را در گروه <span class="math notranslate nohighlight">\(A_0\)</span> میگزاریم سپس تمام همسایه های ان را در گروه <span class="math notranslate nohighlight">\(A_1\)</span> میگزاریم و
 در <span class="math notranslate nohighlight">\(A_2\)</span> تمام همسایه های گروه های <span class="math notranslate nohighlight">\(A_0\)</span> و <span class="math notranslate nohighlight">\(A_1\)</span> را میگزاریم که تا الان در هیچ گروهی نیامد اند و به همین شکل در گروه <span class="math notranslate nohighlight">\(A_i\)</span> تمام
-راس هایی که همسایه راس های گروه های <span class="math notranslate nohighlight">\(A_j\)</span> که <span class="math notranslate nohighlight">\(0&lt;=j&lt;i\)</span> است و در آن ها  نیامده قرار میدهیم.</p>
+راس هایی که همسایه راس های گروه های <span class="math notranslate nohighlight">\(A_j\)</span> که <span class="math notranslate nohighlight">\(0\)</span> <span class="math notranslate nohighlight">\(\leqslant\)</span> <span class="math notranslate nohighlight">\(j&lt;i\)</span> است و در آن ها  نیامده قرار میدهیم.</p>
 <p>فرض کنید <span class="math notranslate nohighlight">\(Dis_i\)</span> برابر شماره گروهی است که <span class="math notranslate nohighlight">\(i\)</span> در آن امده است(برای مثال <span class="math notranslate nohighlight">\(Dis_{root} = 0\)</span> است).
-واضح است در این روش تمام راس هایی که در مولفه همبندی root است در گروه ها می ایند پس برای راحتی کار فرض میکنیم گراف همبند است ولی هر چه میگوییم در واقع</p>
-<blockquote>
-<div>برای مولفه همبندی root درست است.</div></blockquote>
-<p>ابتدا ثابت میکنیم برای دو راس <span class="math notranslate nohighlight">\(i,j\)</span> که به هم یال دارند <span class="math notranslate nohighlight">\(|Dis_{i}-Dis_{j}| &lt;= 1\)</span>.
+واضح است در این روش تمام راس هایی که در مولفه همبندی root است در گروه ها می ایند پس برای راحتی کار فرض میکنیم گراف همبند است ولی هر چه میگوییم در واقع برای مولفه همبندی root درست است.</p>
+<p>ابتدا ثابت میکنیم برای دو راس <span class="math notranslate nohighlight">\(i,j\)</span> که به هم یال دارند <span class="math notranslate nohighlight">\(|Dis_{i}-Dis_{j}|\)</span> <span class="math notranslate nohighlight">\(\leqslant\)</span>  <span class="math notranslate nohighlight">\(1\)</span> .
 برهان خلف میزنیم فرض کنید دو راس <span class="math notranslate nohighlight">\(i,j\)</span> است که همسایه هم هستند و <span class="math notranslate nohighlight">\(Dis_{j} - Dis_{i} &gt; 1\)</span>. حال زمانی را در نظر بگیرید که داشتیم گروه
 <span class="math notranslate nohighlight">\(A_{Dis_{i}+1}\)</span> را داشتیم پر میکردیم آن لحظه <span class="math notranslate nohighlight">\(j\)</span> در هیچ گروهی نیامده بود و همسایه <span class="math notranslate nohighlight">\(i\)</span> بود پس در گروه <span class="math notranslate nohighlight">\(A_{Dis_{i}+1}\)</span>
-بود و با تناقض بدست امده قضیه ثابت شد.</p>
-<p>پس میتوانیم فرض کنیم در گروه <span class="math notranslate nohighlight">\(A_i\)</span> تمام
+بود و با تناقض بدست امده قضیه ثابت شد.
+پس میتوانیم فرض کنیم در گروه <span class="math notranslate nohighlight">\(A_i\)</span> تمام
 راس هایی که همسایه راس های گروه های <span class="math notranslate nohighlight">\(A_{i-1}\)</span> و در آن نیامده قرار میدهیم.</p>
 <p>حال میخواهیم ثابت کنیم <span class="math notranslate nohighlight">\(Dis_{i}\)</span> = <span class="math notranslate nohighlight">\(dis(i,root)\)</span>. برهان خلف میزنیم راسی که کمترین مقدار Dis را دارد و حکم ما برای آن برقرار نیست(نام آن را i میگزاریم)
-حال همسایه i را در مسیری به root که تعداد یال های آن مسیر برابر <span class="math notranslate nohighlight">\(dis(root,i)\)</span> است در نظر بگیرید.(با نام j)</p>
-<blockquote>
-<div>چون راس i کمترین Dis را بین راس هایی که حکم را نقض میکردند داشت پس j حکم را نقض نمیکرد پس <span class="math notranslate nohighlight">\(Dis_{j}=dis(root,i)-1\)</span> است و چون <span class="math notranslate nohighlight">\(Dis_{i} &gt; Dis_{j}\)</span> و</div></blockquote>
-<p><span class="math notranslate nohighlight">\(|Dis_{i}-Dis_{j}| &lt;= 1\)</span> پس <span class="math notranslate nohighlight">\(Dis_{i} = Dis_{j}+1\)</span> با تناقض بدست امده قضیه اثبات شد.</p>
+حال همسایه i را در مسیری به root که تعداد یال های آن مسیر برابر <span class="math notranslate nohighlight">\(dis(root,i)\)</span> است در نظر بگیرید.(با نام j)
+چون راس i کمترین Dis را بین راس هایی که حکم را نقض میکردند داشت پس j حکم را نقض نمیکرد پس :</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Dis_{j}=dis(root,i)-1\)</span></p></li>
+<li><p>و چون <span class="math notranslate nohighlight">\(Dis_{i} &gt; Dis_{j}\)</span> و <span class="math notranslate nohighlight">\(|Dis_{i}-Dis_{j}|\)</span> <span class="math notranslate nohighlight">\(\leqslant\)</span> <span class="math notranslate nohighlight">\(1\)</span> پس:</p></li>
+<li><p><span class="math notranslate nohighlight">\(Dis_{i} = Dis_{j}+1\)</span></p></li>
+</ul>
+<p>و با تناقض بدست امده قضیه اثبات شد.</p>
 <p>حال الگوریتم را کمی تغییر میدهیم و ثابت میکنیم باز همان کار را داریم انجام میدهیم :</p>
 <p>یک گروه جدید میسازیم با نام B که ابتدا راس root را در آن میگزاریم و سپس تا زمانی که B عضو دارد کار زیر را انجام میدهیم :
 راسی در B که کمترین مقدار Dis را دارد در نظر میگیریم(با نام i) i را از B حذف میکنیم سپس تمام همسایه های آن را که هنوز در هیچ A ای نبود را در گروه <span class="math notranslate nohighlight">\(A_{Dis_i} + 1\)</span> میگزاریم و آن را داخل B میگزاریم.
 این الگوریتم نیز مانند الگوریتم بالایی است فقط بجای آن که همه راس های <span class="math notranslate nohighlight">\(A_i\)</span> با هم در نظر بگیریم و همه همسایه های آن ها که تا بحال در گروهی نیامده در گروه بعدی بگزاریم
 , روی راس های داخل گروه <span class="math notranslate nohighlight">\(A_i\)</span> را با ترتیبی که فرقی ندارد چه گونه است حرکت میکنیم و هر راس از گروه بعد در اولین زمانی که یک همسایه از آن در <span class="math notranslate nohighlight">\(A_i\)</span> را
 دیدیم وارد <span class="math notranslate nohighlight">\(A_{i+1}\)</span> میشود.
-واضح است وقتی یک راس وارد B میشود مقدار Dis آن از بقیه راس های داخل B بیشتر است پس اگر راس های داخل B را به ترتیب ورودشان در B نگه داریم عملا هر دفعه راس ته</p>
-<blockquote>
-<div>B را میگیریم آن را حذف میکنیم و راس های همسایه آن را که تابحال در B نیامده ان به سر اضافه میکنیم.</div></blockquote>
+واضح است وقتی یک راس وارد B میشود مقدار Dis آن از بقیه راس های داخل B بیشتر است پس اگر راس های داخل B را به ترتیب ورودشان در B نگه داریم عملا هر دفعه راس ته B را میگیریم آن را حذف میکنیم و راس های همسایه آن را که تابحال در B نیامده ان به سر اضافه میکنیم.</p>
 <div class="section" id="id1">
 <h2>زدن کد برای bfs<a class="headerlink" href="#id1" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <p>نحوه ورودی :
@@ -308,14 +308,16 @@
 <p>خروجی :
 به اندازه تعداد راس ها باید عدد چاپ کنیم که عدد i برابر <span class="math notranslate nohighlight">\(dis(1,i)\)</span> است .</p>
 <p>نحوه کد :</p>
-<p>ما از queue که یک صف است در کد استفاده میکنیم queue دارای قابلیت های زیادی است ولی قابلیت های مورد استفاده ما در زیر امده :
--queue q
-- q.size() برابر تعداد عناصر داخل q است.
-- q.front() مقدار عنصر ته  q
-- q.pop() حذف عنصر ته q
-- q.push(x) اضافه کردن x به q از سر آن
-- queue در واقع برای ما نقش گروه B را ایفا میکند.
-همچنین از ارایه Mark استفاده میکنیم که مقدار اولیه آن برای هر راس صفر است و اگه راسی وارد B  شود مقدار آن برای آن راس 1 میشود.
+<p>ما از queue که یک صف است در کد استفاده میکنیم queue دارای قابلیت های زیادی است ولی قابلیت های مورد استفاده ما در زیر امده :</p>
+<ul class="simple">
+<li><p>queue q</p></li>
+<li><p>q.size() برابر تعداد عناصر داخل q است.</p></li>
+<li><p>q.front() مقدار عنصر ته  q</p></li>
+<li><p>q.pop() حذف عنصر ته q</p></li>
+<li><p>q.push(x) اضافه کردن x به q از سر آن</p></li>
+<li><p>queue در واقع برای ما نقش گروه B را ایفا میکند.</p></li>
+</ul>
+<p>همچنین از ارایه Mark استفاده میکنیم که مقدار اولیه آن برای هر راس صفر است و اگه راسی وارد B  شود مقدار آن برای آن راس 1 میشود.
 و از ارایه Dis هم استفاده میکنیم که برای هر راس جواب در آن ذخیره میشود.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// in the name of GOD</span>
 <span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
@@ -328,34 +330,34 @@
 <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">maxn</span><span class="p">]</span> <span class="p">;</span><span class="c1">//list hamsaye haye har ras dar un neveshte shode</span>
 
 <span class="kt">void</span> <span class="nf">bfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">root</span><span class="p">){</span><span class="c1">//fasele harki az root bedast khahad amad</span>
- <span class="n">Dis</span><span class="p">[</span><span class="n">root</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="c1">// dis(root , root) = 0</span>
- <span class="n">Mark</span><span class="p">[</span><span class="n">root</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
- <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="p">;</span>
- <span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span><span class="c1">//ta zamani ke dakhele q ras hast while ra edame bede</span>
-  <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="p">;</span><span class="c1">//rasi dar q ke kamtarin Dis ra darad</span>
-  <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="p">;</span> <span class="c1">//hazfe un</span>
-  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="c1">//hamsaye haye i ra negah mikonim va agar ta be hal vared q nashodan vared mikonim</span>
-   <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">;</span>
-   <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">Mark</span><span class="p">[</span><span class="n">v</span><span class="p">]){</span>
-    <span class="n">Mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
-    <span class="n">Dis</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">Dis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">;</span>
-    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="p">;</span>
-   <span class="p">}</span>
-  <span class="p">}</span>
- <span class="p">}</span>
+    <span class="n">Dis</span><span class="p">[</span><span class="n">root</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="c1">// dis(root , root) = 0</span>
+    <span class="n">Mark</span><span class="p">[</span><span class="n">root</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="p">)</span> <span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span><span class="c1">//ta zamani ke dakhele q ras hast while ra edame bede</span>
+        <span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="p">;</span><span class="c1">//rasi dar q ke kamtarin Dis ra darad</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="p">;</span> <span class="c1">//hazfe un</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">()</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="c1">//hamsaye haye i ra negah mikonim va agar ta be hal vared q nashodan vared mikonim</span>
+            <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">Mark</span><span class="p">[</span><span class="n">v</span><span class="p">]){</span>
+             <span class="n">Mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span>
+             <span class="n">Dis</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">Dis</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">;</span>
+             <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
- <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span> <span class="p">;</span>
- <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="c1">//list hamsaye haye ras ha ra por mikonim</span>
-  <span class="kt">int</span> <span class="n">u</span> <span class="p">,</span> <span class="n">v</span> <span class="p">;</span>
-  <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">;</span>
-  <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-  <span class="n">adj</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
- <span class="p">}</span>
- <span class="n">bfs</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="c1">//yani be ezaye root = 1 tabe bfs ra seda bezan</span>
- <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
- <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Dis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span> <span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="c1">//list hamsaye haye ras ha ra por mikonim</span>
+        <span class="kt">int</span> <span class="n">u</span> <span class="p">,</span> <span class="n">v</span> <span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">;</span>
+        <span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+        <span class="n">adj</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">bfs</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="c1">//yani be ezaye root = 1 tabe bfs ra seda bezan</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+       <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Dis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -363,15 +365,17 @@
 </div>
 <div class="section" id="id2">
 <h2>نتیجه گیری<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
-<p>در این بخش به معرفی الگوریتم Bfs و ویژگی های آن پرداختیم . از مهمترین کاربرد های های bfs میتولن به موارد زیر اشاره کرد.</p>
+<p>در این بخش به معرفی الگوریتم bfs و ویژگی های آن پرداختیم . از مهمترین کاربرد های های bfs میتولن به موارد زیر اشاره کرد.</p>
 <ul class="simple">
-<li>پیدا کردن فاصله هر راس از راسی خاص</li>
-<li>پیدا کردن راس های داخل مولفه همبندی راسی خاص(در نتیجه تشخیص همبند بودن یا نبودن گراف)</li>
-<li>پیمایش گراف به منظوری خاص</li>
-<li>همچنین اگر برای هر راس راسی که به واسطه همسایگی با ان وارد گروهمان میشود یال بین ان ها را پر رنگ کنیم هر یال حداکثر یبار پر رنگ میشود و یال های پر رنک تشکیل یک درخت میدهند که</li>
+<li><p>پیدا کردن فاصله هر راس از راسی خاص</p></li>
+<li><p>پیدا کردن راس های داخل مولفه همبندی راسی خاص(در نتیجه تشخیص همبند بودن یا نبودن گراف)</p></li>
+<li><p>پیمایش گراف به منظوری خاص</p></li>
+<li><p>همچنین اگر برای هر راس راسی که به واسطه همسایگی با ان وارد گروهمان میشود یال بین ان ها را پر رنگ کنیم هر یال حداکثر یبار پر رنگ میشود و یال های پر رنک تشکیل یک درخت میدهند که</p></li>
 </ul>
 <p>ویژگی هایی که در بالا گفتیم را دارد و گاهی بکار می اید.</p>
-<p>شاد باشید ;)</p>
+<p>توصیه میشود حتما برای یاد گرفتن این بخش به تمرینات این بخش سر بزنید.</p>
+<p>شاد باشید (;</p>
+<p>Not yet</p>
 </div>
 </div>
 
@@ -413,11 +417,11 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 13, 2020.
+                        آخرین به روز رسانی در مهٔ 15, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.8.5) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>

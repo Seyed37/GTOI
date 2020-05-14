@@ -320,9 +320,9 @@
 <p>گراف تابعی را در نظر بگیرید. همانطور که می دانید در هر گراف تابعی از هر مولفه همبندی (در گراف زمینه) از یک دور جهت دار تشکیل شده است که از هر راس آن یک درخت آویزان است. شهودا برای تبدیل این گراف تابعی به درخت کافیست یک یال از هر دور را حذف کنیم سپس مولفه های همبندی گراف تابعی را به هم وصل کنیم تا تبدیل به درخت شود اما باید طوری این فرایند را انجام دهیم که تناظر یک به یک باشد و بتوان از روی درخت دو رنگ فهمید کدام یال حذف شده است!</p>
 <p>فرض کنید به ازای هر مولفه همبندی گراف تابعی (در گراف زمینه) کمترین برچسب در دور آن را زیبایی مولفه می نامیم و راسی که این برچسب کمینه را دارد راس زیبای مولفه بنامید. حالا برای تناظر فرایند زیر را انجام دهید.</p>
 <ul class="simple">
-<li>مولفه ها طوری چپ به راس مرتب کنید که زیبایی مولفه ها از چپ به راست <strong>نزولی</strong> باشد.</li>
-<li>در هر کدام از مولفه ها فرض کنید دور آن <span class="math notranslate nohighlight">\(p_1,p_2,...,p_k\)</span> باشد به طوریکه <span class="math notranslate nohighlight">\(p_1\)</span> راس زیبای مولفه باشد. ابتدا یال <span class="math notranslate nohighlight">\(p_kp_1\)</span> را حذف کنید. سپس <span class="math notranslate nohighlight">\(p_k\)</span> را به راس زیبای مولفه بعدی (در سمت راست) وصل کنید.</li>
-<li>راس <span class="math notranslate nohighlight">\(p_1\)</span> در چپ ترین مولفه را آبی کنید و راس <span class="math notranslate nohighlight">\(p_k\)</span> در راست ترین مولفه را قرمز کنید. سپس جهت دهی یال ها را از بین ببرید.</li>
+<li><p>مولفه ها طوری چپ به راس مرتب کنید که زیبایی مولفه ها از چپ به راست <strong>نزولی</strong> باشد.</p></li>
+<li><p>در هر کدام از مولفه ها فرض کنید دور آن <span class="math notranslate nohighlight">\(p_1,p_2,...,p_k\)</span> باشد به طوریکه <span class="math notranslate nohighlight">\(p_1\)</span> راس زیبای مولفه باشد. ابتدا یال <span class="math notranslate nohighlight">\(p_kp_1\)</span> را حذف کنید. سپس <span class="math notranslate nohighlight">\(p_k\)</span> را به راس زیبای مولفه بعدی (در سمت راست) وصل کنید.</p></li>
+<li><p>راس <span class="math notranslate nohighlight">\(p_1\)</span> در چپ ترین مولفه را آبی کنید و راس <span class="math notranslate nohighlight">\(p_k\)</span> در راست ترین مولفه را قرمز کنید. سپس جهت دهی یال ها را از بین ببرید.</p></li>
 </ul>
 <p>به این صورت از گراف تابعی که داشتیم یک درخت دو رنگ ساختیم.</p>
 <p>چرا زیبایی مولفه را <strong>کوچکترین</strong> راس دور تعریف کردیم و چرا مولفه ها را طوری مرتب کردیم که زیبایی ها <strong>نزولی</strong> باشد؟ دلیل این کار تنها این بود که مسیر راس آبی به قرمز این ویژگی را داشته باشد که به آن ویژگی جذاب می گوییم.</p>
@@ -331,9 +331,9 @@
 <p>همانطور که گفتیم راس آبی را <span class="math notranslate nohighlight">\(A\)</span> در نظر بگیرید و راس قرمز را <span class="math notranslate nohighlight">\(B\)</span> در نظر بگیرید.</p>
 <p>مراحل تناظر را یکی یکی به عقب بر می گردانیم تا به گراف تابعی برسیم. اول از همه درخت را از مسیر <span class="math notranslate nohighlight">\(A\)</span> به <span class="math notranslate nohighlight">\(B\)</span> آویزان کنید. راس <span class="math notranslate nohighlight">\(A\)</span> را در سمت چپ در نظر بگیرید و راس <span class="math notranslate nohighlight">\(B\)</span> را در سمت راست در نظر بگیرید.</p>
 <ul class="simple">
-<li>مسیر <span class="math notranslate nohighlight">\(AB\)</span> باید از چپ به راست جهت دهی شده باشد.</li>
-<li>سپس تمام درخت هایی که از رئوس مسیر <span class="math notranslate nohighlight">\(AB\)</span> آویزان شده اند باید از پایین به بالا جهت دهی شده باشند (هر راس به پدرش یال دارد).</li>
-<li>در اینجا از <strong>ویژگی جذاب</strong> که در بالا گفتیم استفاده می کنیم. با طی کردن مسیر از <span class="math notranslate nohighlight">\(A\)</span> به <span class="math notranslate nohighlight">\(B\)</span> می توانیم مسیر را به بازه هایی افراز کنیم که قبلا (در گراف تابعی) متعلق به یک مولفه بوده اند. حالا می دانیم که هر کدام از بازه ها قبلا یک دور بوده اند که راس های آن به ترتیب <span class="math notranslate nohighlight">\(p_1,...,p_k\)</span> بوده اند و یال <span class="math notranslate nohighlight">\(p_kp_1\)</span> حذف شده است. پس کافیست یک یال از راس آخر بازه (که همان <span class="math notranslate nohighlight">\(p_k\)</span> است) به راس اول بازه (که همان <span class="math notranslate nohighlight">\(p_1\)</span> است) بکشیم.</li>
+<li><p>مسیر <span class="math notranslate nohighlight">\(AB\)</span> باید از چپ به راست جهت دهی شده باشد.</p></li>
+<li><p>سپس تمام درخت هایی که از رئوس مسیر <span class="math notranslate nohighlight">\(AB\)</span> آویزان شده اند باید از پایین به بالا جهت دهی شده باشند (هر راس به پدرش یال دارد).</p></li>
+<li><p>در اینجا از <strong>ویژگی جذاب</strong> که در بالا گفتیم استفاده می کنیم. با طی کردن مسیر از <span class="math notranslate nohighlight">\(A\)</span> به <span class="math notranslate nohighlight">\(B\)</span> می توانیم مسیر را به بازه هایی افراز کنیم که قبلا (در گراف تابعی) متعلق به یک مولفه بوده اند. حالا می دانیم که هر کدام از بازه ها قبلا یک دور بوده اند که راس های آن به ترتیب <span class="math notranslate nohighlight">\(p_1,...,p_k\)</span> بوده اند و یال <span class="math notranslate nohighlight">\(p_kp_1\)</span> حذف شده است. پس کافیست یک یال از راس آخر بازه (که همان <span class="math notranslate nohighlight">\(p_k\)</span> است) به راس اول بازه (که همان <span class="math notranslate nohighlight">\(p_1\)</span> است) بکشیم.</p></li>
 </ul>
 <p>پس توانستیم با معکوس تابع تناظر از هر درخت دو رنگ به یک گراف تابعی برسیم. پس توانستیم یک به یک بودن تناظر را ثابت کنیم.</p>
 </div>
@@ -349,9 +349,9 @@
 <h3>حل<a class="headerlink" href="#id13" title="لینک ثابت به این سر مقاله">¶</a></h3>
 <p>سعی می کنیم <span class="math notranslate nohighlight">\(T\)</span> را محاسبه کنیم. یک انشعاب خاص را در نظر بگیرید و فرایند ساختن آن را به شکل زیر در نظر بگیرید‌ :</p>
 <ul class="simple">
-<li>ابتدا گرافی <span class="math notranslate nohighlight">\(n\)</span> راسی و بدون یال در نظر بگیرید. یال ها را یکی یکی اضافه می کنیم. پس در هر مرحله تعدادی درخت جهت دار خواهیم داشت.</li>
-<li>در مرحله <span class="math notranslate nohighlight">\(i\)</span> ام یالی که روی آن عدد <span class="math notranslate nohighlight">\(i\)</span> نوشته شده را در نظر بگیرید. فرض کنید <span class="math notranslate nohighlight">\(uv\)</span> باشد.</li>
-<li>در اینصورت لازم و کافی است که در هر مرحله <span class="math notranslate nohighlight">\(u, v\)</span> مربوط به دو مولفه متفاوت باشند و همچنین <span class="math notranslate nohighlight">\(v\)</span> راسی باشد که ریشه یکی از درخت های جهت دار ما است.</li>
+<li><p>ابتدا گرافی <span class="math notranslate nohighlight">\(n\)</span> راسی و بدون یال در نظر بگیرید. یال ها را یکی یکی اضافه می کنیم. پس در هر مرحله تعدادی درخت جهت دار خواهیم داشت.</p></li>
+<li><p>در مرحله <span class="math notranslate nohighlight">\(i\)</span> ام یالی که روی آن عدد <span class="math notranslate nohighlight">\(i\)</span> نوشته شده را در نظر بگیرید. فرض کنید <span class="math notranslate nohighlight">\(uv\)</span> باشد.</p></li>
+<li><p>در اینصورت لازم و کافی است که در هر مرحله <span class="math notranslate nohighlight">\(u, v\)</span> مربوط به دو مولفه متفاوت باشند و همچنین <span class="math notranslate nohighlight">\(v\)</span> راسی باشد که ریشه یکی از درخت های جهت دار ما است.</p></li>
 </ul>
 <p>برای شمردن تعداد انشعاب های ممکن کافی است بفهمیم فرایند ساختن انشعاب چند حالت مختلف می تواند داشته باشد.</p>
 <p>در شروع مرحله <span class="math notranslate nohighlight">\(i\)</span> (با شمارش از 1) دقیقا <span class="math notranslate nohighlight">\(n-i+1\)</span> درخت ریشه دار داریم. اگر روی <span class="math notranslate nohighlight">\(u\)</span> حالت بندی کنید (که <span class="math notranslate nohighlight">\(n\)</span> حالت دارد) برای انتخاب <span class="math notranslate nohighlight">\(v\)</span> دقیقا <span class="math notranslate nohighlight">\(n-i\)</span> حالت داریم زیرا که <span class="math notranslate nohighlight">\(v\)</span> باید ریشه یکی از درخت ها باشد و نباید ریشه درختی باشد که <span class="math notranslate nohighlight">\(u\)</span> در آن است. بنابراین مرحله <span class="math notranslate nohighlight">\(i\)</span> ام فرایند ساختن گراف <span class="math notranslate nohighlight">\(n \times (n-i)\)</span> حالت دارد. پس در نهایت داریم
@@ -407,11 +407,11 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 13, 2020.
+                        آخرین به روز رسانی در مهٔ 15, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.8.5) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>
