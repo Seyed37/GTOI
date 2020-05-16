@@ -300,14 +300,14 @@
 <span class="math notranslate nohighlight">\(u , v\)</span> را ندارد.که یعنی <span class="math notranslate nohighlight">\(mh = lca(u,b)\)</span>  or <span class="math notranslate nohighlight">\(lca(v,b)\)</span> .بدون از دست دادن کلیت مسئله فرض کنید <span class="math notranslate nohighlight">\(mh = lca(u,b)\)</span>. حال ثابت میکنیم <span class="math notranslate nohighlight">\(d(b,u)\)</span> &gt; <span class="math notranslate nohighlight">\(d(u,v)\)</span>
 با اثبات این بخش با تناقض بدست امده در طول قطر قضیه اثبات میشود.</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(d(b,u)\)</span> &gt; <span class="math notranslate nohighlight">\(d(u,v)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(mh = lca(b,u)\)</span> <span class="math notranslate nohighlight">\(\longrightarrow\)</span>  <span class="math notranslate nohighlight">\(h(b)+h(u)-2×h(Mh)\)</span> &gt; <span class="math notranslate nohighlight">\(d(u,v)\)</span></p></li>
-<li><p>اگر <span class="math notranslate nohighlight">\(mh \neq lca(u,v)\)</span> هم باشد باز جد مشترکشان است پس <span class="math notranslate nohighlight">\(d(u,v)\)</span> <span class="math notranslate nohighlight">\(\leqslant\)</span> <span class="math notranslate nohighlight">\(h(u)+h(v)-2×h(mh)\)</span></p></li>
-<li><p>در نتیجه</p></li>
+<li><span class="math notranslate nohighlight">\(d(b,u)\)</span> &gt; <span class="math notranslate nohighlight">\(d(u,v)\)</span></li>
+<li><span class="math notranslate nohighlight">\(mh = lca(b,u)\)</span> <span class="math notranslate nohighlight">\(\longrightarrow\)</span>  <span class="math notranslate nohighlight">\(h(b)+h(u)-2×h(Mh)\)</span> &gt; <span class="math notranslate nohighlight">\(d(u,v)\)</span></li>
+<li>اگر <span class="math notranslate nohighlight">\(mh \neq lca(u,v)\)</span> هم باشد باز جد مشترکشان است پس <span class="math notranslate nohighlight">\(d(u,v)\)</span> <span class="math notranslate nohighlight">\(\leqslant\)</span> <span class="math notranslate nohighlight">\(h(u)+h(v)-2×h(mh)\)</span></li>
+<li>در نتیجه</li>
 </ul>
-<dl class="simple">
-<dt><span class="math notranslate nohighlight">\(h(B) + h(u) - 2×h(mh) &gt; h(u) + h(v) - 2×h(mh) \longrightarrow h(B) &gt; h(u)\)</span></dt><dd><p>که فرض سوال است پس عبارت درست است. با تناقض بدست امده قضیه اثبات شد.</p>
-</dd>
+<dl class="docutils">
+<dt><span class="math notranslate nohighlight">\(h(B) + h(u) - 2×h(mh) &gt; h(u) + h(v) - 2×h(mh) \longrightarrow h(B) &gt; h(u)\)</span></dt>
+<dd>که فرض سوال است پس عبارت درست است. با تناقض بدست امده قضیه اثبات شد.</dd>
 </dl>
 </div>
 <div class="section" id="id6">
@@ -317,16 +317,16 @@
 <div class="section" id="id7">
 <h2>قضیه 2.2.2<a class="headerlink" href="#id7" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <ul class="simple">
-<li><p>الف) در درخت اگر قطر برابر <span class="math notranslate nohighlight">\(Q\)</span> باشد شعاع برابر <span class="math notranslate nohighlight">\(\lceil{Q/2}\rceil\)</span> است.</p></li>
-<li><p>ب) در درخت اگر <span class="math notranslate nohighlight">\(Q\)</span> فرد باشد دو راس وسط مسیر دو سر قطر مرکز هستند و اگر زوج باشد راس وسط قطر.</p></li>
+<li>الف) در درخت اگر قطر برابر <span class="math notranslate nohighlight">\(Q\)</span> باشد شعاع برابر <span class="math notranslate nohighlight">\(\lceil{Q/2}\rceil\)</span> است.</li>
+<li>ب) در درخت اگر <span class="math notranslate nohighlight">\(Q\)</span> فرد باشد دو راس وسط مسیر دو سر قطر مرکز هستند و اگر زوج باشد راس وسط قطر.</li>
 </ul>
 <p>اثبات : در ابتدا ثابت میکنیم راسی که در مسیر دو سر قطر نیست نمیتواند مرکز باشد. راسی مانند <span class="math notranslate nohighlight">\(u\)</span> را در نظر بگیرید که در مسیر دو سر قطر نیست و راس <span class="math notranslate nohighlight">\(v\)</span> را راسی از مسیر دو سر قطر در نظر بگیرید که فاصله اش با
 <span class="math notranslate nohighlight">\(u\)</span> مینیمم است با توجه به قضیه 2.2.1 میتوان فهمید <span class="math notranslate nohighlight">\(\varepsilon{(u)} = \varepsilon{(v)} + d(u,v)\)</span> پس <span class="math notranslate nohighlight">\(v\)</span> قطعا مرکز نیست.
 حال بیایبد راس های درون مسیر دو سر قطر را از یک سر قطر به ترتیب شماره گزاری کنید(یعنی از 0 تا <span class="math notranslate nohighlight">\(Q\)</span>. طبق  قضیه 2.2.1 میدانیم راس خروج از مرکز راس <span class="math notranslate nohighlight">\(i\)</span> ام در مسیر دو سر قطر برابر <span class="math notranslate nohighlight">\(max(i,Q-i)\)</span>
 است.میدانیم مینیمم عبارت بالا زمانی است که <span class="math notranslate nohighlight">\(i , Q-i\)</span> کمترین اختلاف را با هم داشته باشند پس</p>
 <ul class="simple">
-<li><p>اگر <span class="math notranslate nohighlight">\(Q\)</span> زوج باشد جواب میشود  <span class="math notranslate nohighlight">\(min(Q - Q/2 , Q/2)\)</span> = <span class="math notranslate nohighlight">\(Q/2\)</span>  پس شعاع برابر <span class="math notranslate nohighlight">\(Q/2\)</span> است و تنها مرکز هم راس وسط قطر است (راس <span class="math notranslate nohighlight">\(Q/2\)</span> مسیر دو سر قطر.</p></li>
-<li><p>اگر <span class="math notranslate nohighlight">\(Q\)</span> فرد باشد شعاع میشود  <span class="math notranslate nohighlight">\(min((Q-1)/2 , (Q+1)/2)\)</span> = <span class="math notranslate nohighlight">\((Q+1)/2\)</span>  و تنها راس هایی در مسیر در سر قطر که چنین ویژگی دارد راس های <span class="math notranslate nohighlight">\((Q-1)/2,(Q+1)/2\)</span>  مسیر دو سر قطر هستند.</p></li>
+<li>اگر <span class="math notranslate nohighlight">\(Q\)</span> زوج باشد جواب میشود  <span class="math notranslate nohighlight">\(min(Q - Q/2 , Q/2)\)</span> = <span class="math notranslate nohighlight">\(Q/2\)</span>  پس شعاع برابر <span class="math notranslate nohighlight">\(Q/2\)</span> است و تنها مرکز هم راس وسط قطر است (راس <span class="math notranslate nohighlight">\(Q/2\)</span> مسیر دو سر قطر.</li>
+<li>اگر <span class="math notranslate nohighlight">\(Q\)</span> فرد باشد شعاع میشود  <span class="math notranslate nohighlight">\(min((Q-1)/2 , (Q+1)/2)\)</span> = <span class="math notranslate nohighlight">\((Q+1)/2\)</span>  و تنها راس هایی در مسیر در سر قطر که چنین ویژگی دارد راس های <span class="math notranslate nohighlight">\((Q-1)/2,(Q+1)/2\)</span>  مسیر دو سر قطر هستند.</li>
 </ul>
 </div>
 <div class="section" id="id8">
@@ -336,8 +336,8 @@
 <div class="section" id="id9">
 <h2>قضیه 2.2.3<a class="headerlink" href="#id9" title="لینک ثابت به این سر مقاله">¶</a></h2>
 <ul class="simple">
-<li><p>الف) در درخت یک راس سنتروید است اگر و تنها اگر وقتی او را از درخت حذف کنیم سایز هر مولفه کمتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> باشد.</p></li>
-<li><p>ب) در درخت حداکثر دو سنتروید داریم و اگر دو تا باشند گراف زوج راسی است و ان دو به هم یال دارند .</p></li>
+<li>الف) در درخت یک راس سنتروید است اگر و تنها اگر وقتی او را از درخت حذف کنیم سایز هر مولفه کمتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> باشد.</li>
+<li>ب) در درخت حداکثر دو سنتروید داریم و اگر دو تا باشند گراف زوج راسی است و ان دو به هم یال دارند .</li>
 </ul>
 <p>اثبات : راس ها را شماره گزاری میکنیم و <span class="math notranslate nohighlight">\(a_i\)</span> برابر مجموع فاصله های راس <span class="math notranslate nohighlight">\(i\)</span> از دیگر راس های خواهد بود.حال ابتدا بخش اگر الف را اثبات میکنیم. فرض کنید سنتروید راس <span class="math notranslate nohighlight">\(u\)</span> باشد و وقتی ان را حذف کنیم
 مولفه همبندی با سایز بیشتر از <span class="math notranslate nohighlight">\(n/2\)</span> بوجود بیاید حال میگویم راسی که از ان مولفه با <span class="math notranslate nohighlight">\(u\)</span> همسایه است را در نظر بگیرید و نام آن را <span class="math notranslate nohighlight">\(v\)</span> بگزارید . فاصله <span class="math notranslate nohighlight">\(v\)</span> از راس های داخل این مولفه همبندی
@@ -347,8 +347,7 @@
 درخت را از راس <span class="math notranslate nohighlight">\(i\)</span> اویزان میکنیم.حال یک متغیر به نام <span class="math notranslate nohighlight">\(A\)</span> داریم که وقتی روی راس <span class="math notranslate nohighlight">\(z\)</span> هستیم <span class="math notranslate nohighlight">\(A = a_z\)</span> حال از راس ریشه یعنی <span class="math notranslate nohighlight">\(i\)</span> به سمت راس <span class="math notranslate nohighlight">\(j\)</span> حرکت میکنیم
 (یعنی در واقع مسیر بین این دو راس را با شروع از <span class="math notranslate nohighlight">\(i\)</span> طی میکنیم) حال زمانی که از یک راس به بچه اش میرویم <span class="math notranslate nohighlight">\(A\)</span> به اندازه سایز زیر درخت بچه اش کم میشود و به اندازه تعداد راس های منهای سایز زیر درخت بچه اش به <span class="math notranslate nohighlight">\(A\)</span> اضافه میشود.</p>
 <blockquote>
-<div><p>ما میدانیم سایز زیر درخت <span class="math notranslate nohighlight">\(j\)</span> بیشترمساوی از <span class="math notranslate nohighlight">\(n/2\)</span> است زیرا وقتی <span class="math notranslate nohighlight">\(j\)</span> را از درخت حذف کنیم سایز مولفه همبندی که پدرش در آن قرار دارد طبق فرض کمتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است پس تعداد راس های که در این مولفه نیستند(با احتساب <span class="math notranslate nohighlight">\(j\)</span>)</p>
-</div></blockquote>
+<div>ما میدانیم سایز زیر درخت <span class="math notranslate nohighlight">\(j\)</span> بیشترمساوی از <span class="math notranslate nohighlight">\(n/2\)</span> است زیرا وقتی <span class="math notranslate nohighlight">\(j\)</span> را از درخت حذف کنیم سایز مولفه همبندی که پدرش در آن قرار دارد طبق فرض کمتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است پس تعداد راس های که در این مولفه نیستند(با احتساب <span class="math notranslate nohighlight">\(j\)</span>)</div></blockquote>
 <p>بیشتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است.پس سایز زیر درخت تمام جد های <span class="math notranslate nohighlight">\(j\)</span> که ما طی کردیم هم این بیشتر مساوی بیشتر مساوی <span class="math notranslate nohighlight">\(n/2\)</span> است پس میتوان نتیجه گرفت مقدار <span class="math notranslate nohighlight">\(A\)</span> همیشه یا کمتر میشود یا تغییر نمیکند.
 پس :math:` a_i &gt;= a_j <cite>. اگر ما درخت را از :math:`j</cite> هم اویزان کنیم و مسیر بین ان دو را طی کنیم به نتیجه :math:` a_j geq a_i ` میرسیم که در نتیجه <span class="math notranslate nohighlight">\(a_i = a_j\)</span> است.</p>
 <p>حال به اثبات بخش ب میرویم فرض کنید دو راس <span class="math notranslate nohighlight">\(i,j\)</span> سنتروید هستند و درخت را از  <span class="math notranslate nohighlight">\(i\)</span> اویزان کردیم و داریم الگوریتم بالا را طی میکنیم حال میگوییم وقتی از یک راس به بچه اش میرویم <span class="math notranslate nohighlight">\(A\)</span> در صورتی تغییر نمیکند
@@ -366,8 +365,8 @@
 <p>فاصله بین دو راس حداقل 1 است. و در گراف <span class="math notranslate nohighlight">\(K_n\)</span> فاصله بین هر دو راس دقیقا 1 است. پس کمترین چگالی ممکن در گراف <span class="math notranslate nohighlight">\(K_n\)</span> به دست می آید که برابر با <span class="math notranslate nohighlight">\(n \choose 2\)</span> می باشد.</p>
 <p>حالا اگر دامنه بحث را به درخت ها محدود کنیم مسئله کمی سخت تر می شود. اما همچنان می توان اینگونه استنتاج کرد.</p>
 <ul class="simple">
-<li><p>دقیقا <span class="math notranslate nohighlight">\(n-1\)</span> جفت از راس ها هستند که فاصله اشان دقیقا 1 است. زیرا درخت <span class="math notranslate nohighlight">\(n-1\)</span> یال دارد.</p></li>
-<li><p>هر جفتی از راس ها که به همدیگر یال ندارند دارای فاصله حداقل 2 هستند.</p></li>
+<li>دقیقا <span class="math notranslate nohighlight">\(n-1\)</span> جفت از راس ها هستند که فاصله اشان دقیقا 1 است. زیرا درخت <span class="math notranslate nohighlight">\(n-1\)</span> یال دارد.</li>
+<li>هر جفتی از راس ها که به همدیگر یال ندارند دارای فاصله حداقل 2 هستند.</li>
 </ul>
 <p>در نتیجه کمترین چگالی ممکن حداقل <span class="math notranslate nohighlight">\(2 \times {n \choose 2} - (n-1)\)</span> می باشد و تنها مثالی که در حالت این کران صدق می کند حالتی است که فاصله بین هر دو راس <strong>حداکثر</strong> برابر با 2 است. تنها درختی که این ویژگی را دارد ستاره می باشد (همانطور که در عکس می بینید). زیرا که اگر در این گراف دو برگ باشند که پدر مشترک نداشته باشند در اینصورت فاصله آنها حداقل 3 خواهد بود.</p>
 <blockquote>
@@ -467,11 +466,11 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 15, 2020.
+                        آخرین به روز رسانی در مهٔ 17, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
-                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (3.0.3) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
+                        ساخته شده به وسیله <a href="http://sphinx-doc.org/">Sphinx</a> (1.8.5) و <a href="https://github.com/saeiddrv/SphinxMinooTheme">تم مینو</a> (Beta 0.9.7).
                     
                 </p>
             </div>
