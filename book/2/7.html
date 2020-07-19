@@ -377,10 +377,69 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h2>خواص اکسترمالی قطر<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<h2>آویزان کردن از مرکز<a class="headerlink" href="#id2" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>با تعریف مرکز گراف در قسمت های قبل آشنا شدیم و فهمیدیم که مرکز یک درخت وسط قطر است. در نتیجه اگر طول قطر فرد بود تنها یک مرکز داریم و اگر طول قطر زوج بود دو مرکز داریم.</p>
+<p>یک قطر دلخواه از درخت را مثل <span class="math notranslate nohighlight">\(AB\)</span> در نظر بگیرید.</p>
+<ul class="simple">
+<li>اگر طول قطر زوج بود <strong>راس</strong> وسط مسیر <span class="math notranslate nohighlight">\(AB\)</span> را <span class="math notranslate nohighlight">\(MID\)</span> بنامید.</li>
+<li>اگر طول قطر فرد بود <strong>یال</strong> وسط مسیر <span class="math notranslate nohighlight">\(AB\)</span> را <span class="math notranslate nohighlight">\(MID\)</span> بنامید.</li>
+</ul>
+<p>حالا همانند شکل درخت را از <span class="math notranslate nohighlight">\(MID\)</span> آویزان کنید. در این قسمت به بررسی ویژگی های جالب این نوع ریشه دار کردن می پردازیم.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/center.png"><img alt="اگه اینترنت یارو آشغال باشه این میاد" src="../../_images/center.png" style="width: 80%;" /></a>
 </div>
+<p>در ادامه فرض می کنیم که قطر درخت زوج است (و در نتیجه <span class="math notranslate nohighlight">\(MID\)</span> یک راس است). بررسی حالاتی که قطر فرد باشد به صورت مشابه امکان پذیر است. حتی برای جلوگیری از دو بار کاری می توان وسط هر یال یک راس اضافه کرد (در نتیجه طی کردن یک یال در گراف قبل معادل با طی کردن دو یال در گراف جدید است) و سپس از آنجایی که در گراف جدید تمام فاصله ها دو برابر می شوند، قطر گراف جدید نیز زوج خواهد شد.</p>
+<p>پس حالا درخت را از راس <span class="math notranslate nohighlight">\(MID\)</span> ریشه دار در نظر میگیریم و همانطور که می بینید اگر مسیر <span class="math notranslate nohighlight">\(A, B\)</span> تا ریشه را در نظر بگیریم با هم اشتراکی نخواهند داشت (به جز در ریشه). همچنین واضح است که ارتفاع راس های <span class="math notranslate nohighlight">\(A, B\)</span> با هم برابر است این ارتفاع را <span class="math notranslate nohighlight">\(H\)</span> بنامید.</p>
 <div class="section" id="id3">
-<h2>یک الگوریتم ساده تر<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<h3>لم 2.7.1<a class="headerlink" href="#id3" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>اگر ارتفاع راس <span class="math notranslate nohighlight">\(u\)</span> را <span class="math notranslate nohighlight">\(h(u)\)</span> در نظر بگیریم آنگاه مسیری به طول حداقل <span class="math notranslate nohighlight">\(h(u) + H\)</span> وجود دارد که یک سر آن <span class="math notranslate nohighlight">\(u\)</span> است.</p>
+<p>زیرا که اگر از <span class="math notranslate nohighlight">\(u\)</span> به ریشه بروید حداکثر با یکی از دو مسیر <span class="math notranslate nohighlight">\(A\)</span> به ریشه و <span class="math notranslate nohighlight">\(B\)</span> به ریشه اشتراک خواهیم داشت پس می توان با ادامه دادن مسیرمان از ریشه به یکی از <span class="math notranslate nohighlight">\(A\)</span> یا <span class="math notranslate nohighlight">\(B\)</span> برویم.</p>
+</div>
+<div class="section" id="id4">
+<h3>لم 2.7.2<a class="headerlink" href="#id4" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>ارتفاع درخت برابر با <span class="math notranslate nohighlight">\(H\)</span> است. زیرا از طرفی دو راس <span class="math notranslate nohighlight">\(A, B\)</span> ارتفاع <span class="math notranslate nohighlight">\(H\)</span> دارند.</p>
+<p>حالا فرض خاف کنید که راسی مثل <span class="math notranslate nohighlight">\(u\)</span> باشد که <span class="math notranslate nohighlight">\(h(u) &gt; H\)</span> طبق لم 2.7.1 مسیری به طول <span class="math notranslate nohighlight">\(h(u) + H\)</span> در درخت وجود خواهد داشت که بیشتر از <span class="math notranslate nohighlight">\(2 \times H\)</span> است. از آن جایی که فرض کردیم <span class="math notranslate nohighlight">\(AB\)</span> قطر درخت است پس امکان ندارد که مسیری بیشتر از <span class="math notranslate nohighlight">\(2 \times H\)</span> در درخت وجود داشته باشد که با فرض خلف در تناقض است و در نهایت ثابت می کند که ارتفاع درخت برابر با <span class="math notranslate nohighlight">\(H\)</span> است.</p>
+<p>از کنار هم گذاشتن لم 2.7.1 و لم 2.7.2 نتیجه می شود که خروج از مرکز هر راس مثل <span class="math notranslate nohighlight">\(u\)</span> برابر با <span class="math notranslate nohighlight">\(h(u) + H\)</span> می باشد یعنی فاصله راس <span class="math notranslate nohighlight">\(u\)</span> از یکی از دو سر قطر <span class="math notranslate nohighlight">\(AB\)</span> (که این موضوع را قبلا نیز ثابت کرده بودیم).</p>
+<p>دلیل این موضوع این است که اولا طبق لم 2.7.1 این خروج از مرکز <span class="math notranslate nohighlight">\(u\)</span> حداقل <span class="math notranslate nohighlight">\(h(u)+H\)</span> است. از طرف دیگر از راس <span class="math notranslate nohighlight">\(u\)</span> حداکثر <span class="math notranslate nohighlight">\(h(u)\)</span> یال می توان بالا رفت و حداکثر <span class="math notranslate nohighlight">\(H\)</span> یال می توان پایین رفت (زیرا طبق 2.7.2 ارتفاع درخت <span class="math notranslate nohighlight">\(H\)</span> است). در نتیجه خروج از مرکز حداکثر <span class="math notranslate nohighlight">\(h(u) + H\)</span> است که در نهایت ثابت می کند  <span class="math notranslate nohighlight">\(\varepsilon{(u)} = h(u) + H\)</span>.</p>
+</div>
+<div class="section" id="id5">
+<h3>قضیه 2.7.3<a class="headerlink" href="#id5" title="لینک ثابت به این سر مقاله">¶</a></h3>
+<p>به راس هایی که می توانند یکی از دو سر قطر باشند <strong>راس قطری</strong> می گوییم. به راس هایی که ارتفاع آن ها <span class="math notranslate nohighlight">\(H\)</span> است <strong>راس های کف</strong> می گوییم. در اینجا ثابت می کنیم که یک راس قطری است اگر و فقط اگر کف باشد!</p>
+<p>اگر راسی مثل <span class="math notranslate nohighlight">\(u\)</span> قطری باشد یعنی <span class="math notranslate nohighlight">\(\varepsilon{(u)} = 2 \times H\)</span> است. از آنجایی که <span class="math notranslate nohighlight">\(\varepsilon{(u)} = h(u) + H\)</span> می توان نتیجه گرفت که <span class="math notranslate nohighlight">\(h(u) = H\)</span> است که یعنی این راس کف است.</p>
+<p>اگر راسی مثل <span class="math notranslate nohighlight">\(u\)</span> کف باشد یعنی <span class="math notranslate nohighlight">\(h(u) = H\)</span> است. طبق <span class="math notranslate nohighlight">\(\varepsilon{(u)} = h(u) + H\)</span> نتیجه می گیریم که <span class="math notranslate nohighlight">\(\varepsilon{(u)} = 2 \times H\)</span> است که یعنی این راس قطری است.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>یک الگوریتم ساده تر<a class="headerlink" href="#id6" title="لینک ثابت به این سر مقاله">¶</a></h2>
+<p>طبق لم 2.7.1 یکی دور ترین راس از <span class="math notranslate nohighlight">\(u\)</span> یکی از راس های کف است. از آنجایی که طبق قضیه 2.7.3 هر راس کف یک راس قطری نیز هست می توانیم نتیجه بگیریم دورترین راس از <span class="math notranslate nohighlight">\(u\)</span> یک سر قطر است!</p>
+<p>بنابراین اگر دورترین راس از <span class="math notranslate nohighlight">\(u\)</span> (که یک راس دلخواه است) را پیدا کنیم و آن را <span class="math notranslate nohighlight">\(A\)</span> بنامیم آنگاه <span class="math notranslate nohighlight">\(A\)</span> یک سر قطر است. پس دورترین راس از <span class="math notranslate nohighlight">\(A\)</span> را در نظر بگیرید و آن را <span class="math notranslate nohighlight">\(B\)</span> بنامید. مسیر <span class="math notranslate nohighlight">\(AB\)</span> قطر درخت است.</p>
+<p>این قضایا به ما الگوریتم ساده تری برای پیدا کردن قطر درخت پیشنهاد می دهند که پیاده سازی آن را در زیر می بینید. تابع far در واقع دور ترین راس از راس شروع را بر می گرداند.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">maxn</span> <span class="o">=</span> <span class="mf">1e5</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">g</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">h</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">far</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span> <span class="kt">int</span> <span class="n">par</span> <span class="o">=</span> <span class="mi">0</span><span class="p">){</span>
+   <span class="n">h</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">par</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+   <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+   <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">y</span> <span class="p">:</span> <span class="n">g</span><span class="p">[</span><span class="n">u</span><span class="p">]){</span>
+       <span class="k">if</span><span class="p">(</span><span class="n">y</span> <span class="o">!=</span> <span class="n">par</span><span class="p">){</span>
+           <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="n">far</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">u</span><span class="p">);</span>
+           <span class="k">if</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">h</span><span class="p">[</span><span class="n">ans</span><span class="p">])</span>
+               <span class="n">ans</span> <span class="o">=</span> <span class="n">u</span><span class="p">;</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="c1">// input</span>
+    <span class="kt">int</span> <span class="n">A</span> <span class="o">=</span> <span class="n">far</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">B</span> <span class="o">=</span> <span class="n">far</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+    <span class="c1">// AB ghotr ast!</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -422,7 +481,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 19, 2020.
+                        آخرین به روز رسانی در ژوئیهٔ 18, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     

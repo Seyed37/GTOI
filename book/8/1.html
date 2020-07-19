@@ -270,6 +270,30 @@
 				    
   <div class="section" id="bst">
 <h1>BST<a class="headerlink" href="#bst" title="لینک ثابت به این سر مقاله">¶</a></h1>
+<p>درخت های دودویی، درخت های ریشه داری هستند که هر راس حداکثر ۲ بچه دارد. Binary Search Tree یا درخت جست و جوی دودویی، یک داده ساختار درختی است که روی هر راس آن یک عدد نوشته شده است. فرض کنید روی هر راس <span class="math notranslate nohighlight">\(u\)</span> عدد <span class="math notranslate nohighlight">\(a_u\)</span> نوشته شده باشد. BST دارای ویژگی های زیر است.</p>
+<ul class="simple">
+<li>تمام اعداد نوشته شده روی زیردرخت سمت چپ <span class="math notranslate nohighlight">\(u\)</span> کمتر از <span class="math notranslate nohighlight">\(a_u\)</span> هستند.</li>
+<li>تمام اعداد نوشته شده روی زیردرخت سمت راست <span class="math notranslate nohighlight">\(u\)</span> بیشتر از <span class="math notranslate nohighlight">\(a_u\)</span> هستند.</li>
+</ul>
+<p>این ویژگی جالب BST باعث می شود که جست و جو به دنبال یک عدد خاص مثل <span class="math notranslate nohighlight">\(x\)</span> در این داده ساختار برای ما آسان باشد. به این صورت که اگر در زیردرخت <span class="math notranslate nohighlight">\(u\)</span> به دنبال عدد <span class="math notranslate nohighlight">\(x\)</span> می گردیم ابتدا <span class="math notranslate nohighlight">\(a_u, x\)</span> را مقایسه می کنیم.</p>
+<ul class="simple">
+<li>اگر <span class="math notranslate nohighlight">\(a_u = x\)</span> که این مقدار را پیدا کرده ایم.</li>
+<li>اگر <span class="math notranslate nohighlight">\(a_u &gt; x\)</span> آنگاه باید در زیردرخت بچه سمت چپ <span class="math notranslate nohighlight">\(u\)</span> به دنبال <span class="math notranslate nohighlight">\(x\)</span> بگردیم.</li>
+<li>اگر <span class="math notranslate nohighlight">\(a_u &lt; x\)</span> آنگاه باید در زیردرخت بچه سمت راست <span class="math notranslate nohighlight">\(u\)</span> به دنبال <span class="math notranslate nohighlight">\(x\)</span> بگردیم.</li>
+</ul>
+<p>پس در واقع طی عملیات جست و جو به دنبال <span class="math notranslate nohighlight">\(x\)</span> یک مسیر از ریشه تا یک راس را طی می کنیم پس بیشترین تعداد عملیاتی که انجام می دهیم برابر با ارتفاع درخت است!</p>
+<p>به صورت معمول BST ها این عملیات های پایه ای را انجام می دهند.</p>
+<ul class="simple">
+<li>یک راس جدید با مقدار <span class="math notranslate nohighlight">\(x\)</span> به ساختار اضافه کن.</li>
+<li>راس <span class="math notranslate nohighlight">\(u\)</span> (دلخواه) را حذف کن.</li>
+<li>راسی که مقدار <span class="math notranslate nohighlight">\(x\)</span> روی آن نوشته شده را پیدا کن (یا بگو چنین راسی وجود ندارد).</li>
+</ul>
+<p>همانطور که دیدیم BST ها عملیات سوم را با <span class="math notranslate nohighlight">\(O(h)\)</span> انجام می دهند پس باید اضافه و حذف راس (عملیات اول و دوم) را طوری انجام دهیم که ارتفاع درخت زیاد نشود!</p>
+<p>به عنوان مثال می توان برای اضافه کردن مقدار جدید <span class="math notranslate nohighlight">\(x\)</span> (عملیات اول) به سادگی دنبال <span class="math notranslate nohighlight">\(x\)</span> بگردیم. اگر <span class="math notranslate nohighlight">\(x\)</span> را یافتیم که نیاز به اعمال تغییر در درخت نیست. در غیراینصورت می توانیم همانجایی که انتظار داشتیم <span class="math notranslate nohighlight">\(x\)</span> باشد و نبود (اولین مرحله ای که جست و جو ما را به راسی خارج از درخت هدایت می کند)، راسی با مقدار <span class="math notranslate nohighlight">\(x\)</span> قرار دهیم. این یک روش خیلی ساده برای انجام عملیات اول است اما اگر این روش را در پیش بگیریم ممکن است بعد از مدتی ارتفاع درخت خیلی زیاد شود که اصلا بهینه نیست. مثلا با اضافه کردن  اعداد 1 تا <span class="math notranslate nohighlight">\(n\)</span> به صورت صعودی، در نهایت به یک مسیر <span class="math notranslate nohighlight">\(n\)</span> راسی می رسیم.</p>
+<p>برای حذف کردن مقدار <span class="math notranslate nohighlight">\(x\)</span> یک روش ساده این است که ابتدا راس <span class="math notranslate nohighlight">\(u\)</span> را پیدا کنیم که <span class="math notranslate nohighlight">\(a_u = x\)</span> است. سپس راس با <strong>کمترین مقدار</strong> در زیر سمت <strong>راست</strong> <span class="math notranslate nohighlight">\(u\)</span> پیدا کنیم (اگر زیردرخت سمت راست نداشت به سادگی می توان کل زیردرخت سمت چپ را به جای زیر درخت <span class="math notranslate nohighlight">\(u\)</span> قرار داد). و این راس کمینه را به جای <span class="math notranslate nohighlight">\(u\)</span> قرار دهیم. می توان بررسی کرد که در اینصورت درخت حاصل همچنان ویژگی BST را حفظ خواهد کرد. پیدا کردن راس با کمترین مقدار هم به این شکل ممکن است که هر زمان که می توانستیم به چپ برویم، به چپ می رویم هر زمان که نتوانستیم به چپ برویم به راس با مقدار کمینه رسیده ایم. (چرا؟)</p>
+<p>الگوریتم های متفاوتی برای BST وجود دارد که از جمله معروف ترین آن ها می توان به AVL tree, Red–black tree, Tango tree, Treap اشاره کرد. که هر کدام به روش متفاوتی عمل می کنند اما تمام آن ها تلاش می کنند که ارتفاع درخت را <span class="math notranslate nohighlight">\(O(log(n))\)</span> نگه دارند!</p>
+<p>بعضی از آن ها مثل Treap به صورت احتمالاتی کار می کنند یعنی ممکن است ارتفاع درخت زیاد شود اما اگر میانگین ارتفاع در مراحل مختلف را در نظر بگیریم امیدریاضی آن از <span class="math notranslate nohighlight">\(O(log(n))\)</span> خواهد بود.</p>
+<p>در کل می توان فرض کرد که الگوریتم های مشهور BST (که در اینجا به بحث درباره آن نمی پردازیم) تمام عملیات ها را با پیچیدگی زمانی <span class="math notranslate nohighlight">\(O(log(n))\)</span> انجام می دهند. جالب است بدانید std::set که در زبان c++ کاربرد فراوان دارد در واقع با Red–black tree پیاده سازی شده است.</p>
 </div>
 
 
@@ -310,7 +334,7 @@
                     این کتاب عمومی است و تحت پروانه cc-by-sa در دسترس است.
                 </p>
                     <p style="font-size: 13px;">
-                        آخرین به روز رسانی در مهٔ 19, 2020.
+                        آخرین به روز رسانی در ژوئیهٔ 18, 2020.
                     </p>
                 <p style="font-size: 13px;">
                     
